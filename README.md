@@ -2,8 +2,8 @@
 
 Welcome to **The Times Graphics Components**, a collection of React-based components designed for interactive graphics and data visualizations.
 
-<p align="center">
-  <img src="./public/logo.png" alt="Logo" width="150">
+<p style="margin: 50px 0" align="center">
+  <img src="./public/logo.png" alt="The Times" width="400">
 </p>
 
 ---
