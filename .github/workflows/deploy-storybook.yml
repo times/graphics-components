@@ -1,7 +1,8 @@
 name: Deploy Storybook to GitHub Pages
-concurrency:
-  group: ${{ github.head_ref || github.ref_name }}-${{ github.workflow }}
-  cancel-in-progress: true
+
+permissions:
+  contents: write
+
 on:
   push:
     branches:
@@ -9,22 +10,17 @@ on:
 
 jobs:
   deploy:
-    runs-on: self-hosted
-    timeout-minutes: 5
+    runs-on: ubuntu-latest  # O tu self-hosted si ya lo tienes configurado
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
-      - name: Cache npm dependencies
-        uses: actions/cache@v3
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-modules-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-modules-
+
       - name: Install dependencies
         run: npm install
+
       - name: Build Storybook
         run: npm run build-storybook
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
