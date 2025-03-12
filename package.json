@@ -19,7 +19,8 @@
     "eject": "react-scripts eject",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "deploy-storybook": "git checkout master && git branch -D gh-pages && git push origin --delete gh-pages && npm run build-storybook && git checkout --orphan gh-pages && cp -r storybook-static/* . && git add . && git commit -m \"Deploy Storybook\" && git push origin gh-pages && git checkout master && npm i"
+    "deploy-storybook": "npm run build-storybook && gh-pages -d storybook-static -b gh-pages -f"
+
   },
   "eslintConfig": {
     "extends": [
