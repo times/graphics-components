@@ -1,0 +1,47 @@
+import { Meta, Story, ArgTypes, Description } from '@storybook/addon-docs';
+import { AudioPlayer } from '../../lib/components';
+import '../../App.css';
+
+# AudioPlayer
+
+A component for playing audio with a waveform visualization. This component integrates an equalizer visualization and allows users to play, pause, and interact with the audio in a visually engaging manner.
+
+<Meta title="Components/AudioPlayer" component={AudioPlayer} />
+
+## Overview
+
+The `AudioPlayer` component is designed to provide an interactive way to play audio while displaying a waveform visualization. It supports customizable styles and properties, making it versatile for different use cases.
+
+## Features
+
+- 🎵 **Waveform visualization**: Displays the audio waveform dynamically.
+- ⏯ **Play/Pause control**: Users can toggle playback.
+- 🔊 **Volume control**: Adjust audio volume dynamically.
+- 🖼 **Image & Quote support**: Can display an image and a short text description.
+- 📂 **Flexible Data Input**: Accepts an object with `id`, `name`, `quote`, `imgSrc`, and `audioSrc`.
+
+## Usage
+
+To use the `AudioPlayer` component in your project, import it and pass the required props.
+
+```jsx
+import AudioPlayer from 'the-times-graphics-components';
+
+<AudioPlayer 
+  data={{
+    id: '1',
+    name: 'Sample Audio',
+    quote: 'This is a sample audio player.',
+    imgSrc: 'sample-image',
+    audioSrc: 'sample-audio'
+  }}
+/>
+```
+
+## Notes
+
+- Ensure that the `audioSrc` points to a valid audio file (e.g., `.mp3`, `.wav`, `.m4a`).
+- The `imgSrc` should be a valid image file accessible in the project.
+- If no `quote` is provided, the component will still function correctly without displaying a description.
+
+This component is designed to be flexible and can be styled further using styled-components or external CSS to fit different UI requirements.
