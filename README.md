@@ -13,10 +13,10 @@ Welcome to **The Times Graphics Components**, a collection of React-based compon
 To install the dependencies, run:
 
 ```bash
-npm install
+yarn install
 ```
 
-## 🚀 Usage
+<!-- ## 🚀 Usage
 
 To use the components in your project:
 
@@ -24,14 +24,14 @@ To use the components in your project:
 import { ComponentName } from 'the-times-graphics-components';
 
 <ComponentName prop="value" />
-```
+``` -->
 
 ## 🏗 Development
 
 To start the Storybook environment:
 
 ```bash
-npm run storybook
+yarn storybook
 ```
 
 ## 📦 Deployment
@@ -39,7 +39,7 @@ npm run storybook
 To deploy Storybook to GitHub Pages:
 
 ```bash
-npm run deploy-storybook
+yarn deploy-storybook
 ```
 
 ## 🤝 Contributing
