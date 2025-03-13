@@ -50,13 +50,13 @@ We welcome contributions! To contribute:
 
 1. **Fork** the repository.
 2. **Create a new branch**:
-   ```bash
+```bash
    git checkout -b feature-branch
-   ```
+```
 3. **Run ESLint and fix issues before committing:**
-   ```bash
+```bash
    yarn lint
-   ``` 
+``` 
 4. **Make your changes and commit them:**:
 ```bash
    git commit -m "Add new feature"
