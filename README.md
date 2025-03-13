@@ -42,6 +42,8 @@ To deploy Storybook to GitHub Pages:
 yarn deploy-storybook
 ```
 
+
+
 ## 🤝 Contributing
 
 We welcome contributions! To contribute:
@@ -51,12 +53,16 @@ We welcome contributions! To contribute:
    ```bash
    git checkout -b feature-branch
    ```
-3. **Make your changes and commit them:**:
+3. **Run ESLint and fix issues before committing:**
+   ```bash
+   yarn lint
+   ``` 
+4. **Make your changes and commit them:**:
 ```bash
    git commit -m "Add new feature"
    ``` 
-4. **Push to your branch:**:
+5. **Push to your branch:**:
 ```bash
    git push origin feature-branch
    ```
-4. **Open a pull request on GitHub.**
+6. **Open a pull request on GitHub.**
