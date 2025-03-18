@@ -1,5 +1,6 @@
 import React from 'react';
 import { AudioPlayer } from '../../lib/components';
+import WithTextWrapper from '../../storybook/decorators/WithTextWrapper';
 
 export default {
     title: 'Components/AudioPlayer',
@@ -7,6 +8,13 @@ export default {
     parameters: {
         layout: 'centered',
     },
+    decorators: [
+        (Story) => (
+            <WithTextWrapper>
+                <Story />
+            </WithTextWrapper>
+        ),
+    ],
 };
 
 const Template = (args) => <AudioPlayer {...args} />;

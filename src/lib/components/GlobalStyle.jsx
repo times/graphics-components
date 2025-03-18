@@ -13,12 +13,20 @@ export const GlobalStyle = createGlobalStyle`
 
 `;
 
+export const Container = styled.div`
+    font-family: 'RobotoRegular', sans-serif;
+    font-size: 1.6rem;
+
+    margin-block-start: 1em;
+    margin-block-end: 100px;
+`;
+
 export const CardContainer = styled.div`
     font-family: 'RobotoRegular', sans-serif;
 
     background-color: black;
     color: white;
-
+    margin: 40px 0;
     padding-block-start: 16px;
     padding-block-end: 8px;
     padding-inline: 12px;
