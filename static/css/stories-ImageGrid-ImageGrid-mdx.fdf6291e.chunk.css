@@ -1,0 +1,15 @@
+.docblock-source pre {
+    background: rgb(24 24 24) !important;
+}
+
+.docblock-source span {
+    color: white !important;
+}
+
+
+.docblock-source .imports , .docblock-source .token.string,  .docblock-source .tag.class-name  {
+    color: #83ff83 !important;
+}
+
+
+/*# sourceMappingURL=stories-ImageGrid-ImageGrid-mdx.fdf6291e.chunk.css.map*/
