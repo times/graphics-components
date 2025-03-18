@@ -1,0 +1,61 @@
+import { Meta, Story, ArgTypes, Description } from '@storybook/addon-docs';
+import { ImageGrid } from '../../lib/components';
+import '../../App.css';
+
+# ImageGrid
+
+A component for displaying a grid of images with interactive tooltips. This component supports dynamic data and allows users to interact with images.
+
+<Meta title="Components/ImageGrid" component={ImageGrid} />
+
+## Overview
+
+The `ImageGrid` component provides an interactive way to display images in a structured grid. Each image supports tooltips and additional descriptive text.
+
+## Features
+
+- 🖼 **Dynamic image grid**: Displays images based on provided data.
+- 🏷 **Tooltips**: Hovering over an image shows additional information.
+- 📋 **Customizable Data Structure**: Accepts an array of objects with `id`, `name`, `imgSrc`, `copy`, and `age`.
+- 🖥 **Responsive Layout**: Adapts to different screen sizes.
+
+## Usage
+
+To use the `ImageGrid` component in your project, import it and pass the required props.
+```jsx
+import { ImageGrid } from 'the-times-graphics-components';
+
+const data = [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "imgSrc": "john_doe",
+      "copy": "Pellentesque laoreet semper est ac condimentum.",
+      "age": 40
+    },
+    {
+      "id": 2,
+      "name": "John Doe",
+      "imgSrc": "john_doe",
+      "copy": "Pellentesque laoreet semper est ac condimentum.",
+      "age": 42
+    },
+    {
+      "id": 3,
+      "name": "John Doe",
+      "imgSrc": "john_doe",
+      "copy": "Pellentesque laoreet semper est ac condimentum.",
+      "age": 24
+    },
+]
+
+<ImageGrid data={data} />
+```
+
+## Notes
+
+- Ensure that the `imgSrc` corresponds to a valid image available in the project.
+- The `copy` field provides additional information when hovering over an image.
+- The component is designed to be responsive and adapts to different screen sizes.
+
+This component is highly flexible and can be customized further using styled-components or external CSS.
