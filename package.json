@@ -36,7 +36,7 @@
         "preview": "vite preview",
         "storybook": "storybook dev -p 6006",
         "build-storybook": "storybook build",
-       "deploy-storybook": "yarn build-storybook && mkdir -p .out && cp -r storybook-static/* .out && git checkout gh-pages || git checkout --orphan gh-pages && git rm -rf . && cp -r .out/* . && rm -rf .out && git add . && git commit -m 'Deploy Storybook' && git push origin gh-pages && git checkout -"
+        "deploy-storybook": "git checkout master && git branch -D gh-pages && git push origin --delete gh-pages && yarn build-storybook && mkdir -p .out && cp -r storybook-static/* .out && git checkout --orphan gh-pages && git rm -rf . && cp -r .out/* . && rm -rf .out && git add . && git commit -m \"Deploy Storybook\" && git push origin gh-pages && git checkout master && yarn"
     },
     "eslintConfig": {
         "extends": [
