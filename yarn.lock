@@ -1741,12 +1741,12 @@
   dependencies:
     ts-dedent "^2.0.0"
 
-"@storybook/core@8.6.7":
-  version "8.6.7"
-  resolved "https://npm.onservo.com/@storybook/core/-/core-8.6.7.tgz#0e08a85b88e2d73c50da1a324767d0fc7baf51c4"
-  integrity sha512-FcvLFA+Qn3+D6LgQkk0MOXA5FBz8DGc0UZmZuVbIwIUV4MV4ywCMwtKdG0cyhtzQg0YNyfiIYWJr7lZ4jLLhYg==
+"@storybook/core@8.6.11":
+  version "8.6.11"
+  resolved "https://npm.onservo.com/@storybook/core/-/core-8.6.11.tgz#5e70a374cc2e1dcb92ac78ab5dee48b654a2ed75"
+  integrity sha512-fhzLQ9HpljbLpkHykafmcjIERHI5j6SZhylFCDwEWkETuZtRbyCs3mmULutcEOzKhxRgNtiIRoRmZPdQcPtHNg==
   dependencies:
-    "@storybook/theming" "8.6.7"
+    "@storybook/theming" "8.6.11"
     better-opn "^3.0.2"
     browser-assert "^1.2.1"
     esbuild "^0.18.0 || ^0.19.0 || ^0.20.0 || ^0.21.0 || ^0.22.0 || ^0.23.0 || ^0.24.0 || ^0.25.0"
@@ -4063,7 +4063,7 @@ get-symbol-description@^1.1.0:
 
 gh-pages@^6.3.0:
   version "6.3.0"
-  resolved "https://npm.onservo.com/gh-pages/-/gh-pages-6.3.0.tgz#a5b9476dd4385ceaf85c6467b2e05397093e7613"
+  resolved "https://registry.yarnpkg.com/gh-pages/-/gh-pages-6.3.0.tgz#a5b9476dd4385ceaf85c6467b2e05397093e7613"
   integrity sha512-Ot5lU6jK0Eb+sszG8pciXdjMXdBJ5wODvgjR+imihTqsUWF2K6dJ9HST55lgqcs8wWcw6o6wAsUzfcYRhJPXbA==
   dependencies:
     async "^3.2.4"
@@ -5772,12 +5772,12 @@ source-map@^0.6.0, source-map@~0.6.0, source-map@~0.6.1:
   resolved "https://npm.onservo.com/source-map/-/source-map-0.6.1.tgz#74722af32e9614e9c287a8d0bbde48b5e2f1a263"
   integrity sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==
 
-storybook@^8.6.4:
-  version "8.6.7"
-  resolved "https://npm.onservo.com/storybook/-/storybook-8.6.7.tgz#733ee38873d969627c37393621462abb2d21649c"
-  integrity sha512-9gktoFMQDSCINNGQH869d/sar9rVtAhr0HchcvDA6bssAqgQJvTphY4qC9lH54SxfTJm/7Sy+BKEngMK+dziJg==
+storybook@^8.6.11:
+  version "8.6.11"
+  resolved "https://npm.onservo.com/storybook/-/storybook-8.6.11.tgz#3cde1c3430a0578bf63985cca865816ff82a4aa9"
+  integrity sha512-B2wxpmq1QYS4JV7RQu1mOHD7akfoGbuoUSkx2D2GZgv/zXAHZmDpSFcTvvBBm8FAtzChI9HhITSJ0YS0ePfnJQ==
   dependencies:
-    "@storybook/core" "8.6.7"
+    "@storybook/core" "8.6.11"
 
 string-natural-compare@^3.0.1:
   version "3.0.1"
