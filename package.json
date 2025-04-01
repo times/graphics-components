@@ -35,7 +35,7 @@
         "build": "vite build",
         "preview": "vite preview",
         "storybook": "storybook dev -p 6006",
-        "build-storybook": "build-storybook",
+        "build-storybook": "storybook build",
         "deploy-storybook": "yarn build-storybook && gh-pages -d storybook-static"
     },
     "eslintConfig": {
@@ -57,7 +57,7 @@
     },
     "devDependencies": {
         "@chromatic-com/storybook": "^3.2.5",
-        "@storybook/addon-essentials": "^8.6.11",
+        "@storybook/addon-essentials": "^8.6.4",
         "@storybook/addon-interactions": "^8.6.4",
         "@storybook/addon-onboarding": "^8.6.4",
         "@storybook/blocks": "^8.6.4",
