@@ -1859,7 +1859,7 @@
 
 "@storybook/react-vite@^8.6.11":
   version "8.6.11"
-  resolved "https://npm.onservo.com/@storybook/react-vite/-/react-vite-8.6.11.tgz#9c7659755f3aa41709e094b844cb1ec8f50eb8e6"
+  resolved "https://registry.yarnpkg.com/@storybook/react-vite/-/react-vite-8.6.11.tgz#9c7659755f3aa41709e094b844cb1ec8f50eb8e6"
   integrity sha512-UjAIzmfmZIhrMB5MYrc4RswTca0oodbG8m3iBBCadjy+rSZ/c9cbZgkI3bU8W5khkCToQoAXNJI8xWYfr/PGxw==
   dependencies:
     "@joshwooding/vite-plugin-react-docgen-typescript" "0.5.0"
@@ -5774,7 +5774,7 @@ source-map@^0.6.0, source-map@~0.6.0, source-map@~0.6.1:
 
 storybook@^8.6.11:
   version "8.6.11"
-  resolved "https://npm.onservo.com/storybook/-/storybook-8.6.11.tgz#3cde1c3430a0578bf63985cca865816ff82a4aa9"
+  resolved "https://registry.yarnpkg.com/storybook/-/storybook-8.6.11.tgz#3cde1c3430a0578bf63985cca865816ff82a4aa9"
   integrity sha512-B2wxpmq1QYS4JV7RQu1mOHD7akfoGbuoUSkx2D2GZgv/zXAHZmDpSFcTvvBBm8FAtzChI9HhITSJ0YS0ePfnJQ==
   dependencies:
     "@storybook/core" "8.6.11"
