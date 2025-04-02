@@ -6,6 +6,15 @@ Welcome to **The Times Graphics Components**, a collection of React-based compon
   <img src="./public/logo.png" alt="The Times" width="400">
 </p>
 
+
+---
+
+## ⚠️ Requirements
+
+This library requires **React 19 or higher**.  
+Please make sure your project is using React 19+ to avoid runtime errors related to JSX transformations.
+
+
 ---
 
 ## 🚀 Installation
