@@ -11,8 +11,22 @@ jobs:
       - run: yarn build
       - run: yarn build-storybook
 
+  publish:
+    docker:
+      - image: cimg/node:20.11
+    steps:
+      - checkout
+      - run: |
+          echo "//npm.pkg.github.com/:_authToken=$NPM_TOKEN" > ~/.npmrc
+          echo "@times:registry=https://npm.pkg.github.com/" >> ~/.npmrc
+      - run: yarn install --frozen-lockfile
+      - run: npm publish
+
 workflows:
   version: 2
   build_and_test:
     jobs:
       - build
+      - publish:
+          requires:
+            - build
