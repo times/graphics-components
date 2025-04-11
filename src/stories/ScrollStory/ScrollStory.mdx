@@ -1,0 +1,50 @@
+import { Meta, Story, ArgTypes, Description } from '@storybook/addon-docs';
+import { ScrollStory } from '../../lib/components';
+import '../../App.css';
+
+<Meta title="Components/ScrollStory" component={ScrollStory} />
+
+# ScrollStory
+
+A scrollytelling component that displays media (images, videos, AI2HTML graphics) alongside scroll-triggered text. Media transitions smoothly as the user scrolls through the content.
+
+## Features
+
+- 🎞 **Sticky Media**: Media stays fixed while scrolling through related text.
+- 🖼 **Image & Video Support**: Works with images, MP4 videos, YouTube and Vimeo.
+- 🎯 **Responsive Layout**: Supports edge-to-edge and contained layouts.
+- 🎛 **Highly Configurable**: Customize media behavior, styling, fonts, and more.
+
+## Usage
+
+```jsx
+import { ScrollStory } from '@times/graphics-components';
+
+const data = {
+  imgFit: "cover",
+  containerWidth: "edge-to-edge",
+  borderRadius: "0",
+  fixedImgHeight: "500px",
+  fontType: "sans-serif",
+  fontSize: "md",
+  videoAutoplay: true,
+  videoControls: false,
+  videoLoop: true,
+  videoMute: true,
+  slides: [
+    {
+      media: "https://picsum.photos/id/1015/1200/800",
+      text: "This is a slide with an image."
+    },
+    {
+      media: "https://www.youtube.com/watch?v=wDchsz8nmbo",
+      text: "This is a slide with a YouTube video."
+    },
+    {
+      media: "https://www.barrons.com/asset/barrons/videos/asset-uploader-a9e12c89-5df7-433d-98aa-868c701b078d/C0586.mp4",
+      text: "This is a slide with an MP4 video."
+    }
+  ]
+};
+
+<ScrollStory data={data} />
