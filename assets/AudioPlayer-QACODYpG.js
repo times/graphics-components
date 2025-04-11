@@ -1,4 +1,4 @@
-import{j as e}from"./jsx-runtime-D_zvdyIk.js";import{useMDXComponents as s}from"./index-CB3_FCD4.js";import"./App-cHJwTn66.js";import{A as r}from"./index-BKALBp3K.js";import{M as t}from"./index-C4xyjISp.js";import"./index-MPVjHJeJ.js";import"./preview-DzIAIZpD.js";import"./iframe-B34bHjgP.js";import"./DocsRenderer-CFRXHY34-B-fBcth8.js";import"./react-18-BlUjvyv-.js";import"./index-Bzm33-PM.js";import"./index-CXQShRbs.js";import"./index-DrFu-skq.js";function o(n){const i={code:"code",h1:"h1",h2:"h2",li:"li",p:"p",pre:"pre",strong:"strong",ul:"ul",...s(),...n.components};return e.jsxs(e.Fragment,{children:[e.jsx(i.h1,{id:"audioplayer",children:"AudioPlayer"}),`
+import{j as e}from"./jsx-runtime-D_zvdyIk.js";import{useMDXComponents as s}from"./index-CB3_FCD4.js";import"./App-CXMXhIGU.js";import{A as r}from"./index-D25he_x9.js";import{M as t}from"./index-D8AqWxJs.js";import"./index-MPVjHJeJ.js";import"./preview-BLJB5gdp.js";import"./iframe-BAIiH5tV.js";import"./DocsRenderer-CFRXHY34-Cr3frfUS.js";import"./react-18-BlUjvyv-.js";import"./index-Bzm33-PM.js";import"./index-CXQShRbs.js";import"./index-DrFu-skq.js";function o(n){const i={code:"code",h1:"h1",h2:"h2",li:"li",p:"p",pre:"pre",strong:"strong",ul:"ul",...s(),...n.components};return e.jsxs(e.Fragment,{children:[e.jsx(i.h1,{id:"audioplayer",children:"AudioPlayer"}),`
 `,e.jsx(i.p,{children:"A component for playing audio with a waveform visualization. This component integrates an equalizer visualization and allows users to play, pause, and interact with the audio in a visually engaging manner."}),`
 `,e.jsx(t,{title:"Components/AudioPlayer",component:r}),`
 `,e.jsx(i.h2,{id:"overview",children:"Overview"}),`
@@ -13,7 +13,7 @@ import{j as e}from"./jsx-runtime-D_zvdyIk.js";import{useMDXComponents as s}from"
 `]}),`
 `,e.jsx(i.h2,{id:"usage",children:"Usage"}),`
 `,e.jsxs(i.p,{children:["To use the ",e.jsx(i.code,{children:"AudioPlayer"})," component in your project, import it and pass the required props."]}),`
-`,e.jsx(i.pre,{children:e.jsx(i.code,{className:"language-jsx",children:`import AudioPlayer from 'the-times-graphics-components';
+`,e.jsx(i.pre,{children:e.jsx(i.code,{className:"language-jsx",children:`import { AudioPlayer } from '@times/graphics-components';
 
 <AudioPlayer 
   data={{
