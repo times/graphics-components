@@ -1,6 +1,6 @@
 {
     "name": "@times/graphics-components",
-    "version": "0.0.2",
+    "version": "0.0.5",
     "type": "module",
     "main": "dist/times-graphics-components.umd.js",
     "module": "dist/times-graphics-components.es.js",
@@ -23,7 +23,7 @@
         "@testing-library/react": "^16.2.0",
         "@testing-library/user-event": "^13.5.0",
         "@times-visuals/styles": "^1.2.0",
-        "styled-components": "^6.1.17",
+        "styled-components": "^6.0.0",
         "wavesurfer.js": "^7.9.1",
         "web-vitals": "^2.1.4"
     },
