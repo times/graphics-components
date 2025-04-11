@@ -25,6 +25,23 @@ To install the dependencies, run:
 yarn install
 ```
 
+## 🔐 Internal Usage Only
+
+This package is published to **GitHub Packages** under the `@times` scope, and is intended for internal use by teams at The Times / NewsCorp only.
+
+### Local development setup
+
+To install this package locally, you need:
+
+1. A GitHub personal access token (classic) with `read:packages` permission
+2. A `.npmrc` file configured like this:
+
+```ini
+@times:registry=https://npm.pkg.github.com/
+//npm.pkg.github.com/:_authToken=YOUR_GITHUB_TOKEN
+registry=https://registry.npmjs.org/
+```
+
 <!-- ## 🚀 Usage
 
 To use the components in your project:
