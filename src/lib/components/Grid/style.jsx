@@ -21,7 +21,7 @@ export const GridContainer = styled.div`
 
 export const ImageProfile = styled.img`
     width: 100%;
-    height: 150px;
+    height: 80px;
 
     object-fit: cover;
     cursor: pointer;

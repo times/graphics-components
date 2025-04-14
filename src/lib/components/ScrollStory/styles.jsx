@@ -21,8 +21,8 @@ export const SlidesWrapper = styled.div`
 
     &.bleed {
         top: 30vh;
-        width: 80vw;
-        margin-left: calc(50% - 40vw);
+        width: 40vw;
+        margin-left: calc(50% - 20vw);
         height: 500px !important;
     }
 

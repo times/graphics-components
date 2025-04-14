@@ -20,15 +20,4 @@ export const HeadingContainer = styled.div`
 
     padding-inline-start: 10px;
 
-    @media (min-width: ${breakpoints.mobile}) {
-        padding-inline: 72.297px;
-    }
-
-    @media (min-width: ${breakpoints.tablet}) {
-        padding-inline: 220.5px;
-    }
-
-    @media (min-width: ${breakpoints.desktop}) {
-        padding-inline: 258.4px;
-    }
 `;

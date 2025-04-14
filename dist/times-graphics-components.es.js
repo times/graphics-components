@@ -1,5 +1,5 @@
-import ke, { useState as N, useEffect as Y, memo as Ce, useRef as X, useCallback as Ee } from "react";
-import M, { createGlobalStyle as Se } from "styled-components";
+import we, { useState as N, useEffect as Y, memo as ke, useRef as X, useCallback as Ce } from "react";
+import M, { createGlobalStyle as Ee } from "styled-components";
 var G = { exports: {} }, F = {};
 /**
  * @license React
@@ -10,10 +10,10 @@ var G = { exports: {} }, F = {};
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-var de;
-function Pe() {
-  if (de) return F;
-  de = 1;
+var ce;
+function Se() {
+  if (ce) return F;
+  ce = 1;
   var s = Symbol.for("react.transitional.element"), e = Symbol.for("react.fragment");
   function t(i, r, n) {
     var a = null;
@@ -42,9 +42,9 @@ var q = {};
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-var ue;
-function Re() {
-  return ue || (ue = 1, process.env.NODE_ENV !== "production" && function() {
+var de;
+function Pe() {
+  return de || (de = 1, process.env.NODE_ENV !== "production" && function() {
     function s(o) {
       if (o == null) return null;
       if (typeof o == "function")
@@ -135,7 +135,7 @@ function Re() {
     }
     function l(o, v) {
       function S() {
-        se || (se = !0, console.error(
+        ne || (ne = !0, console.error(
           "%s: `key` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. (https://react.dev/link/special-props)",
           v
         ));
@@ -147,7 +147,7 @@ function Re() {
     }
     function u() {
       var o = s(this.type);
-      return oe[o] || (oe[o] = !0, console.error(
+      return se[o] || (se[o] = !0, console.error(
         "Accessing element.ref was removed in React 19. ref is now a regular prop. It will be removed from the JSX Element type in a future release."
       )), o = this.props.ref, o !== void 0 ? o : null;
     }
@@ -187,7 +187,7 @@ function Re() {
       var j = v.children;
       if (j !== void 0)
         if (T)
-          if (xe(j)) {
+          if (ye(j)) {
             for (T = 0; T < j.length; T++)
               f(j[T]);
             Object.freeze && Object.freeze(j);
@@ -198,10 +198,10 @@ function Re() {
         else f(j);
       if (B.call(v, "key")) {
         j = s(o);
-        var z = Object.keys(v).filter(function(we) {
-          return we !== "key";
+        var z = Object.keys(v).filter(function(xe) {
+          return xe !== "key";
         });
-        T = 0 < z.length ? "{key: someKey, " + z.join(": ..., ") + ": ...}" : "{key: someKey}", ce[j + T] || (z = 0 < z.length ? "{" + z.join(": ..., ") + ": ...}" : "{}", console.error(
+        T = 0 < z.length ? "{key: someKey, " + z.join(": ..., ") + ": ...}" : "{key: someKey}", le[j + T] || (z = 0 < z.length ? "{" + z.join(": ..., ") + ": ...}" : "{}", console.error(
           `A props object containing a "key" prop is being spread into JSX:
   let props = %s;
   <%s {...props} />
@@ -212,7 +212,7 @@ React keys must be passed directly to JSX without using spread:
           j,
           z,
           j
-        ), ce[j + T] = !0);
+        ), le[j + T] = !0);
       }
       if (j = null, S !== void 0 && (t(S), j = "" + S), a(v) && (t(v.key), j = "" + v.key), "key" in v) {
         S = {};
@@ -236,7 +236,7 @@ React keys must be passed directly to JSX without using spread:
     function f(o) {
       typeof o == "object" && o !== null && o.$$typeof === b && o._store && (o._store.validated = 1);
     }
-    var p = ke, b = Symbol.for("react.transitional.element"), x = Symbol.for("react.portal"), P = Symbol.for("react.fragment"), w = Symbol.for("react.strict_mode"), k = Symbol.for("react.profiler"), E = Symbol.for("react.consumer"), _ = Symbol.for("react.context"), y = Symbol.for("react.forward_ref"), d = Symbol.for("react.suspense"), g = Symbol.for("react.suspense_list"), C = Symbol.for("react.memo"), O = Symbol.for("react.lazy"), D = Symbol.for("react.activity"), L = Symbol.for("react.client.reference"), $ = p.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, B = Object.prototype.hasOwnProperty, xe = Array.isArray, J = console.createTask ? console.createTask : function() {
+    var p = we, b = Symbol.for("react.transitional.element"), x = Symbol.for("react.portal"), P = Symbol.for("react.fragment"), w = Symbol.for("react.strict_mode"), k = Symbol.for("react.profiler"), E = Symbol.for("react.consumer"), _ = Symbol.for("react.context"), y = Symbol.for("react.forward_ref"), d = Symbol.for("react.suspense"), g = Symbol.for("react.suspense_list"), C = Symbol.for("react.memo"), O = Symbol.for("react.lazy"), D = Symbol.for("react.activity"), L = Symbol.for("react.client.reference"), $ = p.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, B = Object.prototype.hasOwnProperty, ye = Array.isArray, J = console.createTask ? console.createTask : function() {
       return null;
     };
     p = {
@@ -244,10 +244,10 @@ React keys must be passed directly to JSX without using spread:
         return o();
       }
     };
-    var se, oe = {}, ae = p["react-stack-bottom-frame"].bind(
+    var ne, se = {}, oe = p["react-stack-bottom-frame"].bind(
       p,
       n
-    )(), le = J(i(n)), ce = {};
+    )(), ae = J(i(n)), le = {};
     q.Fragment = P, q.jsx = function(o, v, S, T, W) {
       var A = 1e4 > $.recentlyCreatedOwnerStacks++;
       return c(
@@ -257,8 +257,8 @@ React keys must be passed directly to JSX without using spread:
         !1,
         T,
         W,
-        A ? Error("react-stack-top-frame") : ae,
-        A ? J(i(o)) : le
+        A ? Error("react-stack-top-frame") : oe,
+        A ? J(i(o)) : ae
       );
     }, q.jsxs = function(o, v, S, T, W) {
       var A = 1e4 > $.recentlyCreatedOwnerStacks++;
@@ -269,17 +269,17 @@ React keys must be passed directly to JSX without using spread:
         !0,
         T,
         W,
-        A ? Error("react-stack-top-frame") : ae,
-        A ? J(i(o)) : le
+        A ? Error("react-stack-top-frame") : oe,
+        A ? J(i(o)) : ae
       );
     };
   }()), q;
 }
-var he;
-function Te() {
-  return he || (he = 1, process.env.NODE_ENV === "production" ? G.exports = Pe() : G.exports = Re()), G.exports;
+var ue;
+function Re() {
+  return ue || (ue = 1, process.env.NODE_ENV === "production" ? G.exports = Se() : G.exports = Pe()), G.exports;
 }
-var m = Te();
+var m = Re();
 function R(s, e, t, i) {
   return new (t || (t = Promise))(function(r, n) {
     function a(h) {
@@ -351,18 +351,18 @@ const U = { decode: function(s, e) {
     }
   }(s), { duration: e, length: s[0].length, sampleRate: s[0].length / e, numberOfChannels: s.length, getChannelData: (t) => s == null ? void 0 : s[t], copyFromChannel: AudioBuffer.prototype.copyFromChannel, copyToChannel: AudioBuffer.prototype.copyToChannel };
 } };
-function be(s, e) {
+function ge(s, e) {
   const t = e.xmlns ? document.createElementNS(e.xmlns, s) : document.createElement(s);
-  for (const [i, r] of Object.entries(e)) if (i === "children") for (const [n, a] of Object.entries(e)) typeof a == "string" ? t.appendChild(document.createTextNode(a)) : t.appendChild(be(n, a));
+  for (const [i, r] of Object.entries(e)) if (i === "children") for (const [n, a] of Object.entries(e)) typeof a == "string" ? t.appendChild(document.createTextNode(a)) : t.appendChild(ge(n, a));
   else i === "style" ? Object.assign(t.style, r) : i === "textContent" ? t.textContent = r : t.setAttribute(i, r.toString());
   return t;
 }
-function pe(s, e, t) {
-  const i = be(s, e || {});
+function he(s, e, t) {
+  const i = ge(s, e || {});
   return t == null || t.appendChild(i), i;
 }
-var je = Object.freeze({ __proto__: null, createElement: pe, default: pe });
-const _e = { fetchBlob: function(s, e, t) {
+var Te = Object.freeze({ __proto__: null, createElement: he, default: he });
+const je = { fetchBlob: function(s, e, t) {
   return R(this, void 0, void 0, function* () {
     const i = yield fetch(s, t);
     if (i.status >= 400) throw new Error(`Failed to fetch ${s}: ${i.status} (${i.statusText})`);
@@ -389,7 +389,7 @@ const _e = { fetchBlob: function(s, e, t) {
     }(i.clone(), e), i.blob();
   });
 } };
-class Me extends V {
+class _e extends V {
   constructor(e) {
     super(), this.isExternalMedia = !1, e.media ? (this.media = e.media, this.isExternalMedia = !0) : this.media = document.createElement("audio"), e.mediaControls && (this.media.controls = !0), e.autoplay && (this.media.autoplay = !0), e.playbackRate != null && this.onMediaEvent("canplay", () => {
       e.playbackRate != null && (this.media.playbackRate = e.playbackRate);
@@ -863,7 +863,7 @@ class I extends V {
   }
 }
 I.MAX_CANVAS_WIDTH = 8e3, I.MAX_NODES = 10;
-class Oe extends V {
+class Me extends V {
   constructor() {
     super(...arguments), this.unsubscribe = () => {
     };
@@ -980,14 +980,14 @@ class ee extends V {
     return e;
   }
 }
-const Ne = { waveColor: "#999", progressColor: "#555", cursorWidth: 1, minPxPerSec: 0, fillParent: !0, interact: !0, dragToSeek: !1, autoScroll: !0, autoCenter: !0, sampleRate: 8e3 };
-class H extends Me {
+const Oe = { waveColor: "#999", progressColor: "#555", cursorWidth: 1, minPxPerSec: 0, fillParent: !0, interact: !0, dragToSeek: !1, autoScroll: !0, autoCenter: !0, sampleRate: 8e3 };
+class H extends _e {
   static create(e) {
     return new H(e);
   }
   constructor(e) {
     const t = e.media || (e.backend === "WebAudio" ? new ee() : void 0);
-    super({ media: t, mediaControls: e.mediaControls, autoplay: e.autoplay, playbackRate: e.audioRate }), this.plugins = [], this.decodedData = null, this.stopAtPosition = null, this.subscriptions = [], this.mediaSubscriptions = [], this.abortController = null, this.options = Object.assign({}, Ne, e), this.timer = new Oe();
+    super({ media: t, mediaControls: e.mediaControls, autoplay: e.autoplay, playbackRate: e.audioRate }), this.plugins = [], this.decodedData = null, this.stopAtPosition = null, this.subscriptions = [], this.mediaSubscriptions = [], this.abortController = null, this.options = Object.assign({}, Oe, e), this.timer = new Me();
     const i = t ? void 0 : this.getMediaElement();
     this.renderer = new I(this.options, i), this.initPlayerEvents(), this.initRendererEvents(), this.initTimerEvents(), this.initPlugins();
     const r = this.options.url || this.getSrc() || "";
@@ -1098,7 +1098,7 @@ class H extends Me {
         const l = this.options.fetchParams || {};
         window.AbortController && !l.signal && (this.abortController = new AbortController(), l.signal = (n = this.abortController) === null || n === void 0 ? void 0 : n.signal);
         const u = (c) => this.emit("loading", c);
-        t = yield _e.fetchBlob(e, u, l);
+        t = yield je.fetchBlob(e, u, l);
         const h = this.options.blobMimeType;
         h && (t = new Blob([t], { type: h }));
       }
@@ -1223,8 +1223,8 @@ H.BasePlugin = class extends V {
   destroy() {
     this.emit("destroy"), this.subscriptions.forEach((s) => s());
   }
-}, H.dom = je;
-const Ae = (s, e) => {
+}, H.dom = Te;
+const Ne = (s, e) => {
   const [t, i] = N(null);
   return Y(() => {
     if (!s.current) return;
@@ -1236,7 +1236,7 @@ const Ae = (s, e) => {
       r.destroy();
     };
   }, [e, s]), t;
-}, De = M.div`
+}, Ae = M.div`
     display: grid;
     grid-template-columns: max-content 1fr;
     gap: 0.5em;
@@ -1382,10 +1382,10 @@ const Ae = (s, e) => {
         border: 1px solid #b2b2b2;
         border-right-width: 0;
     }
-`, Le = Ce((s) => {
+`, De = ke((s) => {
   const e = X(null), [t, i] = N(!1), [r, n] = N(0.5), [a, l] = N(0), [u, h] = N(
     k(0)
-  ), [c, f] = N(!1), p = Ae(e, s), b = X(null), { onPlay: x, onReady: P } = s, w = Ee(() => {
+  ), [c, f] = N(!1), p = Ne(e, s), b = X(null), { onPlay: x, onReady: P } = s, w = Ce(() => {
     p.playPause();
   }, [p]);
   Y(() => {
@@ -1436,7 +1436,7 @@ const Ae = (s, e) => {
   function _() {
     f(!c);
   }
-  return /* @__PURE__ */ m.jsxs(De, { children: [
+  return /* @__PURE__ */ m.jsxs(Ae, { children: [
     t ? /* @__PURE__ */ m.jsx(
       "img",
       {
@@ -1487,7 +1487,7 @@ const Ae = (s, e) => {
       )
     ] })
   ] });
-}), ve = Se`
+}), be = Ee`
   @font-face {
     font-family: "Times Modern";
     src: url("../lib/assets/fonts/TimesModernRegular.woff2") format("woff2");
@@ -1496,13 +1496,13 @@ const Ae = (s, e) => {
     font-weight: 400;
   }
 
-`, ye = M.div`
+`, ve = M.div`
     font-family: 'RobotoRegular', sans-serif;
     font-size: 1.6rem;
 
     margin-block-start: 1em;
     margin-block-end: 100px;
-`, We = M.div`
+`, Le = M.div`
     font-family: 'RobotoRegular', sans-serif;
 
     background-color: black;
@@ -1560,10 +1560,10 @@ const Ae = (s, e) => {
         }
     }
 `;
-function tt({ data: s }) {
+function et({ data: s }) {
   return /* @__PURE__ */ m.jsxs(m.Fragment, { children: [
-    /* @__PURE__ */ m.jsx(ve, {}),
-    /* @__PURE__ */ m.jsxs(We, { children: [
+    /* @__PURE__ */ m.jsx(be, {}),
+    /* @__PURE__ */ m.jsxs(Le, { children: [
       /* @__PURE__ */ m.jsxs("div", { className: "card-image--container", children: [
         /* @__PURE__ */ m.jsx(
           "img",
@@ -1576,7 +1576,7 @@ function tt({ data: s }) {
       ] }),
       /* @__PURE__ */ m.jsx("p", { className: "card-quote", children: s.quote }),
       /* @__PURE__ */ m.jsx(
-        Le,
+        De,
         {
           height: 100,
           waveColor: "#ff0000",
@@ -1593,9 +1593,9 @@ function tt({ data: s }) {
     ] })
   ] });
 }
-var te = {}, ie = {}, me;
-function $e() {
-  return me || (me = 1, function(s) {
+var te = {}, ie = {}, pe;
+function We() {
+  return pe || (pe = 1, function(s) {
     Object.defineProperty(s, "__esModule", {
       value: !0
     }), s.default = void 0;
@@ -1707,9 +1707,9 @@ function $e() {
     s.default = i;
   }(ie)), ie;
 }
-var re = {}, fe;
-function ze() {
-  return fe || (fe = 1, function(s) {
+var re = {}, me;
+function $e() {
+  return me || (me = 1, function(s) {
     Object.defineProperty(s, "__esModule", {
       value: !0
     }), s.default = void 0;
@@ -1724,9 +1724,9 @@ function ze() {
     s.default = e;
   }(re)), re;
 }
-var ge;
-function Ie() {
-  return ge || (ge = 1, function(s) {
+var fe;
+function ze() {
+  return fe || (fe = 1, function(s) {
     Object.defineProperty(s, "__esModule", {
       value: !0
     }), Object.defineProperty(s, "colors", {
@@ -1740,14 +1740,14 @@ function Ie() {
         return t.default;
       }
     });
-    var e = i($e()), t = i(ze());
+    var e = i(We()), t = i($e());
     function i(r) {
       return r && r.__esModule ? r : { default: r };
     }
   }(te)), te;
 }
-var ne = Ie();
-const Be = M.div`
+ze();
+const Ie = M.div`
     .headline {
         font-family: 'RobotoRegular', sans-serif;
         font-size: 20px;
@@ -1766,25 +1766,14 @@ const Be = M.div`
 
     padding-inline-start: 10px;
 
-    @media (min-width: ${ne.breakpoints.mobile}) {
-        padding-inline: 72.297px;
-    }
-
-    @media (min-width: ${ne.breakpoints.tablet}) {
-        padding-inline: 220.5px;
-    }
-
-    @media (min-width: ${ne.breakpoints.desktop}) {
-        padding-inline: 258.4px;
-    }
 `;
-function Fe({ headline: s, standfirst: e }) {
-  return /* @__PURE__ */ m.jsxs(Be, { children: [
+function Be({ headline: s, standfirst: e }) {
+  return /* @__PURE__ */ m.jsxs(Ie, { children: [
     s && /* @__PURE__ */ m.jsx("h1", { className: "headline", children: s }),
     e && /* @__PURE__ */ m.jsx("p", { className: "standfirst", children: e })
   ] });
 }
-const qe = M.div`
+const Fe = M.div`
     margin-block: 1em;
     margin-inline: 10px;
 
@@ -1801,9 +1790,9 @@ const qe = M.div`
         grid-template-columns: repeat(7, 1fr);
         gap: 1em;
     }
-`, Ye = M.img`
+`, qe = M.img`
     width: 100%;
-    height: 150px;
+    height: 80px;
 
     object-fit: cover;
     cursor: pointer;
@@ -1816,7 +1805,7 @@ const qe = M.div`
 
     transition: opacity 250ms ease-in;
 `;
-function He({
+function Ye({
   data: s,
   clickedImage: e,
   setClickedImage: t,
@@ -1830,7 +1819,7 @@ function He({
     ]);
   }
   const a = s.map((l) => /* @__PURE__ */ m.jsx(
-    Ye,
+    qe,
     {
       src: `https://nuk-tnl-editorial-prod-staticassets.s3.amazonaws.com/2024/times-image-grid/assets/${l.imgSrc}.jpg`,
       alt: l.name,
@@ -1841,9 +1830,9 @@ function He({
     },
     l.id
   ));
-  return /* @__PURE__ */ m.jsx(qe, { children: a });
+  return /* @__PURE__ */ m.jsx(Fe, { children: a });
 }
-const Ve = M.div`
+const He = M.div`
     position: absolute;
     left: 0px;
     top: ${(s) => s.isImageInLastRow ? s.tooltipPos[1] - 380 : s.tooltipPos[1]}px;
@@ -1922,7 +1911,7 @@ const Ve = M.div`
         }
     }
 `;
-function Ge({
+function Ve({
   clickedImage: s,
   setClickedImage: e,
   tooltipPos: t,
@@ -1935,7 +1924,7 @@ function Ge({
     r(!1), e(null);
   }
   return /* @__PURE__ */ m.jsxs(
-    Ve,
+    He,
     {
       showTooltip: i,
       tooltipPos: t,
@@ -1958,21 +1947,21 @@ function Ge({
     }
   );
 }
-function it({ data: s }) {
+function tt({ data: s }) {
   const [e, t] = N(null), [i, r] = N(!1), [n, a] = N([0, 0]);
   let u = s.length - s.indexOf(e) <= 7;
   return /* @__PURE__ */ m.jsxs(m.Fragment, { children: [
-    /* @__PURE__ */ m.jsx(ve, {}),
-    /* @__PURE__ */ m.jsxs(ye, { children: [
+    /* @__PURE__ */ m.jsx(be, {}),
+    /* @__PURE__ */ m.jsxs(ve, { children: [
       /* @__PURE__ */ m.jsx(
-        Fe,
+        Be,
         {
           headline: "Lorem ipsum dolor sit amet",
           standfirst: "Nulla vel augue ut erat efficitur scelerisque id vel tellus. Ut iaculis nulla sit amet lorem rutrum, ac luctus sem imperdiet"
         }
       ),
       /* @__PURE__ */ m.jsx(
-        He,
+        Ye,
         {
           data: s,
           clickedImage: e,
@@ -1982,7 +1971,7 @@ function it({ data: s }) {
         }
       ),
       /* @__PURE__ */ m.jsx(
-        Ge,
+        Ve,
         {
           clickedImage: e,
           setClickedImage: t,
@@ -1999,7 +1988,7 @@ M.div`
     position: relative;
     width: 100%;
 `;
-const Ue = M.div`
+const Ge = M.div`
     position: sticky;
     top: 30vh;
     width: 100%;
@@ -2014,19 +2003,19 @@ const Ue = M.div`
 
     &.bleed {
         top: 30vh;
-        width: 80vw;
-        margin-left: calc(50% - 40vw);
+        width: 40vw;
+        margin-left: calc(50% - 20vw);
         height: 500px !important;
     }
 
     &.edge-to-edge iframe {
         height: 100vh;
     }
-`, Xe = M.div`
+`, Ue = M.div`
     position: relative;
     width: 100%;
     height: 100%;
-`, Je = M.div`
+`, Xe = M.div`
     position: absolute;
     top: 0;
     bottom: 0;
@@ -2039,12 +2028,12 @@ const Ue = M.div`
         opacity: 1;
         pointer-events: auto;
     }
-`, Ze = M.section`
+`, Je = M.section`
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-`, Qe = M.p`
+`, Ze = M.p`
     line-height: 1.4;
     font-family: 'Times Modern', serif;
     font-size: ${({ size: s }) => s === "lg" ? "20px" : "16px"} !important;
@@ -2055,7 +2044,7 @@ const Ue = M.div`
     font-size: 18px;
     line-height: 30px;
 `;
-function rt({ data: s }) {
+function it({ data: s }) {
   const {
     slides: e = [],
     imgFit: t = "cover",
@@ -2094,16 +2083,16 @@ function rt({ data: s }) {
       return `https://player.vimeo.com/video/${d.split("/").pop()}?autoplay=${u ? 1 : 0}&loop=${l ? 1 : 0}&controls=${h ? 1 : 0}&muted=${c ? 1 : 0}`;
     return d;
   }, _ = (d) => d.includes("youtube.com") || d.includes("youtu.be"), y = (d) => d.endsWith(".mp4");
-  return /* @__PURE__ */ m.jsxs(ye, { children: [
+  return /* @__PURE__ */ m.jsxs(ve, { children: [
     /* @__PURE__ */ m.jsx(
-      Ue,
+      Ge,
       {
         style: {
           height: n || "500px"
         },
         className: i === "edge-to-edge" ? "edge-to-edge" : i === "bleed" ? "bleed" : "",
-        children: /* @__PURE__ */ m.jsx(Xe, { children: e.map((d, g) => /* @__PURE__ */ m.jsx(
-          Je,
+        children: /* @__PURE__ */ m.jsx(Ue, { children: e.map((d, g) => /* @__PURE__ */ m.jsx(
+          Xe,
           {
             ref: (C) => w.current[g] = C,
             className: b[g] ? "overlap" : "",
@@ -2163,13 +2152,13 @@ function rt({ data: s }) {
       }
     ),
     /* @__PURE__ */ m.jsx("div", { className: "scroller-sections", children: e.map((d, g) => /* @__PURE__ */ m.jsx(
-      Ze,
+      Je,
       {
         className: "trigger",
         "data-index": g,
         ref: (C) => P.current[g] = C,
         children: d.text && /* @__PURE__ */ m.jsx(
-          Qe,
+          Ze,
           {
             size: a,
             dangerouslySetInnerHTML: { __html: d.text }
@@ -2181,11 +2170,11 @@ function rt({ data: s }) {
   ] });
 }
 export {
-  tt as AudioPlayer,
-  Le as Equalizer,
-  He as Grid,
-  Fe as Header,
-  it as ImageGrid,
-  rt as ScrollStory,
-  Ge as Tooltip
+  et as AudioPlayer,
+  De as Equalizer,
+  Ye as Grid,
+  Be as Header,
+  tt as ImageGrid,
+  it as ScrollStory,
+  Ve as Tooltip
 };
