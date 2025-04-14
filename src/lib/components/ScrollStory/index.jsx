@@ -76,11 +76,13 @@ export default function ScrollStory({ data }) {
       style={{
         height: fixedImgHeight || '500px',
       }}
-        className={
-          containerWidth === 'edge-to-edge' || containerWidth === 'bleed'
-            ? 'edge-to-edge'
-            : ''
-        }
+      className={
+        containerWidth === 'edge-to-edge'
+          ? 'edge-to-edge'
+          : containerWidth === 'inline'
+          ? 'inline'
+          : ''
+      }
       >
         <SlidesContainer>
           {slides.map((slide, i) => (

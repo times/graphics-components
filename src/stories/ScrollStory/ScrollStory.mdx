@@ -15,6 +15,80 @@ A scrollytelling component that displays media (images, videos, AI2HTML graphics
 - 🎯 **Responsive Layout**: Supports edge-to-edge and contained layouts.
 - 🎛 **Highly Configurable**: Customize media behavior, styling, fonts, and more.
 
+## Props
+
+### `data.slides` (required)  
+**Type:** `Array<{ media: string, text?: string, altText?: string }>`  
+A list of slides, each containing a `media` URL (image, YouTube, Vimeo, or MP4), optional `text` (HTML allowed), and optional `altText` for images.
+
+---
+
+### `data.imgFit`  
+**Type:** `"cover" | "contain" | "fill"`  
+**Default:** `"cover"`  
+Sets how the media is resized inside its container (`object-fit`).
+
+---
+
+### `data.containerWidth`  
+**Type:** `"inline" | "edge-to-edge" | "bleed"`  
+**Default:** `"inline"`  
+Controls the width of the media container.  
+- `inline`: uses 56.2% width and centers the media  
+- `bleed`: respects content layout  
+- `edge-to-edge`: stretches to full viewport width  
+
+---
+
+### `data.borderRadius`  
+**Type:** `string`  
+**Default:** `"0"`  
+Sets the `border-radius` of the media element (e.g., `"8px"` or `"1rem"`).
+
+---
+
+### `data.fixedImgHeight`  
+**Type:** `string`  
+If provided (e.g. `"500px"`), sets a fixed height for all media. Otherwise it defaults to `"500px"` or `"100vh"` for `edge-to-edge`.
+
+---
+
+### `data.fontSize`  
+**Type:** `"sm" | "md" | "lg"`  
+**Default:** `"md"`  
+Adjusts the font size of the scroll-triggered text blocks.
+
+---
+
+### `data.videoAutoplay`  
+**Type:** `boolean`  
+**Default:** `true`  
+If `true`, videos autoplay when active.
+
+---
+
+### `data.videoLoop`  
+**Type:** `boolean`  
+**Default:** `true`  
+If `true`, videos will loop.
+
+---
+
+### `data.videoControls`  
+**Type:** `boolean`  
+**Default:** `false`  
+If `true`, native video player controls will be shown.
+
+---
+
+### `data.videoMute`  
+**Type:** `boolean`  
+**Default:** `true`  
+If `true`, videos will start muted.
+
+---
+
+
 ## Usage
 
 ```jsx

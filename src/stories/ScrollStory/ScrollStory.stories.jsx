@@ -8,7 +8,7 @@ export default {
     argTypes: {
       containerWidth: {
         control: { type: 'select' },
-        options: ['default', 'edge-to-edge', 'bleed'],
+        options: ['bleed', 'edge-to-edge', 'inline'],
       },
       imgFit: {
         control: { type: 'select' },
