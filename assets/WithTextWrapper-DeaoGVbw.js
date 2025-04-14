@@ -1,4 +1,4 @@
-import{j as i}from"./jsx-runtime-D_zvdyIk.js";import"./index-MPVjHJeJ.js";import{d as e}from"./index-DUUT1ymY.js";const n=e.div`
+import{j as i}from"./jsx-runtime-D_zvdyIk.js";import"./index-MPVjHJeJ.js";import{d as e}from"./index-C34YMM90.js";const n=e.div`
     padding: 20px;
     text-align: center;
     max-width: 1182px;
