@@ -7,11 +7,17 @@ const Wrapper = styled.div`
     max-width: 1182px;
     margin-left: auto;
     margin-right: auto;
+     @media (min-width: 768px) {
+        width: 80.8%;
+    }
+
+    @media (min-width: 1024px) {
+        width: 56.2%;
+    }
 `;
 
 const SMALL = styled.small`
     font-size: 12px;
-    width: 90%;
     text-align: left;
     margin: 0 auto;
     color: #333333;
@@ -25,17 +31,13 @@ const SMALL = styled.small`
         line-height: 30px;
         padding-left: 0;
         padding-right: 0;
-        width: 80.8%;
     }
 
-    @media (min-width: 1024px) {
-        width: 56.2%;
-    }
+ 
 `;
 
 const H1 = styled.h1`
     font-size: 24px;
-    width: 90%;
     text-align: left;
     margin: 0 auto;
     color: #333333;
@@ -49,21 +51,14 @@ const H1 = styled.h1`
         line-height: 30px;
         padding-left: 0;
         padding-right: 0;
-        width: 80.8%;
         margin-bottom: 20px;
     }
 
-    @media (min-width: 1024px) {
-        width: 56.2%;
-    }
 `;
 
 const Text = styled.p`
     font-size: 16px;
     line-height: 28px;
-    padding-left: 10px;
-    padding-right: 10px;
-    width: 90%;
     text-align: left;
     margin: 0 auto;
     color: #333333;
@@ -77,12 +72,8 @@ const Text = styled.p`
         line-height: 30px;
         padding-left: 0;
         padding-right: 0;
-        width: 80.8%;
     }
 
-    @media (min-width: 1024px) {
-        width: 56.2%;
-    }
 `;
 
 const WithTextWrapper = ({ children }) => {

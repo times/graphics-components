@@ -19,9 +19,11 @@ export const SlidesWrapper = styled.div`
         height: 100vh !important;
     }
 
-    &.inline {
-        width: 56.2%;
-        margin: 0 auto;
+    &.bleed {
+        top: 30vh;
+        width: 80vw;
+        margin-left: calc(50% - 40vw);
+        height: 500px !important;
     }
 
     &.edge-to-edge iframe {
