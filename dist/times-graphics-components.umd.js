@@ -449,54 +449,59 @@ React keys must be passed directly to JSX without using spread:
         }
     }
 `;function be({clickedImage:s,setClickedImage:e,tooltipPos:t,showTooltip:i,setShowTooltip:r,isImageInLastRow:n}){if(!s)return;function a(){r(!1),e(null)}return m.jsxs(Fe,{showTooltip:i,tooltipPos:t,isImageInLastRow:n,children:[m.jsx("img",{className:"tooltip-image",src:`https://nuk-tnl-editorial-prod-staticassets.s3.amazonaws.com/2024/times-image-grid/assets/${s.imgSrc}.jpg`,alt:s.name}),m.jsxs("div",{className:"tooltip-content",children:[m.jsx("h3",{children:s.name}),m.jsx("p",{children:s.copy})]}),m.jsx("button",{className:"tooltip-close",onClick:a,children:m.jsx("img",{src:"https://nuk-tnl-editorial-prod-staticassets.s3.amazonaws.com/2023/st-grid-jeremy-clarkson/assets/x.svg"})})]})}function Ye({data:s}){const[e,t]=C.useState(null),[i,r]=C.useState(!1),[n,a]=C.useState([0,0]);let u=s.length-s.indexOf(e)<=7;return m.jsxs(m.Fragment,{children:[m.jsx(de,{}),m.jsxs(ue,{children:[m.jsx(fe,{headline:"Lorem ipsum dolor sit amet",standfirst:"Nulla vel augue ut erat efficitur scelerisque id vel tellus. Ut iaculis nulla sit amet lorem rutrum, ac luctus sem imperdiet"}),m.jsx(ge,{data:s,clickedImage:e,setClickedImage:t,setShowTooltip:r,setTooltipPos:a}),m.jsx(be,{clickedImage:e,setClickedImage:t,showTooltip:i,setShowTooltip:r,tooltipPos:n,isImageInLastRow:u})]})]})}N.div`
-  position: relative;
-  width: 100%;
+    position: relative;
+    width: 100%;
 `;const He=N.div`
-  position: sticky;
-  top: 30vh;
-  width: 100%;
-  overflow: hidden;
+    position: sticky;
+    top: 30vh;
+    width: 100%;
+    overflow: hidden;
 
-  &.edge-to-edge {
-    top: 0;
-    width: 100vw;
-    margin-left: calc(50% - 50vw);
-    height: 100vh !important;
-  }
+    &.edge-to-edge {
+        top: 0;
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        height: 100vh !important;
+    }
 
-  &.edge-to-edge iframe {
-    height: 100vh;
-  }
+    &.inline {
+        width: 56.2%;
+        margin: 0 auto;
+    }
+
+    &.edge-to-edge iframe {
+        height: 100vh;
+    }
 `,Ge=N.div`
-  position: relative;
-  width: 100%;
-  height: 100%;
+    position: relative;
+    width: 100%;
+    height: 100%;
 `,Ve=N.div`
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  opacity: 0;
-  transition: opacity 0.4s ease;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.4s ease;
 
-  &.overlap {
-    opacity: 1;
-    pointer-events: auto;
-  }
+    &.overlap {
+        opacity: 1;
+        pointer-events: auto;
+    }
 `,Ue=N.section`
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 `,$e=N.p`
-  line-height: 1.4;
-  font-family: 'Times Modern', serif;
-  font-size: ${({size:s})=>s==="lg"?"20px":"16px"} !important;
-  padding: 1rem;
-  max-width: 600px;
-  background: white;
-  z-index: 1;
-  font-size: 18px;
-  line-height: 30px;
-`;function Xe({data:s}){const{slides:e=[],imgFit:t="cover",containerWidth:i="edge-to-edge",borderRadius:r="0",fixedImgHeight:n,fontSize:a="md",videoLoop:l=!0,videoAutoplay:u=!0,videoControls:h=!1,videoMute:c=!0}=s,[f,p]=C.useState(0),[b,x]=C.useState([]),T=C.useRef([]),w=C.useRef([]);C.useEffect(()=>{const d=new IntersectionObserver(g=>{g.forEach(E=>{if(E.isIntersecting){const A=parseInt(E.target.dataset.index,10);p(A)}})},{threshold:.6});return T.current.forEach(g=>g&&d.observe(g)),()=>d.disconnect()},[e.length]),C.useEffect(()=>{const d=e.map((g,E)=>E===f);x(d)},[f,e]);const k=d=>b[d]?2:1,S=d=>{var g;if(d.includes("youtube.com")){const E=(g=d.split("v=")[1])==null?void 0:g.split("&")[0];return`https://www.youtube.com/embed/${E}?autoplay=${u?1:0}&loop=${l?1:0}&controls=${h?1:0}&mute=${c?1:0}&playlist=${E}`}else if(d.includes("vimeo.com"))return`https://player.vimeo.com/video/${d.split("/").pop()}?autoplay=${u?1:0}&loop=${l?1:0}&controls=${h?1:0}&muted=${c?1:0}`;return d},_=d=>d.includes("youtube.com")||d.includes("youtu.be"),y=d=>d.endsWith(".mp4");return m.jsxs(ue,{children:[m.jsx(He,{style:{height:n||"500px"},className:i==="edge-to-edge"||i==="bleed"?"edge-to-edge":"",children:m.jsx(Ge,{children:e.map((d,g)=>m.jsx(Ve,{ref:E=>w.current[g]=E,className:b[g]?"overlap":"",style:{zIndex:k(g)},children:_(d.media)?m.jsx("iframe",{title:"YouTube video",src:S(d.media),frameBorder:"0",allow:"autoplay; encrypted-media",allowFullScreen:!0,style:{objectFit:t,width:"100%",height:n||(i==="edge-to-edge"?"100vh":"500px"),borderRadius:r}}):y(d.media)?m.jsx("video",{autoPlay:u,loop:l,controls:h,muted:c,style:{objectFit:t,width:"100%",height:n,borderRadius:r},children:m.jsx("source",{src:d.media,type:"video/mp4"})}):m.jsx("img",{src:d.media,alt:d.altText||"Slide image",style:{objectFit:t,width:"100%",height:n,borderRadius:r}})},g))})}),m.jsx("div",{className:"scroller-sections",children:e.map((d,g)=>m.jsx(Ue,{className:"trigger","data-index":g,ref:E=>T.current[g]=E,children:d.text&&m.jsx($e,{size:a,dangerouslySetInnerHTML:{__html:d.text}})},g))})]})}O.AudioPlayer=Ae,O.Equalizer=ce,O.Grid=ge,O.Header=fe,O.ImageGrid=Ye,O.ScrollStory=Xe,O.Tooltip=be,Object.defineProperty(O,Symbol.toStringTag,{value:"Module"})});
+    line-height: 1.4;
+    font-family: 'Times Modern', serif;
+    font-size: ${({size:s})=>s==="lg"?"20px":"16px"} !important;
+    padding: 1rem;
+    max-width: 600px;
+    background: white;
+    z-index: 1;
+    font-size: 18px;
+    line-height: 30px;
+`;function Xe({data:s}){const{slides:e=[],imgFit:t="cover",containerWidth:i="edge-to-edge",borderRadius:r="0",fixedImgHeight:n,fontSize:a="md",videoLoop:l=!0,videoAutoplay:u=!0,videoControls:h=!1,videoMute:c=!0}=s,[f,p]=C.useState(0),[b,x]=C.useState([]),T=C.useRef([]),w=C.useRef([]);C.useEffect(()=>{const d=new IntersectionObserver(g=>{g.forEach(E=>{if(E.isIntersecting){const A=parseInt(E.target.dataset.index,10);p(A)}})},{threshold:.6});return T.current.forEach(g=>g&&d.observe(g)),()=>d.disconnect()},[e.length]),C.useEffect(()=>{const d=e.map((g,E)=>E===f);x(d)},[f,e]);const k=d=>b[d]?2:1,S=d=>{var g;if(d.includes("youtube.com")){const E=(g=d.split("v=")[1])==null?void 0:g.split("&")[0];return`https://www.youtube.com/embed/${E}?autoplay=${u?1:0}&loop=${l?1:0}&controls=${h?1:0}&mute=${c?1:0}&playlist=${E}`}else if(d.includes("vimeo.com"))return`https://player.vimeo.com/video/${d.split("/").pop()}?autoplay=${u?1:0}&loop=${l?1:0}&controls=${h?1:0}&muted=${c?1:0}`;return d},_=d=>d.includes("youtube.com")||d.includes("youtu.be"),y=d=>d.endsWith(".mp4");return m.jsxs(ue,{children:[m.jsx(He,{style:{height:n||"500px"},className:i==="edge-to-edge"?"edge-to-edge":i==="inline"?"inline":"",children:m.jsx(Ge,{children:e.map((d,g)=>m.jsx(Ve,{ref:E=>w.current[g]=E,className:b[g]?"overlap":"",style:{zIndex:k(g)},children:_(d.media)?m.jsx("iframe",{title:"YouTube video",src:S(d.media),frameBorder:"0",allow:"autoplay; encrypted-media",allowFullScreen:!0,style:{objectFit:t,width:"100%",height:n||(i==="edge-to-edge"?"100vh":"500px"),borderRadius:r}}):y(d.media)?m.jsx("video",{autoPlay:u,loop:l,controls:h,muted:c,style:{objectFit:t,width:"100%",height:n,borderRadius:r},children:m.jsx("source",{src:d.media,type:"video/mp4"})}):m.jsx("img",{src:d.media,alt:d.altText||"Slide image",style:{objectFit:t,width:"100%",height:n,borderRadius:r}})},g))})}),m.jsx("div",{className:"scroller-sections",children:e.map((d,g)=>m.jsx(Ue,{className:"trigger","data-index":g,ref:E=>T.current[g]=E,children:d.text&&m.jsx($e,{size:a,dangerouslySetInnerHTML:{__html:d.text}})},g))})]})}O.AudioPlayer=Ae,O.Equalizer=ce,O.Grid=ge,O.Header=fe,O.ImageGrid=Ye,O.ScrollStory=Xe,O.Tooltip=be,Object.defineProperty(O,Symbol.toStringTag,{value:"Module"})});
