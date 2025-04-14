@@ -2012,9 +2012,11 @@ const Ue = M.div`
         height: 100vh !important;
     }
 
-    &.inline {
-        width: 56.2%;
-        margin: 0 auto;
+    &.bleed {
+        top: 30vh;
+        width: 80vw;
+        margin-left: calc(50% - 40vw);
+        height: 500px !important;
     }
 
     &.edge-to-edge iframe {
@@ -2099,7 +2101,7 @@ function rt({ data: s }) {
         style: {
           height: n || "500px"
         },
-        className: i === "edge-to-edge" ? "edge-to-edge" : i === "inline" ? "inline" : "",
+        className: i === "edge-to-edge" ? "edge-to-edge" : i === "bleed" ? "bleed" : "",
         children: /* @__PURE__ */ m.jsx(Xe, { children: e.map((d, g) => /* @__PURE__ */ m.jsx(
           Je,
           {
@@ -2117,7 +2119,7 @@ function rt({ data: s }) {
                 style: {
                   objectFit: t,
                   width: "100%",
-                  height: n || (i === "edge-to-edge" ? "100vh" : "500px"),
+                  height: n || (i === "edge-to-edge" ? "100vh" : "100%"),
                   borderRadius: r
                 }
               }
@@ -2131,10 +2133,16 @@ function rt({ data: s }) {
                 style: {
                   objectFit: t,
                   width: "100%",
-                  height: n,
+                  height: n || "100%",
                   borderRadius: r
                 },
-                children: /* @__PURE__ */ m.jsx("source", { src: d.media, type: "video/mp4" })
+                children: /* @__PURE__ */ m.jsx(
+                  "source",
+                  {
+                    src: d.media,
+                    type: "video/mp4"
+                  }
+                )
               }
             ) : /* @__PURE__ */ m.jsx(
               "img",
@@ -2144,7 +2152,7 @@ function rt({ data: s }) {
                 style: {
                   objectFit: t,
                   width: "100%",
-                  height: n,
+                  height: n || "100%",
                   borderRadius: r
                 }
               }
