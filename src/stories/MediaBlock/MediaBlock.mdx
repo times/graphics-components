@@ -1,0 +1,117 @@
+import { Meta, Story, ArgTypes, Description } from '@storybook/addon-docs';
+import { MediaBlock } from '../../lib/components';
+import '../../App.css';
+
+<Meta title="Components/MediaBlock" component={MediaBlock} />
+
+# MediaBlock
+
+A flexible media display component that supports responsive layout and a variety of formats, including images, MP4, YouTube, and Vimeo. It includes optional wrapper content such as headlines, captions, and notes.
+
+## Features
+
+- 🖼 **Multiple Media Types**: Supports YouTube, Vimeo, MP4, and static images.
+- 🧱 **Wrapper Support**: Includes optional headline, subhead, chart title, caption, and notes.
+- 📐 **Responsive Layout**: Choose from `inline`, `edge-to-edge`, or `bleed` width behavior.
+- 🎛 **Customizable**: Control video playback, image styling, and content layout.
+
+## Props
+
+### `data.media` (required)  
+**Type:** `string`  
+Media URL. Can be an image, `.mp4` file, YouTube or Vimeo link.
+
+---
+
+### `data.text`  
+**Type:** `string`  
+Optional descriptive text rendered below the media. Accepts raw HTML.
+
+---
+
+### `data.caption`  
+**Type:** `string`  
+Optional caption displayed as an overlay.
+
+---
+
+### `data.altText`  
+**Type:** `string`  
+Alternative text for accessibility when `media` is an image.
+
+---
+
+### `data.containerWidth`  
+**Type:** `'inline' | 'edge-to-edge' | 'bleed'`  
+**Default:** `'inline'`  
+Controls the layout of the media.
+
+---
+
+### `data.fixedImgHeight`  
+**Type:** `string`  
+If defined, forces a fixed height for the media element (e.g. `'400px'`).
+
+---
+
+### `data.imgBorderRadius`  
+**Type:** `string`  
+CSS value to round media corners (e.g. `'8px'`, `'0'`).
+
+---
+
+### `data.videoAutoplay`  
+**Type:** `boolean`  
+**Default:** `true`  
+Whether videos should autoplay.
+
+---
+
+### `data.videoLoop`  
+**Type:** `boolean`  
+**Default:** `true`  
+Whether videos should loop.
+
+---
+
+### `data.videoMute`  
+**Type:** `boolean`  
+**Default:** `true`  
+Whether videos should start muted.
+
+---
+
+### `data.videoControls`  
+**Type:** `boolean`  
+**Default:** `false`  
+Show native video player controls.
+
+---
+
+### `data.hed`, `data.dek`, `data.chartTitle`, `data.note`, `data.source`  
+**Type:** `string`  
+Optional elements for the wrapper component (headline, subhead, etc).
+
+## Usage
+
+```jsx
+import { MediaBlock } from '@times/graphics-components';
+
+const data = {
+  media: "https://www.youtube.com/watch?v=wDchsz8nmbo",
+  containerWidth: "inline",
+  fixedImgHeight: "400px",
+  imgBorderRadius: "8px",
+  videoAutoplay: true,
+  videoLoop: true,
+  videoMute: true,
+  videoControls: true,
+  text: "This is a media block with a YouTube video.",
+  caption: "Example caption.",
+  hed: "Main headline",
+  dek: "Descriptive subheadline",
+  note: "Source note",
+  source: "Reuters"
+};
+
+<MediaBlock data={data} />
