@@ -6,3 +6,4 @@ export { default as ImageGrid } from './ImageGrid';
 export { default as Grid } from './Grid';
 export { default as Tooltip } from './Tooltip';
 export { default as ScrollStory } from './ScrollStory';
+export { default as MediaBlock } from './MediaBlock';

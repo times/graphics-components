@@ -14,9 +14,6 @@ export const GlobalStyle = createGlobalStyle`
 `;
 
 export const Container = styled.div`
-    font-family: 'RobotoRegular', sans-serif;
-    font-size: 1.6rem;
-
     margin-block-start: 1em;
     margin-block-end: 100px;
 `;
