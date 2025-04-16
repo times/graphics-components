@@ -22,9 +22,6 @@ const SMALL = styled.small`
     margin: 0 auto;
     color: #333333;
     display: block;
-    font-family:
-        "Times Modern",
-        serif;
 
     @media (min-width: 768px) {
         font-size: 12px;
@@ -42,10 +39,7 @@ const H1 = styled.h1`
     margin: 0 auto;
     color: #333333;
     display: block;
-     font-family:
-        "Times Modern",
-        serif;
-
+ 
     @media (min-width: 768px) {
         font-size: 34px;
         line-height: 30px;
@@ -63,9 +57,7 @@ const Text = styled.p`
     margin: 0 auto;
     color: #333333;
     display: block;
-     font-family:
-        "Times Modern",
-        serif;
+ 
 
     @media (min-width: 768px) {
         font-size: 18px;

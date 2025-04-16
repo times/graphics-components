@@ -61,7 +61,6 @@ export const Section = styled.section`
 
 export const Text = styled.p`
     line-height: 1.4;
-    font-family: 'Times Modern', serif;
     font-size: ${({ size }) => (size === 'lg' ? '20px' : '16px')} !important;
     padding: 1rem;
     max-width: 600px;

@@ -1,5 +1,5 @@
-import Te, { useState as N, useEffect as H, memo as ke, useRef as X, useCallback as Re } from "react";
-import E, { createGlobalStyle as Me, css as ee } from "styled-components";
+import ke, { useState as N, useEffect as H, memo as Ce, useRef as X, useCallback as Ee } from "react";
+import R, { createGlobalStyle as Se, css as ee } from "styled-components";
 var G = { exports: {} }, F = {};
 /**
  * @license React
@@ -11,23 +11,23 @@ var G = { exports: {} }, F = {};
  * LICENSE file in the root directory of this source tree.
  */
 var ue;
-function Ce() {
+function Pe() {
   if (ue) return F;
   ue = 1;
-  var n = Symbol.for("react.transitional.element"), e = Symbol.for("react.fragment");
-  function t(i, r, o) {
-    var s = null;
-    if (o !== void 0 && (s = "" + o), r.key !== void 0 && (s = "" + r.key), "key" in r) {
-      o = {};
+  var s = Symbol.for("react.transitional.element"), e = Symbol.for("react.fragment");
+  function t(i, r, n) {
+    var o = null;
+    if (n !== void 0 && (o = "" + n), r.key !== void 0 && (o = "" + r.key), "key" in r) {
+      n = {};
       for (var l in r)
-        l !== "key" && (o[l] = r[l]);
-    } else o = r;
-    return r = o.ref, {
-      $$typeof: n,
+        l !== "key" && (n[l] = r[l]);
+    } else n = r;
+    return r = n.ref, {
+      $$typeof: s,
       type: i,
-      key: s,
+      key: o,
       ref: r !== void 0 ? r : null,
-      props: o
+      props: n
     };
   }
   return F.Fragment = e, F.jsx = t, F.jsxs = t, F;
@@ -42,47 +42,47 @@ var q = {};
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-var fe;
-function Ee() {
-  return fe || (fe = 1, process.env.NODE_ENV !== "production" && function() {
-    function n(a) {
+var he;
+function Re() {
+  return he || (he = 1, process.env.NODE_ENV !== "production" && function() {
+    function s(a) {
       if (a == null) return null;
       if (typeof a == "function")
-        return a.$$typeof === A ? null : a.displayName || a.name || null;
+        return a.$$typeof === L ? null : a.displayName || a.name || null;
       if (typeof a == "string") return a;
       switch (a) {
-        case C:
+        case P:
           return "Fragment";
-        case T:
+        case k:
           return "Profiler";
-        case x:
+        case w:
           return "StrictMode";
-        case h:
+        case p:
           return "Suspense";
         case b:
           return "SuspenseList";
-        case O:
+        case D:
           return "Activity";
       }
       if (typeof a == "object")
         switch (typeof a.tag == "number" && console.error(
           "Received an unexpected object in getComponentNameFromType(). This is likely a bug in React. Please file an issue."
         ), a.$$typeof) {
-          case w:
+          case x:
             return "Portal";
-          case D:
+          case M:
             return (a.displayName || "Context") + ".Provider";
-          case R:
+          case E:
             return (a._context.displayName || "Context") + ".Consumer";
-          case v:
-            var y = a.render;
-            return a = a.displayName, a || (a = y.displayName || y.name || "", a = a !== "" ? "ForwardRef(" + a + ")" : "ForwardRef"), a;
-          case k:
-            return y = a.displayName || null, y !== null ? y : n(a.type) || "Memo";
-          case _:
-            y = a._payload, a = a._init;
+          case y:
+            var v = a.render;
+            return a = a.displayName, a || (a = v.displayName || v.name || "", a = a !== "" ? "ForwardRef(" + a + ")" : "ForwardRef"), a;
+          case C:
+            return v = a.displayName || null, v !== null ? v : s(a.type) || "Memo";
+          case O:
+            v = a._payload, a = a._init;
             try {
-              return n(a(y));
+              return s(a(v));
             } catch {
             }
         }
@@ -94,71 +94,71 @@ function Ee() {
     function t(a) {
       try {
         e(a);
-        var y = !1;
+        var v = !1;
       } catch {
-        y = !0;
+        v = !0;
       }
-      if (y) {
-        y = console;
-        var M = y.error, P = typeof Symbol == "function" && Symbol.toStringTag && a[Symbol.toStringTag] || a.constructor.name || "Object";
-        return M.call(
-          y,
+      if (v) {
+        v = console;
+        var S = v.error, j = typeof Symbol == "function" && Symbol.toStringTag && a[Symbol.toStringTag] || a.constructor.name || "Object";
+        return S.call(
+          v,
           "The provided key is an unsupported type %s. This value must be coerced to a string before using it here.",
-          P
+          j
         ), e(a);
       }
     }
     function i(a) {
-      if (a === C) return "<>";
-      if (typeof a == "object" && a !== null && a.$$typeof === _)
+      if (a === P) return "<>";
+      if (typeof a == "object" && a !== null && a.$$typeof === O)
         return "<...>";
       try {
-        var y = n(a);
-        return y ? "<" + y + ">" : "<...>";
+        var v = s(a);
+        return v ? "<" + v + ">" : "<...>";
       } catch {
         return "<...>";
       }
     }
     function r() {
-      var a = L.A;
+      var a = W.A;
       return a === null ? null : a.getOwner();
     }
-    function o() {
+    function n() {
       return Error("react-stack-top-frame");
     }
-    function s(a) {
+    function o(a) {
       if (B.call(a, "key")) {
-        var y = Object.getOwnPropertyDescriptor(a, "key").get;
-        if (y && y.isReactWarning) return !1;
+        var v = Object.getOwnPropertyDescriptor(a, "key").get;
+        if (v && v.isReactWarning) return !1;
       }
       return a.key !== void 0;
     }
-    function l(a, y) {
-      function M() {
-        se || (se = !0, console.error(
+    function l(a, v) {
+      function S() {
+        oe || (oe = !0, console.error(
           "%s: `key` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. (https://react.dev/link/special-props)",
-          y
+          v
         ));
       }
-      M.isReactWarning = !0, Object.defineProperty(a, "key", {
-        get: M,
+      S.isReactWarning = !0, Object.defineProperty(a, "key", {
+        get: S,
         configurable: !0
       });
     }
     function u() {
-      var a = n(this.type);
+      var a = s(this.type);
       return ae[a] || (ae[a] = !0, console.error(
         "Accessing element.ref was removed in React 19. ref is now a regular prop. It will be removed from the JSX Element type in a future release."
       )), a = this.props.ref, a !== void 0 ? a : null;
     }
-    function f(a, y, M, P, z, W, Z, Q) {
-      return M = W.ref, a = {
+    function h(a, v, S, j, $, A, Z, Q) {
+      return S = A.ref, a = {
         $$typeof: g,
         type: a,
-        key: y,
-        props: W,
-        _owner: z
-      }, (M !== void 0 ? M : null) !== null ? Object.defineProperty(a, "ref", {
+        key: v,
+        props: A,
+        _owner: $
+      }, (S !== void 0 ? S : null) !== null ? Object.defineProperty(a, "ref", {
         enumerable: !1,
         get: u
       }) : Object.defineProperty(a, "ref", { enumerable: !1, value: null }), a._store = {}, Object.defineProperty(a._store, "validated", {
@@ -183,60 +183,60 @@ function Ee() {
         value: Q
       }), Object.freeze && (Object.freeze(a.props), Object.freeze(a)), a;
     }
-    function d(a, y, M, P, z, W, Z, Q) {
-      var j = y.children;
-      if (j !== void 0)
-        if (P)
-          if (we(j)) {
-            for (P = 0; P < j.length; P++)
-              p(j[P]);
-            Object.freeze && Object.freeze(j);
+    function c(a, v, S, j, $, A, Z, Q) {
+      var _ = v.children;
+      if (_ !== void 0)
+        if (j)
+          if (xe(_)) {
+            for (j = 0; j < _.length; j++)
+              f(_[j]);
+            Object.freeze && Object.freeze(_);
           } else
             console.error(
               "React.jsx: Static children should always be an array. You are likely explicitly calling React.jsxs or React.jsxDEV. Use the Babel transform instead."
             );
-        else p(j);
-      if (B.call(y, "key")) {
-        j = n(a);
-        var I = Object.keys(y).filter(function(xe) {
-          return xe !== "key";
+        else f(_);
+      if (B.call(v, "key")) {
+        _ = s(a);
+        var z = Object.keys(v).filter(function(we) {
+          return we !== "key";
         });
-        P = 0 < I.length ? "{key: someKey, " + I.join(": ..., ") + ": ...}" : "{key: someKey}", ce[j + P] || (I = 0 < I.length ? "{" + I.join(": ..., ") + ": ...}" : "{}", console.error(
+        j = 0 < z.length ? "{key: someKey, " + z.join(": ..., ") + ": ...}" : "{key: someKey}", de[_ + j] || (z = 0 < z.length ? "{" + z.join(": ..., ") + ": ...}" : "{}", console.error(
           `A props object containing a "key" prop is being spread into JSX:
   let props = %s;
   <%s {...props} />
 React keys must be passed directly to JSX without using spread:
   let props = %s;
   <%s key={someKey} {...props} />`,
-          P,
           j,
-          I,
-          j
-        ), ce[j + P] = !0);
+          _,
+          z,
+          _
+        ), de[_ + j] = !0);
       }
-      if (j = null, M !== void 0 && (t(M), j = "" + M), s(y) && (t(y.key), j = "" + y.key), "key" in y) {
-        M = {};
-        for (var K in y)
-          K !== "key" && (M[K] = y[K]);
-      } else M = y;
-      return j && l(
-        M,
+      if (_ = null, S !== void 0 && (t(S), _ = "" + S), o(v) && (t(v.key), _ = "" + v.key), "key" in v) {
+        S = {};
+        for (var K in v)
+          K !== "key" && (S[K] = v[K]);
+      } else S = v;
+      return _ && l(
+        S,
         typeof a == "function" ? a.displayName || a.name || "Unknown" : a
-      ), f(
+      ), h(
         a,
-        j,
-        W,
-        z,
+        _,
+        A,
+        $,
         r(),
-        M,
+        S,
         Z,
         Q
       );
     }
-    function p(a) {
+    function f(a) {
       typeof a == "object" && a !== null && a.$$typeof === g && a._store && (a._store.validated = 1);
     }
-    var m = Te, g = Symbol.for("react.transitional.element"), w = Symbol.for("react.portal"), C = Symbol.for("react.fragment"), x = Symbol.for("react.strict_mode"), T = Symbol.for("react.profiler"), R = Symbol.for("react.consumer"), D = Symbol.for("react.context"), v = Symbol.for("react.forward_ref"), h = Symbol.for("react.suspense"), b = Symbol.for("react.suspense_list"), k = Symbol.for("react.memo"), _ = Symbol.for("react.lazy"), O = Symbol.for("react.activity"), A = Symbol.for("react.client.reference"), L = m.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, B = Object.prototype.hasOwnProperty, we = Array.isArray, J = console.createTask ? console.createTask : function() {
+    var m = ke, g = Symbol.for("react.transitional.element"), x = Symbol.for("react.portal"), P = Symbol.for("react.fragment"), w = Symbol.for("react.strict_mode"), k = Symbol.for("react.profiler"), E = Symbol.for("react.consumer"), M = Symbol.for("react.context"), y = Symbol.for("react.forward_ref"), p = Symbol.for("react.suspense"), b = Symbol.for("react.suspense_list"), C = Symbol.for("react.memo"), O = Symbol.for("react.lazy"), D = Symbol.for("react.activity"), L = Symbol.for("react.client.reference"), W = m.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, B = Object.prototype.hasOwnProperty, xe = Array.isArray, J = console.createTask ? console.createTask : function() {
       return null;
     };
     m = {
@@ -244,65 +244,65 @@ React keys must be passed directly to JSX without using spread:
         return a();
       }
     };
-    var se, ae = {}, le = m["react-stack-bottom-frame"].bind(
+    var oe, ae = {}, le = m["react-stack-bottom-frame"].bind(
       m,
-      o
-    )(), de = J(i(o)), ce = {};
-    q.Fragment = C, q.jsx = function(a, y, M, P, z) {
-      var W = 1e4 > L.recentlyCreatedOwnerStacks++;
-      return d(
+      n
+    )(), ce = J(i(n)), de = {};
+    q.Fragment = P, q.jsx = function(a, v, S, j, $) {
+      var A = 1e4 > W.recentlyCreatedOwnerStacks++;
+      return c(
         a,
-        y,
-        M,
+        v,
+        S,
         !1,
-        P,
-        z,
-        W ? Error("react-stack-top-frame") : le,
-        W ? J(i(a)) : de
+        j,
+        $,
+        A ? Error("react-stack-top-frame") : le,
+        A ? J(i(a)) : ce
       );
-    }, q.jsxs = function(a, y, M, P, z) {
-      var W = 1e4 > L.recentlyCreatedOwnerStacks++;
-      return d(
+    }, q.jsxs = function(a, v, S, j, $) {
+      var A = 1e4 > W.recentlyCreatedOwnerStacks++;
+      return c(
         a,
-        y,
-        M,
+        v,
+        S,
         !0,
-        P,
-        z,
-        W ? Error("react-stack-top-frame") : le,
-        W ? J(i(a)) : de
+        j,
+        $,
+        A ? Error("react-stack-top-frame") : le,
+        A ? J(i(a)) : ce
       );
     };
   }()), q;
 }
-var he;
-function Se() {
-  return he || (he = 1, process.env.NODE_ENV === "production" ? G.exports = Ce() : G.exports = Ee()), G.exports;
+var pe;
+function Te() {
+  return pe || (pe = 1, process.env.NODE_ENV === "production" ? G.exports = Pe() : G.exports = Re()), G.exports;
 }
-var c = Se();
-function S(n, e, t, i) {
-  return new (t || (t = Promise))(function(r, o) {
-    function s(f) {
+var d = Te();
+function T(s, e, t, i) {
+  return new (t || (t = Promise))(function(r, n) {
+    function o(h) {
       try {
-        u(i.next(f));
-      } catch (d) {
-        o(d);
+        u(i.next(h));
+      } catch (c) {
+        n(c);
       }
     }
-    function l(f) {
+    function l(h) {
       try {
-        u(i.throw(f));
-      } catch (d) {
-        o(d);
+        u(i.throw(h));
+      } catch (c) {
+        n(c);
       }
     }
-    function u(f) {
-      var d;
-      f.done ? r(f.value) : (d = f.value, d instanceof t ? d : new t(function(p) {
-        p(d);
-      })).then(s, l);
+    function u(h) {
+      var c;
+      h.done ? r(h.value) : (c = h.value, c instanceof t ? c : new t(function(f) {
+        f(c);
+      })).then(o, l);
     }
-    u((i = i.apply(n, e || [])).next());
+    u((i = i.apply(s, e || [])).next());
   });
 }
 class V {
@@ -332,64 +332,64 @@ class V {
     this.listeners[e] && this.listeners[e].forEach((i) => i(...t));
   }
 }
-const U = { decode: function(n, e) {
-  return S(this, void 0, void 0, function* () {
+const U = { decode: function(s, e) {
+  return T(this, void 0, void 0, function* () {
     const t = new AudioContext({ sampleRate: e });
-    return t.decodeAudioData(n).finally(() => t.close());
+    return t.decodeAudioData(s).finally(() => t.close());
   });
-}, createBuffer: function(n, e) {
-  return typeof n[0] == "number" && (n = [n]), function(t) {
+}, createBuffer: function(s, e) {
+  return typeof s[0] == "number" && (s = [s]), function(t) {
     const i = t[0];
     if (i.some((r) => r > 1 || r < -1)) {
       const r = i.length;
-      let o = 0;
-      for (let s = 0; s < r; s++) {
-        const l = Math.abs(i[s]);
-        l > o && (o = l);
+      let n = 0;
+      for (let o = 0; o < r; o++) {
+        const l = Math.abs(i[o]);
+        l > n && (n = l);
       }
-      for (const s of t) for (let l = 0; l < r; l++) s[l] /= o;
+      for (const o of t) for (let l = 0; l < r; l++) o[l] /= n;
     }
-  }(n), { duration: e, length: n[0].length, sampleRate: n[0].length / e, numberOfChannels: n.length, getChannelData: (t) => n == null ? void 0 : n[t], copyFromChannel: AudioBuffer.prototype.copyFromChannel, copyToChannel: AudioBuffer.prototype.copyToChannel };
+  }(s), { duration: e, length: s[0].length, sampleRate: s[0].length / e, numberOfChannels: s.length, getChannelData: (t) => s == null ? void 0 : s[t], copyFromChannel: AudioBuffer.prototype.copyFromChannel, copyToChannel: AudioBuffer.prototype.copyToChannel };
 } };
-function ye(n, e) {
-  const t = e.xmlns ? document.createElementNS(e.xmlns, n) : document.createElement(n);
-  for (const [i, r] of Object.entries(e)) if (i === "children") for (const [o, s] of Object.entries(e)) typeof s == "string" ? t.appendChild(document.createTextNode(s)) : t.appendChild(ye(o, s));
+function ve(s, e) {
+  const t = e.xmlns ? document.createElementNS(e.xmlns, s) : document.createElement(s);
+  for (const [i, r] of Object.entries(e)) if (i === "children") for (const [n, o] of Object.entries(e)) typeof o == "string" ? t.appendChild(document.createTextNode(o)) : t.appendChild(ve(n, o));
   else i === "style" ? Object.assign(t.style, r) : i === "textContent" ? t.textContent = r : t.setAttribute(i, r.toString());
   return t;
 }
-function me(n, e, t) {
-  const i = ye(n, e || {});
+function me(s, e, t) {
+  const i = ve(s, e || {});
   return t == null || t.appendChild(i), i;
 }
-var Pe = Object.freeze({ __proto__: null, createElement: me, default: me });
-const je = { fetchBlob: function(n, e, t) {
-  return S(this, void 0, void 0, function* () {
-    const i = yield fetch(n, t);
-    if (i.status >= 400) throw new Error(`Failed to fetch ${n}: ${i.status} (${i.statusText})`);
-    return function(r, o) {
-      S(this, void 0, void 0, function* () {
+var je = Object.freeze({ __proto__: null, createElement: me, default: me });
+const _e = { fetchBlob: function(s, e, t) {
+  return T(this, void 0, void 0, function* () {
+    const i = yield fetch(s, t);
+    if (i.status >= 400) throw new Error(`Failed to fetch ${s}: ${i.status} (${i.statusText})`);
+    return function(r, n) {
+      T(this, void 0, void 0, function* () {
         if (!r.body || !r.headers) return;
-        const s = r.body.getReader(), l = Number(r.headers.get("Content-Length")) || 0;
+        const o = r.body.getReader(), l = Number(r.headers.get("Content-Length")) || 0;
         let u = 0;
-        const f = (p) => S(this, void 0, void 0, function* () {
-          u += (p == null ? void 0 : p.length) || 0;
+        const h = (f) => T(this, void 0, void 0, function* () {
+          u += (f == null ? void 0 : f.length) || 0;
           const m = Math.round(u / l * 100);
-          o(m);
-        }), d = () => S(this, void 0, void 0, function* () {
-          let p;
+          n(m);
+        }), c = () => T(this, void 0, void 0, function* () {
+          let f;
           try {
-            p = yield s.read();
+            f = yield o.read();
           } catch {
             return;
           }
-          p.done || (f(p.value), yield d());
+          f.done || (h(f.value), yield c());
         });
-        d();
+        c();
       });
     }(i.clone(), e), i.blob();
   });
 } };
-class De extends V {
+class Me extends V {
   constructor(e) {
     super(), this.isExternalMedia = !1, e.media ? (this.media = e.media, this.isExternalMedia = !0) : this.media = document.createElement("audio"), e.mediaControls && (this.media.controls = !0), e.autoplay && (this.media.autoplay = !0), e.playbackRate != null && this.onMediaEvent("canplay", () => {
       e.playbackRate != null && (this.media.playbackRate = e.playbackRate);
@@ -427,7 +427,7 @@ class De extends V {
     this.media = e;
   }
   play() {
-    return S(this, void 0, void 0, function* () {
+    return T(this, void 0, void 0, function* () {
       return this.media.play();
     });
   }
@@ -474,13 +474,13 @@ class De extends V {
     return this.media.setSinkId(e);
   }
 }
-class $ extends V {
+class I extends V {
   constructor(e, t) {
     super(), this.timeouts = [], this.isScrollable = !1, this.audioData = null, this.resizeObserver = null, this.lastContainerWidth = 0, this.isDragging = !1, this.subscriptions = [], this.unsubscribeOnScroll = [], this.subscriptions = [], this.options = e;
     const i = this.parentFromOptionsContainer(e.container);
     this.parent = i;
-    const [r, o] = this.initHtml();
-    i.appendChild(r), this.container = r, this.scrollContainer = o.querySelector(".scroll"), this.wrapper = o.querySelector(".wrapper"), this.canvasWrapper = o.querySelector(".canvases"), this.progressWrapper = o.querySelector(".progress"), this.cursor = o.querySelector(".cursor"), t && o.appendChild(t), this.initEvents();
+    const [r, n] = this.initHtml();
+    i.appendChild(r), this.container = r, this.scrollContainer = n.querySelector(".scroll"), this.wrapper = n.querySelector(".wrapper"), this.canvasWrapper = n.querySelector(".canvases"), this.progressWrapper = n.querySelector(".progress"), this.cursor = n.querySelector(".cursor"), t && n.appendChild(t), this.initEvents();
   }
   parentFromOptionsContainer(e) {
     let t;
@@ -489,8 +489,8 @@ class $ extends V {
   }
   initEvents() {
     const e = (t) => {
-      const i = this.wrapper.getBoundingClientRect(), r = t.clientX - i.left, o = t.clientY - i.top;
-      return [r / i.width, o / i.height];
+      const i = this.wrapper.getBoundingClientRect(), r = t.clientX - i.left, n = t.clientY - i.top;
+      return [r / i.width, n / i.height];
     };
     if (this.wrapper.addEventListener("click", (t) => {
       const [i, r] = e(t);
@@ -499,8 +499,8 @@ class $ extends V {
       const [i, r] = e(t);
       this.emit("dblclick", i, r);
     }), this.options.dragToSeek !== !0 && typeof this.options.dragToSeek != "object" || this.initDrag(), this.scrollContainer.addEventListener("scroll", () => {
-      const { scrollLeft: t, scrollWidth: i, clientWidth: r } = this.scrollContainer, o = t / i, s = (t + r) / i;
-      this.emit("scroll", o, s, t, t + r);
+      const { scrollLeft: t, scrollWidth: i, clientWidth: r } = this.scrollContainer, n = t / i, o = (t + r) / i;
+      this.emit("scroll", n, o, t, t + r);
     }), typeof ResizeObserver == "function") {
       const t = this.createDelay(100);
       this.resizeObserver = new ResizeObserver(() => {
@@ -514,44 +514,44 @@ class $ extends V {
     e === this.lastContainerWidth && this.options.height !== "auto" || (this.lastContainerWidth = e, this.reRender());
   }
   initDrag() {
-    this.subscriptions.push(function(e, t, i, r, o = 3, s = 0, l = 100) {
+    this.subscriptions.push(function(e, t, i, r, n = 3, o = 0, l = 100) {
       if (!e) return () => {
       };
       const u = matchMedia("(pointer: coarse)").matches;
-      let f = () => {
+      let h = () => {
       };
-      const d = (p) => {
-        if (p.button !== s) return;
-        p.preventDefault(), p.stopPropagation();
-        let m = p.clientX, g = p.clientY, w = !1;
-        const C = Date.now(), x = (h) => {
-          if (h.preventDefault(), h.stopPropagation(), u && Date.now() - C < l) return;
-          const b = h.clientX, k = h.clientY, _ = b - m, O = k - g;
-          if (w || Math.abs(_) > o || Math.abs(O) > o) {
-            const A = e.getBoundingClientRect(), { left: L, top: B } = A;
-            w || (i == null || i(m - L, g - B), w = !0), t(_, O, b - L, k - B), m = b, g = k;
+      const c = (f) => {
+        if (f.button !== o) return;
+        f.preventDefault(), f.stopPropagation();
+        let m = f.clientX, g = f.clientY, x = !1;
+        const P = Date.now(), w = (p) => {
+          if (p.preventDefault(), p.stopPropagation(), u && Date.now() - P < l) return;
+          const b = p.clientX, C = p.clientY, O = b - m, D = C - g;
+          if (x || Math.abs(O) > n || Math.abs(D) > n) {
+            const L = e.getBoundingClientRect(), { left: W, top: B } = L;
+            x || (i == null || i(m - W, g - B), x = !0), t(O, D, b - W, C - B), m = b, g = C;
           }
-        }, T = (h) => {
-          if (w) {
-            const b = h.clientX, k = h.clientY, _ = e.getBoundingClientRect(), { left: O, top: A } = _;
-            r == null || r(b - O, k - A);
+        }, k = (p) => {
+          if (x) {
+            const b = p.clientX, C = p.clientY, O = e.getBoundingClientRect(), { left: D, top: L } = O;
+            r == null || r(b - D, C - L);
           }
-          f();
-        }, R = (h) => {
-          h.relatedTarget && h.relatedTarget !== document.documentElement || T(h);
-        }, D = (h) => {
-          w && (h.stopPropagation(), h.preventDefault());
-        }, v = (h) => {
-          w && h.preventDefault();
+          h();
+        }, E = (p) => {
+          p.relatedTarget && p.relatedTarget !== document.documentElement || k(p);
+        }, M = (p) => {
+          x && (p.stopPropagation(), p.preventDefault());
+        }, y = (p) => {
+          x && p.preventDefault();
         };
-        document.addEventListener("pointermove", x), document.addEventListener("pointerup", T), document.addEventListener("pointerout", R), document.addEventListener("pointercancel", R), document.addEventListener("touchmove", v, { passive: !1 }), document.addEventListener("click", D, { capture: !0 }), f = () => {
-          document.removeEventListener("pointermove", x), document.removeEventListener("pointerup", T), document.removeEventListener("pointerout", R), document.removeEventListener("pointercancel", R), document.removeEventListener("touchmove", v), setTimeout(() => {
-            document.removeEventListener("click", D, { capture: !0 });
+        document.addEventListener("pointermove", w), document.addEventListener("pointerup", k), document.addEventListener("pointerout", E), document.addEventListener("pointercancel", E), document.addEventListener("touchmove", y, { passive: !1 }), document.addEventListener("click", M, { capture: !0 }), h = () => {
+          document.removeEventListener("pointermove", w), document.removeEventListener("pointerup", k), document.removeEventListener("pointerout", E), document.removeEventListener("pointercancel", E), document.removeEventListener("touchmove", y), setTimeout(() => {
+            document.removeEventListener("click", M, { capture: !0 });
           }, 10);
         };
       };
-      return e.addEventListener("pointerdown", d), () => {
-        f(), e.removeEventListener("pointerdown", d);
+      return e.addEventListener("pointerdown", c), () => {
+        h(), e.removeEventListener("pointerdown", c);
       };
     }(this.wrapper, (e, t, i) => {
       this.emit("drag", Math.max(0, Math.min(1, i / this.wrapper.getBoundingClientRect().width)));
@@ -567,8 +567,8 @@ class $ extends V {
     if (e == null) return 128;
     if (!isNaN(Number(e))) return Number(e);
     if (e === "auto") {
-      const o = this.parent.clientHeight || 128;
-      return t != null && t.every((s) => !s.overlay) ? o / r : o;
+      const n = this.parent.clientHeight || 128;
+      return t != null && t.every((o) => !o.overlay) ? n / r : n;
     }
     return 128;
   }
@@ -680,133 +680,133 @@ class $ extends V {
     const r = () => {
       t && clearTimeout(t), i && i();
     };
-    return this.timeouts.push(r), () => new Promise((o, s) => {
-      r(), i = s, t = setTimeout(() => {
-        t = void 0, i = void 0, o();
+    return this.timeouts.push(r), () => new Promise((n, o) => {
+      r(), i = o, t = setTimeout(() => {
+        t = void 0, i = void 0, n();
       }, e);
     });
   }
   convertColorValues(e) {
     if (!Array.isArray(e)) return e || "";
     if (e.length < 2) return e[0] || "";
-    const t = document.createElement("canvas"), i = t.getContext("2d"), r = t.height * (window.devicePixelRatio || 1), o = i.createLinearGradient(0, 0, 0, r), s = 1 / (e.length - 1);
+    const t = document.createElement("canvas"), i = t.getContext("2d"), r = t.height * (window.devicePixelRatio || 1), n = i.createLinearGradient(0, 0, 0, r), o = 1 / (e.length - 1);
     return e.forEach((l, u) => {
-      const f = u * s;
-      o.addColorStop(f, l);
-    }), o;
+      const h = u * o;
+      n.addColorStop(h, l);
+    }), n;
   }
   getPixelRatio() {
     return Math.max(1, window.devicePixelRatio || 1);
   }
   renderBarWaveform(e, t, i, r) {
-    const o = e[0], s = e[1] || e[0], l = o.length, { width: u, height: f } = i.canvas, d = f / 2, p = this.getPixelRatio(), m = t.barWidth ? t.barWidth * p : 1, g = t.barGap ? t.barGap * p : t.barWidth ? m / 2 : 0, w = t.barRadius || 0, C = u / (m + g) / l, x = w && "roundRect" in i ? "roundRect" : "rect";
+    const n = e[0], o = e[1] || e[0], l = n.length, { width: u, height: h } = i.canvas, c = h / 2, f = this.getPixelRatio(), m = t.barWidth ? t.barWidth * f : 1, g = t.barGap ? t.barGap * f : t.barWidth ? m / 2 : 0, x = t.barRadius || 0, P = u / (m + g) / l, w = x && "roundRect" in i ? "roundRect" : "rect";
     i.beginPath();
-    let T = 0, R = 0, D = 0;
-    for (let v = 0; v <= l; v++) {
-      const h = Math.round(v * C);
-      if (h > T) {
-        const _ = Math.round(R * d * r), O = _ + Math.round(D * d * r) || 1;
-        let A = d - _;
-        t.barAlign === "top" ? A = 0 : t.barAlign === "bottom" && (A = f - O), i[x](T * (m + g), A, m, O, w), T = h, R = 0, D = 0;
+    let k = 0, E = 0, M = 0;
+    for (let y = 0; y <= l; y++) {
+      const p = Math.round(y * P);
+      if (p > k) {
+        const O = Math.round(E * c * r), D = O + Math.round(M * c * r) || 1;
+        let L = c - O;
+        t.barAlign === "top" ? L = 0 : t.barAlign === "bottom" && (L = h - D), i[w](k * (m + g), L, m, D, x), k = p, E = 0, M = 0;
       }
-      const b = Math.abs(o[v] || 0), k = Math.abs(s[v] || 0);
-      b > R && (R = b), k > D && (D = k);
+      const b = Math.abs(n[y] || 0), C = Math.abs(o[y] || 0);
+      b > E && (E = b), C > M && (M = C);
     }
     i.fill(), i.closePath();
   }
   renderLineWaveform(e, t, i, r) {
-    const o = (s) => {
-      const l = e[s] || e[0], u = l.length, { height: f } = i.canvas, d = f / 2, p = i.canvas.width / u;
-      i.moveTo(0, d);
+    const n = (o) => {
+      const l = e[o] || e[0], u = l.length, { height: h } = i.canvas, c = h / 2, f = i.canvas.width / u;
+      i.moveTo(0, c);
       let m = 0, g = 0;
-      for (let w = 0; w <= u; w++) {
-        const C = Math.round(w * p);
-        if (C > m) {
-          const T = d + (Math.round(g * d * r) || 1) * (s === 0 ? -1 : 1);
-          i.lineTo(m, T), m = C, g = 0;
+      for (let x = 0; x <= u; x++) {
+        const P = Math.round(x * f);
+        if (P > m) {
+          const k = c + (Math.round(g * c * r) || 1) * (o === 0 ? -1 : 1);
+          i.lineTo(m, k), m = P, g = 0;
         }
-        const x = Math.abs(l[w] || 0);
-        x > g && (g = x);
+        const w = Math.abs(l[x] || 0);
+        w > g && (g = w);
       }
-      i.lineTo(m, d);
+      i.lineTo(m, c);
     };
-    i.beginPath(), o(0), o(1), i.fill(), i.closePath();
+    i.beginPath(), n(0), n(1), i.fill(), i.closePath();
   }
   renderWaveform(e, t, i) {
     if (i.fillStyle = this.convertColorValues(t.waveColor), t.renderFunction) return void t.renderFunction(e, i);
     let r = t.barHeight || 1;
     if (t.normalize) {
-      const o = Array.from(e[0]).reduce((s, l) => Math.max(s, Math.abs(l)), 0);
-      r = o ? 1 / o : 1;
+      const n = Array.from(e[0]).reduce((o, l) => Math.max(o, Math.abs(l)), 0);
+      r = n ? 1 / n : 1;
     }
     t.barWidth || t.barGap || t.barAlign ? this.renderBarWaveform(e, t, i, r) : this.renderLineWaveform(e, t, i, r);
   }
-  renderSingleCanvas(e, t, i, r, o, s, l) {
-    const u = this.getPixelRatio(), f = document.createElement("canvas");
-    f.width = Math.round(i * u), f.height = Math.round(r * u), f.style.width = `${i}px`, f.style.height = `${r}px`, f.style.left = `${Math.round(o)}px`, s.appendChild(f);
-    const d = f.getContext("2d");
-    if (this.renderWaveform(e, t, d), f.width > 0 && f.height > 0) {
-      const p = f.cloneNode(), m = p.getContext("2d");
-      m.drawImage(f, 0, 0), m.globalCompositeOperation = "source-in", m.fillStyle = this.convertColorValues(t.progressColor), m.fillRect(0, 0, f.width, f.height), l.appendChild(p);
+  renderSingleCanvas(e, t, i, r, n, o, l) {
+    const u = this.getPixelRatio(), h = document.createElement("canvas");
+    h.width = Math.round(i * u), h.height = Math.round(r * u), h.style.width = `${i}px`, h.style.height = `${r}px`, h.style.left = `${Math.round(n)}px`, o.appendChild(h);
+    const c = h.getContext("2d");
+    if (this.renderWaveform(e, t, c), h.width > 0 && h.height > 0) {
+      const f = h.cloneNode(), m = f.getContext("2d");
+      m.drawImage(h, 0, 0), m.globalCompositeOperation = "source-in", m.fillStyle = this.convertColorValues(t.progressColor), m.fillRect(0, 0, h.width, h.height), l.appendChild(f);
     }
   }
-  renderMultiCanvas(e, t, i, r, o, s) {
-    const l = this.getPixelRatio(), { clientWidth: u } = this.scrollContainer, f = i / l;
-    let d = Math.min($.MAX_CANVAS_WIDTH, u, f), p = {};
-    if (d === 0) return;
+  renderMultiCanvas(e, t, i, r, n, o) {
+    const l = this.getPixelRatio(), { clientWidth: u } = this.scrollContainer, h = i / l;
+    let c = Math.min(I.MAX_CANVAS_WIDTH, u, h), f = {};
+    if (c === 0) return;
     if (t.barWidth || t.barGap) {
-      const x = t.barWidth || 0.5, T = x + (t.barGap || x / 2);
-      d % T != 0 && (d = Math.floor(d / T) * T);
+      const w = t.barWidth || 0.5, k = w + (t.barGap || w / 2);
+      c % k != 0 && (c = Math.floor(c / k) * k);
     }
-    const m = (x) => {
-      if (x < 0 || x >= g || p[x]) return;
-      p[x] = !0;
-      const T = x * d, R = Math.min(f - T, d);
-      if (R <= 0) return;
-      const D = e.map((v) => {
-        const h = Math.floor(T / f * v.length), b = Math.floor((T + R) / f * v.length);
-        return v.slice(h, b);
+    const m = (w) => {
+      if (w < 0 || w >= g || f[w]) return;
+      f[w] = !0;
+      const k = w * c, E = Math.min(h - k, c);
+      if (E <= 0) return;
+      const M = e.map((y) => {
+        const p = Math.floor(k / h * y.length), b = Math.floor((k + E) / h * y.length);
+        return y.slice(p, b);
       });
-      this.renderSingleCanvas(D, t, R, r, T, o, s);
-    }, g = Math.ceil(f / d);
+      this.renderSingleCanvas(M, t, E, r, k, n, o);
+    }, g = Math.ceil(h / c);
     if (!this.isScrollable) {
-      for (let x = 0; x < g; x++) m(x);
+      for (let w = 0; w < g; w++) m(w);
       return;
     }
-    const w = this.scrollContainer.scrollLeft / f, C = Math.floor(w * g);
-    if (m(C - 1), m(C), m(C + 1), g > 1) {
-      const x = this.on("scroll", () => {
-        const { scrollLeft: T } = this.scrollContainer, R = Math.floor(T / f * g);
-        Object.keys(p).length > $.MAX_NODES && (o.innerHTML = "", s.innerHTML = "", p = {}), m(R - 1), m(R), m(R + 1);
+    const x = this.scrollContainer.scrollLeft / h, P = Math.floor(x * g);
+    if (m(P - 1), m(P), m(P + 1), g > 1) {
+      const w = this.on("scroll", () => {
+        const { scrollLeft: k } = this.scrollContainer, E = Math.floor(k / h * g);
+        Object.keys(f).length > I.MAX_NODES && (n.innerHTML = "", o.innerHTML = "", f = {}), m(E - 1), m(E), m(E + 1);
       });
-      this.unsubscribeOnScroll.push(x);
+      this.unsubscribeOnScroll.push(w);
     }
   }
   renderChannel(e, t, i, r) {
-    var { overlay: o } = t, s = function(d, p) {
+    var { overlay: n } = t, o = function(c, f) {
       var m = {};
-      for (var g in d) Object.prototype.hasOwnProperty.call(d, g) && p.indexOf(g) < 0 && (m[g] = d[g]);
-      if (d != null && typeof Object.getOwnPropertySymbols == "function") {
-        var w = 0;
-        for (g = Object.getOwnPropertySymbols(d); w < g.length; w++) p.indexOf(g[w]) < 0 && Object.prototype.propertyIsEnumerable.call(d, g[w]) && (m[g[w]] = d[g[w]]);
+      for (var g in c) Object.prototype.hasOwnProperty.call(c, g) && f.indexOf(g) < 0 && (m[g] = c[g]);
+      if (c != null && typeof Object.getOwnPropertySymbols == "function") {
+        var x = 0;
+        for (g = Object.getOwnPropertySymbols(c); x < g.length; x++) f.indexOf(g[x]) < 0 && Object.prototype.propertyIsEnumerable.call(c, g[x]) && (m[g[x]] = c[g[x]]);
       }
       return m;
     }(t, ["overlay"]);
-    const l = document.createElement("div"), u = this.getHeight(s.height, s.splitChannels);
-    l.style.height = `${u}px`, o && r > 0 && (l.style.marginTop = `-${u}px`), this.canvasWrapper.style.minHeight = `${u}px`, this.canvasWrapper.appendChild(l);
-    const f = l.cloneNode();
-    this.progressWrapper.appendChild(f), this.renderMultiCanvas(e, s, i, u, l, f);
+    const l = document.createElement("div"), u = this.getHeight(o.height, o.splitChannels);
+    l.style.height = `${u}px`, n && r > 0 && (l.style.marginTop = `-${u}px`), this.canvasWrapper.style.minHeight = `${u}px`, this.canvasWrapper.appendChild(l);
+    const h = l.cloneNode();
+    this.progressWrapper.appendChild(h), this.renderMultiCanvas(e, o, i, u, l, h);
   }
   render(e) {
-    return S(this, void 0, void 0, function* () {
+    return T(this, void 0, void 0, function* () {
       var t;
       this.timeouts.forEach((u) => u()), this.timeouts = [], this.canvasWrapper.innerHTML = "", this.progressWrapper.innerHTML = "", this.options.width != null && (this.scrollContainer.style.width = typeof this.options.width == "number" ? `${this.options.width}px` : this.options.width);
-      const i = this.getPixelRatio(), r = this.scrollContainer.clientWidth, o = Math.ceil(e.duration * (this.options.minPxPerSec || 0));
-      this.isScrollable = o > r;
-      const s = this.options.fillParent && !this.isScrollable, l = (s ? r : o) * i;
-      if (this.wrapper.style.width = s ? "100%" : `${o}px`, this.scrollContainer.style.overflowX = this.isScrollable ? "auto" : "hidden", this.scrollContainer.classList.toggle("noScrollbar", !!this.options.hideScrollbar), this.cursor.style.backgroundColor = `${this.options.cursorColor || this.options.progressColor}`, this.cursor.style.width = `${this.options.cursorWidth}px`, this.audioData = e, this.emit("render"), this.options.splitChannels) for (let u = 0; u < e.numberOfChannels; u++) {
-        const f = Object.assign(Object.assign({}, this.options), (t = this.options.splitChannels) === null || t === void 0 ? void 0 : t[u]);
-        this.renderChannel([e.getChannelData(u)], f, l, u);
+      const i = this.getPixelRatio(), r = this.scrollContainer.clientWidth, n = Math.ceil(e.duration * (this.options.minPxPerSec || 0));
+      this.isScrollable = n > r;
+      const o = this.options.fillParent && !this.isScrollable, l = (o ? r : n) * i;
+      if (this.wrapper.style.width = o ? "100%" : `${n}px`, this.scrollContainer.style.overflowX = this.isScrollable ? "auto" : "hidden", this.scrollContainer.classList.toggle("noScrollbar", !!this.options.hideScrollbar), this.cursor.style.backgroundColor = `${this.options.cursorColor || this.options.progressColor}`, this.cursor.style.width = `${this.options.cursorWidth}px`, this.audioData = e, this.emit("render"), this.options.splitChannels) for (let u = 0; u < e.numberOfChannels; u++) {
+        const h = Object.assign(Object.assign({}, this.options), (t = this.options.splitChannels) === null || t === void 0 ? void 0 : t[u]);
+        this.renderChannel([e.getChannelData(u)], h, l, u);
       }
       else {
         const u = [e.getChannelData(0)];
@@ -828,17 +828,17 @@ class $ extends V {
     this.options.minPxPerSec = e, this.reRender();
   }
   scrollIntoView(e, t = !1) {
-    const { scrollLeft: i, scrollWidth: r, clientWidth: o } = this.scrollContainer, s = e * r, l = i, u = i + o, f = o / 2;
+    const { scrollLeft: i, scrollWidth: r, clientWidth: n } = this.scrollContainer, o = e * r, l = i, u = i + n, h = n / 2;
     if (this.isDragging)
-      s + 30 > u ? this.scrollContainer.scrollLeft += 30 : s - 30 < l && (this.scrollContainer.scrollLeft -= 30);
+      o + 30 > u ? this.scrollContainer.scrollLeft += 30 : o - 30 < l && (this.scrollContainer.scrollLeft -= 30);
     else {
-      (s < l || s > u) && (this.scrollContainer.scrollLeft = s - (this.options.autoCenter ? f : 0));
-      const d = s - i - f;
-      t && this.options.autoCenter && d > 0 && (this.scrollContainer.scrollLeft += Math.min(d, 10));
+      (o < l || o > u) && (this.scrollContainer.scrollLeft = o - (this.options.autoCenter ? h : 0));
+      const c = o - i - h;
+      t && this.options.autoCenter && c > 0 && (this.scrollContainer.scrollLeft += Math.min(c, 10));
     }
     {
-      const d = this.scrollContainer.scrollLeft, p = d / r, m = (d + o) / r;
-      this.emit("scroll", p, m, d, d + o);
+      const c = this.scrollContainer.scrollLeft, f = c / r, m = (c + n) / r;
+      this.emit("scroll", f, m, c, c + n);
     }
   }
   renderProgress(e, t) {
@@ -847,23 +847,23 @@ class $ extends V {
     this.canvasWrapper.style.clipPath = `polygon(${i}% 0, 100% 0, 100% 100%, ${i}% 100%)`, this.progressWrapper.style.width = `${i}%`, this.cursor.style.left = `${i}%`, this.cursor.style.transform = `translateX(-${Math.round(i) === 100 ? this.options.cursorWidth : 0}px)`, this.isScrollable && this.options.autoScroll && this.scrollIntoView(e, t);
   }
   exportImage(e, t, i) {
-    return S(this, void 0, void 0, function* () {
+    return T(this, void 0, void 0, function* () {
       const r = this.canvasWrapper.querySelectorAll("canvas");
       if (!r.length) throw new Error("No waveform data");
       if (i === "dataURL") {
-        const o = Array.from(r).map((s) => s.toDataURL(e, t));
-        return Promise.resolve(o);
+        const n = Array.from(r).map((o) => o.toDataURL(e, t));
+        return Promise.resolve(n);
       }
-      return Promise.all(Array.from(r).map((o) => new Promise((s, l) => {
-        o.toBlob((u) => {
-          u ? s(u) : l(new Error("Could not export image"));
+      return Promise.all(Array.from(r).map((n) => new Promise((o, l) => {
+        n.toBlob((u) => {
+          u ? o(u) : l(new Error("Could not export image"));
         }, e, t);
       })));
     });
   }
 }
-$.MAX_CANVAS_WIDTH = 8e3, $.MAX_NODES = 10;
-class _e extends V {
+I.MAX_CANVAS_WIDTH = 8e3, I.MAX_NODES = 10;
+class Oe extends V {
   constructor() {
     super(...arguments), this.unsubscribe = () => {
     };
@@ -887,7 +887,7 @@ class te extends V {
     super(), this.bufferNode = null, this.playStartTime = 0, this.playedDuration = 0, this._muted = !1, this._playbackRate = 1, this._duration = void 0, this.buffer = null, this.currentSrc = "", this.paused = !0, this.crossOrigin = null, this.seeking = !1, this.autoplay = !1, this.addEventListener = this.on, this.removeEventListener = this.un, this.audioContext = e, this.gainNode = this.audioContext.createGain(), this.gainNode.connect(this.audioContext.destination);
   }
   load() {
-    return S(this, void 0, void 0, function* () {
+    return T(this, void 0, void 0, function* () {
     });
   }
   get src() {
@@ -916,7 +916,7 @@ class te extends V {
     this.paused = !0, (e = this.bufferNode) === null || e === void 0 || e.stop(), this.playedDuration += this.audioContext.currentTime - this.playStartTime;
   }
   play() {
-    return S(this, void 0, void 0, function* () {
+    return T(this, void 0, void 0, function* () {
       this.paused && (this._play(), this.emit("play"));
     });
   }
@@ -930,7 +930,7 @@ class te extends V {
     }, { once: !0 });
   }
   setSinkId(e) {
-    return S(this, void 0, void 0, function* () {
+    return T(this, void 0, void 0, function* () {
       return this.audioContext.setSinkId(e);
     });
   }
@@ -981,20 +981,20 @@ class te extends V {
   }
 }
 const Ne = { waveColor: "#999", progressColor: "#555", cursorWidth: 1, minPxPerSec: 0, fillParent: !0, interact: !0, dragToSeek: !1, autoScroll: !0, autoCenter: !0, sampleRate: 8e3 };
-class Y extends De {
+class Y extends Me {
   static create(e) {
     return new Y(e);
   }
   constructor(e) {
     const t = e.media || (e.backend === "WebAudio" ? new te() : void 0);
-    super({ media: t, mediaControls: e.mediaControls, autoplay: e.autoplay, playbackRate: e.audioRate }), this.plugins = [], this.decodedData = null, this.stopAtPosition = null, this.subscriptions = [], this.mediaSubscriptions = [], this.abortController = null, this.options = Object.assign({}, Ne, e), this.timer = new _e();
+    super({ media: t, mediaControls: e.mediaControls, autoplay: e.autoplay, playbackRate: e.audioRate }), this.plugins = [], this.decodedData = null, this.stopAtPosition = null, this.subscriptions = [], this.mediaSubscriptions = [], this.abortController = null, this.options = Object.assign({}, Ne, e), this.timer = new Oe();
     const i = t ? void 0 : this.getMediaElement();
-    this.renderer = new $(this.options, i), this.initPlayerEvents(), this.initRendererEvents(), this.initTimerEvents(), this.initPlugins();
+    this.renderer = new I(this.options, i), this.initPlayerEvents(), this.initRendererEvents(), this.initTimerEvents(), this.initPlugins();
     const r = this.options.url || this.getSrc() || "";
     Promise.resolve().then(() => {
       this.emit("init");
-      const { peaks: o, duration: s } = this.options;
-      (r || o && s) && this.load(r, o, s).catch(() => null);
+      const { peaks: n, duration: o } = this.options;
+      (r || n && o) && this.load(r, n, o).catch(() => null);
     });
   }
   updateProgress(e = this.getCurrentTime()) {
@@ -1033,8 +1033,8 @@ class Y extends De {
     }), this.renderer.on("dblclick", (e, t) => {
       this.emit("dblclick", e, t);
     }), this.renderer.on("scroll", (e, t, i, r) => {
-      const o = this.getDuration();
-      this.emit("scroll", e * o, t * o, i, r);
+      const n = this.getDuration();
+      this.emit("scroll", e * n, t * n, i, r);
     }), this.renderer.on("render", () => {
       this.emit("redraw");
     }), this.renderer.on("rendered", () => {
@@ -1092,26 +1092,26 @@ class Y extends De {
     return this.plugins;
   }
   loadAudio(e, t, i, r) {
-    return S(this, void 0, void 0, function* () {
-      var o;
+    return T(this, void 0, void 0, function* () {
+      var n;
       if (this.emit("load", e), !this.options.media && this.isPlaying() && this.pause(), this.decodedData = null, this.stopAtPosition = null, !t && !i) {
         const l = this.options.fetchParams || {};
-        window.AbortController && !l.signal && (this.abortController = new AbortController(), l.signal = (o = this.abortController) === null || o === void 0 ? void 0 : o.signal);
-        const u = (d) => this.emit("loading", d);
-        t = yield je.fetchBlob(e, u, l);
-        const f = this.options.blobMimeType;
-        f && (t = new Blob([t], { type: f }));
+        window.AbortController && !l.signal && (this.abortController = new AbortController(), l.signal = (n = this.abortController) === null || n === void 0 ? void 0 : n.signal);
+        const u = (c) => this.emit("loading", c);
+        t = yield _e.fetchBlob(e, u, l);
+        const h = this.options.blobMimeType;
+        h && (t = new Blob([t], { type: h }));
       }
       this.setSrc(e, t);
-      const s = yield new Promise((l) => {
+      const o = yield new Promise((l) => {
         const u = r || this.getDuration();
         u ? l(u) : this.mediaSubscriptions.push(this.onMediaEvent("loadedmetadata", () => l(this.getDuration()), { once: !0 }));
       });
       if (!e && !t) {
         const l = this.getMediaElement();
-        l instanceof te && (l.duration = s);
+        l instanceof te && (l.duration = o);
       }
-      if (i) this.decodedData = U.createBuffer(i, s || 0);
+      if (i) this.decodedData = U.createBuffer(i, o || 0);
       else if (t) {
         const l = yield t.arrayBuffer();
         this.decodedData = yield U.decode(l, this.options.sampleRate);
@@ -1120,7 +1120,7 @@ class Y extends De {
     });
   }
   load(e, t, i) {
-    return S(this, void 0, void 0, function* () {
+    return T(this, void 0, void 0, function* () {
       try {
         return yield this.loadAudio(e, void 0, t, i);
       } catch (r) {
@@ -1129,7 +1129,7 @@ class Y extends De {
     });
   }
   loadBlob(e, t, i) {
-    return S(this, void 0, void 0, function* () {
+    return T(this, void 0, void 0, function* () {
       try {
         return yield this.loadAudio("", e, t, i);
       } catch (r) {
@@ -1146,21 +1146,21 @@ class Y extends De {
   }
   exportPeaks({ channels: e = 2, maxLength: t = 8e3, precision: i = 1e4 } = {}) {
     if (!this.decodedData) throw new Error("The audio has not been decoded yet");
-    const r = Math.min(e, this.decodedData.numberOfChannels), o = [];
-    for (let s = 0; s < r; s++) {
-      const l = this.decodedData.getChannelData(s), u = [], f = l.length / t;
-      for (let d = 0; d < t; d++) {
-        const p = l.slice(Math.floor(d * f), Math.ceil((d + 1) * f));
+    const r = Math.min(e, this.decodedData.numberOfChannels), n = [];
+    for (let o = 0; o < r; o++) {
+      const l = this.decodedData.getChannelData(o), u = [], h = l.length / t;
+      for (let c = 0; c < t; c++) {
+        const f = l.slice(Math.floor(c * h), Math.ceil((c + 1) * h));
         let m = 0;
-        for (let g = 0; g < p.length; g++) {
-          const w = p[g];
-          Math.abs(w) > Math.abs(m) && (m = w);
+        for (let g = 0; g < f.length; g++) {
+          const x = f[g];
+          Math.abs(x) > Math.abs(m) && (m = x);
         }
         u.push(Math.round(m * i) / i);
       }
-      o.push(u);
+      n.push(u);
     }
-    return o;
+    return n;
   }
   getDuration() {
     let e = super.getDuration() || 0;
@@ -1178,14 +1178,14 @@ class Y extends De {
   }
   play(e, t) {
     const i = Object.create(null, { play: { get: () => super.play } });
-    return S(this, void 0, void 0, function* () {
+    return T(this, void 0, void 0, function* () {
       e != null && this.setTime(e);
       const r = yield i.play.call(this);
       return t != null && (this.media instanceof te ? this.media.stopAt(t) : this.stopAtPosition = t), r;
     });
   }
   playPause() {
-    return S(this, void 0, void 0, function* () {
+    return T(this, void 0, void 0, function* () {
       return this.isPlaying() ? this.pause() : this.play();
     });
   }
@@ -1202,7 +1202,7 @@ class Y extends De {
     this.unsubscribePlayerEvents(), super.setMediaElement(e), this.initPlayerEvents();
   }
   exportImage() {
-    return S(this, arguments, void 0, function* (e = "image/png", t = 1, i = "dataURL") {
+    return T(this, arguments, void 0, function* (e = "image/png", t = 1, i = "dataURL") {
       return this.renderer.exportImage(e, t, i);
     });
   }
@@ -1212,31 +1212,31 @@ class Y extends De {
   }
 }
 Y.BasePlugin = class extends V {
-  constructor(n) {
-    super(), this.subscriptions = [], this.options = n;
+  constructor(s) {
+    super(), this.subscriptions = [], this.options = s;
   }
   onInit() {
   }
-  _init(n) {
-    this.wavesurfer = n, this.onInit();
+  _init(s) {
+    this.wavesurfer = s, this.onInit();
   }
   destroy() {
-    this.emit("destroy"), this.subscriptions.forEach((n) => n());
+    this.emit("destroy"), this.subscriptions.forEach((s) => s());
   }
-}, Y.dom = Pe;
-const We = (n, e) => {
+}, Y.dom = je;
+const Ae = (s, e) => {
   const [t, i] = N(null);
   return H(() => {
-    if (!n.current) return;
+    if (!s.current) return;
     const r = Y.create({
       ...e,
-      container: n.current
+      container: s.current
     });
     return i(r), () => {
       r.destroy();
     };
-  }, [e, n]), t;
-}, Oe = E.div`
+  }, [e, s]), t;
+}, De = R.div`
     display: grid;
     grid-template-columns: max-content 1fr;
     gap: 0.5em;
@@ -1382,35 +1382,35 @@ const We = (n, e) => {
         border: 1px solid #b2b2b2;
         border-right-width: 0;
     }
-`, Ae = ke((n) => {
-  const e = X(null), [t, i] = N(!1), [r, o] = N(0.5), [s, l] = N(0), [u, f] = N(
-    T(0)
-  ), [d, p] = N(!1), m = We(e, n), g = X(null), { onPlay: w, onReady: C } = n, x = Re(() => {
+`, Le = Ce((s) => {
+  const e = X(null), [t, i] = N(!1), [r, n] = N(0.5), [o, l] = N(0), [u, h] = N(
+    k(0)
+  ), [c, f] = N(!1), m = Ae(e, s), g = X(null), { onPlay: x, onReady: P } = s, w = Ee(() => {
     m.playPause();
   }, [m]);
   H(() => {
     if (!m) return;
     m.setVolume(r);
-    const v = () => ({
+    const y = () => ({
       media: m.getMediaElement(),
       peaks: m.exportPeaks()
-    }), h = [
+    }), p = [
       m.on("ready", () => {
-        C && C(v()), l(
-          T(
+        P && P(y()), l(
+          k(
             Math.round(m.getDuration() * 1e3)
           )
         ), i(m.isPlaying());
       }),
       m.on("play", () => {
-        w && w((b) => {
-          const k = v();
-          return !b || b.media !== k.media ? (b && (b.media.pause(), b.media.currentTime = 0), k) : b;
+        x && x((b) => {
+          const C = y();
+          return !b || b.media !== C.media ? (b && (b.media.pause(), b.media.currentTime = 0), C) : b;
         }), i(!0);
       }),
       m.on("audioprocess", () => {
-        f(
-          T(
+        h(
+          k(
             Math.round(m.getCurrentTime() * 1e3)
           )
         );
@@ -1418,56 +1418,56 @@ const We = (n, e) => {
       m.on("pause", () => i(!1))
     ];
     return () => {
-      h.forEach((b) => b());
+      p.forEach((b) => b());
     };
-  }, [m, w, C, r]), H(() => {
-    const v = g.current;
-    v.style.setProperty("--value", v.value), v.style.setProperty("--min", v.min === "" ? "0" : v.min), v.style.setProperty("--max", v.max === "" ? "100" : v.max), v.style.setProperty("--value", v.value);
+  }, [m, x, P, r]), H(() => {
+    const y = g.current;
+    y.style.setProperty("--value", y.value), y.style.setProperty("--min", y.min === "" ? "0" : y.min), y.style.setProperty("--max", y.max === "" ? "100" : y.max), y.style.setProperty("--value", y.value);
   }, []);
-  function T(v) {
-    var h = Math.floor(v / 6e4), b = (v % 6e4 / 1e3).toFixed(0);
-    return h + ":" + (b < 10 ? "0" : "") + b;
+  function k(y) {
+    var p = Math.floor(y / 6e4), b = (y % 6e4 / 1e3).toFixed(0);
+    return p + ":" + (b < 10 ? "0" : "") + b;
   }
-  function R(v) {
-    o(v.target.value);
-    const h = v.target;
-    h.style.setProperty("--value", h.value), h.style.setProperty("--min", h.min === "" ? "0" : h.min), h.style.setProperty("--max", h.max === "" ? "100" : h.max), h.style.setProperty("--value", h.value);
+  function E(y) {
+    n(y.target.value);
+    const p = y.target;
+    p.style.setProperty("--value", p.value), p.style.setProperty("--min", p.min === "" ? "0" : p.min), p.style.setProperty("--max", p.max === "" ? "100" : p.max), p.style.setProperty("--value", p.value);
   }
-  function D() {
-    p(!d);
+  function M() {
+    f(!c);
   }
-  return /* @__PURE__ */ c.jsxs(Oe, { children: [
-    t ? /* @__PURE__ */ c.jsx(
+  return /* @__PURE__ */ d.jsxs(De, { children: [
+    t ? /* @__PURE__ */ d.jsx(
       "img",
       {
         className: "play-icon",
         src: "https://extras.thetimes.co.uk/web/2025/times-knife-crime-audio/assets/pause.png",
-        onClick: x
+        onClick: w
       }
-    ) : /* @__PURE__ */ c.jsx(
+    ) : /* @__PURE__ */ d.jsx(
       "img",
       {
         className: "play-icon",
         src: "https://extras.thetimes.co.uk/web/2025/times-knife-crime-audio/assets/play.png",
-        onClick: x
+        onClick: w
       }
     ),
-    /* @__PURE__ */ c.jsx("div", { ref: e, style: { width: "100%" } }),
-    /* @__PURE__ */ c.jsxs("p", { className: "waveform-time", children: [
-      /* @__PURE__ */ c.jsx("span", { children: u }),
+    /* @__PURE__ */ d.jsx("div", { ref: e, style: { width: "100%" } }),
+    /* @__PURE__ */ d.jsxs("p", { className: "waveform-time", children: [
+      /* @__PURE__ */ d.jsx("span", { children: u }),
       " / ",
-      /* @__PURE__ */ c.jsx("span", { children: s })
+      /* @__PURE__ */ d.jsx("span", { children: o })
     ] }),
-    /* @__PURE__ */ c.jsxs("div", { className: "volume-container", children: [
-      /* @__PURE__ */ c.jsx(
+    /* @__PURE__ */ d.jsxs("div", { className: "volume-container", children: [
+      /* @__PURE__ */ d.jsx(
         "img",
         {
           className: "volume-icon",
           src: "https://extras.thetimes.co.uk/web/2025/times-knife-crime-audio/assets/volume.png",
-          onClick: D
+          onClick: M
         }
       ),
-      /* @__PURE__ */ c.jsx(
+      /* @__PURE__ */ d.jsx(
         "input",
         {
           ref: g,
@@ -1478,371 +1478,22 @@ const We = (n, e) => {
           max: 1,
           step: 0.1,
           value: r,
-          onChange: R,
+          onChange: E,
           style: {
-            opacity: d ? 1 : 0,
-            pointerEvents: d ? "all" : "none"
+            opacity: c ? 1 : 0,
+            pointerEvents: c ? "all" : "none"
           }
         }
       )
     ] })
   ] });
-}), ne = Me`
-  @font-face {
-            font-family: Roboto-Regular;
-            src: url(/d/fonts/Roboto/Roboto-Regular-1f6d3cf6d3.woff2) format("woff2"), url(/d/fonts/Roboto/Roboto-Regular.woff) format("woff"), url(/d/fonts/Roboto/Roboto-Regular.ttf) format("truetype");
-            font-weight: 400;
-            font-style: normal;
-            font-display: swap
-        }
+}), se = Se`
+  
 
-        @font-face {
-            font-family: Roboto-Regular-fallback;
-            src: local("Arial");
-            font-display: swap;
-            font-style: normal;
-            font-weight: 400;
-            ascent-override: 92.49%;
-            descent-override: 24.34%;
-            line-gap-override: 0;
-            size-adjust: 100.3%
-        }
-
-        @font-face {
-            font-family: Roboto-Medium;
-            src: url(/d/fonts/Roboto/Roboto-Medium-e7df3d0942.woff2) format("woff2"), url(/d/fonts/Roboto/Roboto-Medium.woff) format("woff"), url(/d/fonts/Roboto/Roboto-Medium.ttf) format("truetype");
-            font-weight: 400;
-            font-style: normal;
-            font-display: swap
-        }
-
-        @font-face {
-            font-family: Roboto-Medium-fallback;
-            font-display: swap;
-            font-style: normal;
-            font-weight: 400;
-            src: local("Arial");
-            ascent-override: 91.62%;
-            descent-override: 24.11%;
-            line-gap-override: 0;
-            size-adjust: 101.26%
-        }
-
-        @font-face {
-            font-family: Roboto;
-            src: url(/d/fonts/Roboto/Roboto-Regular-1f6d3cf6d3.woff2) format("woff2");
-            font-weight: 400;
-            font-style: normal;
-            font-display: swap
-        }
-
-        @font-face {
-            font-family: Roboto;
-            src: url(/d/fonts/Roboto/Roboto-Medium-e7df3d0942.woff2) format("woff2");
-            font-weight: 500;
-            font-style: normal;
-            font-display: swap
-        }
-
-        @font-face {
-            font-family: Roboto;
-            src: url(/d/fonts/Roboto/Roboto-Bold-e9f5aaf547.woff2) format("woff2");
-            font-weight: 700;
-            font-style: normal;
-            font-display: swap
-        }
-
-        @font-face {
-            font-family: TimesDigitalW04;
-            src: url(/d/fonts/TimesDigital/TimesDigitalW04-dca82eac02.woff2) format("woff2"), url(/d/fonts/TimesDigital/TimesDigitalW04-c93f4e13dd.woff) format("woff"), url(/d/fonts/TimesDigital/TimesDigitalW04.ttf) format("truetype");
-            font-weight: 400;
-            font-style: normal;
-            font-display: swap
-        }
-
-        @font-face {
-            font-family: TimesDigitalW04-fallback;
-            font-display: swap;
-            font-style: normal;
-            font-weight: 400;
-            src: local("Times New Roman");
-            ascent-override: 87.46%;
-            descent-override: 28.13%;
-            line-gap-override: 0;
-            size-adjust: 113.42%
-        }
-
-        @font-face {
-            font-family: TimesDigitalW04-Regular;
-            src: url(/d/fonts/TimesDigital/TimesDigitalW04-Regular-dca82eac02.woff2) format("woff2"), url(/d/fonts/TimesDigital/TimesDigitalW04-Regular-c93f4e13dd.woff) format("woff"), url(/d/fonts/TimesDigital/TimesDigitalW04-Regular-bf4b850ffb.ttf) format("truetype");
-            font-weight: 400;
-            font-style: normal;
-            font-display: swap
-        }
-
-        @font-face {
-            font-family: TimesDigitalW04-Regular-fallback;
-            font-display: swap;
-            font-style: normal;
-            font-weight: 400;
-            src: local("Times New Roman");
-            ascent-override: 87.46%;
-            descent-override: 28.13%;
-            line-gap-override: 0;
-            size-adjust: 113.42%
-        }
-
-        @font-face {
-            font-family: TimesDigitalW04-RegularSC;
-            src: url(/d/fonts/TimesDigital/TimesDigitalW04-RegularSC-5fc97c82cd.woff2) format("woff2"), url(/d/fonts/TimesDigital/TimesDigitalW04-RegularSC-a06bfa24de.woff) format("woff"), url(/d/fonts/TimesDigital/TimesDigitalW04-RegularSC-b3f19b6c56.ttf) format("truetype");
-            font-weight: 400;
-            font-style: normal;
-            font-display: swap
-        }
-
-        @font-face {
-            font-family: TimesDigitalW04-RegularSC-fallback;
-            font-display: swap;
-            font-style: normal;
-            font-weight: 400;
-            src: local("Times New Roman");
-            ascent-override: 87.46%;
-            descent-override: 28.13%;
-            line-gap-override: 0;
-            size-adjust: 113.42%
-        }
-
-        @font-face {
-            font-family: TimesDigitalW04-Bold;
-            src: url(/d/fonts/TimesDigital/TimesDigitalW04-Bold-9a71df9f73.woff2) format("woff2"), url(/d/fonts/TimesDigital/TimesDigitalW04-Bold-956d1db6de.woff) format("woff"), url(/d/fonts/TimesDigital/TimesDigitalW04-Bold-e627de75c8.ttf) format("truetype");
-            font-weight: 400;
-            font-style: normal;
-            font-display: swap
-        }
-
-        @font-face {
-            font-family: TimesDigitalW04-Bold-fallback;
-            font-display: swap;
-            font-style: normal;
-            font-weight: 700;
-            src: local("Times New Roman Bold");
-            ascent-override: 86.91%;
-            descent-override: 27.95%;
-            line-gap-override: 0;
-            size-adjust: 114.14%
-        }
-
-        @font-face {
-            font-family: TimesDigitalW04-BoldItalic;
-            src: url(/d/fonts/TimesDigital/TimesDigitalW04-BoldItalic-bc6071c2c8.woff2) format("woff2"), url(/d/fonts/TimesDigital/TimesDigitalW04-BoldItalic-8c36a2d2bd.woff) format("woff"), url(/d/fonts/TimesDigital/TimesDigitalW04-BoldItalic-2a78549947.ttf) format("truetype");
-            font-weight: 400;
-            font-style: normal;
-            font-display: swap
-        }
-
-        @font-face {
-            font-family: TimesDigitalW04-BoldItalic-fallback;
-            font-display: swap;
-            font-style: italic;
-            font-weight: 700;
-            src: local("Times New Roman Bold Italic");
-            ascent-override: 84.79%;
-            descent-override: 27.27%;
-            line-gap-override: 0;
-            size-adjust: 116.99%
-        }
-
-        @font-face {
-            font-family: TimesDigitalW04-Italic;
-            src: url(/d/fonts/TimesDigital/TimesDigitalW04-Italic-b1475ca316.woff2) format("woff2"), url(/d/fonts/TimesDigital/TimesDigitalW04-Italic-a577e30ef1.woff) format("woff"), url(/d/fonts/TimesDigital/TimesDigitalW04-Italic-624f40f1d5.ttf) format("truetype");
-            font-weight: 400;
-            font-style: normal;
-            font-display: swap
-        }
-
-        @font-face {
-            font-family: TimesDigitalW04-Italic-fallback;
-            font-display: swap;
-            font-style: italic;
-            font-weight: 400;
-            src: local("Times New Roman Italic");
-            ascent-override: 89.35%;
-            descent-override: 28.73%;
-            line-gap-override: 0;
-            size-adjust: 111.02%
-        }
-
-        @font-face {
-            font-family: TimesDigitalW04-BoldSC;
-            src: url(/d/fonts/TimesDigital/TimesDigitalW04-BoldSC-cd2602db9d.woff2) format("woff2"), url(/d/fonts/TimesDigital/TimesDigitalW04-BoldSC-ddd4d0a956.woff) format("woff"), url(/d/fonts/TimesDigital/TimesDigitalW04-BoldSC-5099432df6.ttf) format("truetype");
-            font-weight: 400;
-            font-style: normal;
-            font-display: swap
-        }
-
-        @font-face {
-            font-family: TimesDigitalW04-BoldSC-fallback;
-            font-display: swap;
-            font-style: normal;
-            font-weight: 700;
-            src: local("Times New Roman Bold");
-            ascent-override: 86.91%;
-            descent-override: 27.95%;
-            line-gap-override: 0;
-            size-adjust: 114.14%
-        }
-
-        @font-face {
-            font-family: "Times Digital W04 Regular";
-            font-display: swap;
-            font-style: normal;
-            font-weight: 400;
-            src: url(/d/fonts/TimesDigital/TimesDigitalW04-Regular-dca82eac02.woff2) format("woff2")
-        }
-
-        @font-face {
-            font-family: TimesModern-Regular;
-            src: url(/d/fonts/TimesModern/TimesModern-Regular-f3419df85d.woff2) format("woff2"), url(/d/fonts/TimesModern/TimesModern-Regular-39c619f4ef.woff) format("woff"), url(/d/fonts/TimesModern/TimesModern-Regular-e47b8c277b.ttf) format("truetype");
-            font-weight: 400;
-            font-style: normal;
-            font-display: swap
-        }
-
-        @font-face {
-            font-family: TimesModern-Regular-fallback;
-            font-display: swap;
-            font-style: normal;
-            font-weight: 400;
-            src: local("Times New Roman");
-            ascent-override: 71.84%;
-            descent-override: 17.78%;
-            line-gap-override: 6.72%;
-            size-adjust: 96.74%
-        }
-
-        @font-face {
-            font-family: TimesModern-Bold;
-            src: url(/d/fonts/TimesModern/TimesModern-Bold-62eb027e67.woff2) format("woff2"), url(/d/fonts/TimesModern/TimesModern-Bold-828aec4ccd.woff) format("woff"), url(/d/fonts/TimesModern/TimesModern-Bold-a2020323c6.ttf) format("truetype");
-            font-weight: 400;
-            font-style: normal;
-            font-display: swap
-        }
-
-        @font-face {
-            font-family: TimesModern-Bold-fallback;
-            font-display: swap;
-            font-style: normal;
-            font-weight: 700;
-            src: local("Times New Roman Bold");
-            ascent-override: 73.8%;
-            descent-override: 18.26%;
-            line-gap-override: 6.9%;
-            size-adjust: 94.18%
-        }
-
-        @font-face {
-            font-family: TimesModern-ExtraBold-Italic;
-            src: url(/d/fonts/TimesModern/TimesModern-ExtraBold-Italic-c71c30fb0b.woff2) format("woff2"), url(/d/fonts/TimesModern/TimesModern-ExtraBold-Italic-ad4b681d5b.woff) format("woff"), url(/d/fonts/TimesModern/TimesModern-ExtraBold-Italic-36c209071c.ttf) format("truetype");
-            font-weight: 400;
-            font-style: normal;
-            font-display: swap
-        }
-
-        @font-face {
-            font-family: TimesModern-ExtraBold-Italic-fallback;
-            font-display: swap;
-            font-style: italic;
-            font-weight: 700;
-            src: local("Times New Roman Bold Italic");
-            ascent-override: 71.6%;
-            descent-override: 17.82%;
-            line-gap-override: 6.7%;
-            size-adjust: 97.06%
-        }
-
-        @font-face {
-            font-family: TimesModern-Italic;
-            src: url(/d/fonts/TimesModern/TimesModern-Italic-cc70e7e7f9.woff2) format("woff2"), url(/d/fonts/TimesModern/TimesModern-Italic-c85a679cf5.woff) format("woff"), url(/d/fonts/TimesModern/TimesModern-Italic-2f957b4455.ttf) format("truetype");
-            font-weight: 400;
-            font-style: normal;
-            font-display: swap
-        }
-
-        @font-face {
-            font-family: TimesModern-Italic-fallback;
-            font-display: swap;
-            font-style: italic;
-            font-weight: 400;
-            src: local("Times New Roman Italic");
-            ascent-override: 83.3%;
-            descent-override: 21.13%;
-            line-gap-override: 7.83%;
-            size-adjust: 89.44%
-        }
-
-        @font-face {
-            font-family: "Times Modern";
-            src: url(/d/fonts/TimesModern/TimesModern-Regular-f3419df85d.woff2) format("woff2");
-            font-display: swap;
-            font-style: normal;
-            font-weight: 400
-        }
-
-        @font-face {
-            font-family: "Times Modern";
-            src: url(/d/fonts/TimesModern/TimesModern-Bold-62eb027e67.woff2) format("woff2");
-            font-display: swap;
-            font-style: normal;
-            font-weight: 700
-        }
-
-        @font-face {
-            font-family: "Times Modern";
-            src: url(/d/fonts/TimesModern/TimesModern-ExtraBold-afbbdbe2e3.woff2) format("woff2");
-            font-display: swap;
-            font-style: normal;
-            font-weight: 800
-        }
-
-        @font-face {
-            font-family: TimesModernMagazine;
-            src: url(/d/fonts/TimesModernMagazine/TimesModernMagazine-Bd-367d1488f7.woff2) format("woff2"), url(/d/fonts/TimesModernMagazine/TimesModernMagazine-Bd-1fbe4b75f4.woff) format("woff"), url(/d/fonts/TimesModernMagazine/TimesModernMagazine-Bd-2d23205196.ttf) format("truetype");
-            font-weight: 400;
-            font-style: normal;
-            font-display: swap
-        }
-
-        @font-face {
-            font-family: TimesModernMagazine-fallback;
-            src: local("Times New Roman");
-            font-display: swap
-        }
-
-        @font-face {
-            font-family: TimesModernMagazine-Lt;
-            src: url(/d/fonts/TimesModernMagazine/TimesModernMagazine-Lt-02f06ffbdb.woff2) format("woff2"), url(/d/fonts/TimesModernMagazine/TimesModernMagazine-Lt-e73cf89261.woff) format("woff"), url(/d/fonts/TimesModernMagazine/TimesModernMagazine-Lt-a35dbc7e66.ttf) format("truetype");
-            font-weight: 400;
-            font-style: normal;
-            font-display: swap
-        }
-
-        @font-face {
-            font-family: TimesModernMagazine-Lt-fallback;
-            font-display: swap;
-            font-style: normal;
-            font-weight: 400;
-            src: local("Times New Roman");
-            ascent-override: 97.73%;
-            descent-override: 24.2%;
-            line-gap-override: 0;
-            size-adjust: 97.51%
-        }
-
-`, ve = E.div`
+`, ye = R.div`
     margin-block-start: 1em;
     margin-block-end: 100px;
-`, ze = E.div`
-    font-family: 'RobotoRegular', sans-serif;
+`, $e = R.div`
 
     background-color: black;
     color: white;
@@ -1862,7 +1513,6 @@ const We = (n, e) => {
     }
 
     .card-quote {
-        font-family: 'Times Modern', serif;
         font-size: 24px;
         line-height: 30px;
         font-weight: 700;
@@ -1899,48 +1549,48 @@ const We = (n, e) => {
         }
     }
 `;
-function lt({ data: n }) {
-  return /* @__PURE__ */ c.jsxs(c.Fragment, { children: [
-    /* @__PURE__ */ c.jsx(ne, {}),
-    /* @__PURE__ */ c.jsxs(ze, { children: [
-      /* @__PURE__ */ c.jsxs("div", { className: "card-image--container", children: [
-        /* @__PURE__ */ c.jsx(
+function lt({ data: s }) {
+  return /* @__PURE__ */ d.jsxs(d.Fragment, { children: [
+    /* @__PURE__ */ d.jsx(se, {}),
+    /* @__PURE__ */ d.jsxs($e, { children: [
+      /* @__PURE__ */ d.jsxs("div", { className: "card-image--container", children: [
+        /* @__PURE__ */ d.jsx(
           "img",
           {
-            src: `https://extras.thetimes.co.uk/web/2025/times-knife-crime-audio/assets/${n.imgSrc}.jpg`,
+            src: `https://extras.thetimes.co.uk/web/2025/times-knife-crime-audio/assets/${s.imgSrc}.jpg`,
             className: "card-image"
           }
         ),
-        /* @__PURE__ */ c.jsx("p", { className: "card-name", children: n.name })
+        /* @__PURE__ */ d.jsx("p", { className: "card-name", children: s.name })
       ] }),
-      /* @__PURE__ */ c.jsx("p", { className: "card-quote", children: n.quote }),
-      /* @__PURE__ */ c.jsx(
-        Ae,
+      /* @__PURE__ */ d.jsx("p", { className: "card-quote", children: s.quote }),
+      /* @__PURE__ */ d.jsx(
+        Le,
         {
           height: 100,
           waveColor: "#ff0000",
           progressColor: "#940000",
-          url: `https://extras.thetimes.co.uk/web/2025/times-knife-crime-audio/assets/${n.audioSrc}.m4a`,
+          url: `https://extras.thetimes.co.uk/web/2025/times-knife-crime-audio/assets/${s.audioSrc}.m4a`,
           normalize: !0,
           barWidth: 2,
           barGap: 2,
           barRadius: 2,
           cursorWidth: 2
         },
-        n.id
+        s.id
       )
     ] })
   ] });
 }
-var ie = {}, re = {}, pe;
-function Le() {
-  return pe || (pe = 1, function(n) {
-    Object.defineProperty(n, "__esModule", {
+var ie = {}, re = {}, fe;
+function We() {
+  return fe || (fe = 1, function(s) {
+    Object.defineProperty(s, "__esModule", {
       value: !0
-    }), n.default = void 0;
+    }), s.default = void 0;
     var e;
-    function t(r, o, s) {
-      return o in r ? Object.defineProperty(r, o, { value: s, enumerable: !0, configurable: !0, writable: !0 }) : r[o] = s, r;
+    function t(r, n, o) {
+      return n in r ? Object.defineProperty(r, n, { value: o, enumerable: !0, configurable: !0, writable: !0 }) : r[n] = o, r;
     }
     var i = {
       digital: (e = {
@@ -2043,15 +1693,15 @@ function Le() {
         }
       }
     };
-    n.default = i;
+    s.default = i;
   }(re)), re;
 }
-var oe = {}, ge;
-function Ie() {
-  return ge || (ge = 1, function(n) {
-    Object.defineProperty(n, "__esModule", {
+var ne = {}, ge;
+function ze() {
+  return ge || (ge = 1, function(s) {
+    Object.defineProperty(s, "__esModule", {
       value: !0
-    }), n.default = void 0;
+    }), s.default = void 0;
     var e = {
       micro: "400px",
       small: "520px",
@@ -2060,33 +1710,33 @@ function Ie() {
       desktop: "1200px",
       "desktop-wide": "1320px"
     };
-    n.default = e;
-  }(oe)), oe;
+    s.default = e;
+  }(ne)), ne;
 }
 var be;
-function $e() {
-  return be || (be = 1, function(n) {
-    Object.defineProperty(n, "__esModule", {
+function Ie() {
+  return be || (be = 1, function(s) {
+    Object.defineProperty(s, "__esModule", {
       value: !0
-    }), Object.defineProperty(n, "colors", {
+    }), Object.defineProperty(s, "colors", {
       enumerable: !0,
       get: function() {
         return e.default;
       }
-    }), Object.defineProperty(n, "breakpoints", {
+    }), Object.defineProperty(s, "breakpoints", {
       enumerable: !0,
       get: function() {
         return t.default;
       }
     });
-    var e = i(Le()), t = i(Ie());
+    var e = i(We()), t = i(ze());
     function i(r) {
       return r && r.__esModule ? r : { default: r };
     }
   }(ie)), ie;
 }
-$e();
-const Be = E.div`
+Ie();
+const Be = R.div`
     .headline {
         font-family: 'RobotoRegular', sans-serif;
         font-size: 20px;
@@ -2106,13 +1756,13 @@ const Be = E.div`
     padding-inline-start: 10px;
 
 `;
-function Fe({ headline: n, standfirst: e }) {
-  return /* @__PURE__ */ c.jsxs(Be, { children: [
-    n && /* @__PURE__ */ c.jsx("h1", { className: "headline", children: n }),
-    e && /* @__PURE__ */ c.jsx("p", { className: "standfirst", children: e })
+function Fe({ headline: s, standfirst: e }) {
+  return /* @__PURE__ */ d.jsxs(Be, { children: [
+    s && /* @__PURE__ */ d.jsx("h1", { className: "headline", children: s }),
+    e && /* @__PURE__ */ d.jsx("p", { className: "standfirst", children: e })
   ] });
 }
-const qe = E.div`
+const qe = R.div`
     margin-block: 1em;
     margin-inline: 10px;
 
@@ -2129,7 +1779,7 @@ const qe = E.div`
         grid-template-columns: repeat(7, 1fr);
         gap: 1em;
     }
-`, He = E.img`
+`, He = R.img`
     width: 100%;
     height: 80px;
 
@@ -2137,44 +1787,44 @@ const qe = E.div`
     cursor: pointer;
 
     // * CONDITIONAL STYLES
-    opacity: ${(n) => n.isHovered ? "1" : "0.5"};
+    opacity: ${(s) => s.isHovered ? "1" : "0.5"};
 
-    -webkit-filter: ${(n) => n.grayscale ? "grayscale(100%)" : "none"};
-    filter: ${(n) => n.grayscale ? "grayscale(100%)" : "none"};
+    -webkit-filter: ${(s) => s.grayscale ? "grayscale(100%)" : "none"};
+    filter: ${(s) => s.grayscale ? "grayscale(100%)" : "none"};
 
     transition: opacity 250ms ease-in;
 `;
 function Ye({
-  data: n,
+  data: s,
   clickedImage: e,
   setClickedImage: t,
   setShowTooltip: i,
   setTooltipPos: r
 }) {
-  function o(l, u) {
+  function n(l, u) {
     t(u), i(!0), r([
       l.clientX,
       l.target.offsetTop + l.target.offsetHeight - 20
     ]);
   }
-  const s = n.map((l) => /* @__PURE__ */ c.jsx(
+  const o = s.map((l) => /* @__PURE__ */ d.jsx(
     He,
     {
       src: `https://nuk-tnl-editorial-prod-staticassets.s3.amazonaws.com/2024/times-image-grid/assets/${l.imgSrc}.jpg`,
       alt: l.name,
       grayscale: !1,
       lazy: !0,
-      onClick: (u) => o(u, l),
+      onClick: (u) => n(u, l),
       isHovered: e === l
     },
     l.id
   ));
-  return /* @__PURE__ */ c.jsx(qe, { children: s });
+  return /* @__PURE__ */ d.jsx(qe, { children: o });
 }
-const Ve = E.div`
+const Ve = R.div`
     position: absolute;
     left: 0px;
-    top: ${(n) => n.isImageInLastRow ? n.tooltipPos[1] - 380 : n.tooltipPos[1]}px;
+    top: ${(s) => s.isImageInLastRow ? s.tooltipPos[1] - 380 : s.tooltipPos[1]}px;
 
     margin-inline: 15%;
     padding: 0.5em;
@@ -2192,7 +1842,7 @@ const Ve = E.div`
     font-family: 'RobotoRegular', sans-serif;
     font-size: 1.6rem;
 
-    opacity: ${(n) => n.showTooltip ? "1" : "0"};
+    opacity: ${(s) => s.showTooltip ? "1" : "0"};
     transition: opacity 250ms ease-in;
 
     .tooltip-image {
@@ -2251,83 +1901,83 @@ const Ve = E.div`
     }
 `;
 function Ge({
-  clickedImage: n,
+  clickedImage: s,
   setClickedImage: e,
   tooltipPos: t,
   showTooltip: i,
   setShowTooltip: r,
-  isImageInLastRow: o
+  isImageInLastRow: n
 }) {
-  if (!n) return;
-  function s() {
+  if (!s) return;
+  function o() {
     r(!1), e(null);
   }
-  return /* @__PURE__ */ c.jsxs(
+  return /* @__PURE__ */ d.jsxs(
     Ve,
     {
       showTooltip: i,
       tooltipPos: t,
-      isImageInLastRow: o,
+      isImageInLastRow: n,
       children: [
-        /* @__PURE__ */ c.jsx(
+        /* @__PURE__ */ d.jsx(
           "img",
           {
             className: "tooltip-image",
-            src: `https://nuk-tnl-editorial-prod-staticassets.s3.amazonaws.com/2024/times-image-grid/assets/${n.imgSrc}.jpg`,
-            alt: n.name
+            src: `https://nuk-tnl-editorial-prod-staticassets.s3.amazonaws.com/2024/times-image-grid/assets/${s.imgSrc}.jpg`,
+            alt: s.name
           }
         ),
-        /* @__PURE__ */ c.jsxs("div", { className: "tooltip-content", children: [
-          /* @__PURE__ */ c.jsx("h3", { children: n.name }),
-          /* @__PURE__ */ c.jsx("p", { children: n.copy })
+        /* @__PURE__ */ d.jsxs("div", { className: "tooltip-content", children: [
+          /* @__PURE__ */ d.jsx("h3", { children: s.name }),
+          /* @__PURE__ */ d.jsx("p", { children: s.copy })
         ] }),
-        /* @__PURE__ */ c.jsx("button", { className: "tooltip-close", onClick: s, children: /* @__PURE__ */ c.jsx("img", { src: "https://nuk-tnl-editorial-prod-staticassets.s3.amazonaws.com/2023/st-grid-jeremy-clarkson/assets/x.svg" }) })
+        /* @__PURE__ */ d.jsx("button", { className: "tooltip-close", onClick: o, children: /* @__PURE__ */ d.jsx("img", { src: "https://nuk-tnl-editorial-prod-staticassets.s3.amazonaws.com/2023/st-grid-jeremy-clarkson/assets/x.svg" }) })
       ]
     }
   );
 }
-function dt({ data: n }) {
-  const [e, t] = N(null), [i, r] = N(!1), [o, s] = N([0, 0]);
-  let u = n.length - n.indexOf(e) <= 7;
-  return /* @__PURE__ */ c.jsxs(c.Fragment, { children: [
-    /* @__PURE__ */ c.jsx(ne, {}),
-    /* @__PURE__ */ c.jsxs(ve, { children: [
-      /* @__PURE__ */ c.jsx(
+function ct({ data: s }) {
+  const [e, t] = N(null), [i, r] = N(!1), [n, o] = N([0, 0]);
+  let u = s.length - s.indexOf(e) <= 7;
+  return /* @__PURE__ */ d.jsxs(d.Fragment, { children: [
+    /* @__PURE__ */ d.jsx(se, {}),
+    /* @__PURE__ */ d.jsxs(ye, { children: [
+      /* @__PURE__ */ d.jsx(
         Fe,
         {
           headline: "Lorem ipsum dolor sit amet",
           standfirst: "Nulla vel augue ut erat efficitur scelerisque id vel tellus. Ut iaculis nulla sit amet lorem rutrum, ac luctus sem imperdiet"
         }
       ),
-      /* @__PURE__ */ c.jsx(
+      /* @__PURE__ */ d.jsx(
         Ye,
         {
-          data: n,
+          data: s,
           clickedImage: e,
           setClickedImage: t,
           setShowTooltip: r,
-          setTooltipPos: s
+          setTooltipPos: o
         }
       ),
-      /* @__PURE__ */ c.jsx(
+      /* @__PURE__ */ d.jsx(
         Ge,
         {
           clickedImage: e,
           setClickedImage: t,
           showTooltip: i,
           setShowTooltip: r,
-          tooltipPos: o,
+          tooltipPos: n,
           isImageInLastRow: u
         }
       )
     ] })
   ] });
 }
-E.div`
+R.div`
     position: relative;
     width: 100%;
 `;
-const Ue = E.div`
+const Ue = R.div`
     position: sticky;
     top: 30vh;
     width: 100%;
@@ -2350,11 +2000,11 @@ const Ue = E.div`
     &.edge-to-edge iframe {
         height: 100vh;
     }
-`, Xe = E.div`
+`, Xe = R.div`
     position: relative;
     width: 100%;
     height: 100%;
-`, Je = E.div`
+`, Je = R.div`
     position: absolute;
     top: 0;
     bottom: 0;
@@ -2367,15 +2017,14 @@ const Ue = E.div`
         opacity: 1;
         pointer-events: auto;
     }
-`, Ze = E.section`
+`, Ze = R.section`
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-`, Qe = E.p`
+`, Qe = R.p`
     line-height: 1.4;
-    font-family: 'Times Modern', serif;
-    font-size: ${({ size: n }) => n === "lg" ? "20px" : "16px"} !important;
+    font-size: ${({ size: s }) => s === "lg" ? "20px" : "16px"} !important;
     padding: 1rem;
     max-width: 600px;
     background: white;
@@ -2383,104 +2032,104 @@ const Ue = E.div`
     font-size: 18px;
     line-height: 30px;
 `;
-function ct({ data: n }) {
+function dt({ data: s }) {
   const {
     slides: e = [],
     imgFit: t = "cover",
     containerWidth: i = "edge-to-edge",
     borderRadius: r = "0",
-    fixedImgHeight: o,
-    fontSize: s = "md",
+    fixedImgHeight: n,
+    fontSize: o = "md",
     videoLoop: l = !0,
     videoAutoplay: u = !0,
-    videoControls: f = !1,
-    videoMute: d = !0
-  } = n, [p, m] = N(0), [g, w] = N([]), C = X([]), x = X([]);
+    videoControls: h = !1,
+    videoMute: c = !0
+  } = s, [f, m] = N(0), [g, x] = N([]), P = X([]), w = X([]);
   H(() => {
-    const h = new IntersectionObserver(
+    const p = new IntersectionObserver(
       (b) => {
-        b.forEach((k) => {
-          if (k.isIntersecting) {
-            const _ = parseInt(k.target.dataset.index, 10);
-            m(_);
+        b.forEach((C) => {
+          if (C.isIntersecting) {
+            const O = parseInt(C.target.dataset.index, 10);
+            m(O);
           }
         });
       },
       { threshold: 0.6 }
     );
-    return C.current.forEach((b) => b && h.observe(b)), () => h.disconnect();
+    return P.current.forEach((b) => b && p.observe(b)), () => p.disconnect();
   }, [e.length]), H(() => {
-    const h = e.map((b, k) => k === p);
-    w(h);
-  }, [p, e]);
-  const T = (h) => g[h] ? 2 : 1, R = (h) => {
+    const p = e.map((b, C) => C === f);
+    x(p);
+  }, [f, e]);
+  const k = (p) => g[p] ? 2 : 1, E = (p) => {
     var b;
-    if (h.includes("youtube.com")) {
-      const k = (b = h.split("v=")[1]) == null ? void 0 : b.split("&")[0];
-      return `https://www.youtube.com/embed/${k}?autoplay=${u ? 1 : 0}&loop=${l ? 1 : 0}&controls=${f ? 1 : 0}&mute=${d ? 1 : 0}&playlist=${k}`;
-    } else if (h.includes("vimeo.com"))
-      return `https://player.vimeo.com/video/${h.split("/").pop()}?autoplay=${u ? 1 : 0}&loop=${l ? 1 : 0}&controls=${f ? 1 : 0}&muted=${d ? 1 : 0}`;
-    return h;
-  }, D = (h) => h.includes("youtube.com") || h.includes("youtu.be"), v = (h) => h.endsWith(".mp4");
-  return /* @__PURE__ */ c.jsxs(ve, { children: [
-    /* @__PURE__ */ c.jsx(
+    if (p.includes("youtube.com")) {
+      const C = (b = p.split("v=")[1]) == null ? void 0 : b.split("&")[0];
+      return `https://www.youtube.com/embed/${C}?autoplay=${u ? 1 : 0}&loop=${l ? 1 : 0}&controls=${h ? 1 : 0}&mute=${c ? 1 : 0}&playlist=${C}`;
+    } else if (p.includes("vimeo.com"))
+      return `https://player.vimeo.com/video/${p.split("/").pop()}?autoplay=${u ? 1 : 0}&loop=${l ? 1 : 0}&controls=${h ? 1 : 0}&muted=${c ? 1 : 0}`;
+    return p;
+  }, M = (p) => p.includes("youtube.com") || p.includes("youtu.be"), y = (p) => p.endsWith(".mp4");
+  return /* @__PURE__ */ d.jsxs(ye, { children: [
+    /* @__PURE__ */ d.jsx(
       Ue,
       {
         style: {
-          height: o || "500px"
+          height: n || "500px"
         },
         className: i === "edge-to-edge" ? "edge-to-edge" : i === "bleed" ? "bleed" : "",
-        children: /* @__PURE__ */ c.jsx(Xe, { children: e.map((h, b) => /* @__PURE__ */ c.jsx(
+        children: /* @__PURE__ */ d.jsx(Xe, { children: e.map((p, b) => /* @__PURE__ */ d.jsx(
           Je,
           {
-            ref: (k) => x.current[b] = k,
+            ref: (C) => w.current[b] = C,
             className: g[b] ? "overlap" : "",
-            style: { zIndex: T(b) },
-            children: D(h.media) ? /* @__PURE__ */ c.jsx(
+            style: { zIndex: k(b) },
+            children: M(p.media) ? /* @__PURE__ */ d.jsx(
               "iframe",
               {
                 title: "YouTube video",
-                src: R(h.media),
+                src: E(p.media),
                 frameBorder: "0",
                 allow: "autoplay; encrypted-media",
                 allowFullScreen: !0,
                 style: {
                   objectFit: t,
                   width: "100%",
-                  height: o || (i === "edge-to-edge" ? "100vh" : "100%"),
+                  height: n || (i === "edge-to-edge" ? "100vh" : "100%"),
                   borderRadius: r
                 }
               }
-            ) : v(h.media) ? /* @__PURE__ */ c.jsx(
+            ) : y(p.media) ? /* @__PURE__ */ d.jsx(
               "video",
               {
                 autoPlay: u,
                 loop: l,
-                controls: f,
-                muted: d,
+                controls: h,
+                muted: c,
                 style: {
                   objectFit: t,
                   width: "100%",
-                  height: o || "100%",
+                  height: n || "100%",
                   borderRadius: r
                 },
-                children: /* @__PURE__ */ c.jsx(
+                children: /* @__PURE__ */ d.jsx(
                   "source",
                   {
-                    src: h.media,
+                    src: p.media,
                     type: "video/mp4"
                   }
                 )
               }
-            ) : /* @__PURE__ */ c.jsx(
+            ) : /* @__PURE__ */ d.jsx(
               "img",
               {
-                src: h.media,
-                alt: h.altText || "Slide image",
+                src: p.media,
+                alt: p.altText || "Slide image",
                 style: {
                   objectFit: t,
                   width: "100%",
-                  height: o || "100%",
+                  height: n || "100%",
                   borderRadius: r
                 }
               }
@@ -2490,17 +2139,17 @@ function ct({ data: n }) {
         )) })
       }
     ),
-    /* @__PURE__ */ c.jsx("div", { className: "scroller-sections", children: e.map((h, b) => /* @__PURE__ */ c.jsx(
+    /* @__PURE__ */ d.jsx("div", { className: "scroller-sections", children: e.map((p, b) => /* @__PURE__ */ d.jsx(
       Ze,
       {
         className: "trigger",
         "data-index": b,
-        ref: (k) => C.current[b] = k,
-        children: h.text && /* @__PURE__ */ c.jsx(
+        ref: (C) => P.current[b] = C,
+        children: p.text && /* @__PURE__ */ d.jsx(
           Qe,
           {
-            size: s,
-            dangerouslySetInnerHTML: { __html: h.text }
+            size: o,
+            dangerouslySetInnerHTML: { __html: p.text }
           }
         )
       },
@@ -2508,11 +2157,10 @@ function ct({ data: n }) {
     )) })
   ] });
 }
-const Ke = E.div`
+const Ke = R.div`
     h3 {
         line-height: 20px;
         color: #000;
-        font-family: 'Times Modern', serif;
         font-size: 22px;
         font-weight: 700;
         margin: 0 auto;
@@ -2523,7 +2171,6 @@ const Ke = E.div`
     h4 {
         line-height: 20px;
         color: #000;
-        font-family: 'Times Modern', serif;
         font-size: 16px;
         font-weight: 400;
         margin: 0 auto 15px;
@@ -2534,7 +2181,6 @@ const Ke = E.div`
     .chart-title {
         line-height: 20px;
         color: #000;
-        font-family: 'Times Modern', serif;
         font-size: 16px;
         font-weight: 400;
         margin: 0 auto 15px;
@@ -2552,25 +2198,25 @@ const Ke = E.div`
         letter-spacing: 0.5px;
         text-align: left;
     }
-`, et = ({ data: n = {}, children: e }) => {
+`, et = ({ data: s = {}, children: e }) => {
   const {
     hed: t = "",
     dek: i = "",
     chartTitle: r = "",
-    note: o = "",
-    source: s = ""
-  } = n;
-  return /* @__PURE__ */ c.jsxs(Ke, { children: [
-    t && /* @__PURE__ */ c.jsx("h3", { children: t }),
-    i && /* @__PURE__ */ c.jsx("h4", { children: i }),
-    r && /* @__PURE__ */ c.jsx("p", { className: "chart-title", children: r }),
+    note: n = "",
+    source: o = ""
+  } = s;
+  return /* @__PURE__ */ d.jsxs(Ke, { children: [
+    t && /* @__PURE__ */ d.jsx("h3", { children: t }),
+    i && /* @__PURE__ */ d.jsx("h4", { children: i }),
+    r && /* @__PURE__ */ d.jsx("p", { className: "chart-title", children: r }),
     e,
-    (o || s) && /* @__PURE__ */ c.jsxs("div", { className: "note-container", children: [
-      o && /* @__PURE__ */ c.jsx("p", { className: "note", children: o }),
-      s && /* @__PURE__ */ c.jsx("p", { className: "note", children: s })
+    (n || o) && /* @__PURE__ */ d.jsxs("div", { className: "note-container", children: [
+      n && /* @__PURE__ */ d.jsx("p", { className: "note", children: n }),
+      o && /* @__PURE__ */ d.jsx("p", { className: "note", children: o })
     ] })
   ] });
-}, tt = E.div`
+}, tt = R.div`
     display: block;
     margin: 20px auto;
     position: relative;
@@ -2592,33 +2238,30 @@ const Ke = E.div`
             padding: 0;
         }
     }
-`, it = E.div`
+`, it = R.div`
     margin-top: 10px;
     text-align: left;
-    font-family: 'Times Modern', serif;
     p {
-        font-family: 'Times Modern', serif;
         font-size: 14px;
         color: rgb(105, 105, 105);
         line-height: 19px;
         margin-bottom: 4px;
         text-align: left;
     }
-`, rt = E.div`
+`, rt = R.div`
     position: absolute;
     top: 0;
     background-color: black;
     color: #fff;
     padding: 10px;
-    font-family: 'Times Modern', serif;
-    border-radius: ${({ $imgBorderRadius: n }) => `${n} 0 0 0`};
+    border-radius: ${({ $imgBorderRadius: s }) => `${s} 0 0 0`};
 
     p {
         color: #fff;
         font-size: 12px;
         margin: 0;
     }
-`, ot = E.div`
+`, nt = R.div`
     position: relative;
 
     iframe,
@@ -2627,11 +2270,11 @@ const Ke = E.div`
         width: 100%;
         height: auto;
         border: none;
-        ${({ $containerWidth: n, $fixedImgHeight: e, $imgBorderRadius: t }) => n === "edge-to-edge" ? ee`
+        ${({ $containerWidth: s, $fixedImgHeight: e, $imgBorderRadius: t }) => s === "edge-to-edge" ? ee`
                     height: 100vh;
                     object-fit: cover;
                     border-radius: ${t};
-                ` : n === "bleed" || n === "inline" && e ? ee`
+                ` : s === "bleed" || s === "inline" && e ? ee`
                     height: ${e};
                     object-fit: cover;
                     border-radius: ${t};
@@ -2639,59 +2282,59 @@ const Ke = E.div`
                 border-radius: ${t};
             `}
     }
-`, nt = (n, e, t, i, r) => {
-  var o;
-  if (n.includes("youtube.com")) {
-    const s = (o = n.split("v=")[1]) == null ? void 0 : o.split("&")[0];
-    return `https://www.youtube.com/embed/${s}?autoplay=${e ? 1 : 0}&loop=${t ? 1 : 0}&controls=${i ? 1 : 0}&mute=${r ? 1 : 0}&playlist=${s}`;
-  } else if (n.includes("vimeo.com"))
-    return `https://player.vimeo.com/video/${n.split("/").pop()}?autoplay=${e ? 1 : 0}&loop=${t ? 1 : 0}&controls=${i ? 1 : 0}&muted=${r ? 1 : 0}`;
-  return n;
-}, ut = ({ data: n }) => {
-  if (!n) return null;
+`, st = (s, e, t, i, r) => {
+  var n;
+  if (s.includes("youtube.com")) {
+    const o = (n = s.split("v=")[1]) == null ? void 0 : n.split("&")[0];
+    return `https://www.youtube.com/embed/${o}?autoplay=${e ? 1 : 0}&loop=${t ? 1 : 0}&controls=${i ? 1 : 0}&mute=${r ? 1 : 0}&playlist=${o}`;
+  } else if (s.includes("vimeo.com"))
+    return `https://player.vimeo.com/video/${s.split("/").pop()}?autoplay=${e ? 1 : 0}&loop=${t ? 1 : 0}&controls=${i ? 1 : 0}&muted=${r ? 1 : 0}`;
+  return s;
+}, ut = ({ data: s }) => {
+  if (!s) return null;
   const {
     fixedImgHeight: e = null,
     containerWidth: t = "inline",
     imgBorderRadius: i = null,
     media: r = "",
-    videoLoop: o = "true",
-    videoAutoplay: s = "true",
+    videoLoop: n = "true",
+    videoAutoplay: o = "true",
     videoControls: l = "false",
     videoMute: u = "true",
-    text: f,
-    caption: d,
-    altText: p
-  } = n, x = nt(
+    text: h,
+    caption: c,
+    altText: f
+  } = s, w = st(
     r,
-    s === !0,
     o === !0,
+    n === !0,
     l === !0,
     u === !0
-  ), T = /* @__PURE__ */ c.jsxs(
-    ot,
+  ), k = /* @__PURE__ */ d.jsxs(
+    nt,
     {
       $containerWidth: t,
       $fixedImgHeight: e,
       $imgBorderRadius: i,
       children: [
-        r.includes("youtube.com") || r.includes("vimeo.com") ? /* @__PURE__ */ c.jsx(
+        r.includes("youtube.com") || r.includes("vimeo.com") ? /* @__PURE__ */ d.jsx(
           "iframe",
           {
-            src: x,
+            src: w,
             title: "Embedded media",
             allow: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",
             allowFullScreen: !0
           }
-        ) : r.endsWith(".mp4") ? /* @__PURE__ */ c.jsxs(
+        ) : r.endsWith(".mp4") ? /* @__PURE__ */ d.jsxs(
           "video",
           {
-            autoPlay: s,
-            loop: o,
+            autoPlay: o,
+            loop: n,
             controls: l,
             muted: u,
             children: [
-              /* @__PURE__ */ c.jsx("source", { src: r, type: "video/mp4" }),
-              /* @__PURE__ */ c.jsx(
+              /* @__PURE__ */ d.jsx("source", { src: r, type: "video/mp4" }),
+              /* @__PURE__ */ d.jsx(
                 "track",
                 {
                   kind: "captions",
@@ -2702,36 +2345,36 @@ const Ke = E.div`
               "Your browser does not support the video tag."
             ]
           }
-        ) : /* @__PURE__ */ c.jsx("img", { src: r, alt: p }),
-        f && /* @__PURE__ */ c.jsx(
+        ) : /* @__PURE__ */ d.jsx("img", { src: r, alt: f }),
+        h && /* @__PURE__ */ d.jsx(
           it,
           {
             $imgBorderRadius: i,
-            dangerouslySetInnerHTML: { __html: f }
+            dangerouslySetInnerHTML: { __html: h }
           }
         ),
-        d && /* @__PURE__ */ c.jsx(
+        c && /* @__PURE__ */ d.jsx(
           rt,
           {
             $imgBorderRadius: i,
-            dangerouslySetInnerHTML: { __html: d }
+            dangerouslySetInnerHTML: { __html: c }
           }
         )
       ]
     }
   );
-  return /* @__PURE__ */ c.jsxs(c.Fragment, { children: [
-    /* @__PURE__ */ c.jsx(ne, {}),
-    /* @__PURE__ */ c.jsx(tt, { className: t, children: /* @__PURE__ */ c.jsx(et, { data: n, children: T }) })
+  return /* @__PURE__ */ d.jsxs(d.Fragment, { children: [
+    /* @__PURE__ */ d.jsx(se, {}),
+    /* @__PURE__ */ d.jsx(tt, { className: t, children: /* @__PURE__ */ d.jsx(et, { data: s, children: k }) })
   ] });
 };
 export {
   lt as AudioPlayer,
-  Ae as Equalizer,
+  Le as Equalizer,
   Ye as Grid,
   Fe as Header,
-  dt as ImageGrid,
+  ct as ImageGrid,
   ut as MediaBlock,
-  ct as ScrollStory,
+  dt as ScrollStory,
   Ge as Tooltip
 };

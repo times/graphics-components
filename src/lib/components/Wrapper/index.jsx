@@ -6,7 +6,6 @@ const WrapperContainer = styled.div`
     h3 {
         line-height: 20px;
         color: #000;
-        font-family: 'Times Modern', serif;
         font-size: 22px;
         font-weight: 700;
         margin: 0 auto;
@@ -17,7 +16,6 @@ const WrapperContainer = styled.div`
     h4 {
         line-height: 20px;
         color: #000;
-        font-family: 'Times Modern', serif;
         font-size: 16px;
         font-weight: 400;
         margin: 0 auto 15px;
@@ -28,7 +26,6 @@ const WrapperContainer = styled.div`
     .chart-title {
         line-height: 20px;
         color: #000;
-        font-family: 'Times Modern', serif;
         font-size: 16px;
         font-weight: 400;
         margin: 0 auto 15px;
