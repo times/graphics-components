@@ -27,8 +27,9 @@ export const MediaContainer = styled.div`
 export const SlideText = styled.div`
     margin-top: 10px;
     text-align: left;
+    font-family: 'Times Modern', serif;
     p {
-        font-family: var(--font-body);
+        font-family: 'Times Modern', serif;
         font-size: 14px;
         color: rgb(105, 105, 105);
         line-height: 19px;
@@ -43,7 +44,7 @@ export const CaptionText = styled.div`
     background-color: black;
     color: #fff;
     padding: 10px;
-    font-family: var(--font-body);
+    font-family: 'Times Modern', serif;
     border-radius: ${({ $imgBorderRadius }) => `${$imgBorderRadius} 0 0 0`};
 
     p {

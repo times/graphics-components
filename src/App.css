@@ -2,10 +2,13 @@
     background: rgb(24 24 24) !important;
 }
 
-.docblock-source span {
+.docblock-source {
     color: white !important;
 }
 
+.docblock-source span {
+    color: white !important;
+}
 
 .docblock-source .imports , .docblock-source .token.string,  .docblock-source .tag.class-name  {
     color: #83ff83 !important;
