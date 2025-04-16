@@ -1,4 +1,4 @@
-import{j as i}from"./jsx-runtime-D_zvdyIk.js";import"./index-MPVjHJeJ.js";import{d as e}from"./index-_NQI7EM8.js";const n=e.div`
+import{j as i}from"./jsx-runtime-D_zvdyIk.js";import"./index-MPVjHJeJ.js";import{d as e}from"./index-CuiiTVLL.js";const n=e.div`
     padding: 20px;
     text-align: center;
     max-width: 1182px;
@@ -17,9 +17,6 @@ import{j as i}from"./jsx-runtime-D_zvdyIk.js";import"./index-MPVjHJeJ.js";import
     margin: 0 auto;
     color: #333333;
     display: block;
-    font-family:
-        "Times Modern",
-        serif;
 
     @media (min-width: 768px) {
         font-size: 12px;
@@ -35,10 +32,7 @@ import{j as i}from"./jsx-runtime-D_zvdyIk.js";import"./index-MPVjHJeJ.js";import
     margin: 0 auto;
     color: #333333;
     display: block;
-     font-family:
-        "Times Modern",
-        serif;
-
+ 
     @media (min-width: 768px) {
         font-size: 34px;
         line-height: 30px;
@@ -54,9 +48,7 @@ import{j as i}from"./jsx-runtime-D_zvdyIk.js";import"./index-MPVjHJeJ.js";import
     margin: 0 auto;
     color: #333333;
     display: block;
-     font-family:
-        "Times Modern",
-        serif;
+ 
 
     @media (min-width: 768px) {
         font-size: 18px;
