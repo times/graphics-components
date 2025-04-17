@@ -70,7 +70,7 @@ function Re() {
         ), a.$$typeof) {
           case x:
             return "Portal";
-          case M:
+          case _:
             return (a.displayName || "Context") + ".Provider";
           case E:
             return (a._context.displayName || "Context") + ".Consumer";
@@ -184,24 +184,24 @@ function Re() {
       }), Object.freeze && (Object.freeze(a.props), Object.freeze(a)), a;
     }
     function d(a, v, S, j, $, A, Q, K) {
-      var _ = v.children;
-      if (_ !== void 0)
+      var M = v.children;
+      if (M !== void 0)
         if (j)
-          if (xe(_)) {
-            for (j = 0; j < _.length; j++)
-              f(_[j]);
-            Object.freeze && Object.freeze(_);
+          if (xe(M)) {
+            for (j = 0; j < M.length; j++)
+              f(M[j]);
+            Object.freeze && Object.freeze(M);
           } else
             console.error(
               "React.jsx: Static children should always be an array. You are likely explicitly calling React.jsxs or React.jsxDEV. Use the Babel transform instead."
             );
-        else f(_);
+        else f(M);
       if (B.call(v, "key")) {
-        _ = s(a);
+        M = s(a);
         var z = Object.keys(v).filter(function(we) {
           return we !== "key";
         });
-        j = 0 < z.length ? "{key: someKey, " + z.join(": ..., ") + ": ...}" : "{key: someKey}", de[_ + j] || (z = 0 < z.length ? "{" + z.join(": ..., ") + ": ...}" : "{}", console.error(
+        j = 0 < z.length ? "{key: someKey, " + z.join(": ..., ") + ": ...}" : "{key: someKey}", de[M + j] || (z = 0 < z.length ? "{" + z.join(": ..., ") + ": ...}" : "{}", console.error(
           `A props object containing a "key" prop is being spread into JSX:
   let props = %s;
   <%s {...props} />
@@ -209,22 +209,22 @@ React keys must be passed directly to JSX without using spread:
   let props = %s;
   <%s key={someKey} {...props} />`,
           j,
-          _,
+          M,
           z,
-          _
-        ), de[_ + j] = !0);
+          M
+        ), de[M + j] = !0);
       }
-      if (_ = null, S !== void 0 && (t(S), _ = "" + S), o(v) && (t(v.key), _ = "" + v.key), "key" in v) {
+      if (M = null, S !== void 0 && (t(S), M = "" + S), o(v) && (t(v.key), M = "" + v.key), "key" in v) {
         S = {};
         for (var ee in v)
           ee !== "key" && (S[ee] = v[ee]);
       } else S = v;
-      return _ && l(
+      return M && l(
         S,
         typeof a == "function" ? a.displayName || a.name || "Unknown" : a
       ), h(
         a,
-        _,
+        M,
         A,
         $,
         r(),
@@ -236,7 +236,7 @@ React keys must be passed directly to JSX without using spread:
     function f(a) {
       typeof a == "object" && a !== null && a.$$typeof === g && a._store && (a._store.validated = 1);
     }
-    var m = ke, g = Symbol.for("react.transitional.element"), x = Symbol.for("react.portal"), P = Symbol.for("react.fragment"), w = Symbol.for("react.strict_mode"), k = Symbol.for("react.profiler"), E = Symbol.for("react.consumer"), M = Symbol.for("react.context"), y = Symbol.for("react.forward_ref"), p = Symbol.for("react.suspense"), b = Symbol.for("react.suspense_list"), C = Symbol.for("react.memo"), O = Symbol.for("react.lazy"), D = Symbol.for("react.activity"), L = Symbol.for("react.client.reference"), W = m.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, B = Object.prototype.hasOwnProperty, xe = Array.isArray, Z = console.createTask ? console.createTask : function() {
+    var m = ke, g = Symbol.for("react.transitional.element"), x = Symbol.for("react.portal"), P = Symbol.for("react.fragment"), w = Symbol.for("react.strict_mode"), k = Symbol.for("react.profiler"), E = Symbol.for("react.consumer"), _ = Symbol.for("react.context"), y = Symbol.for("react.forward_ref"), p = Symbol.for("react.suspense"), b = Symbol.for("react.suspense_list"), C = Symbol.for("react.memo"), O = Symbol.for("react.lazy"), D = Symbol.for("react.activity"), L = Symbol.for("react.client.reference"), W = m.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, B = Object.prototype.hasOwnProperty, xe = Array.isArray, Z = console.createTask ? console.createTask : function() {
       return null;
     };
     m = {
@@ -362,7 +362,7 @@ function me(s, e, t) {
   return t == null || t.appendChild(i), i;
 }
 var je = Object.freeze({ __proto__: null, createElement: me, default: me });
-const _e = { fetchBlob: function(s, e, t) {
+const Me = { fetchBlob: function(s, e, t) {
   return T(this, void 0, void 0, function* () {
     const i = yield fetch(s, t);
     if (i.status >= 400) throw new Error(`Failed to fetch ${s}: ${i.status} (${i.statusText})`);
@@ -389,7 +389,7 @@ const _e = { fetchBlob: function(s, e, t) {
     }(i.clone(), e), i.blob();
   });
 } };
-class Me extends V {
+class _e extends V {
   constructor(e) {
     super(), this.isExternalMedia = !1, e.media ? (this.media = e.media, this.isExternalMedia = !0) : this.media = document.createElement("audio"), e.mediaControls && (this.media.controls = !0), e.autoplay && (this.media.autoplay = !0), e.playbackRate != null && this.onMediaEvent("canplay", () => {
       e.playbackRate != null && (this.media.playbackRate = e.playbackRate);
@@ -539,14 +539,14 @@ class I extends V {
           h();
         }, E = (p) => {
           p.relatedTarget && p.relatedTarget !== document.documentElement || k(p);
-        }, M = (p) => {
+        }, _ = (p) => {
           x && (p.stopPropagation(), p.preventDefault());
         }, y = (p) => {
           x && p.preventDefault();
         };
-        document.addEventListener("pointermove", w), document.addEventListener("pointerup", k), document.addEventListener("pointerout", E), document.addEventListener("pointercancel", E), document.addEventListener("touchmove", y, { passive: !1 }), document.addEventListener("click", M, { capture: !0 }), h = () => {
+        document.addEventListener("pointermove", w), document.addEventListener("pointerup", k), document.addEventListener("pointerout", E), document.addEventListener("pointercancel", E), document.addEventListener("touchmove", y, { passive: !1 }), document.addEventListener("click", _, { capture: !0 }), h = () => {
           document.removeEventListener("pointermove", w), document.removeEventListener("pointerup", k), document.removeEventListener("pointerout", E), document.removeEventListener("pointercancel", E), document.removeEventListener("touchmove", y), setTimeout(() => {
-            document.removeEventListener("click", M, { capture: !0 });
+            document.removeEventListener("click", _, { capture: !0 });
           }, 10);
         };
       };
@@ -701,16 +701,16 @@ class I extends V {
   renderBarWaveform(e, t, i, r) {
     const n = e[0], o = e[1] || e[0], l = n.length, { width: u, height: h } = i.canvas, d = h / 2, f = this.getPixelRatio(), m = t.barWidth ? t.barWidth * f : 1, g = t.barGap ? t.barGap * f : t.barWidth ? m / 2 : 0, x = t.barRadius || 0, P = u / (m + g) / l, w = x && "roundRect" in i ? "roundRect" : "rect";
     i.beginPath();
-    let k = 0, E = 0, M = 0;
+    let k = 0, E = 0, _ = 0;
     for (let y = 0; y <= l; y++) {
       const p = Math.round(y * P);
       if (p > k) {
-        const O = Math.round(E * d * r), D = O + Math.round(M * d * r) || 1;
+        const O = Math.round(E * d * r), D = O + Math.round(_ * d * r) || 1;
         let L = d - O;
-        t.barAlign === "top" ? L = 0 : t.barAlign === "bottom" && (L = h - D), i[w](k * (m + g), L, m, D, x), k = p, E = 0, M = 0;
+        t.barAlign === "top" ? L = 0 : t.barAlign === "bottom" && (L = h - D), i[w](k * (m + g), L, m, D, x), k = p, E = 0, _ = 0;
       }
       const b = Math.abs(n[y] || 0), C = Math.abs(o[y] || 0);
-      b > E && (E = b), C > M && (M = C);
+      b > E && (E = b), C > _ && (_ = C);
     }
     i.fill(), i.closePath();
   }
@@ -763,11 +763,11 @@ class I extends V {
       f[w] = !0;
       const k = w * d, E = Math.min(h - k, d);
       if (E <= 0) return;
-      const M = e.map((y) => {
+      const _ = e.map((y) => {
         const p = Math.floor(k / h * y.length), b = Math.floor((k + E) / h * y.length);
         return y.slice(p, b);
       });
-      this.renderSingleCanvas(M, t, E, r, k, n, o);
+      this.renderSingleCanvas(_, t, E, r, k, n, o);
     }, g = Math.ceil(h / d);
     if (!this.isScrollable) {
       for (let w = 0; w < g; w++) m(w);
@@ -981,7 +981,7 @@ class ie extends V {
   }
 }
 const Ne = { waveColor: "#999", progressColor: "#555", cursorWidth: 1, minPxPerSec: 0, fillParent: !0, interact: !0, dragToSeek: !1, autoScroll: !0, autoCenter: !0, sampleRate: 8e3 };
-class Y extends Me {
+class Y extends _e {
   static create(e) {
     return new Y(e);
   }
@@ -1098,7 +1098,7 @@ class Y extends Me {
         const l = this.options.fetchParams || {};
         window.AbortController && !l.signal && (this.abortController = new AbortController(), l.signal = (n = this.abortController) === null || n === void 0 ? void 0 : n.signal);
         const u = (d) => this.emit("loading", d);
-        t = yield _e.fetchBlob(e, u, l);
+        t = yield Me.fetchBlob(e, u, l);
         const h = this.options.blobMimeType;
         h && (t = new Blob([t], { type: h }));
       }
@@ -1433,7 +1433,7 @@ const Ae = (s, e) => {
     const p = y.target;
     p.style.setProperty("--value", p.value), p.style.setProperty("--min", p.min === "" ? "0" : p.min), p.style.setProperty("--max", p.max === "" ? "100" : p.max), p.style.setProperty("--value", p.value);
   }
-  function M() {
+  function _() {
     f(!d);
   }
   return /* @__PURE__ */ c.jsxs(De, { children: [
@@ -1464,7 +1464,7 @@ const Ae = (s, e) => {
         {
           className: "volume-icon",
           src: "https://extras.thetimes.co.uk/web/2025/times-knife-crime-audio/assets/volume.png",
-          onClick: M
+          onClick: _
         }
       ),
       /* @__PURE__ */ c.jsx(
@@ -1489,9 +1489,25 @@ const Ae = (s, e) => {
   ] });
 }), J = Se`
    @media (prefers-color-scheme: dark) {
-    body {
-      background-color: #121212;
-      color: #ccc;
+        body {
+        background-color: #121212 !important;
+        color: #ccc !important;
+        }
+        .Page {
+            background-color: #333;
+            padding-top: 5rem;
+        } 
+        .MainContainer {
+            background-color: #121212;
+        }
+        #article-main{
+            border-color: rgb(49 49 49) black !important;
+        }
+        @media (min-width: 520px) {
+            .MainContainer {
+                border-right: 1px solid rgb(0 0 0 / 50%);
+                border-left: 1px solid rgb(0 0 0 / 50%);
+            }
     }
   }
 `, ye = R.div`
@@ -2073,7 +2089,7 @@ function dt({ data: s }) {
     } else if (p.includes("vimeo.com"))
       return `https://player.vimeo.com/video/${p.split("/").pop()}?autoplay=${u ? 1 : 0}&loop=${l ? 1 : 0}&controls=${h ? 1 : 0}&muted=${d ? 1 : 0}`;
     return p;
-  }, M = (p) => p.includes("youtube.com") || p.includes("youtu.be"), y = (p) => p.endsWith(".mp4");
+  }, _ = (p) => p.includes("youtube.com") || p.includes("youtu.be"), y = (p) => p.endsWith(".mp4");
   return /* @__PURE__ */ c.jsxs(c.Fragment, { children: [
     /* @__PURE__ */ c.jsx(J, {}),
     /* @__PURE__ */ c.jsxs(ye, { children: [
@@ -2090,7 +2106,7 @@ function dt({ data: s }) {
               ref: (C) => w.current[b] = C,
               className: g[b] ? "overlap" : "",
               style: { zIndex: k(b) },
-              children: M(p.media) ? /* @__PURE__ */ c.jsx(
+              children: _(p.media) ? /* @__PURE__ */ c.jsx(
                 "iframe",
                 {
                   title: "YouTube video",

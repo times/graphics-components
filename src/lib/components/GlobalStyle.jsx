@@ -4,9 +4,25 @@ import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
    @media (prefers-color-scheme: dark) {
-    body {
-      background-color: #121212;
-      color: #ccc;
+        body {
+        background-color: #121212 !important;
+        color: #ccc !important;
+        }
+        .Page {
+            background-color: #333;
+            padding-top: 5rem;
+        } 
+        .MainContainer {
+            background-color: #121212;
+        }
+        #article-main{
+            border-color: rgb(49 49 49) black !important;
+        }
+        @media (min-width: 520px) {
+            .MainContainer {
+                border-right: 1px solid rgb(0 0 0 / 50%);
+                border-left: 1px solid rgb(0 0 0 / 50%);
+            }
     }
   }
 `;

@@ -239,9 +239,25 @@ React keys must be passed directly to JSX without using spread:
     }
 `,ce=C.memo(s=>{const e=C.useRef(null),[t,i]=C.useState(!1),[r,n]=C.useState(.5),[o,l]=C.useState(0),[u,h]=C.useState(k(0)),[d,f]=C.useState(!1),m=Me(e,s),g=C.useRef(null),{onPlay:x,onReady:P}=s,w=C.useCallback(()=>{m.playPause()},[m]);C.useEffect(()=>{if(!m)return;m.setVolume(r);const y=()=>({media:m.getMediaElement(),peaks:m.exportPeaks()}),p=[m.on("ready",()=>{P&&P(y()),l(k(Math.round(m.getDuration()*1e3))),i(m.isPlaying())}),m.on("play",()=>{x&&x(b=>{const E=y();return!b||b.media!==E.media?(b&&(b.media.pause(),b.media.currentTime=0),E):b}),i(!0)}),m.on("audioprocess",()=>{h(k(Math.round(m.getCurrentTime()*1e3)))}),m.on("pause",()=>i(!1))];return()=>{p.forEach(b=>b())}},[m,x,P,r]),C.useEffect(()=>{const y=g.current;y.style.setProperty("--value",y.value),y.style.setProperty("--min",y.min===""?"0":y.min),y.style.setProperty("--max",y.max===""?"100":y.max),y.style.setProperty("--value",y.value)},[]);function k(y){var p=Math.floor(y/6e4),b=(y%6e4/1e3).toFixed(0);return p+":"+(b<10?"0":"")+b}function S(y){n(y.target.value);const p=y.target;p.style.setProperty("--value",p.value),p.style.setProperty("--min",p.min===""?"0":p.min),p.style.setProperty("--max",p.max===""?"100":p.max),p.style.setProperty("--value",p.value)}function N(){f(!d)}return c.jsxs(_e,{children:[t?c.jsx("img",{className:"play-icon",src:"https://extras.thetimes.co.uk/web/2025/times-knife-crime-audio/assets/pause.png",onClick:w}):c.jsx("img",{className:"play-icon",src:"https://extras.thetimes.co.uk/web/2025/times-knife-crime-audio/assets/play.png",onClick:w}),c.jsx("div",{ref:e,style:{width:"100%"}}),c.jsxs("p",{className:"waveform-time",children:[c.jsx("span",{children:u})," / ",c.jsx("span",{children:o})]}),c.jsxs("div",{className:"volume-container",children:[c.jsx("img",{className:"volume-icon",src:"https://extras.thetimes.co.uk/web/2025/times-knife-crime-audio/assets/volume.png",onClick:N}),c.jsx("input",{ref:g,className:"styled-slider slider-progress",type:"range",id:"volume-slider",min:0,max:1,step:.1,value:r,onChange:S,style:{opacity:d?1:0,pointerEvents:d?"all":"none"}})]})]})}),q=R.createGlobalStyle`
    @media (prefers-color-scheme: dark) {
-    body {
-      background-color: #121212;
-      color: #ccc;
+        body {
+        background-color: #121212 !important;
+        color: #ccc !important;
+        }
+        .Page {
+            background-color: #333;
+            padding-top: 5rem;
+        } 
+        .MainContainer {
+            background-color: #121212;
+        }
+        #article-main{
+            border-color: rgb(49 49 49) black !important;
+        }
+        @media (min-width: 520px) {
+            .MainContainer {
+                border-right: 1px solid rgb(0 0 0 / 50%);
+                border-left: 1px solid rgb(0 0 0 / 50%);
+            }
     }
   }
 `,de=R.div`
