@@ -3,8 +3,12 @@ import styled from 'styled-components';
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
-  
-
+   @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #121212;
+      color: #ccc;
+    }
+  }
 `;
 
 export const Container = styled.div`
@@ -13,7 +17,6 @@ export const Container = styled.div`
 `;
 
 export const CardContainer = styled.div`
-
     background-color: black;
     color: white;
     margin: 40px 0;

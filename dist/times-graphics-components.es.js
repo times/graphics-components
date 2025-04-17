@@ -1,5 +1,5 @@
 import ke, { useState as N, useEffect as H, memo as Ce, useRef as X, useCallback as Ee } from "react";
-import R, { createGlobalStyle as Se, css as ee } from "styled-components";
+import R, { createGlobalStyle as Se, css as te } from "styled-components";
 var G = { exports: {} }, F = {};
 /**
  * @license React
@@ -151,7 +151,7 @@ function Re() {
         "Accessing element.ref was removed in React 19. ref is now a regular prop. It will be removed from the JSX Element type in a future release."
       )), a = this.props.ref, a !== void 0 ? a : null;
     }
-    function h(a, v, S, j, $, A, Z, Q) {
+    function h(a, v, S, j, $, A, Q, K) {
       return S = A.ref, a = {
         $$typeof: g,
         type: a,
@@ -175,15 +175,15 @@ function Re() {
         configurable: !1,
         enumerable: !1,
         writable: !0,
-        value: Z
+        value: Q
       }), Object.defineProperty(a, "_debugTask", {
         configurable: !1,
         enumerable: !1,
         writable: !0,
-        value: Q
+        value: K
       }), Object.freeze && (Object.freeze(a.props), Object.freeze(a)), a;
     }
-    function c(a, v, S, j, $, A, Z, Q) {
+    function d(a, v, S, j, $, A, Q, K) {
       var _ = v.children;
       if (_ !== void 0)
         if (j)
@@ -216,8 +216,8 @@ React keys must be passed directly to JSX without using spread:
       }
       if (_ = null, S !== void 0 && (t(S), _ = "" + S), o(v) && (t(v.key), _ = "" + v.key), "key" in v) {
         S = {};
-        for (var K in v)
-          K !== "key" && (S[K] = v[K]);
+        for (var ee in v)
+          ee !== "key" && (S[ee] = v[ee]);
       } else S = v;
       return _ && l(
         S,
@@ -229,14 +229,14 @@ React keys must be passed directly to JSX without using spread:
         $,
         r(),
         S,
-        Z,
-        Q
+        Q,
+        K
       );
     }
     function f(a) {
       typeof a == "object" && a !== null && a.$$typeof === g && a._store && (a._store.validated = 1);
     }
-    var m = ke, g = Symbol.for("react.transitional.element"), x = Symbol.for("react.portal"), P = Symbol.for("react.fragment"), w = Symbol.for("react.strict_mode"), k = Symbol.for("react.profiler"), E = Symbol.for("react.consumer"), M = Symbol.for("react.context"), y = Symbol.for("react.forward_ref"), p = Symbol.for("react.suspense"), b = Symbol.for("react.suspense_list"), C = Symbol.for("react.memo"), O = Symbol.for("react.lazy"), D = Symbol.for("react.activity"), L = Symbol.for("react.client.reference"), W = m.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, B = Object.prototype.hasOwnProperty, xe = Array.isArray, J = console.createTask ? console.createTask : function() {
+    var m = ke, g = Symbol.for("react.transitional.element"), x = Symbol.for("react.portal"), P = Symbol.for("react.fragment"), w = Symbol.for("react.strict_mode"), k = Symbol.for("react.profiler"), E = Symbol.for("react.consumer"), M = Symbol.for("react.context"), y = Symbol.for("react.forward_ref"), p = Symbol.for("react.suspense"), b = Symbol.for("react.suspense_list"), C = Symbol.for("react.memo"), O = Symbol.for("react.lazy"), D = Symbol.for("react.activity"), L = Symbol.for("react.client.reference"), W = m.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, B = Object.prototype.hasOwnProperty, xe = Array.isArray, Z = console.createTask ? console.createTask : function() {
       return null;
     };
     m = {
@@ -247,10 +247,10 @@ React keys must be passed directly to JSX without using spread:
     var oe, ae = {}, le = m["react-stack-bottom-frame"].bind(
       m,
       n
-    )(), ce = J(i(n)), de = {};
+    )(), ce = Z(i(n)), de = {};
     q.Fragment = P, q.jsx = function(a, v, S, j, $) {
       var A = 1e4 > W.recentlyCreatedOwnerStacks++;
-      return c(
+      return d(
         a,
         v,
         S,
@@ -258,11 +258,11 @@ React keys must be passed directly to JSX without using spread:
         j,
         $,
         A ? Error("react-stack-top-frame") : le,
-        A ? J(i(a)) : ce
+        A ? Z(i(a)) : ce
       );
     }, q.jsxs = function(a, v, S, j, $) {
       var A = 1e4 > W.recentlyCreatedOwnerStacks++;
-      return c(
+      return d(
         a,
         v,
         S,
@@ -270,7 +270,7 @@ React keys must be passed directly to JSX without using spread:
         j,
         $,
         A ? Error("react-stack-top-frame") : le,
-        A ? J(i(a)) : ce
+        A ? Z(i(a)) : ce
       );
     };
   }()), q;
@@ -279,27 +279,27 @@ var pe;
 function Te() {
   return pe || (pe = 1, process.env.NODE_ENV === "production" ? G.exports = Pe() : G.exports = Re()), G.exports;
 }
-var d = Te();
+var c = Te();
 function T(s, e, t, i) {
   return new (t || (t = Promise))(function(r, n) {
     function o(h) {
       try {
         u(i.next(h));
-      } catch (c) {
-        n(c);
+      } catch (d) {
+        n(d);
       }
     }
     function l(h) {
       try {
         u(i.throw(h));
-      } catch (c) {
-        n(c);
+      } catch (d) {
+        n(d);
       }
     }
     function u(h) {
-      var c;
-      h.done ? r(h.value) : (c = h.value, c instanceof t ? c : new t(function(f) {
-        f(c);
+      var d;
+      h.done ? r(h.value) : (d = h.value, d instanceof t ? d : new t(function(f) {
+        f(d);
       })).then(o, l);
     }
     u((i = i.apply(s, e || [])).next());
@@ -375,16 +375,16 @@ const _e = { fetchBlob: function(s, e, t) {
           u += (f == null ? void 0 : f.length) || 0;
           const m = Math.round(u / l * 100);
           n(m);
-        }), c = () => T(this, void 0, void 0, function* () {
+        }), d = () => T(this, void 0, void 0, function* () {
           let f;
           try {
             f = yield o.read();
           } catch {
             return;
           }
-          f.done || (h(f.value), yield c());
+          f.done || (h(f.value), yield d());
         });
-        c();
+        d();
       });
     }(i.clone(), e), i.blob();
   });
@@ -520,7 +520,7 @@ class I extends V {
       const u = matchMedia("(pointer: coarse)").matches;
       let h = () => {
       };
-      const c = (f) => {
+      const d = (f) => {
         if (f.button !== o) return;
         f.preventDefault(), f.stopPropagation();
         let m = f.clientX, g = f.clientY, x = !1;
@@ -550,8 +550,8 @@ class I extends V {
           }, 10);
         };
       };
-      return e.addEventListener("pointerdown", c), () => {
-        h(), e.removeEventListener("pointerdown", c);
+      return e.addEventListener("pointerdown", d), () => {
+        h(), e.removeEventListener("pointerdown", d);
       };
     }(this.wrapper, (e, t, i) => {
       this.emit("drag", Math.max(0, Math.min(1, i / this.wrapper.getBoundingClientRect().width)));
@@ -699,14 +699,14 @@ class I extends V {
     return Math.max(1, window.devicePixelRatio || 1);
   }
   renderBarWaveform(e, t, i, r) {
-    const n = e[0], o = e[1] || e[0], l = n.length, { width: u, height: h } = i.canvas, c = h / 2, f = this.getPixelRatio(), m = t.barWidth ? t.barWidth * f : 1, g = t.barGap ? t.barGap * f : t.barWidth ? m / 2 : 0, x = t.barRadius || 0, P = u / (m + g) / l, w = x && "roundRect" in i ? "roundRect" : "rect";
+    const n = e[0], o = e[1] || e[0], l = n.length, { width: u, height: h } = i.canvas, d = h / 2, f = this.getPixelRatio(), m = t.barWidth ? t.barWidth * f : 1, g = t.barGap ? t.barGap * f : t.barWidth ? m / 2 : 0, x = t.barRadius || 0, P = u / (m + g) / l, w = x && "roundRect" in i ? "roundRect" : "rect";
     i.beginPath();
     let k = 0, E = 0, M = 0;
     for (let y = 0; y <= l; y++) {
       const p = Math.round(y * P);
       if (p > k) {
-        const O = Math.round(E * c * r), D = O + Math.round(M * c * r) || 1;
-        let L = c - O;
+        const O = Math.round(E * d * r), D = O + Math.round(M * d * r) || 1;
+        let L = d - O;
         t.barAlign === "top" ? L = 0 : t.barAlign === "bottom" && (L = h - D), i[w](k * (m + g), L, m, D, x), k = p, E = 0, M = 0;
       }
       const b = Math.abs(n[y] || 0), C = Math.abs(o[y] || 0);
@@ -716,19 +716,19 @@ class I extends V {
   }
   renderLineWaveform(e, t, i, r) {
     const n = (o) => {
-      const l = e[o] || e[0], u = l.length, { height: h } = i.canvas, c = h / 2, f = i.canvas.width / u;
-      i.moveTo(0, c);
+      const l = e[o] || e[0], u = l.length, { height: h } = i.canvas, d = h / 2, f = i.canvas.width / u;
+      i.moveTo(0, d);
       let m = 0, g = 0;
       for (let x = 0; x <= u; x++) {
         const P = Math.round(x * f);
         if (P > m) {
-          const k = c + (Math.round(g * c * r) || 1) * (o === 0 ? -1 : 1);
+          const k = d + (Math.round(g * d * r) || 1) * (o === 0 ? -1 : 1);
           i.lineTo(m, k), m = P, g = 0;
         }
         const w = Math.abs(l[x] || 0);
         w > g && (g = w);
       }
-      i.lineTo(m, c);
+      i.lineTo(m, d);
     };
     i.beginPath(), n(0), n(1), i.fill(), i.closePath();
   }
@@ -744,31 +744,31 @@ class I extends V {
   renderSingleCanvas(e, t, i, r, n, o, l) {
     const u = this.getPixelRatio(), h = document.createElement("canvas");
     h.width = Math.round(i * u), h.height = Math.round(r * u), h.style.width = `${i}px`, h.style.height = `${r}px`, h.style.left = `${Math.round(n)}px`, o.appendChild(h);
-    const c = h.getContext("2d");
-    if (this.renderWaveform(e, t, c), h.width > 0 && h.height > 0) {
+    const d = h.getContext("2d");
+    if (this.renderWaveform(e, t, d), h.width > 0 && h.height > 0) {
       const f = h.cloneNode(), m = f.getContext("2d");
       m.drawImage(h, 0, 0), m.globalCompositeOperation = "source-in", m.fillStyle = this.convertColorValues(t.progressColor), m.fillRect(0, 0, h.width, h.height), l.appendChild(f);
     }
   }
   renderMultiCanvas(e, t, i, r, n, o) {
     const l = this.getPixelRatio(), { clientWidth: u } = this.scrollContainer, h = i / l;
-    let c = Math.min(I.MAX_CANVAS_WIDTH, u, h), f = {};
-    if (c === 0) return;
+    let d = Math.min(I.MAX_CANVAS_WIDTH, u, h), f = {};
+    if (d === 0) return;
     if (t.barWidth || t.barGap) {
       const w = t.barWidth || 0.5, k = w + (t.barGap || w / 2);
-      c % k != 0 && (c = Math.floor(c / k) * k);
+      d % k != 0 && (d = Math.floor(d / k) * k);
     }
     const m = (w) => {
       if (w < 0 || w >= g || f[w]) return;
       f[w] = !0;
-      const k = w * c, E = Math.min(h - k, c);
+      const k = w * d, E = Math.min(h - k, d);
       if (E <= 0) return;
       const M = e.map((y) => {
         const p = Math.floor(k / h * y.length), b = Math.floor((k + E) / h * y.length);
         return y.slice(p, b);
       });
       this.renderSingleCanvas(M, t, E, r, k, n, o);
-    }, g = Math.ceil(h / c);
+    }, g = Math.ceil(h / d);
     if (!this.isScrollable) {
       for (let w = 0; w < g; w++) m(w);
       return;
@@ -783,12 +783,12 @@ class I extends V {
     }
   }
   renderChannel(e, t, i, r) {
-    var { overlay: n } = t, o = function(c, f) {
+    var { overlay: n } = t, o = function(d, f) {
       var m = {};
-      for (var g in c) Object.prototype.hasOwnProperty.call(c, g) && f.indexOf(g) < 0 && (m[g] = c[g]);
-      if (c != null && typeof Object.getOwnPropertySymbols == "function") {
+      for (var g in d) Object.prototype.hasOwnProperty.call(d, g) && f.indexOf(g) < 0 && (m[g] = d[g]);
+      if (d != null && typeof Object.getOwnPropertySymbols == "function") {
         var x = 0;
-        for (g = Object.getOwnPropertySymbols(c); x < g.length; x++) f.indexOf(g[x]) < 0 && Object.prototype.propertyIsEnumerable.call(c, g[x]) && (m[g[x]] = c[g[x]]);
+        for (g = Object.getOwnPropertySymbols(d); x < g.length; x++) f.indexOf(g[x]) < 0 && Object.prototype.propertyIsEnumerable.call(d, g[x]) && (m[g[x]] = d[g[x]]);
       }
       return m;
     }(t, ["overlay"]);
@@ -833,12 +833,12 @@ class I extends V {
       o + 30 > u ? this.scrollContainer.scrollLeft += 30 : o - 30 < l && (this.scrollContainer.scrollLeft -= 30);
     else {
       (o < l || o > u) && (this.scrollContainer.scrollLeft = o - (this.options.autoCenter ? h : 0));
-      const c = o - i - h;
-      t && this.options.autoCenter && c > 0 && (this.scrollContainer.scrollLeft += Math.min(c, 10));
+      const d = o - i - h;
+      t && this.options.autoCenter && d > 0 && (this.scrollContainer.scrollLeft += Math.min(d, 10));
     }
     {
-      const c = this.scrollContainer.scrollLeft, f = c / r, m = (c + n) / r;
-      this.emit("scroll", f, m, c, c + n);
+      const d = this.scrollContainer.scrollLeft, f = d / r, m = (d + n) / r;
+      this.emit("scroll", f, m, d, d + n);
     }
   }
   renderProgress(e, t) {
@@ -882,7 +882,7 @@ class Oe extends V {
     this.unsubscribe();
   }
 }
-class te extends V {
+class ie extends V {
   constructor(e = new AudioContext()) {
     super(), this.bufferNode = null, this.playStartTime = 0, this.playedDuration = 0, this._muted = !1, this._playbackRate = 1, this._duration = void 0, this.buffer = null, this.currentSrc = "", this.paused = !0, this.crossOrigin = null, this.seeking = !1, this.autoplay = !1, this.addEventListener = this.on, this.removeEventListener = this.un, this.audioContext = e, this.gainNode = this.audioContext.createGain(), this.gainNode.connect(this.audioContext.destination);
   }
@@ -986,7 +986,7 @@ class Y extends Me {
     return new Y(e);
   }
   constructor(e) {
-    const t = e.media || (e.backend === "WebAudio" ? new te() : void 0);
+    const t = e.media || (e.backend === "WebAudio" ? new ie() : void 0);
     super({ media: t, mediaControls: e.mediaControls, autoplay: e.autoplay, playbackRate: e.audioRate }), this.plugins = [], this.decodedData = null, this.stopAtPosition = null, this.subscriptions = [], this.mediaSubscriptions = [], this.abortController = null, this.options = Object.assign({}, Ne, e), this.timer = new Oe();
     const i = t ? void 0 : this.getMediaElement();
     this.renderer = new I(this.options, i), this.initPlayerEvents(), this.initRendererEvents(), this.initTimerEvents(), this.initPlugins();
@@ -1097,7 +1097,7 @@ class Y extends Me {
       if (this.emit("load", e), !this.options.media && this.isPlaying() && this.pause(), this.decodedData = null, this.stopAtPosition = null, !t && !i) {
         const l = this.options.fetchParams || {};
         window.AbortController && !l.signal && (this.abortController = new AbortController(), l.signal = (n = this.abortController) === null || n === void 0 ? void 0 : n.signal);
-        const u = (c) => this.emit("loading", c);
+        const u = (d) => this.emit("loading", d);
         t = yield _e.fetchBlob(e, u, l);
         const h = this.options.blobMimeType;
         h && (t = new Blob([t], { type: h }));
@@ -1109,7 +1109,7 @@ class Y extends Me {
       });
       if (!e && !t) {
         const l = this.getMediaElement();
-        l instanceof te && (l.duration = o);
+        l instanceof ie && (l.duration = o);
       }
       if (i) this.decodedData = U.createBuffer(i, o || 0);
       else if (t) {
@@ -1149,8 +1149,8 @@ class Y extends Me {
     const r = Math.min(e, this.decodedData.numberOfChannels), n = [];
     for (let o = 0; o < r; o++) {
       const l = this.decodedData.getChannelData(o), u = [], h = l.length / t;
-      for (let c = 0; c < t; c++) {
-        const f = l.slice(Math.floor(c * h), Math.ceil((c + 1) * h));
+      for (let d = 0; d < t; d++) {
+        const f = l.slice(Math.floor(d * h), Math.ceil((d + 1) * h));
         let m = 0;
         for (let g = 0; g < f.length; g++) {
           const x = f[g];
@@ -1181,7 +1181,7 @@ class Y extends Me {
     return T(this, void 0, void 0, function* () {
       e != null && this.setTime(e);
       const r = yield i.play.call(this);
-      return t != null && (this.media instanceof te ? this.media.stopAt(t) : this.stopAtPosition = t), r;
+      return t != null && (this.media instanceof ie ? this.media.stopAt(t) : this.stopAtPosition = t), r;
     });
   }
   playPause() {
@@ -1385,7 +1385,7 @@ const Ae = (s, e) => {
 `, Le = Ce((s) => {
   const e = X(null), [t, i] = N(!1), [r, n] = N(0.5), [o, l] = N(0), [u, h] = N(
     k(0)
-  ), [c, f] = N(!1), m = Ae(e, s), g = X(null), { onPlay: x, onReady: P } = s, w = Ee(() => {
+  ), [d, f] = N(!1), m = Ae(e, s), g = X(null), { onPlay: x, onReady: P } = s, w = Ee(() => {
     m.playPause();
   }, [m]);
   H(() => {
@@ -1434,17 +1434,17 @@ const Ae = (s, e) => {
     p.style.setProperty("--value", p.value), p.style.setProperty("--min", p.min === "" ? "0" : p.min), p.style.setProperty("--max", p.max === "" ? "100" : p.max), p.style.setProperty("--value", p.value);
   }
   function M() {
-    f(!c);
+    f(!d);
   }
-  return /* @__PURE__ */ d.jsxs(De, { children: [
-    t ? /* @__PURE__ */ d.jsx(
+  return /* @__PURE__ */ c.jsxs(De, { children: [
+    t ? /* @__PURE__ */ c.jsx(
       "img",
       {
         className: "play-icon",
         src: "https://extras.thetimes.co.uk/web/2025/times-knife-crime-audio/assets/pause.png",
         onClick: w
       }
-    ) : /* @__PURE__ */ d.jsx(
+    ) : /* @__PURE__ */ c.jsx(
       "img",
       {
         className: "play-icon",
@@ -1452,14 +1452,14 @@ const Ae = (s, e) => {
         onClick: w
       }
     ),
-    /* @__PURE__ */ d.jsx("div", { ref: e, style: { width: "100%" } }),
-    /* @__PURE__ */ d.jsxs("p", { className: "waveform-time", children: [
-      /* @__PURE__ */ d.jsx("span", { children: u }),
+    /* @__PURE__ */ c.jsx("div", { ref: e, style: { width: "100%" } }),
+    /* @__PURE__ */ c.jsxs("p", { className: "waveform-time", children: [
+      /* @__PURE__ */ c.jsx("span", { children: u }),
       " / ",
-      /* @__PURE__ */ d.jsx("span", { children: o })
+      /* @__PURE__ */ c.jsx("span", { children: o })
     ] }),
-    /* @__PURE__ */ d.jsxs("div", { className: "volume-container", children: [
-      /* @__PURE__ */ d.jsx(
+    /* @__PURE__ */ c.jsxs("div", { className: "volume-container", children: [
+      /* @__PURE__ */ c.jsx(
         "img",
         {
           className: "volume-icon",
@@ -1467,7 +1467,7 @@ const Ae = (s, e) => {
           onClick: M
         }
       ),
-      /* @__PURE__ */ d.jsx(
+      /* @__PURE__ */ c.jsx(
         "input",
         {
           ref: g,
@@ -1480,21 +1480,24 @@ const Ae = (s, e) => {
           value: r,
           onChange: E,
           style: {
-            opacity: c ? 1 : 0,
-            pointerEvents: c ? "all" : "none"
+            opacity: d ? 1 : 0,
+            pointerEvents: d ? "all" : "none"
           }
         }
       )
     ] })
   ] });
-}), se = Se`
-  
-
+}), J = Se`
+   @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #121212;
+      color: #ccc;
+    }
+  }
 `, ye = R.div`
     margin-block-start: 1em;
     margin-block-end: 100px;
 `, $e = R.div`
-
     background-color: black;
     color: white;
     margin: 40px 0;
@@ -1550,21 +1553,21 @@ const Ae = (s, e) => {
     }
 `;
 function lt({ data: s }) {
-  return /* @__PURE__ */ d.jsxs(d.Fragment, { children: [
-    /* @__PURE__ */ d.jsx(se, {}),
-    /* @__PURE__ */ d.jsxs($e, { children: [
-      /* @__PURE__ */ d.jsxs("div", { className: "card-image--container", children: [
-        /* @__PURE__ */ d.jsx(
+  return /* @__PURE__ */ c.jsxs(c.Fragment, { children: [
+    /* @__PURE__ */ c.jsx(J, {}),
+    /* @__PURE__ */ c.jsxs($e, { children: [
+      /* @__PURE__ */ c.jsxs("div", { className: "card-image--container", children: [
+        /* @__PURE__ */ c.jsx(
           "img",
           {
             src: `https://extras.thetimes.co.uk/web/2025/times-knife-crime-audio/assets/${s.imgSrc}.jpg`,
             className: "card-image"
           }
         ),
-        /* @__PURE__ */ d.jsx("p", { className: "card-name", children: s.name })
+        /* @__PURE__ */ c.jsx("p", { className: "card-name", children: s.name })
       ] }),
-      /* @__PURE__ */ d.jsx("p", { className: "card-quote", children: s.quote }),
-      /* @__PURE__ */ d.jsx(
+      /* @__PURE__ */ c.jsx("p", { className: "card-quote", children: s.quote }),
+      /* @__PURE__ */ c.jsx(
         Le,
         {
           height: 100,
@@ -1582,7 +1585,7 @@ function lt({ data: s }) {
     ] })
   ] });
 }
-var ie = {}, re = {}, fe;
+var re = {}, ne = {}, fe;
 function We() {
   return fe || (fe = 1, function(s) {
     Object.defineProperty(s, "__esModule", {
@@ -1694,9 +1697,9 @@ function We() {
       }
     };
     s.default = i;
-  }(re)), re;
+  }(ne)), ne;
 }
-var ne = {}, ge;
+var se = {}, ge;
 function ze() {
   return ge || (ge = 1, function(s) {
     Object.defineProperty(s, "__esModule", {
@@ -1711,7 +1714,7 @@ function ze() {
       "desktop-wide": "1320px"
     };
     s.default = e;
-  }(ne)), ne;
+  }(se)), se;
 }
 var be;
 function Ie() {
@@ -1733,7 +1736,7 @@ function Ie() {
     function i(r) {
       return r && r.__esModule ? r : { default: r };
     }
-  }(ie)), ie;
+  }(re)), re;
 }
 Ie();
 const Be = R.div`
@@ -1757,9 +1760,9 @@ const Be = R.div`
 
 `;
 function Fe({ headline: s, standfirst: e }) {
-  return /* @__PURE__ */ d.jsxs(Be, { children: [
-    s && /* @__PURE__ */ d.jsx("h1", { className: "headline", children: s }),
-    e && /* @__PURE__ */ d.jsx("p", { className: "standfirst", children: e })
+  return /* @__PURE__ */ c.jsxs(Be, { children: [
+    s && /* @__PURE__ */ c.jsx("h1", { className: "headline", children: s }),
+    e && /* @__PURE__ */ c.jsx("p", { className: "standfirst", children: e })
   ] });
 }
 const qe = R.div`
@@ -1807,7 +1810,7 @@ function Ye({
       l.target.offsetTop + l.target.offsetHeight - 20
     ]);
   }
-  const o = s.map((l) => /* @__PURE__ */ d.jsx(
+  const o = s.map((l) => /* @__PURE__ */ c.jsx(
     He,
     {
       src: `https://nuk-tnl-editorial-prod-staticassets.s3.amazonaws.com/2024/times-image-grid/assets/${l.imgSrc}.jpg`,
@@ -1819,7 +1822,7 @@ function Ye({
     },
     l.id
   ));
-  return /* @__PURE__ */ d.jsx(qe, { children: o });
+  return /* @__PURE__ */ c.jsx(qe, { children: o });
 }
 const Ve = R.div`
     position: absolute;
@@ -1912,14 +1915,14 @@ function Ge({
   function o() {
     r(!1), e(null);
   }
-  return /* @__PURE__ */ d.jsxs(
+  return /* @__PURE__ */ c.jsxs(
     Ve,
     {
       showTooltip: i,
       tooltipPos: t,
       isImageInLastRow: n,
       children: [
-        /* @__PURE__ */ d.jsx(
+        /* @__PURE__ */ c.jsx(
           "img",
           {
             className: "tooltip-image",
@@ -1927,11 +1930,11 @@ function Ge({
             alt: s.name
           }
         ),
-        /* @__PURE__ */ d.jsxs("div", { className: "tooltip-content", children: [
-          /* @__PURE__ */ d.jsx("h3", { children: s.name }),
-          /* @__PURE__ */ d.jsx("p", { children: s.copy })
+        /* @__PURE__ */ c.jsxs("div", { className: "tooltip-content", children: [
+          /* @__PURE__ */ c.jsx("h3", { children: s.name }),
+          /* @__PURE__ */ c.jsx("p", { children: s.copy })
         ] }),
-        /* @__PURE__ */ d.jsx("button", { className: "tooltip-close", onClick: o, children: /* @__PURE__ */ d.jsx("img", { src: "https://nuk-tnl-editorial-prod-staticassets.s3.amazonaws.com/2023/st-grid-jeremy-clarkson/assets/x.svg" }) })
+        /* @__PURE__ */ c.jsx("button", { className: "tooltip-close", onClick: o, children: /* @__PURE__ */ c.jsx("img", { src: "https://nuk-tnl-editorial-prod-staticassets.s3.amazonaws.com/2023/st-grid-jeremy-clarkson/assets/x.svg" }) })
       ]
     }
   );
@@ -1939,17 +1942,17 @@ function Ge({
 function ct({ data: s }) {
   const [e, t] = N(null), [i, r] = N(!1), [n, o] = N([0, 0]);
   let u = s.length - s.indexOf(e) <= 7;
-  return /* @__PURE__ */ d.jsxs(d.Fragment, { children: [
-    /* @__PURE__ */ d.jsx(se, {}),
-    /* @__PURE__ */ d.jsxs(ye, { children: [
-      /* @__PURE__ */ d.jsx(
+  return /* @__PURE__ */ c.jsxs(c.Fragment, { children: [
+    /* @__PURE__ */ c.jsx(J, {}),
+    /* @__PURE__ */ c.jsxs(ye, { children: [
+      /* @__PURE__ */ c.jsx(
         Fe,
         {
           headline: "Lorem ipsum dolor sit amet",
           standfirst: "Nulla vel augue ut erat efficitur scelerisque id vel tellus. Ut iaculis nulla sit amet lorem rutrum, ac luctus sem imperdiet"
         }
       ),
-      /* @__PURE__ */ d.jsx(
+      /* @__PURE__ */ c.jsx(
         Ye,
         {
           data: s,
@@ -1959,7 +1962,7 @@ function ct({ data: s }) {
           setTooltipPos: o
         }
       ),
-      /* @__PURE__ */ d.jsx(
+      /* @__PURE__ */ c.jsx(
         Ge,
         {
           clickedImage: e,
@@ -2043,7 +2046,7 @@ function dt({ data: s }) {
     videoLoop: l = !0,
     videoAutoplay: u = !0,
     videoControls: h = !1,
-    videoMute: c = !0
+    videoMute: d = !0
   } = s, [f, m] = N(0), [g, x] = N([]), P = X([]), w = X([]);
   H(() => {
     const p = new IntersectionObserver(
@@ -2066,95 +2069,100 @@ function dt({ data: s }) {
     var b;
     if (p.includes("youtube.com")) {
       const C = (b = p.split("v=")[1]) == null ? void 0 : b.split("&")[0];
-      return `https://www.youtube.com/embed/${C}?autoplay=${u ? 1 : 0}&loop=${l ? 1 : 0}&controls=${h ? 1 : 0}&mute=${c ? 1 : 0}&playlist=${C}`;
+      return `https://www.youtube.com/embed/${C}?autoplay=${u ? 1 : 0}&loop=${l ? 1 : 0}&controls=${h ? 1 : 0}&mute=${d ? 1 : 0}&playlist=${C}`;
     } else if (p.includes("vimeo.com"))
-      return `https://player.vimeo.com/video/${p.split("/").pop()}?autoplay=${u ? 1 : 0}&loop=${l ? 1 : 0}&controls=${h ? 1 : 0}&muted=${c ? 1 : 0}`;
+      return `https://player.vimeo.com/video/${p.split("/").pop()}?autoplay=${u ? 1 : 0}&loop=${l ? 1 : 0}&controls=${h ? 1 : 0}&muted=${d ? 1 : 0}`;
     return p;
   }, M = (p) => p.includes("youtube.com") || p.includes("youtu.be"), y = (p) => p.endsWith(".mp4");
-  return /* @__PURE__ */ d.jsxs(ye, { children: [
-    /* @__PURE__ */ d.jsx(
-      Ue,
-      {
-        style: {
-          height: n || "500px"
-        },
-        className: i === "edge-to-edge" ? "edge-to-edge" : i === "bleed" ? "bleed" : "",
-        children: /* @__PURE__ */ d.jsx(Xe, { children: e.map((p, b) => /* @__PURE__ */ d.jsx(
-          Je,
-          {
-            ref: (C) => w.current[b] = C,
-            className: g[b] ? "overlap" : "",
-            style: { zIndex: k(b) },
-            children: M(p.media) ? /* @__PURE__ */ d.jsx(
-              "iframe",
-              {
-                title: "YouTube video",
-                src: E(p.media),
-                frameBorder: "0",
-                allow: "autoplay; encrypted-media",
-                allowFullScreen: !0,
-                style: {
-                  objectFit: t,
-                  width: "100%",
-                  height: n || (i === "edge-to-edge" ? "100vh" : "100%"),
-                  borderRadius: r
-                }
-              }
-            ) : y(p.media) ? /* @__PURE__ */ d.jsx(
-              "video",
-              {
-                autoPlay: u,
-                loop: l,
-                controls: h,
-                muted: c,
-                style: {
-                  objectFit: t,
-                  width: "100%",
-                  height: n || "100%",
-                  borderRadius: r
-                },
-                children: /* @__PURE__ */ d.jsx(
-                  "source",
-                  {
-                    src: p.media,
-                    type: "video/mp4"
-                  }
-                )
-              }
-            ) : /* @__PURE__ */ d.jsx(
-              "img",
-              {
-                src: p.media,
-                alt: p.altText || "Slide image",
-                style: {
-                  objectFit: t,
-                  width: "100%",
-                  height: n || "100%",
-                  borderRadius: r
-                }
-              }
-            )
+  return /* @__PURE__ */ c.jsxs(c.Fragment, { children: [
+    /* @__PURE__ */ c.jsx(J, {}),
+    /* @__PURE__ */ c.jsxs(ye, { children: [
+      /* @__PURE__ */ c.jsx(
+        Ue,
+        {
+          style: {
+            height: n || "500px"
           },
-          b
-        )) })
-      }
-    ),
-    /* @__PURE__ */ d.jsx("div", { className: "scroller-sections", children: e.map((p, b) => /* @__PURE__ */ d.jsx(
-      Ze,
-      {
-        className: "trigger",
-        "data-index": b,
-        ref: (C) => P.current[b] = C,
-        children: p.text && /* @__PURE__ */ d.jsx(
-          Qe,
-          {
-            size: o,
-            dangerouslySetInnerHTML: { __html: p.text }
-          }
-        )
-      },
-      b
-    )) })
+          className: i === "edge-to-edge" ? "edge-to-edge" : i === "bleed" ? "bleed" : "",
+          children: /* @__PURE__ */ c.jsx(Xe, { children: e.map((p, b) => /* @__PURE__ */ c.jsx(
+            Je,
+            {
+              ref: (C) => w.current[b] = C,
+              className: g[b] ? "overlap" : "",
+              style: { zIndex: k(b) },
+              children: M(p.media) ? /* @__PURE__ */ c.jsx(
+                "iframe",
+                {
+                  title: "YouTube video",
+                  src: E(p.media),
+                  frameBorder: "0",
+                  allow: "autoplay; encrypted-media",
+                  allowFullScreen: !0,
+                  style: {
+                    objectFit: t,
+                    width: "100%",
+                    height: n || (i === "edge-to-edge" ? "100vh" : "100%"),
+                    borderRadius: r
+                  }
+                }
+              ) : y(p.media) ? /* @__PURE__ */ c.jsx(
+                "video",
+                {
+                  autoPlay: u,
+                  loop: l,
+                  controls: h,
+                  muted: d,
+                  style: {
+                    objectFit: t,
+                    width: "100%",
+                    height: n || "100%",
+                    borderRadius: r
+                  },
+                  children: /* @__PURE__ */ c.jsx(
+                    "source",
+                    {
+                      src: p.media,
+                      type: "video/mp4"
+                    }
+                  )
+                }
+              ) : /* @__PURE__ */ c.jsx(
+                "img",
+                {
+                  src: p.media,
+                  alt: p.altText || "Slide image",
+                  style: {
+                    objectFit: t,
+                    width: "100%",
+                    height: n || "100%",
+                    borderRadius: r
+                  }
+                }
+              )
+            },
+            b
+          )) })
+        }
+      ),
+      /* @__PURE__ */ c.jsx("div", { className: "scroller-sections", children: e.map((p, b) => /* @__PURE__ */ c.jsx(
+        Ze,
+        {
+          className: "trigger",
+          "data-index": b,
+          ref: (C) => P.current[b] = C,
+          children: p.text && /* @__PURE__ */ c.jsx(
+            Qe,
+            {
+              size: o,
+              dangerouslySetInnerHTML: {
+                __html: p.text
+              }
+            }
+          )
+        },
+        b
+      )) })
+    ] })
   ] });
 }
 const Ke = R.div`
@@ -2206,14 +2214,14 @@ const Ke = R.div`
     note: n = "",
     source: o = ""
   } = s;
-  return /* @__PURE__ */ d.jsxs(Ke, { children: [
-    t && /* @__PURE__ */ d.jsx("h3", { children: t }),
-    i && /* @__PURE__ */ d.jsx("h4", { children: i }),
-    r && /* @__PURE__ */ d.jsx("p", { className: "chart-title", children: r }),
+  return /* @__PURE__ */ c.jsxs(Ke, { children: [
+    t && /* @__PURE__ */ c.jsx("h3", { children: t }),
+    i && /* @__PURE__ */ c.jsx("h4", { children: i }),
+    r && /* @__PURE__ */ c.jsx("p", { className: "chart-title", children: r }),
     e,
-    (n || o) && /* @__PURE__ */ d.jsxs("div", { className: "note-container", children: [
-      n && /* @__PURE__ */ d.jsx("p", { className: "note", children: n }),
-      o && /* @__PURE__ */ d.jsx("p", { className: "note", children: o })
+    (n || o) && /* @__PURE__ */ c.jsxs("div", { className: "note-container", children: [
+      n && /* @__PURE__ */ c.jsx("p", { className: "note", children: n }),
+      o && /* @__PURE__ */ c.jsx("p", { className: "note", children: o })
     ] })
   ] });
 }, tt = R.div`
@@ -2270,15 +2278,15 @@ const Ke = R.div`
         width: 100%;
         height: auto;
         border: none;
-        ${({ $containerWidth: s, $fixedImgHeight: e, $imgBorderRadius: t }) => s === "edge-to-edge" ? ee`
+        ${({ $containerWidth: s, $fixedImgHeight: e, $imgBorderRadius: t }) => s === "edge-to-edge" ? te`
                     height: 100vh;
                     object-fit: cover;
                     border-radius: ${t};
-                ` : s === "bleed" || s === "inline" && e ? ee`
+                ` : s === "bleed" || s === "inline" && e ? te`
                     height: ${e};
                     object-fit: cover;
                     border-radius: ${t};
-                ` : ee`
+                ` : te`
                 border-radius: ${t};
             `}
     }
@@ -2302,7 +2310,7 @@ const Ke = R.div`
     videoControls: l = "false",
     videoMute: u = "true",
     text: h,
-    caption: c,
+    caption: d,
     altText: f
   } = s, w = st(
     r,
@@ -2310,14 +2318,14 @@ const Ke = R.div`
     n === !0,
     l === !0,
     u === !0
-  ), k = /* @__PURE__ */ d.jsxs(
+  ), k = /* @__PURE__ */ c.jsxs(
     nt,
     {
       $containerWidth: t,
       $fixedImgHeight: e,
       $imgBorderRadius: i,
       children: [
-        r.includes("youtube.com") || r.includes("vimeo.com") ? /* @__PURE__ */ d.jsx(
+        r.includes("youtube.com") || r.includes("vimeo.com") ? /* @__PURE__ */ c.jsx(
           "iframe",
           {
             src: w,
@@ -2325,7 +2333,7 @@ const Ke = R.div`
             allow: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",
             allowFullScreen: !0
           }
-        ) : r.endsWith(".mp4") ? /* @__PURE__ */ d.jsxs(
+        ) : r.endsWith(".mp4") ? /* @__PURE__ */ c.jsxs(
           "video",
           {
             autoPlay: o,
@@ -2333,8 +2341,8 @@ const Ke = R.div`
             controls: l,
             muted: u,
             children: [
-              /* @__PURE__ */ d.jsx("source", { src: r, type: "video/mp4" }),
-              /* @__PURE__ */ d.jsx(
+              /* @__PURE__ */ c.jsx("source", { src: r, type: "video/mp4" }),
+              /* @__PURE__ */ c.jsx(
                 "track",
                 {
                   kind: "captions",
@@ -2345,27 +2353,27 @@ const Ke = R.div`
               "Your browser does not support the video tag."
             ]
           }
-        ) : /* @__PURE__ */ d.jsx("img", { src: r, alt: f }),
-        h && /* @__PURE__ */ d.jsx(
+        ) : /* @__PURE__ */ c.jsx("img", { src: r, alt: f }),
+        h && /* @__PURE__ */ c.jsx(
           it,
           {
             $imgBorderRadius: i,
             dangerouslySetInnerHTML: { __html: h }
           }
         ),
-        c && /* @__PURE__ */ d.jsx(
+        d && /* @__PURE__ */ c.jsx(
           rt,
           {
             $imgBorderRadius: i,
-            dangerouslySetInnerHTML: { __html: c }
+            dangerouslySetInnerHTML: { __html: d }
           }
         )
       ]
     }
   );
-  return /* @__PURE__ */ d.jsxs(d.Fragment, { children: [
-    /* @__PURE__ */ d.jsx(se, {}),
-    /* @__PURE__ */ d.jsx(tt, { className: t, children: /* @__PURE__ */ d.jsx(et, { data: s, children: k }) })
+  return /* @__PURE__ */ c.jsxs(c.Fragment, { children: [
+    /* @__PURE__ */ c.jsx(J, {}),
+    /* @__PURE__ */ c.jsx(tt, { className: t, children: /* @__PURE__ */ c.jsx(et, { data: s, children: k }) })
   ] });
 };
 export {

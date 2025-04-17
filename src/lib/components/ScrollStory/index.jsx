@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Board, Section, SlidesContainer, SlidesWrapper, Text } from './styles';
-import { Container } from '../GlobalStyle';
+import { Container, GlobalStyle } from '../GlobalStyle';
 
 export default function ScrollStory({ data }) {
     const {
@@ -71,101 +71,107 @@ export default function ScrollStory({ data }) {
     const isMP4 = (url) => url.endsWith('.mp4');
 
     return (
-        <Container>
-            <SlidesWrapper
-                style={{
-                    height: fixedImgHeight || '500px',
-                }}
-                className={
-                    containerWidth === 'edge-to-edge'
-                        ? 'edge-to-edge'
-                        : containerWidth === 'bleed'
-                          ? 'bleed'
-                          : ''
-                }
-            >
-                <SlidesContainer>
-                    {slides.map((slide, i) => (
-                        <Board
-                            key={i}
-                            ref={(el) => (boardRefs.current[i] = el)}
-                            className={visibleSlides[i] ? 'overlap' : ''}
-                            style={{ zIndex: getZIndex(i) }}
-                        >
-                            {isYouTube(slide.media) ? (
-                                <iframe
-                                    title="YouTube video"
-                                    src={getEmbedUrl(slide.media)}
-                                    frameBorder="0"
-                                    allow="autoplay; encrypted-media"
-                                    allowFullScreen
-                                    style={{
-                                        objectFit: imgFit,
-                                        width: '100%',
-                                        height: fixedImgHeight
-                                            ? fixedImgHeight
-                                            : containerWidth === 'edge-to-edge'
-                                              ? '100vh'
-                                              : '100%',
-                                        borderRadius,
-                                    }}
-                                />
-                            ) : isMP4(slide.media) ? (
-                                <video
-                                    autoPlay={videoAutoplay}
-                                    loop={videoLoop}
-                                    controls={videoControls}
-                                    muted={videoMute}
-                                    style={{
-                                        objectFit: imgFit,
-                                        width: '100%',
-                                        height: fixedImgHeight
-                                            ? fixedImgHeight
-                                            : '100%',
-                                        borderRadius,
-                                    }}
-                                >
-                                    <source
-                                        src={slide.media}
-                                        type="video/mp4"
+        <>
+            <GlobalStyle />
+            <Container>
+                <SlidesWrapper
+                    style={{
+                        height: fixedImgHeight || '500px',
+                    }}
+                    className={
+                        containerWidth === 'edge-to-edge'
+                            ? 'edge-to-edge'
+                            : containerWidth === 'bleed'
+                              ? 'bleed'
+                              : ''
+                    }
+                >
+                    <SlidesContainer>
+                        {slides.map((slide, i) => (
+                            <Board
+                                key={i}
+                                ref={(el) => (boardRefs.current[i] = el)}
+                                className={visibleSlides[i] ? 'overlap' : ''}
+                                style={{ zIndex: getZIndex(i) }}
+                            >
+                                {isYouTube(slide.media) ? (
+                                    <iframe
+                                        title="YouTube video"
+                                        src={getEmbedUrl(slide.media)}
+                                        frameBorder="0"
+                                        allow="autoplay; encrypted-media"
+                                        allowFullScreen
+                                        style={{
+                                            objectFit: imgFit,
+                                            width: '100%',
+                                            height: fixedImgHeight
+                                                ? fixedImgHeight
+                                                : containerWidth ===
+                                                    'edge-to-edge'
+                                                  ? '100vh'
+                                                  : '100%',
+                                            borderRadius,
+                                        }}
                                     />
-                                </video>
-                            ) : (
-                                <img
-                                    src={slide.media}
-                                    alt={slide.altText || 'Slide image'}
-                                    style={{
-                                        objectFit: imgFit,
-                                        width: '100%',
-                                        height: fixedImgHeight
-                                            ? fixedImgHeight
-                                            : '100%',
-                                        borderRadius,
+                                ) : isMP4(slide.media) ? (
+                                    <video
+                                        autoPlay={videoAutoplay}
+                                        loop={videoLoop}
+                                        controls={videoControls}
+                                        muted={videoMute}
+                                        style={{
+                                            objectFit: imgFit,
+                                            width: '100%',
+                                            height: fixedImgHeight
+                                                ? fixedImgHeight
+                                                : '100%',
+                                            borderRadius,
+                                        }}
+                                    >
+                                        <source
+                                            src={slide.media}
+                                            type="video/mp4"
+                                        />
+                                    </video>
+                                ) : (
+                                    <img
+                                        src={slide.media}
+                                        alt={slide.altText || 'Slide image'}
+                                        style={{
+                                            objectFit: imgFit,
+                                            width: '100%',
+                                            height: fixedImgHeight
+                                                ? fixedImgHeight
+                                                : '100%',
+                                            borderRadius,
+                                        }}
+                                    />
+                                )}
+                            </Board>
+                        ))}
+                    </SlidesContainer>
+                </SlidesWrapper>
+
+                <div className="scroller-sections">
+                    {slides.map((slide, i) => (
+                        <Section
+                            key={i}
+                            className="trigger"
+                            data-index={i}
+                            ref={(el) => (triggersRef.current[i] = el)}
+                        >
+                            {slide.text && (
+                                <Text
+                                    size={fontSize}
+                                    dangerouslySetInnerHTML={{
+                                        __html: slide.text,
                                     }}
                                 />
                             )}
-                        </Board>
+                        </Section>
                     ))}
-                </SlidesContainer>
-            </SlidesWrapper>
-
-            <div className="scroller-sections">
-                {slides.map((slide, i) => (
-                    <Section
-                        key={i}
-                        className="trigger"
-                        data-index={i}
-                        ref={(el) => (triggersRef.current[i] = el)}
-                    >
-                        {slide.text && (
-                            <Text
-                                size={fontSize}
-                                dangerouslySetInnerHTML={{ __html: slide.text }}
-                            />
-                        )}
-                    </Section>
-                ))}
-            </div>
-        </Container>
+                </div>
+            </Container>
+        </>
     );
 }
