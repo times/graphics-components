@@ -5,12 +5,11 @@ import { createGlobalStyle } from 'styled-components';
 export const GlobalStyle = createGlobalStyle`
    @media (prefers-color-scheme: dark) {
         body {
-        background-color: #121212 !important;
+        background-color: #121212;
         color: #ccc !important;
         }
         .Page {
             background-color: #333;
-            padding-top: 5rem;
         } 
         .MainContainer {
             background-color: #121212;
