@@ -1489,15 +1489,23 @@ const Ae = (s, e) => {
   ] });
 }), J = Se`
    @media (prefers-color-scheme: dark) {
+        :root {
+            --color-bg: #121212;
+            --color-page: #1b1b1b;
+            --color-font: #b6b6b6;
+        }
         body {
-        background-color: #121212;
-        color: #ccc !important;
+            background-color: var(--color-bg);
+            color: var(--color-font) !important;
+        }
+        h1, h2, h3, h4, h5, h6, p {
+            color: var(--color-font) !important;
         }
         .Page {
-            background-color: #333;
+            background-color: var(--color-page);
         } 
         .MainContainer {
-            background-color: #121212;
+            background-color: var(--color-bg);
         }
         #article-main{
             border-color: rgb(49 49 49) black !important;
@@ -1506,9 +1514,8 @@ const Ae = (s, e) => {
             .MainContainer {
                 border-right: 1px solid rgb(0 0 0 / 50%);
                 border-left: 1px solid rgb(0 0 0 / 50%);
-            }
+        }    
     }
-  }
 `, ye = R.div`
     margin-block-start: 1em;
     margin-block-end: 100px;
@@ -1857,6 +1864,10 @@ const Ve = R.div`
 
     background-color: #ffffff;
 
+    @media (prefers-color-scheme: dark) {
+        background-color: #1b1b1b;
+    }
+
     font-family: 'RobotoRegular', sans-serif;
     font-size: 1.6rem;
 
@@ -2046,6 +2057,9 @@ const Ue = R.div`
     padding: 1rem;
     max-width: 600px;
     background: white;
+    @media (prefers-color-scheme: dark) {
+        background-color: #1b1b1b;
+    }
     z-index: 1;
     font-size: 18px;
     line-height: 30px;

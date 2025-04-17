@@ -65,6 +65,9 @@ export const Text = styled.p`
     padding: 1rem;
     max-width: 600px;
     background: white;
+    @media (prefers-color-scheme: dark) {
+        background-color: #1b1b1b;
+    }
     z-index: 1;
     font-size: 18px;
     line-height: 30px;

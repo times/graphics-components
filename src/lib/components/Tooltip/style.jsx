@@ -21,6 +21,10 @@ export const TooltipContainer = styled.div`
 
     background-color: #ffffff;
 
+    @media (prefers-color-scheme: dark) {
+        background-color: #1b1b1b;
+    }
+
     font-family: 'RobotoRegular', sans-serif;
     font-size: 1.6rem;
 

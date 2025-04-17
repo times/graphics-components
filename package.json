@@ -1,6 +1,6 @@
 {
     "name": "@times/graphics-components",
-    "version": "0.0.21",
+    "version": "0.0.22",
     "type": "module",
     "main": "dist/times-graphics-components.umd.js",
     "module": "dist/times-graphics-components.es.js",
@@ -51,10 +51,6 @@
         ]
     },
     "devDependencies": {
-        "@testing-library/dom": "^10.4.0",
-        "@testing-library/jest-dom": "^6.6.3",
-        "@testing-library/react": "^16.2.0",
-        "@testing-library/user-event": "^13.5.0",
         "@chromatic-com/storybook": "^3.2.5",
         "@storybook/addon-essentials": "^8.6.4",
         "@storybook/addon-interactions": "^8.6.4",
@@ -64,6 +60,10 @@
         "@storybook/react-vite": "^8.6.11",
         "@storybook/react-webpack5": "^8.6.4",
         "@storybook/test": "^8.6.4",
+        "@testing-library/dom": "^10.4.0",
+        "@testing-library/jest-dom": "^6.6.3",
+        "@testing-library/react": "^16.2.0",
+        "@testing-library/user-event": "^13.5.0",
         "@vitejs/plugin-react": "^4.3.4",
         "eslint": "8.57.1",
         "eslint-config-prettier": "^10.1.1",
