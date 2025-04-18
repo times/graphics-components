@@ -3,6 +3,13 @@ import styled from 'styled-components';
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
+    @font-face {
+    font-family: 'TimesDigital';
+    src: url('./assets/fonts/TimesModernRegular.woff') format('woff');
+    font-display: swap;
+    }
+
+
    @media (prefers-color-scheme: dark) {
         :root {
             --color-bg: #121212;
@@ -61,7 +68,7 @@ export const CardContainer = styled.div`
         line-height: 30px;
         font-weight: 700;
         text-align: left;
-
+        font-family: 'TimesDigital';
         color: #d9d9d9;
         margin-block-start: 12px;
     }

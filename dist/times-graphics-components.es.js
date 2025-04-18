@@ -1,5 +1,5 @@
 import ke, { useState as N, useEffect as H, memo as Ce, useRef as X, useCallback as Ee } from "react";
-import R, { createGlobalStyle as Se, css as te } from "styled-components";
+import P, { createGlobalStyle as Se, css as te } from "styled-components";
 var G = { exports: {} }, F = {};
 /**
  * @license React
@@ -11,7 +11,7 @@ var G = { exports: {} }, F = {};
  * LICENSE file in the root directory of this source tree.
  */
 var ue;
-function Pe() {
+function Te() {
   if (ue) return F;
   ue = 1;
   var s = Symbol.for("react.transitional.element"), e = Symbol.for("react.fragment");
@@ -43,7 +43,7 @@ var q = {};
  * LICENSE file in the root directory of this source tree.
  */
 var he;
-function Re() {
+function Pe() {
   return he || (he = 1, process.env.NODE_ENV !== "production" && function() {
     function s(a) {
       if (a == null) return null;
@@ -51,7 +51,7 @@ function Re() {
         return a.$$typeof === L ? null : a.displayName || a.name || null;
       if (typeof a == "string") return a;
       switch (a) {
-        case P:
+        case T:
           return "Fragment";
         case k:
           return "Profiler";
@@ -109,7 +109,7 @@ function Re() {
       }
     }
     function i(a) {
-      if (a === P) return "<>";
+      if (a === T) return "<>";
       if (typeof a == "object" && a !== null && a.$$typeof === O)
         return "<...>";
       try {
@@ -236,7 +236,7 @@ React keys must be passed directly to JSX without using spread:
     function f(a) {
       typeof a == "object" && a !== null && a.$$typeof === g && a._store && (a._store.validated = 1);
     }
-    var m = ke, g = Symbol.for("react.transitional.element"), x = Symbol.for("react.portal"), P = Symbol.for("react.fragment"), w = Symbol.for("react.strict_mode"), k = Symbol.for("react.profiler"), E = Symbol.for("react.consumer"), _ = Symbol.for("react.context"), y = Symbol.for("react.forward_ref"), p = Symbol.for("react.suspense"), b = Symbol.for("react.suspense_list"), C = Symbol.for("react.memo"), O = Symbol.for("react.lazy"), D = Symbol.for("react.activity"), L = Symbol.for("react.client.reference"), W = m.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, B = Object.prototype.hasOwnProperty, xe = Array.isArray, Z = console.createTask ? console.createTask : function() {
+    var m = ke, g = Symbol.for("react.transitional.element"), x = Symbol.for("react.portal"), T = Symbol.for("react.fragment"), w = Symbol.for("react.strict_mode"), k = Symbol.for("react.profiler"), E = Symbol.for("react.consumer"), _ = Symbol.for("react.context"), y = Symbol.for("react.forward_ref"), p = Symbol.for("react.suspense"), b = Symbol.for("react.suspense_list"), C = Symbol.for("react.memo"), O = Symbol.for("react.lazy"), D = Symbol.for("react.activity"), L = Symbol.for("react.client.reference"), W = m.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, B = Object.prototype.hasOwnProperty, xe = Array.isArray, Z = console.createTask ? console.createTask : function() {
       return null;
     };
     m = {
@@ -248,7 +248,7 @@ React keys must be passed directly to JSX without using spread:
       m,
       n
     )(), ce = Z(i(n)), de = {};
-    q.Fragment = P, q.jsx = function(a, v, S, j, $) {
+    q.Fragment = T, q.jsx = function(a, v, S, j, $) {
       var A = 1e4 > W.recentlyCreatedOwnerStacks++;
       return d(
         a,
@@ -276,11 +276,11 @@ React keys must be passed directly to JSX without using spread:
   }()), q;
 }
 var pe;
-function Te() {
-  return pe || (pe = 1, process.env.NODE_ENV === "production" ? G.exports = Pe() : G.exports = Re()), G.exports;
+function Re() {
+  return pe || (pe = 1, process.env.NODE_ENV === "production" ? G.exports = Te() : G.exports = Pe()), G.exports;
 }
-var c = Te();
-function T(s, e, t, i) {
+var c = Re();
+function R(s, e, t, i) {
   return new (t || (t = Promise))(function(r, n) {
     function o(h) {
       try {
@@ -333,7 +333,7 @@ class V {
   }
 }
 const U = { decode: function(s, e) {
-  return T(this, void 0, void 0, function* () {
+  return R(this, void 0, void 0, function* () {
     const t = new AudioContext({ sampleRate: e });
     return t.decodeAudioData(s).finally(() => t.close());
   });
@@ -363,19 +363,19 @@ function me(s, e, t) {
 }
 var je = Object.freeze({ __proto__: null, createElement: me, default: me });
 const Me = { fetchBlob: function(s, e, t) {
-  return T(this, void 0, void 0, function* () {
+  return R(this, void 0, void 0, function* () {
     const i = yield fetch(s, t);
     if (i.status >= 400) throw new Error(`Failed to fetch ${s}: ${i.status} (${i.statusText})`);
     return function(r, n) {
-      T(this, void 0, void 0, function* () {
+      R(this, void 0, void 0, function* () {
         if (!r.body || !r.headers) return;
         const o = r.body.getReader(), l = Number(r.headers.get("Content-Length")) || 0;
         let u = 0;
-        const h = (f) => T(this, void 0, void 0, function* () {
+        const h = (f) => R(this, void 0, void 0, function* () {
           u += (f == null ? void 0 : f.length) || 0;
           const m = Math.round(u / l * 100);
           n(m);
-        }), d = () => T(this, void 0, void 0, function* () {
+        }), d = () => R(this, void 0, void 0, function* () {
           let f;
           try {
             f = yield o.read();
@@ -427,7 +427,7 @@ class _e extends V {
     this.media = e;
   }
   play() {
-    return T(this, void 0, void 0, function* () {
+    return R(this, void 0, void 0, function* () {
       return this.media.play();
     });
   }
@@ -524,8 +524,8 @@ class I extends V {
         if (f.button !== o) return;
         f.preventDefault(), f.stopPropagation();
         let m = f.clientX, g = f.clientY, x = !1;
-        const P = Date.now(), w = (p) => {
-          if (p.preventDefault(), p.stopPropagation(), u && Date.now() - P < l) return;
+        const T = Date.now(), w = (p) => {
+          if (p.preventDefault(), p.stopPropagation(), u && Date.now() - T < l) return;
           const b = p.clientX, C = p.clientY, O = b - m, D = C - g;
           if (x || Math.abs(O) > n || Math.abs(D) > n) {
             const L = e.getBoundingClientRect(), { left: W, top: B } = L;
@@ -699,11 +699,11 @@ class I extends V {
     return Math.max(1, window.devicePixelRatio || 1);
   }
   renderBarWaveform(e, t, i, r) {
-    const n = e[0], o = e[1] || e[0], l = n.length, { width: u, height: h } = i.canvas, d = h / 2, f = this.getPixelRatio(), m = t.barWidth ? t.barWidth * f : 1, g = t.barGap ? t.barGap * f : t.barWidth ? m / 2 : 0, x = t.barRadius || 0, P = u / (m + g) / l, w = x && "roundRect" in i ? "roundRect" : "rect";
+    const n = e[0], o = e[1] || e[0], l = n.length, { width: u, height: h } = i.canvas, d = h / 2, f = this.getPixelRatio(), m = t.barWidth ? t.barWidth * f : 1, g = t.barGap ? t.barGap * f : t.barWidth ? m / 2 : 0, x = t.barRadius || 0, T = u / (m + g) / l, w = x && "roundRect" in i ? "roundRect" : "rect";
     i.beginPath();
     let k = 0, E = 0, _ = 0;
     for (let y = 0; y <= l; y++) {
-      const p = Math.round(y * P);
+      const p = Math.round(y * T);
       if (p > k) {
         const O = Math.round(E * d * r), D = O + Math.round(_ * d * r) || 1;
         let L = d - O;
@@ -720,10 +720,10 @@ class I extends V {
       i.moveTo(0, d);
       let m = 0, g = 0;
       for (let x = 0; x <= u; x++) {
-        const P = Math.round(x * f);
-        if (P > m) {
+        const T = Math.round(x * f);
+        if (T > m) {
           const k = d + (Math.round(g * d * r) || 1) * (o === 0 ? -1 : 1);
-          i.lineTo(m, k), m = P, g = 0;
+          i.lineTo(m, k), m = T, g = 0;
         }
         const w = Math.abs(l[x] || 0);
         w > g && (g = w);
@@ -773,8 +773,8 @@ class I extends V {
       for (let w = 0; w < g; w++) m(w);
       return;
     }
-    const x = this.scrollContainer.scrollLeft / h, P = Math.floor(x * g);
-    if (m(P - 1), m(P), m(P + 1), g > 1) {
+    const x = this.scrollContainer.scrollLeft / h, T = Math.floor(x * g);
+    if (m(T - 1), m(T), m(T + 1), g > 1) {
       const w = this.on("scroll", () => {
         const { scrollLeft: k } = this.scrollContainer, E = Math.floor(k / h * g);
         Object.keys(f).length > I.MAX_NODES && (n.innerHTML = "", o.innerHTML = "", f = {}), m(E - 1), m(E), m(E + 1);
@@ -798,7 +798,7 @@ class I extends V {
     this.progressWrapper.appendChild(h), this.renderMultiCanvas(e, o, i, u, l, h);
   }
   render(e) {
-    return T(this, void 0, void 0, function* () {
+    return R(this, void 0, void 0, function* () {
       var t;
       this.timeouts.forEach((u) => u()), this.timeouts = [], this.canvasWrapper.innerHTML = "", this.progressWrapper.innerHTML = "", this.options.width != null && (this.scrollContainer.style.width = typeof this.options.width == "number" ? `${this.options.width}px` : this.options.width);
       const i = this.getPixelRatio(), r = this.scrollContainer.clientWidth, n = Math.ceil(e.duration * (this.options.minPxPerSec || 0));
@@ -847,7 +847,7 @@ class I extends V {
     this.canvasWrapper.style.clipPath = `polygon(${i}% 0, 100% 0, 100% 100%, ${i}% 100%)`, this.progressWrapper.style.width = `${i}%`, this.cursor.style.left = `${i}%`, this.cursor.style.transform = `translateX(-${Math.round(i) === 100 ? this.options.cursorWidth : 0}px)`, this.isScrollable && this.options.autoScroll && this.scrollIntoView(e, t);
   }
   exportImage(e, t, i) {
-    return T(this, void 0, void 0, function* () {
+    return R(this, void 0, void 0, function* () {
       const r = this.canvasWrapper.querySelectorAll("canvas");
       if (!r.length) throw new Error("No waveform data");
       if (i === "dataURL") {
@@ -887,7 +887,7 @@ class ie extends V {
     super(), this.bufferNode = null, this.playStartTime = 0, this.playedDuration = 0, this._muted = !1, this._playbackRate = 1, this._duration = void 0, this.buffer = null, this.currentSrc = "", this.paused = !0, this.crossOrigin = null, this.seeking = !1, this.autoplay = !1, this.addEventListener = this.on, this.removeEventListener = this.un, this.audioContext = e, this.gainNode = this.audioContext.createGain(), this.gainNode.connect(this.audioContext.destination);
   }
   load() {
-    return T(this, void 0, void 0, function* () {
+    return R(this, void 0, void 0, function* () {
     });
   }
   get src() {
@@ -916,7 +916,7 @@ class ie extends V {
     this.paused = !0, (e = this.bufferNode) === null || e === void 0 || e.stop(), this.playedDuration += this.audioContext.currentTime - this.playStartTime;
   }
   play() {
-    return T(this, void 0, void 0, function* () {
+    return R(this, void 0, void 0, function* () {
       this.paused && (this._play(), this.emit("play"));
     });
   }
@@ -930,7 +930,7 @@ class ie extends V {
     }, { once: !0 });
   }
   setSinkId(e) {
-    return T(this, void 0, void 0, function* () {
+    return R(this, void 0, void 0, function* () {
       return this.audioContext.setSinkId(e);
     });
   }
@@ -1092,7 +1092,7 @@ class Y extends _e {
     return this.plugins;
   }
   loadAudio(e, t, i, r) {
-    return T(this, void 0, void 0, function* () {
+    return R(this, void 0, void 0, function* () {
       var n;
       if (this.emit("load", e), !this.options.media && this.isPlaying() && this.pause(), this.decodedData = null, this.stopAtPosition = null, !t && !i) {
         const l = this.options.fetchParams || {};
@@ -1120,7 +1120,7 @@ class Y extends _e {
     });
   }
   load(e, t, i) {
-    return T(this, void 0, void 0, function* () {
+    return R(this, void 0, void 0, function* () {
       try {
         return yield this.loadAudio(e, void 0, t, i);
       } catch (r) {
@@ -1129,7 +1129,7 @@ class Y extends _e {
     });
   }
   loadBlob(e, t, i) {
-    return T(this, void 0, void 0, function* () {
+    return R(this, void 0, void 0, function* () {
       try {
         return yield this.loadAudio("", e, t, i);
       } catch (r) {
@@ -1178,14 +1178,14 @@ class Y extends _e {
   }
   play(e, t) {
     const i = Object.create(null, { play: { get: () => super.play } });
-    return T(this, void 0, void 0, function* () {
+    return R(this, void 0, void 0, function* () {
       e != null && this.setTime(e);
       const r = yield i.play.call(this);
       return t != null && (this.media instanceof ie ? this.media.stopAt(t) : this.stopAtPosition = t), r;
     });
   }
   playPause() {
-    return T(this, void 0, void 0, function* () {
+    return R(this, void 0, void 0, function* () {
       return this.isPlaying() ? this.pause() : this.play();
     });
   }
@@ -1202,7 +1202,7 @@ class Y extends _e {
     this.unsubscribePlayerEvents(), super.setMediaElement(e), this.initPlayerEvents();
   }
   exportImage() {
-    return T(this, arguments, void 0, function* (e = "image/png", t = 1, i = "dataURL") {
+    return R(this, arguments, void 0, function* (e = "image/png", t = 1, i = "dataURL") {
       return this.renderer.exportImage(e, t, i);
     });
   }
@@ -1236,7 +1236,7 @@ const Ae = (s, e) => {
       r.destroy();
     };
   }, [e, s]), t;
-}, De = R.div`
+}, De = P.div`
     display: grid;
     grid-template-columns: max-content 1fr;
     gap: 0.5em;
@@ -1385,7 +1385,7 @@ const Ae = (s, e) => {
 `, Le = Ce((s) => {
   const e = X(null), [t, i] = N(!1), [r, n] = N(0.5), [o, l] = N(0), [u, h] = N(
     k(0)
-  ), [d, f] = N(!1), m = Ae(e, s), g = X(null), { onPlay: x, onReady: P } = s, w = Ee(() => {
+  ), [d, f] = N(!1), m = Ae(e, s), g = X(null), { onPlay: x, onReady: T } = s, w = Ee(() => {
     m.playPause();
   }, [m]);
   H(() => {
@@ -1396,7 +1396,7 @@ const Ae = (s, e) => {
       peaks: m.exportPeaks()
     }), p = [
       m.on("ready", () => {
-        P && P(y()), l(
+        T && T(y()), l(
           k(
             Math.round(m.getDuration() * 1e3)
           )
@@ -1420,7 +1420,7 @@ const Ae = (s, e) => {
     return () => {
       p.forEach((b) => b());
     };
-  }, [m, x, P, r]), H(() => {
+  }, [m, x, T, r]), H(() => {
     const y = g.current;
     y.style.setProperty("--value", y.value), y.style.setProperty("--min", y.min === "" ? "0" : y.min), y.style.setProperty("--max", y.max === "" ? "100" : y.max), y.style.setProperty("--value", y.value);
   }, []);
@@ -1488,6 +1488,13 @@ const Ae = (s, e) => {
     ] })
   ] });
 }), J = Se`
+    @font-face {
+    font-family: 'TimesDigital';
+    src: url('./assets/fonts/TimesModernRegular.woff') format('woff');
+    font-display: swap;
+    }
+
+
    @media (prefers-color-scheme: dark) {
         :root {
             --color-bg: #121212;
@@ -1516,10 +1523,10 @@ const Ae = (s, e) => {
                 border-left: 1px solid rgb(0 0 0 / 50%);
         }    
     }
-`, ye = R.div`
+`, ye = P.div`
     margin-block-start: 1em;
     margin-block-end: 100px;
-`, $e = R.div`
+`, $e = P.div`
     background-color: black;
     color: white;
     margin: 40px 0;
@@ -1542,7 +1549,7 @@ const Ae = (s, e) => {
         line-height: 30px;
         font-weight: 700;
         text-align: left;
-
+        font-family: 'TimesDigital';
         color: #d9d9d9;
         margin-block-start: 12px;
     }
@@ -1761,7 +1768,7 @@ function Ie() {
   }(re)), re;
 }
 Ie();
-const Be = R.div`
+const Be = P.div`
     .headline {
         font-family: 'RobotoRegular', sans-serif;
         font-size: 20px;
@@ -1787,7 +1794,7 @@ function Fe({ headline: s, standfirst: e }) {
     e && /* @__PURE__ */ c.jsx("p", { className: "standfirst", children: e })
   ] });
 }
-const qe = R.div`
+const qe = P.div`
     margin-block: 1em;
     margin-inline: 10px;
 
@@ -1804,7 +1811,7 @@ const qe = R.div`
         grid-template-columns: repeat(7, 1fr);
         gap: 1em;
     }
-`, He = R.img`
+`, He = P.img`
     width: 100%;
     height: 80px;
 
@@ -1846,7 +1853,7 @@ function Ye({
   ));
   return /* @__PURE__ */ c.jsx(qe, { children: o });
 }
-const Ve = R.div`
+const Ve = P.div`
     position: absolute;
     left: 0px;
     top: ${(s) => s.isImageInLastRow ? s.tooltipPos[1] - 380 : s.tooltipPos[1]}px;
@@ -2002,11 +2009,11 @@ function ct({ data: s }) {
     ] })
   ] });
 }
-R.div`
+P.div`
     position: relative;
     width: 100%;
 `;
-const Ue = R.div`
+const Ue = P.div`
     position: sticky;
     top: 30vh;
     width: 100%;
@@ -2029,11 +2036,11 @@ const Ue = R.div`
     &.edge-to-edge iframe {
         height: 100vh;
     }
-`, Xe = R.div`
+`, Xe = P.div`
     position: relative;
     width: 100%;
     height: 100%;
-`, Je = R.div`
+`, Je = P.div`
     position: absolute;
     top: 0;
     bottom: 0;
@@ -2046,12 +2053,12 @@ const Ue = R.div`
         opacity: 1;
         pointer-events: auto;
     }
-`, Ze = R.section`
+`, Ze = P.section`
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-`, Qe = R.p`
+`, Qe = P.p`
     line-height: 1.4;
     font-size: ${({ size: s }) => s === "lg" ? "20px" : "16px"} !important;
     padding: 1rem;
@@ -2076,7 +2083,7 @@ function dt({ data: s }) {
     videoAutoplay: u = !0,
     videoControls: h = !1,
     videoMute: d = !0
-  } = s, [f, m] = N(0), [g, x] = N([]), P = X([]), w = X([]);
+  } = s, [f, m] = N(0), [g, x] = N([]), T = X([]), w = X([]);
   H(() => {
     const p = new IntersectionObserver(
       (b) => {
@@ -2089,7 +2096,7 @@ function dt({ data: s }) {
       },
       { threshold: 0.6 }
     );
-    return P.current.forEach((b) => b && p.observe(b)), () => p.disconnect();
+    return T.current.forEach((b) => b && p.observe(b)), () => p.disconnect();
   }, [e.length]), H(() => {
     const p = e.map((b, C) => C === f);
     x(p);
@@ -2178,7 +2185,7 @@ function dt({ data: s }) {
         {
           className: "trigger",
           "data-index": b,
-          ref: (C) => P.current[b] = C,
+          ref: (C) => T.current[b] = C,
           children: p.text && /* @__PURE__ */ c.jsx(
             Qe,
             {
@@ -2194,7 +2201,7 @@ function dt({ data: s }) {
     ] })
   ] });
 }
-const Ke = R.div`
+const Ke = P.div`
     h3 {
         line-height: 20px;
         color: #000;
@@ -2253,7 +2260,7 @@ const Ke = R.div`
       o && /* @__PURE__ */ c.jsx("p", { className: "note", children: o })
     ] })
   ] });
-}, tt = R.div`
+}, tt = P.div`
     display: block;
     margin: 20px auto;
     position: relative;
@@ -2275,7 +2282,7 @@ const Ke = R.div`
             padding: 0;
         }
     }
-`, it = R.div`
+`, it = P.div`
     margin-top: 10px;
     text-align: left;
     p {
@@ -2285,7 +2292,7 @@ const Ke = R.div`
         margin-bottom: 4px;
         text-align: left;
     }
-`, rt = R.div`
+`, rt = P.div`
     position: absolute;
     top: 0;
     background-color: black;
@@ -2298,7 +2305,7 @@ const Ke = R.div`
         font-size: 12px;
         margin: 0;
     }
-`, nt = R.div`
+`, nt = P.div`
     position: relative;
 
     iframe,
