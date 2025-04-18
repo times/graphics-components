@@ -2573,7 +2573,7 @@ const rt = C.div`
 `, kt = ({ text: n, align: e = "left" }) => n ? /* @__PURE__ */ o.jsxs(o.Fragment, { children: [
   /* @__PURE__ */ o.jsx(W, {}),
   /* @__PURE__ */ o.jsx(wt, { align: e, dangerouslySetInnerHTML: { __html: n } })
-] }) : null, jt = ({ blocks: n, align: e = "left" }) => /* @__PURE__ */ o.jsx(o.Fragment, { children: n.map((t, r) => {
+] }) : null, jt = ({ blocks: n, align: e = "left" }) => /* @__PURE__ */ o.jsx("div", { className: "furniture-block", children: n.map((t, r) => {
   switch (t.type) {
     case "headline":
       return /* @__PURE__ */ o.jsx(ut, { text: t.text, align: e }, r);

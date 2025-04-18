@@ -8,7 +8,7 @@ import MediaBlock from '../MediaBlock';
 
 const FurnitureBlock = ({ blocks, align = 'left' }) => {
   return (
-    <>
+    <div className="furniture-block">
       {blocks.map((block, i) => {
         switch (block.type) {
           case 'headline':
@@ -32,7 +32,7 @@ const FurnitureBlock = ({ blocks, align = 'left' }) => {
             return null;
         }
       })}
-    </>
+    </div>
   );
 };
 

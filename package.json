@@ -1,6 +1,6 @@
 {
     "name": "@times/graphics-components",
-    "version": "0.0.29",
+    "version": "0.0.30",
     "type": "module",
     "main": "dist/times-graphics-components.umd.js",
     "module": "dist/times-graphics-components.es.js",
