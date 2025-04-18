@@ -1,4 +1,4 @@
-import{j as e}from"./jsx-runtime-D_zvdyIk.js";import{useMDXComponents as r}from"./index-CB3_FCD4.js";import"./App-BwfzsFku.js";import{M as s}from"./index-DNm4P5kQ.js";import{M as o}from"./index-CfWxzEDN.js";import"./index-MPVjHJeJ.js";import"./preview-yi0mwDqS.js";import"./iframe-orfyAdbf.js";import"./DocsRenderer-CFRXHY34-Bp5Nk1RJ.js";import"./react-18-BlUjvyv-.js";import"./index-Bzm33-PM.js";import"./index-CXQShRbs.js";import"./index-DrFu-skq.js";function i(d){const n={br:"br",code:"code",h1:"h1",h2:"h2",h3:"h3",hr:"hr",li:"li",p:"p",pre:"pre",strong:"strong",ul:"ul",...r(),...d.components};return e.jsxs(e.Fragment,{children:[e.jsx(o,{title:"Components/MediaBlock",component:s}),`
+import{j as e}from"./jsx-runtime-D_zvdyIk.js";import{useMDXComponents as r}from"./index-CB3_FCD4.js";import"./App-Bdnybek-.js";import"./index-vIJoc0uv.js";import{M as s}from"./index-BWLkM44a.js";import"./index-CAATbwiK.js";import{M as o}from"./index-g3RqQ2cZ.js";import"./index-MPVjHJeJ.js";import"./preview-3UCWevkR.js";import"./iframe-Dl4KqlCl.js";import"./DocsRenderer-CFRXHY34-BON3QthS.js";import"./react-18-BlUjvyv-.js";import"./index-Bzm33-PM.js";import"./index-CXQShRbs.js";import"./index-DrFu-skq.js";function i(d){const n={br:"br",code:"code",h1:"h1",h2:"h2",h3:"h3",hr:"hr",li:"li",p:"p",pre:"pre",strong:"strong",ul:"ul",...r(),...d.components};return e.jsxs(e.Fragment,{children:[e.jsx(o,{title:"Components/MediaBlock",component:s}),`
 `,e.jsx(n.h1,{id:"mediablock",children:"MediaBlock"}),`
 `,e.jsx(n.p,{children:"A flexible media display component that supports responsive layout and a variety of formats, including images, MP4, YouTube, and Vimeo. It includes optional wrapper content such as headlines, captions, and notes."}),`
 `,e.jsx(n.h2,{id:"features",children:"Features"}),`
@@ -82,4 +82,4 @@ const data = {
 };
 
 <MediaBlock data={data} />
-`})})]})}function y(d={}){const{wrapper:n}={...r(),...d.components};return n?e.jsx(n,{...d,children:e.jsx(i,{...d})}):i(d)}export{y as default};
+`})})]})}function M(d={}){const{wrapper:n}={...r(),...d.components};return n?e.jsx(n,{...d,children:e.jsx(i,{...d})}):i(d)}export{M as default};

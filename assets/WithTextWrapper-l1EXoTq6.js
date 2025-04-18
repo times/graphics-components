@@ -1,5 +1,4 @@
-import{j as i}from"./jsx-runtime-D_zvdyIk.js";import"./index-MPVjHJeJ.js";import{d as e}from"./index-DNm4P5kQ.js";const n=e.div`
-   
+import{j as i}from"./jsx-runtime-D_zvdyIk.js";import"./index-MPVjHJeJ.js";import{d as e}from"./index-CAATbwiK.js";const n=e.div`
     padding: 20px;
     text-align: center;
     max-width: 1182px;
@@ -18,6 +17,7 @@ import{j as i}from"./jsx-runtime-D_zvdyIk.js";import"./index-MPVjHJeJ.js";import
     margin: 0 auto;
     color: #333333;
     display: block;
+    font-family: 'TimesModern';
     @media (min-width: 768px) {
         font-size: 12px;
         line-height: 30px;
@@ -30,6 +30,7 @@ import{j as i}from"./jsx-runtime-D_zvdyIk.js";import"./index-MPVjHJeJ.js";import
     margin: 0 auto;
     color: #333333;
     display: block;
+    font-family: 'TimesModern';
     @media (min-width: 768px) {
         font-size: 34px;
         line-height: 30px;
@@ -45,7 +46,7 @@ import{j as i}from"./jsx-runtime-D_zvdyIk.js";import"./index-MPVjHJeJ.js";import
     margin: 0 auto;
     color: #333333;
     display: block;
-
+    font-family: 'TimesModern';
     @media (min-width: 768px) {
         font-size: 18px;
         line-height: 30px;

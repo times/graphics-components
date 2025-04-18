@@ -1,4 +1,4 @@
-import{j as e}from"./jsx-runtime-D_zvdyIk.js";import{useMDXComponents as d}from"./index-CB3_FCD4.js";import"./App-BwfzsFku.js";import{S as r}from"./index-DNm4P5kQ.js";import{M as o}from"./index-CfWxzEDN.js";import"./index-MPVjHJeJ.js";import"./preview-yi0mwDqS.js";import"./iframe-orfyAdbf.js";import"./DocsRenderer-CFRXHY34-Bp5Nk1RJ.js";import"./react-18-BlUjvyv-.js";import"./index-Bzm33-PM.js";import"./index-CXQShRbs.js";import"./index-DrFu-skq.js";function i(s){const n={br:"br",code:"code",h1:"h1",h2:"h2",h3:"h3",hr:"hr",li:"li",p:"p",pre:"pre",strong:"strong",ul:"ul",...d(),...s.components};return e.jsxs(e.Fragment,{children:[e.jsx(o,{title:"Components/ScrollStory",component:r}),`
+import{j as e}from"./jsx-runtime-D_zvdyIk.js";import{useMDXComponents as d}from"./index-CB3_FCD4.js";import"./App-Bdnybek-.js";import{S as r}from"./index-vIJoc0uv.js";import"./index-BWLkM44a.js";import"./index-CAATbwiK.js";import{M as o}from"./index-g3RqQ2cZ.js";import"./index-MPVjHJeJ.js";import"./preview-3UCWevkR.js";import"./iframe-Dl4KqlCl.js";import"./DocsRenderer-CFRXHY34-BON3QthS.js";import"./react-18-BlUjvyv-.js";import"./index-Bzm33-PM.js";import"./index-CXQShRbs.js";import"./index-DrFu-skq.js";function i(s){const n={br:"br",code:"code",h1:"h1",h2:"h2",h3:"h3",hr:"hr",li:"li",p:"p",pre:"pre",strong:"strong",ul:"ul",...d(),...s.components};return e.jsxs(e.Fragment,{children:[e.jsx(o,{title:"Components/ScrollStory",component:r}),`
 `,e.jsx(n.h1,{id:"scrollstory",children:"ScrollStory"}),`
 `,e.jsx(n.p,{children:"A scrollytelling component that displays media (images, videos, AI2HTML graphics) alongside scroll-triggered text. Media transitions smoothly as the user scrolls through the content."}),`
 `,e.jsx(n.h2,{id:"features",children:"Features"}),`
@@ -93,4 +93,4 @@ const data = {
 };
 
 <ScrollStory data={data} />
-`})})]})}function y(s={}){const{wrapper:n}={...d(),...s.components};return n?e.jsx(n,{...s,children:e.jsx(i,{...s})}):i(s)}export{y as default};
+`})})]})}function w(s={}){const{wrapper:n}={...d(),...s.components};return n?e.jsx(n,{...s,children:e.jsx(i,{...s})}):i(s)}export{w as default};
