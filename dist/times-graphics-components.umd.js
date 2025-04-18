@@ -238,34 +238,7 @@ React keys must be passed directly to JSX without using spread:
         border-right-width: 0;
     }
 `,ce=C.memo(o=>{const e=C.useRef(null),[t,i]=C.useState(!1),[r,n]=C.useState(.5),[s,l]=C.useState(0),[u,h]=C.useState(k(0)),[d,f]=C.useState(!1),m=Me(e,o),g=C.useRef(null),{onPlay:x,onReady:P}=o,w=C.useCallback(()=>{m.playPause()},[m]);C.useEffect(()=>{if(!m)return;m.setVolume(r);const y=()=>({media:m.getMediaElement(),peaks:m.exportPeaks()}),p=[m.on("ready",()=>{P&&P(y()),l(k(Math.round(m.getDuration()*1e3))),i(m.isPlaying())}),m.on("play",()=>{x&&x(b=>{const E=y();return!b||b.media!==E.media?(b&&(b.media.pause(),b.media.currentTime=0),E):b}),i(!0)}),m.on("audioprocess",()=>{h(k(Math.round(m.getCurrentTime()*1e3)))}),m.on("pause",()=>i(!1))];return()=>{p.forEach(b=>b())}},[m,x,P,r]),C.useEffect(()=>{const y=g.current;y.style.setProperty("--value",y.value),y.style.setProperty("--min",y.min===""?"0":y.min),y.style.setProperty("--max",y.max===""?"100":y.max),y.style.setProperty("--value",y.value)},[]);function k(y){var p=Math.floor(y/6e4),b=(y%6e4/1e3).toFixed(0);return p+":"+(b<10?"0":"")+b}function S(y){n(y.target.value);const p=y.target;p.style.setProperty("--value",p.value),p.style.setProperty("--min",p.min===""?"0":p.min),p.style.setProperty("--max",p.max===""?"100":p.max),p.style.setProperty("--value",p.value)}function N(){f(!d)}return c.jsxs(_e,{children:[t?c.jsx("img",{className:"play-icon",src:"https://extras.thetimes.co.uk/web/2025/times-knife-crime-audio/assets/pause.png",onClick:w}):c.jsx("img",{className:"play-icon",src:"https://extras.thetimes.co.uk/web/2025/times-knife-crime-audio/assets/play.png",onClick:w}),c.jsx("div",{ref:e,style:{width:"100%"}}),c.jsxs("p",{className:"waveform-time",children:[c.jsx("span",{children:u})," / ",c.jsx("span",{children:s})]}),c.jsxs("div",{className:"volume-container",children:[c.jsx("img",{className:"volume-icon",src:"https://extras.thetimes.co.uk/web/2025/times-knife-crime-audio/assets/volume.png",onClick:N}),c.jsx("input",{ref:g,className:"styled-slider slider-progress",type:"range",id:"volume-slider",min:0,max:1,step:.1,value:r,onChange:S,style:{opacity:d?1:0,pointerEvents:d?"all":"none"}})]})]})}),q=R.createGlobalStyle`
-    @font-face {
-        font-family: 'TimesModern';
-        src: url('https://times.github.io/graphics-components/assets/fonts/TimesModernRegular.woff') format('woff');
-        font-display: swap;
-        font-style: normal;
-        font-weight: 400;
-    }
-    @font-face {
-        font-family: 'TimesModern';
-        src: url('https://times.github.io/graphics-components/assets/fonts/TimesModern-Bold.woff') format('woff');
-        font-display: swap;
-        font-style: bold;
-        font-weight: 700;
-    }
-    @font-face {
-        font-family: 'TimesDigital';
-        src: url('https://times.github.io/graphics-components/assets/fonts/TimesDigital-Regular.woff') format('woff');
-        font-display: swap;
-        font-style: normal;
-        font-weight: 400;
-    }
-    @font-face {
-        font-family: 'Roboto-Regular';
-        src: url('https://times.github.io/graphics-components/assets/fonts/Roboto-Regular.woff') format('woff');
-        font-display: swap;
-        font-style: normal;
-        font-weight: 400;
-    }
+
    @media (prefers-color-scheme: dark) {
         :root {
             --color-bg: #121212;
@@ -313,7 +286,6 @@ React keys must be passed directly to JSX without using spread:
     .card-name {
         margin-block-start: 8px;
         margin-block-end: 0;
-        font-family: 'TimesModern';
     }
 
     .card-quote {
@@ -321,7 +293,6 @@ React keys must be passed directly to JSX without using spread:
         line-height: 30px;
         font-weight: 700;
         text-align: left;
-        font-family: 'TimesModern';
         color: #d9d9d9;
         margin-block-start: 12px;
     }
@@ -536,7 +507,6 @@ React keys must be passed directly to JSX without using spread:
     line-height: 1.4;
     font-size: ${({size:o})=>o==="lg"?"20px":"16px"} !important;
     padding: 1rem;
-    font-family: 'TimesModern';
     font-weight: 400;
     max-width: 600px;
     background: white;

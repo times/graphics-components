@@ -2,22 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-    @font-face {
-        font-family: 'TimesModern';
-        src: url('https://times.github.io/graphics-components/assets/fonts/TimesModernRegular.woff')
-            format('woff');
-        font-display: swap;
-        font-style: normal;
-        font-weight: 400;
-    }
-    @font-face {
-        font-family: 'TimesModern';
-        src: url('https://times.github.io/graphics-components/assets/fonts/TimesModern-Bold.woff')
-            format('woff');
-        font-display: swap;
-        font-style: bold;
-        font-weight: 700;
-    }
+   
     padding: 20px;
     text-align: center;
     max-width: 1182px;
@@ -38,7 +23,6 @@ const SMALL = styled.small`
     margin: 0 auto;
     color: #333333;
     display: block;
-    font-family: 'TimesModern';
     @media (min-width: 768px) {
         font-size: 12px;
         line-height: 30px;
@@ -53,7 +37,6 @@ const H1 = styled.h1`
     margin: 0 auto;
     color: #333333;
     display: block;
-    font-family: 'TimesModern';
     @media (min-width: 768px) {
         font-size: 34px;
         line-height: 30px;
@@ -71,7 +54,6 @@ const Text = styled.p`
     margin: 0 auto;
     color: #333333;
     display: block;
-    font-family: 'TimesModern';
 
     @media (min-width: 768px) {
         font-size: 18px;
