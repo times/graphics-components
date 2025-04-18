@@ -24,7 +24,13 @@ export const GlobalStyle = createGlobalStyle`
         font-style: normal;
         font-weight: 400;
     }
-
+    @font-face {
+        font-family: 'Roboto-Regular';
+        src: url('https://times.github.io/graphics-components/assets/fonts/Roboto-Regular.woff') format('woff');
+        font-display: swap;
+        font-style: normal;
+        font-weight: 400;
+    }
    @media (prefers-color-scheme: dark) {
         :root {
             --color-bg: #121212;

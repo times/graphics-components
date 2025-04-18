@@ -63,6 +63,8 @@ export const Text = styled.p`
     line-height: 1.4;
     font-size: ${({ size }) => (size === 'lg' ? '20px' : '16px')} !important;
     padding: 1rem;
+    font-family: 'TimesModern';
+    font-weight: 400;
     max-width: 600px;
     background: white;
     @media (prefers-color-scheme: dark) {

@@ -259,7 +259,13 @@ React keys must be passed directly to JSX without using spread:
         font-style: normal;
         font-weight: 400;
     }
-
+    @font-face {
+        font-family: 'Roboto-Regular';
+        src: url('https://times.github.io/graphics-components/assets/fonts/Roboto-Regular.woff') format('woff');
+        font-display: swap;
+        font-style: normal;
+        font-weight: 400;
+    }
    @media (prefers-color-scheme: dark) {
         :root {
             --color-bg: #121212;
@@ -530,6 +536,8 @@ React keys must be passed directly to JSX without using spread:
     line-height: 1.4;
     font-size: ${({size:o})=>o==="lg"?"20px":"16px"} !important;
     padding: 1rem;
+    font-family: 'TimesModern';
+    font-weight: 400;
     max-width: 600px;
     background: white;
     @media (prefers-color-scheme: dark) {
