@@ -10,14 +10,15 @@ const DescriptionWrapper = styled.p`
     padding-bottom: 10px;
     white-space: pre-wrap;
     overflow-wrap: break-word;
+    text-align: ${({ align }) => align || 'left'};
 `;
 
-const Description = ({ text }) => {
+const Description = ({ text, align = 'left' }) => {
     if (!text) return null;
     return (
         <>
             <GlobalStyle />
-            <DescriptionWrapper>{text}</DescriptionWrapper>
+            <DescriptionWrapper align={align}>{text}</DescriptionWrapper>
         </>
     );
 };

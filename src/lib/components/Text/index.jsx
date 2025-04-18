@@ -8,14 +8,15 @@ const TextWrapper = styled.p`
     line-height: 26px;
     color: rgb(51, 51, 51);
     padding-bottom: 10px;
+    text-align: ${({ align }) => align || 'left'};
 `;
 
-const Text = ({ text }) => {
+const Text = ({ text, align = 'left' }) => {
     if (!text) return null;
     return (
         <>
             <GlobalStyle />
-            <TextWrapper dangerouslySetInnerHTML={{ __html: text }} />
+            <TextWrapper align={align} dangerouslySetInnerHTML={{ __html: text }} />
         </>
     );
 };

@@ -11,4 +11,4 @@ export { default as Headline } from './Headline';
 export { default as Description } from './Description';
 export { default as ArticleFlags } from './ArticleFlags';
 export { default as Text } from './Text';
-
+export { default as FurnitureBlock } from './FurnitureBlock';

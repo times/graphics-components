@@ -1,0 +1,77 @@
+import { Meta, Story, ArgTypes, Description } from '@storybook/addon-docs';
+import FurnitureBlock from '../../lib/components/FurnitureBlock';
+import '../../App.css';
+
+<Meta title="Furniture Components/FurnitureBlock" component={FurnitureBlock} />
+
+# FurnitureBlock
+
+A layout component that dynamically renders a collection of pre-defined content blocks (headline, description, flags, text, media, etc.) based on a structured array. The order and presence of blocks is entirely driven by a JSON config.
+
+## Features
+
+- 🧩 **Composable Layout**: Handles dynamic sequences of article components.
+- 🆎 **Text Blocks**: Includes headline, description, and body text.
+- 🚩 **Metadata Flags**: Displays article status like LIVE, BREAKING, SPONSORED, etc.
+- 🖼 **Media Support**: Renders videos or images via `MediaBlock`.
+- 🔄 **Flexible Ordering**: Block order is fully determined by the input array.
+- 📐 **Global Text Alignment**: Optional `align` prop controls global text alignment.
+
+## Props
+
+### `blocks` (required)  
+**Type:** `Array<{ type: string, [key: string]: any }>`  
+An array of block objects. Each block must include a `type`, and may include other fields depending on the component being rendered.
+
+---
+
+### `align`  
+**Type:** `"left" | "center" | "right"`  
+**Default:** `"left"`  
+Sets the alignment for all text-based components (`headline`, `description`, `text`).
+
+---
+
+## Supported Block Types
+
+- `"headline"` → Renders a headline text.
+- `"description"` → Renders a subtitle or lead-in text.
+- `"flags"` → Renders one or more article flags with optional `longRead`, `expiryTime`, `updatedTime`.
+- `"text"` → Renders body copy, accepts inline HTML.
+- `"media"` → Renders an image or video using `MediaBlock`.
+
+## Usage
+
+```jsx
+import { FurnitureBlock } from '@times/graphics-components';
+
+
+<FurnitureBlock
+  align="center"
+  blocks={[
+    { type: "headline", text: "Markets Rally After Fed Decision" },
+    { type: "description", text: "Investors respond to new monetary policy signals." },
+    {
+      type: "flags",
+      withContainer: true,
+      longRead: true,
+      flags: [
+        { type: "LIVE", expiryTime: "2099-01-01T00:00:00Z", updatedTime: "2025-04-18T06:00:00Z" },
+        { type: "BREAKING" }
+      ]
+    },
+    {
+      type: "text",
+      text: "The Federal Reserve has decided to keep interest rates steady..."
+    },
+    {
+      type: "media",
+      data: {
+        media: "https://picsum.photos/1200/800",
+        containerWidth: "inline",
+        caption: "Chair Powell speaking after the announcement.",
+        altText: "Federal Reserve press conference"
+      }
+    }
+  ]}
+/>

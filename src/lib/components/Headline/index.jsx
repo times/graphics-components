@@ -12,6 +12,8 @@ const HeadlineWrapper = styled.h1`
     font-size: 30px;
     line-height: 33px;
     color: rgb(29, 29, 27);
+    text-align: ${({ align }) => align || 'left'};
+
     font-family: TimesModern-Bold, TimesModern-Bold-fallback, serif;
     @media (min-width: 768px) {
         font-size: 45px;
@@ -19,12 +21,12 @@ const HeadlineWrapper = styled.h1`
     }
 `;
 
-const Headline = ({ text }) => {
+const Headline = ({ text, align = 'left' }) => {
     if (!text) return null;
     return (
         <>
             <GlobalStyle />
-            <HeadlineWrapper>{text}</HeadlineWrapper>
+            <HeadlineWrapper align={align}>{text}</HeadlineWrapper>
         </>
     );
 };
