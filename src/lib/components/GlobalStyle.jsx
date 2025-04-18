@@ -4,11 +4,26 @@ import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
     @font-face {
-    font-family: 'TimesDigital';
-    src: url('https://times.github.io/graphics-components/assets/fonts/TimesModernRegular.woff') format('woff');
-    font-display: swap;
+        font-family: 'TimesModern';
+        src: url('https://times.github.io/graphics-components/assets/fonts/TimesModernRegular.woff') format('woff');
+        font-display: swap;
+        font-style: normal;
+        font-weight: 400;
     }
-
+    @font-face {
+        font-family: 'TimesModern';
+        src: url('https://times.github.io/graphics-components/assets/fonts/TimesModern-Bold.woff') format('woff');
+        font-display: swap;
+        font-style: bold;
+        font-weight: 700;
+    }
+    @font-face {
+        font-family: 'TimesDigital';
+        src: url('https://times.github.io/graphics-components/assets/fonts/TimesDigital-Regular.woff') format('woff');
+        font-display: swap;
+        font-style: normal;
+        font-weight: 400;
+    }
 
    @media (prefers-color-scheme: dark) {
         :root {
@@ -61,6 +76,7 @@ export const CardContainer = styled.div`
     .card-name {
         margin-block-start: 8px;
         margin-block-end: 0;
+        font-family: 'TimesModern';
     }
 
     .card-quote {
@@ -68,7 +84,7 @@ export const CardContainer = styled.div`
         line-height: 30px;
         font-weight: 700;
         text-align: left;
-        font-family: 'TimesDigital';
+        font-family: 'TimesModern';
         color: #d9d9d9;
         margin-block-start: 12px;
     }

@@ -78,7 +78,6 @@
         "shx": "^0.3.4",
         "storybook": "^8.6.11",
         "vite": "^6.2.4",
-        "vite-plugin-static-copy": "^2.3.1",
         "webpack": "^5.98.0"
     }
 }
