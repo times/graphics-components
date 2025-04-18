@@ -27,6 +27,7 @@ export const MediaContainer = styled.div`
 export const SlideText = styled.div`
     margin-top: 10px;
     text-align: left;
+    font-family: Roboto-Regular, Roboto-Regular-fallback, sans-serif;
     p {
         font-size: 14px;
         color: rgb(105, 105, 105);

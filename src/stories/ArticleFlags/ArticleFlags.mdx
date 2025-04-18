@@ -1,0 +1,42 @@
+import { Meta, Story, ArgTypes, Description } from '@storybook/addon-docs';
+import ArticleFlags from '../../lib/components/ArticleFlags';
+import '../../App.css';
+
+# ArticleFlags
+
+A component that renders one or multiple article flags such as **LIVE**, **BREAKING**, **EXCLUSIVE**, **UPDATED**, **SPONSORED**, **NEW**, and optionally a **Long Read** badge.
+
+<Meta title="Furniture Components/ArticleFlags" component={ArticleFlags} />
+
+## Overview
+
+The `ArticleFlags` component displays visual labels for articles with metadata such as status, exclusivity, or timeliness. It also supports an optional "Long Read" indicator.
+
+## Features
+
+- 🚨 **LIVE/BREAKING**: Includes an animated pulsing square.
+- 🟣 **EXCLUSIVE/SPONSORED/UPDATED/etc.**: Displayed with a colored dot.
+- ⏱ **Expiry Support**: Flags with an `expiryTime` automatically disappear when outdated.
+- 🧠 **Updated Time Label**: `LIVE` and `BREAKING` can show a formatted `updatedTime`.
+
+## Usage
+
+```jsx
+import { ArticleFlags } from '@times/graphics-components';
+
+<ArticleFlags
+  withContainer
+  longRead
+  flags={[
+    {
+      type: 'LIVE',
+      expiryTime: '2099-01-01T00:00:00Z',
+      updatedTime: '2025-04-18T06:00:00Z',
+    },
+    { type: 'BREAKING', expiryTime: '2099-01-01T00:00:00Z' },
+    { type: 'EXCLUSIVE' },
+    { type: 'UPDATED', expiryTime: '2099-01-01T00:00:00Z' },
+    { type: 'SPONSORED', expiryTime: '2099-01-01T00:00:00Z' },
+    { type: 'NEW', expiryTime: '2099-01-01T00:00:00Z' }
+  ]}
+/>

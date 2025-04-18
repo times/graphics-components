@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-   
     padding: 20px;
     text-align: center;
     max-width: 1182px;
@@ -23,6 +22,7 @@ const SMALL = styled.small`
     margin: 0 auto;
     color: #333333;
     display: block;
+    font-family: 'TimesModern';
     @media (min-width: 768px) {
         font-size: 12px;
         line-height: 30px;
@@ -37,6 +37,7 @@ const H1 = styled.h1`
     margin: 0 auto;
     color: #333333;
     display: block;
+    font-family: 'TimesModern';
     @media (min-width: 768px) {
         font-size: 34px;
         line-height: 30px;
@@ -54,7 +55,7 @@ const Text = styled.p`
     margin: 0 auto;
     color: #333333;
     display: block;
-
+    font-family: 'TimesModern';
     @media (min-width: 768px) {
         font-size: 18px;
         line-height: 30px;

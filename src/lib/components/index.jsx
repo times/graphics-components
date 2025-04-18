@@ -7,3 +7,8 @@ export { default as Grid } from './Grid';
 export { default as Tooltip } from './Tooltip';
 export { default as ScrollStory } from './ScrollStory';
 export { default as MediaBlock } from './MediaBlock';
+export { default as Headline } from './Headline';
+export { default as Description } from './Description';
+export { default as ArticleFlags } from './ArticleFlags';
+export { default as Text } from './Text';
+
