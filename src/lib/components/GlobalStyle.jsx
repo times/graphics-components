@@ -5,7 +5,7 @@ import { createGlobalStyle } from 'styled-components';
 export const GlobalStyle = createGlobalStyle`
     @font-face {
     font-family: 'TimesDigital';
-    src: url('./assets/fonts/TimesModernRegular.woff') format('woff');
+    src: url('https://times.github.io/graphics-components/assets/fonts/TimesModernRegular.woff') format('woff');
     font-display: swap;
     }
 
