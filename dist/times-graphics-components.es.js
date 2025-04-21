@@ -37791,15 +37791,15 @@ const nT = ke.div`
 
     .video-js .vjs-big-play-button {
         top: unset;
-        bottom: 0.3em;
-        left: 1.8em;
+        bottom: 6px;
+        left: 69px;
         color: black;
-        width: 4rem;
-        height: 4rem;
+        width: 60px;
+        height: 60px;
         background-color: white;
         border-radius: 0;
-        font-size: 5em;
-        line-height: 1.15em;
+        font-size: 42px;
+        line-height: 1.35;
     }
 `, lT = ke.div`
     margin-top: 10px;
