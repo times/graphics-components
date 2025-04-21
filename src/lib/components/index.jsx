@@ -12,3 +12,4 @@ export { default as Description } from './Description';
 export { default as ArticleFlags } from './ArticleFlags';
 export { default as Text } from './Text';
 export { default as FurnitureBlock } from './FurnitureBlock';
+export { default as DataWrapperEmbed } from './DataWrapperEmbed';

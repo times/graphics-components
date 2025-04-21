@@ -1,0 +1,52 @@
+import { Meta, Story, ArgTypes, Description } from '@storybook/addon-docs';
+import { DataWrapperEmbed } from '../../lib/components';
+import '../../App.css';
+
+<Meta title="Components/DataWrapperEmbed" component={DataWrapperEmbed} />
+
+# DataWrapperEmbed
+
+Embeds a responsive [Datawrapper](https://www.datawrapper.de/) chart via `iframe`, with automatic height adjustment based on content.
+
+## Features
+
+- 📊 **Datawrapper Integration**: Embeds any published chart from Datawrapper.
+- 📐 **Auto Resize**: Uses `postMessage` listener to auto-adjust height.
+- 💡 **Versioned Support**: Allows specifying the exact version of the chart.
+- 🛠 **Simple API**: Pass `chartId`, `version`, and optional `title`.
+
+## Props
+
+---
+
+### `chartId` (required)  
+**Type:** `string`  
+The chart ID from Datawrapper (e.g. `csmgb` from the embed URL).
+
+---
+
+### `version`  
+**Type:** `string`  
+**Default:** `"1"`  
+Version number of the chart, typically found in the embed URL (e.g. `2` in `/csmgb/2/`).
+
+---
+
+### `title`  
+**Type:** `string`  
+**Default:** `""`  
+Accessible title for the iframe element.
+
+---
+
+## Usage
+
+```jsx
+import { DataWrapperEmbed } from '@times/graphics-components';
+
+
+<DataWrapperEmbed
+  chartId="csmgb"
+  version="1"
+  title="U.K. inflation trends by sector"
+/>
