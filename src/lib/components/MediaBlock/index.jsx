@@ -1,9 +1,58 @@
 /* eslint-disable linebreak-style */
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import styled, { css } from 'styled-components';
+import videojs from 'video.js';
+import 'video.js/dist/video-js.css';
 import Wrapper from '../Wrapper';
 import { GlobalStyle } from '../GlobalStyle';
 import { CaptionText, MediaContainer, SlideText, StyledMedia } from './styles';
+
+const VideoJS = ({ options, onReady, controlsTop = false }) => {
+    const videoRef  = useRef(null);
+    const playerRef = useRef(null);
+  
+    useEffect(() => {
+      if (!playerRef.current && videoRef.current) {
+        playerRef.current = videojs(videoRef.current, options, () => {
+          onReady?.(playerRef.current);
+        });
+      }
+      return () => {
+        playerRef.current?.dispose();
+        playerRef.current = null;
+      };
+    }, []);
+  
+    useEffect(() => {
+      if (!playerRef.current) return;
+  
+      const { autoplay, controls, loop, muted } = options;
+  
+      playerRef.current.autoplay(autoplay);
+      playerRef.current.controls(controls);
+      playerRef.current.loop(loop);
+      playerRef.current.muted(muted);
+  
+    }, [
+      options.autoplay,
+      options.controls,
+      options.loop,
+      options.muted,
+    ]);
+  
+    return (
+        <div
+        data-vjs-player
+        className={controlsTop ? 'controls-top' : ''}
+      >
+        <video
+          ref={videoRef}
+          className="video-js vjs-big-play-centered"
+        />
+      </div>
+    );
+  };
+  
 
 const getEmbedUrl = (mediaUrl, autoplay, loop, controls, mute) => {
     if (mediaUrl.includes('youtube.com')) {
@@ -52,6 +101,22 @@ const MediaBlock = ({ data }) => {
         parsedMute
     );
 
+    // Video.js options
+    const videoJsOptions = {
+        autoplay: parsedAutoplay,
+        controls: parsedControls,
+        loop: parsedLoop,
+        muted: parsedMute,
+        responsive: true,
+        fluid: true,
+        sources: [
+            {
+                src: media,
+                type: 'video/mp4',
+            },
+        ],
+    };
+
     const mediaElement = (
         <StyledMedia
             $containerWidth={containerWidth}
@@ -66,20 +131,7 @@ const MediaBlock = ({ data }) => {
                     allowFullScreen
                 />
             ) : media.endsWith('.mp4') ? (
-                <video
-                    autoPlay={videoAutoplay}
-                    loop={videoLoop}
-                    controls={videoControls}
-                    muted={videoMute}
-                >
-                    <source src={media} type="video/mp4" />
-                    <track
-                        kind="captions"
-                        src={media.replace('.mp4', '.vtt')}
-                        label="English"
-                    />
-                    Your browser does not support the video tag.
-                </video>
+                <VideoJS options={videoJsOptions} />
             ) : (
                 <img src={media} alt={altText} />
             )}
