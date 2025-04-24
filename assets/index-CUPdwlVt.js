@@ -32,6 +32,7 @@ import{j as $}from"./jsx-runtime-D_zvdyIk.js";import{e as z,r as be}from"./index
 `,un=F.div`
     margin-block-start: 1em;
     margin-block-end: 100px;
+    position: relative;
 `,fn=F.div`
     background-color: black;
     color: white;
