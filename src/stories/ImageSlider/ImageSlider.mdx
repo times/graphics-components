@@ -1,0 +1,68 @@
+import { Meta } from '@storybook/addon-docs';
+import { ImageSlider } from '../../lib/components';
+import '../../App.css';
+
+<Meta title="Components/ImageSlider" component={ImageSlider} />
+
+# ImageSlider
+
+A component for comparing two images using an interactive slider. Commonly used for before/after visual comparisons.
+
+## Features
+
+- ↔️ **Draggable Slider**: Interactive handle reveals either side of the image.
+- 🖼 **Image Comparison**: Accepts `beforeImage` and `afterImage` props.
+- 🏷 **Custom Labels**: Show optional "Before" and "After" tags.
+- ✨ **Photo Credits**: Optionally include source credits below.
+- 📱 **Responsive**: Works on desktop and mobile.
+- ♿ **Accessible**: Keyboard support and semantic markup.
+
+## Props
+
+### `beforeImage` (required)  
+**Type:** `string`  
+URL of the "before" image.
+
+---
+
+### `afterImage` (required)  
+**Type:** `string`  
+URL of the "after" image.
+
+---
+
+### `beforeLabel`  
+**Type:** `string`  
+Default: `'Before'`  
+Text label shown on the left side.
+
+---
+
+### `afterLabel`  
+**Type:** `string`  
+Default: `'After'`  
+Text label shown on the right side.
+
+---
+
+### `photoCredits`  
+**Type:** `{ before?: string; after?: string }`  
+Optional object to display source credits below the component.
+
+---
+
+## Usage
+
+```jsx
+import { ImageSlider } from '@times/graphics-components';
+
+<ImageSlider
+  beforeImage="https://placehold.co/800x450?text=Before"
+  afterImage="https://placehold.co/800x450?text=After"
+  beforeLabel="Before Renovation"
+  afterLabel="After Renovation"
+  photoCredits={{
+    before: 'NASA (2020)',
+    after: 'NOAA (2024)'
+  }}
+/>

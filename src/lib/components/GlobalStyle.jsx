@@ -37,6 +37,7 @@ export const GlobalStyle = createGlobalStyle`
 export const Container = styled.div`
     margin-block-start: 1em;
     margin-block-end: 100px;
+    position: relative;
 `;
 
 export const CardContainer = styled.div`
