@@ -16,6 +16,12 @@ export default {
       control: 'object',
     },
   },
+  parameters: {
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/board/8hNp1148i1vb0LoDO25UhR/FigJam-basics?t=VbbeMpaBY9EPG2go-0',
+    },
+  },
   decorators: [
     (Story) => (
       <WithWrapper>
