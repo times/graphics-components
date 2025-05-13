@@ -1,6 +1,6 @@
 {
     "name": "@times/graphics-components",
-    "version": "0.0.36",
+    "version": "0.0.37",
     "type": "module",
     "main": "dist/times-graphics-components.umd.js",
     "module": "dist/times-graphics-components.es.js",
@@ -79,7 +79,7 @@
         "prop-types": "^15.8.1",
         "shx": "^0.3.4",
         "storybook": "^8.6.11",
-        "vite": "^6.2.4",
+        "vite": "^6.2.7",
         "vite-plugin-css-injected-by-js": "^3.5.2",
         "webpack": "^5.98.0"
     }
