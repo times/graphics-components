@@ -3,8 +3,9 @@ import { Container, GlobalStyle } from '../GlobalStyle';
 import Header from '../Header';
 import Grid from '../Grid';
 import Tooltip from '../Tooltip';
+import ThemeProvider from '../../themes/ThemeProvider';
 
-export default function ImageGrid({ data }) {
+export default function ImageGrid({ data, theme }) {
     const [clickedImage, setClickedImage] = useState(null);
     const [showTooltip, setShowTooltip] = useState(false);
     const [tooltipPos, setTooltipPos] = useState([0, 0]);
@@ -13,7 +14,7 @@ export default function ImageGrid({ data }) {
 
     let isImageInLastRow = dataLength - data.indexOf(clickedImage) <= 7;
 
-    return (
+    const content = (
         <>
             <GlobalStyle />
             <Container>
@@ -38,5 +39,21 @@ export default function ImageGrid({ data }) {
                 />
             </Container>
         </>
+    );
+
+    // If no custom theme is provided, use default ThemeProvider
+    if (!theme) {
+        return (
+            <ThemeProvider>
+                {content}
+            </ThemeProvider>
+        );
+    }
+
+    // If theme is provided, wrap with ThemeProvider
+    return (
+        <ThemeProvider customTheme={theme}>
+            {content}
+        </ThemeProvider>
     );
 }

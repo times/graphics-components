@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 export const MediaContainer = styled.div`
     display: block;
-    margin: ${props => props.theme?.utils?.spacing?.('5') || '20px'} auto;
+    margin: ${props => props.theme.utils.spacing('5')} auto;
     position: relative;
 
     &.bleed {
@@ -17,7 +17,7 @@ export const MediaContainer = styled.div`
     }
 
     @media (max-width: 767px) {
-        padding: 0 ${props => props.theme?.utils?.spacing?.('3') || '14px'} !important;
+        padding: 0 ${props => props.theme.utils.spacing('3')} !important;
         &.bleed {
             padding: 0;
         }
@@ -70,28 +70,28 @@ export const MediaContainer = styled.div`
 
     .video-js .vjs-big-play-button {
         top: unset;
-        bottom: ${props => props.theme?.utils?.spacing?.('2') || '6px'};
-        left: ${props => props.theme?.utils?.spacing?.('16') || '69px'};
-        color: ${props => props.theme?.utils?.color?.('neutral.black') || 'black'};
-        width: ${props => props.theme?.utils?.spacing?.('16') || '60px'};
-        height: ${props => props.theme?.utils?.spacing?.('16') || '60px'};
-        background-color: ${props => props.theme?.utils?.color?.('neutral.nel010') || 'white'};
-        border-radius: ${props => props.theme?.utils?.borderRadius?.('none') || '0'};
-        font-size: ${props => props.theme?.utils?.typography?.('fontSize', '4xl') || '42px'};
+        bottom: ${props => props.theme.utils.spacing('2')};
+        left: ${props => props.theme.utils.spacing('16')};
+        color: ${props => props.theme.utils.color('neutral.black')};
+        width: ${props => props.theme.utils.spacing('16')};
+        height: ${props => props.theme.utils.spacing('16')};
+        background-color: ${props => props.theme.utils.color('neutral.nel010')};
+        border-radius: ${props => props.theme.utils.borderRadius('none')};
+        font-size: ${props => props.theme.utils.typography('fontSize', '4xl')};
         line-height: 1.35;
     }
 `;
 
 export const SlideText = styled.div`
-    margin-top: ${props => props.theme?.utils?.spacing?.('3') || '10px'};
+    margin-top: ${props => props.theme.utils.spacing('3')};
     text-align: left;
-    font-family: ${props => props.theme?.utils?.typography?.('fontFamily', 'sans')?.join(', ') || 'Roboto-Regular, Roboto-Regular-fallback, sans-serif'};
+    font-family: ${props => props.theme.utils.typography('fontFamily', 'timesModernRegular')?.join(', ')};
     
     p {
-        font-size: ${props => props.theme?.utils?.typography?.('fontSize', 'sm') || '14px'};
-        color: ${props => props.theme?.utils?.color?.('neutral.ne060') || 'rgb(105, 105, 105)'};
-        line-height: ${props => props.theme?.utils?.typography?.('lineHeight', 'normal') || '19px'};
-        margin-bottom: ${props => props.theme?.utils?.spacing?.('1') || '4px'};
+        font-size: ${props => props.theme.utils.typography('fontSize', 'sm')};
+        color: ${props => props.theme.utils.color('neutral.ne060')};
+        line-height: ${props => props.theme.utils.typography('lineHeight', 'normal')};
+        margin-bottom: ${props => props.theme.utils.spacing('1')};
         text-align: left;
     }
 `;
@@ -99,15 +99,15 @@ export const SlideText = styled.div`
 export const CaptionText = styled.div`
     position: absolute;
     top: 0;
-    background-color: ${props => props.theme?.utils?.color?.('neutral.black') || 'black'};
-    color: ${props => props.theme?.utils?.color?.('whiteTint.white') || '#fff'};
-    padding: ${props => props.theme?.utils?.spacing?.('3') || '10px'};
+    background-color: ${props => props.theme.utils.color('neutral.black')};
+    color: ${props => props.theme.utils.color('whiteTint.white')};
+    padding: ${props => props.theme.utils.spacing('3')};
     border-radius: ${({ $imgBorderRadius, theme }) => 
-        `${$imgBorderRadius || theme?.utils?.borderRadius?.('md') || '0.375rem'} 0 0 0`};
+        `${$imgBorderRadius || theme.utils.borderRadius('md')} 0 0 0`};
 
     p {
-        color: ${props => props.theme?.utils?.color?.('whiteTint.white') || '#fff'};
-        font-size: ${props => props.theme?.utils?.typography?.('fontSize', 'xs') || '12px'};
+        color: ${props => props.theme.utils.color('whiteTint.white')};
+        font-size: ${props => props.theme.utils.typography('fontSize', 'xs')};
         margin: 0;
     }
 `;
@@ -122,7 +122,7 @@ export const StyledMedia = styled.div`
         height: auto;
         border: none;
         ${({ $containerWidth, $fixedImgHeight, $imgBorderRadius, theme }) => {
-            const borderRadius = $imgBorderRadius || theme?.utils?.borderRadius?.('md') || '0.375rem';
+            const borderRadius = $imgBorderRadius || theme.utils.borderRadius('md');
             
             if ($containerWidth === 'edge-to-edge') {
                 return css`

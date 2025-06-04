@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import { GlobalStyle } from '../GlobalStyle';
+import ThemeProvider from '../../themes/ThemeProvider';
 
 const pulse = keyframes`
   0% { opacity: 1 }
@@ -11,14 +12,18 @@ const pulse = keyframes`
 const Wrapper = styled.div`
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 8px;
+    gap: ${({ theme }) => 
+        theme.utils.spacing('2')
+    };
+    margin-bottom: ${({ theme }) => 
+        theme.utils.spacing('2')
+    };
 
-    ${({ withContainer }) =>
+    ${({ withContainer, theme }) =>
         withContainer &&
         `
-    margin-bottom: 15px;
-    margin-top: 5px;
+    margin-bottom: ${theme.utils.spacing('4')};
+    margin-top: ${theme.utils.spacing('1')};
   `}
 `;
 
@@ -27,72 +32,115 @@ const FlagFlex = styled.div`
     -webkit-box-align: center;
     align-items: center;
     p {
-        color: rgb(51, 51, 51);
-        font-family: Roboto-Regular;
-        font-size: 14px;
-        line-height: 16px;
+        color: ${({ theme }) => 
+            theme.utils.color('ink.inkBase.light')
+        };
+        font-family: ${({ theme }) => 
+            theme.utils.typography('fontFamily', 'timesModernRegular')?.join(', ')
+        };
+        font-size: ${({ theme }) => 
+            theme.utils.typography('fontSize', 'sm')
+        };
+        line-height: ${({ theme }) => 
+            theme.utils.typography('lineHeight', 'tight')
+        };
     }
 `;
 
 const FlagBox = styled.div`
     display: flex;
     align-items: center;
-    background: #9f0000;
-    height: 24px;
-    padding: 7px;
+    background: ${({ theme }) => 
+        theme.utils.color('red.red090')
+    };
+    height: ${({ theme }) => 
+        theme.utils.spacing('6')
+    };
+    padding: ${({ theme }) => 
+        theme.utils.spacing('2')
+    };
     display: flex;
     flex-direction: row;
     width: fit-content;
     color: white;
-    gap: 6px;
-    font-family: Roboto-Regular;
-    font-weight: 200;
-    font-size: 12px;
+    gap: ${({ theme }) => 
+        theme.utils.spacing('2')
+    };
+    font-family: ${({ theme }) => 
+        theme.utils.typography('fontFamily', 'timesModernRegular')?.join(', ')
+    };
+    font-weight: ${({ theme }) => 
+        theme.utils.typography('fontWeight', 'extralight')
+    };
+    font-size: ${({ theme }) => 
+        theme.utils.typography('fontSize', 'xs')
+    };
     display: flex;
     -webkit-box-align: center;
     align-items: center;
 `;
 
 const PulseSquare = styled.div`
-    width: 6px;
-    height: 6px;
+    width: ${({ theme }) => 
+        theme.utils.spacing('2')
+    };
+    height: ${({ theme }) => 
+        theme.utils.spacing('2')
+    };
     background: white;
     animation: ${pulse} 1.2s infinite;
 `;
 
 const FlagDot = styled.div`
-    font-size: 12px;
-    font-weight: 400;
-    letter-spacing: 0.6px;
-    line-height: 12px;
+    font-size: ${({ theme }) => 
+        theme.utils.typography('fontSize', 'xs')
+    };
+    font-weight: ${({ theme }) => 
+        theme.utils.typography('fontWeight', 'normal')
+    };
+    letter-spacing: ${({ theme }) => 
+        theme.utils.typography('letterSpacing', 'wide')
+    };
+    line-height: ${({ theme }) => 
+        theme.utils.typography('fontSize', 'xs')
+    };
     display: flex;
     align-items: center;
-    gap: 6px;
-    font-family: TimesDigitalW04-RegularSC;
-    font-size: 12px;
-    font-weight: bold;
+    gap: ${({ theme }) => 
+        theme.utils.spacing('2')
+    };
+    font-family: ${({ theme }) => 
+        theme.utils.typography('fontFamily', 'TimesDigitalWRegular')?.join(', ')
+    };
+    font-weight: ${({ theme }) => 
+        theme.utils.typography('fontWeight', 'bold')
+    };
     text-transform: uppercase;
-    color: ${({ $type }) => {
+    color: ${({ $type, theme }) => {
         switch ($type) {
             case 'UPDATED':
-                return '#3c81be';
+                return theme.utils.color('blue.blue070');
             case 'EXCLUSIVE':
-                return '#c51d24';
+                return theme.utils.color('red.red060');
             case 'SPONSORED':
-                return '#4d4d4d';
+                return theme.utils.color('neutral.ne070');
             case 'NEW':
-                return '#e34605';
+                return theme.utils.color('amber.amber070');
             case 'LONGREAD':
-                return '#696969';
+                return theme.utils.color('neutral.ne070');
             default:
-                return '#000';
+                return theme.utils.color('neutral.black');
         }
     }};
 `;
 
 const Dot = styled.span`
-    width: 6px;
-    height: 6px;
+    width: ${({ theme }) => 
+        theme.utils.spacing('2')
+    };
+    height: ${({ theme }) => 
+        theme.utils.spacing('2')
+    };
     border-radius: 50%;
     background: currentColor;
 `;
@@ -117,10 +165,11 @@ const ArticleFlags = ({
     flags = [],
     longRead = false,
     withContainer = true,
+    theme,
 }) => {
     if (!flags.length && !longRead) return null;
 
-    return (
+    const content = (
         <>
             <GlobalStyle />
             <Wrapper withContainer={withContainer}>
@@ -138,8 +187,8 @@ const ArticleFlags = ({
 
                     if (type === 'LIVE' || type === 'BREAKING') {
                         return (
-                            <FlagFlex>
-                                <FlagBox key={i} $type={type}>
+                            <FlagFlex key={i}>
+                                <FlagBox $type={type}>
                                     <PulseSquare />
                                     <span className="live-breaking">
                                         {type}
@@ -150,7 +199,7 @@ const ArticleFlags = ({
                                         className="live-breaking"
                                         style={{
                                             fontWeight: 400,
-                                            marginLeft: 6,
+                                            marginLeft: theme?.utils?.spacing?.('2'),
                                         }}
                                     >
                                         {label}
@@ -176,6 +225,22 @@ const ArticleFlags = ({
                 )}
             </Wrapper>
         </>
+    );
+
+    // If no custom theme is provided, use default ThemeProvider
+    if (!theme) {
+        return (
+            <ThemeProvider>
+                {content}
+            </ThemeProvider>
+        );
+    }
+
+    // If theme is provided, wrap with ThemeProvider
+    return (
+        <ThemeProvider customTheme={theme}>
+            {content}
+        </ThemeProvider>
     );
 };
 

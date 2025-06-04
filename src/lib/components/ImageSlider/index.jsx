@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { GlobalStyle } from '../GlobalStyle';
+import ThemeProvider from '../../themes/ThemeProvider';
 
 const Container = styled.div`
     position: relative;
@@ -8,7 +9,9 @@ const Container = styled.div`
     overflow: hidden;
     aspect-ratio: 16 / 9;
     user-select: none;
-    margin: 20px 0 0;
+    margin: ${props => props.theme?.utils?.spacing?.('5') || '20px'} 0 0;
+    border-radius: ${props => props.theme?.utils?.borderRadius?.('md') || '0.375rem'};
+    box-shadow: ${props => props.theme?.utils?.shadow?.('shadow020') || '0 2px 4px 0 rgba(17, 17, 17, 0.08)'};
 `;
 
 const Image = styled.img`
@@ -35,9 +38,10 @@ const Slider = styled.div`
     left: ${({ position }) => `${position}%`};
     height: 100%;
     width: 3px;
-    background: white;
+    background: ${props => props.theme?.utils?.color?.('whiteTint.white') || 'white'};
     cursor: ew-resize;
     z-index: 3;
+    box-shadow: 0 0 8px ${props => props.theme?.utils?.color?.('blackTint.bTint050') || 'rgba(0, 0, 0, 0.3)'};
 
     &::before {
         content: '';
@@ -47,7 +51,9 @@ const Slider = styled.div`
         transform: translate(-50%, -50%);
         width: 10px;
         height: 80px;
-        background: white;
+        background: ${props => props.theme?.utils?.color?.('whiteTint.white') || 'white'};
+        border-radius: ${props => props.theme?.utils?.borderRadius?.('sm') || '0.125rem'};
+        box-shadow: 0 0 8px ${props => props.theme?.utils?.color?.('blackTint.bTint050') || 'rgba(0, 0, 0, 0.3)'};
     }
 
     & > span {
@@ -71,32 +77,50 @@ const Slider = styled.div`
     }
 
     & > span::before {
-        border-right: 8px solid white;
+        border-right: 8px solid ${props => props.theme?.utils?.color?.('whiteTint.white') || 'white'};
     }
 
     & > span::after {
-        border-left: 8px solid white;
+        border-left: 8px solid ${props => props.theme?.utils?.color?.('whiteTint.white') || 'white'};
+    }
+
+    &:focus {
+        outline: 2px solid ${props => props.theme?.utils?.color?.('focus.focus010') || '#005c8a'};
+        outline-offset: 2px;
     }
 `;
 
 const Label = styled.span`
     position: absolute;
-    top: 10px;
-    background: rgba(0, 0, 0, 0.6);
-    color: #fff;
-    padding: 4px 8px;
-    font-size: 12px;
+    top: ${props => props.theme?.utils?.spacing?.('3') || '10px'};
+    background: ${props => props.theme?.utils?.color?.('blackTint.bTint060') || 'rgba(0, 0, 0, 0.6)'};
+    color: ${props => props.theme?.utils?.color?.('whiteTint.white') || '#fff'};
+    padding: ${props => props.theme?.utils?.spacing?.('1') || '4px'} ${props => props.theme?.utils?.spacing?.('2') || '8px'};
+    font-size: ${props => props.theme?.utils?.fontSize?.('xs') || '12px'};
+    font-family: ${props => 
+        (props.theme?.utils?.fontFamily && props.theme.utils.fontFamily('robotoRegular')?.join(', ')) || 'Roboto-Regular, sans-serif'
+    };
+    font-weight: ${props => props.theme?.utils?.fontWeight?.('medium') || '500'};
     z-index: 4;
-    font-family: 'RobotoRegular', sans-serif;
+    border-radius: ${props => props.theme?.utils?.borderRadius?.('sm') || '0.125rem'};
+    letter-spacing: ${props => props.theme?.utils?.letterSpacing?.('wide') || '0.025em'};
 `;
 
 const Credits = styled.p`
-    margin-top: 8px;
-    font-size: 12px;
-    color: #666;
+    margin-top: ${props => props.theme?.utils?.spacing?.('2') || '8px'};
+    font-size: ${props => props.theme?.utils?.fontSize?.('xs') || '12px'};
+    color: ${props => props.theme?.utils?.color?.('ink.inkSubtle.light') || '#666'};
     text-align: left;
-    margin-bottom: 20px;
-    font-family: 'RobotoRegular', sans-serif;
+    margin-bottom: ${props => props.theme?.utils?.spacing?.('5') || '20px'};
+    font-family: ${props => 
+        (props.theme?.utils?.fontFamily && props.theme.utils.fontFamily('robotoRegular')?.join(', ')) || 'Roboto-Regular, sans-serif'
+    };
+    font-weight: ${props => props.theme?.utils?.fontWeight?.('normal') || '400'};
+    line-height: ${props => props.theme?.utils?.lineHeight?.('relaxed') || '1.75'};
+
+    @media (prefers-color-scheme: dark) {
+        color: ${props => props.theme?.utils?.color?.('theme.dark.font') || '#b6b6b6'};
+    }
 `;
 
 const ImageSlider = ({
@@ -105,6 +129,7 @@ const ImageSlider = ({
     beforeLabel = 'Before',
     afterLabel = 'After',
     photoCredits = {},
+    theme,
 }) => {
     const containerRef = useRef(null);
     const [position, setPosition] = useState(50);
@@ -120,6 +145,14 @@ const ImageSlider = ({
     const handleMouseDown = () => setDragging(true);
     const handleMouseUp = () => setDragging(false);
 
+    const handleKeyDown = (e) => {
+        if (e.key === 'ArrowLeft') {
+            setPosition(prev => Math.max(0, prev - 5));
+        } else if (e.key === 'ArrowRight') {
+            setPosition(prev => Math.min(100, prev + 5));
+        }
+    };
+
     useEffect(() => {
         window.addEventListener('mousemove', handleMouseMove);
         window.addEventListener('mouseup', handleMouseUp);
@@ -129,7 +162,7 @@ const ImageSlider = ({
         };
     }, [dragging]);
 
-    return (
+    const content = (
         <>
             <GlobalStyle />
             <Container ref={containerRef}>
@@ -142,10 +175,12 @@ const ImageSlider = ({
                 <Slider
                     position={position}
                     onMouseDown={handleMouseDown}
+                    onKeyDown={handleKeyDown}
                     role="separator"
                     aria-valuenow={position}
                     aria-valuemin={0}
                     aria-valuemax={100}
+                    aria-label="Image comparison slider"
                     tabIndex={0}
                 >
                     <span />
@@ -161,6 +196,22 @@ const ImageSlider = ({
                 </Credits>
             ) : null}
         </>
+    );
+
+    // If no custom theme is provided, use default ThemeProvider
+    if (!theme) {
+        return (
+            <ThemeProvider>
+                {content}
+            </ThemeProvider>
+        );
+    }
+
+    // If theme is provided, wrap with ThemeProvider
+    return (
+        <ThemeProvider customTheme={theme}>
+            {content}
+        </ThemeProvider>
     );
 };
 

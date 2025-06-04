@@ -5,10 +5,10 @@ import { createGlobalStyle } from 'styled-components';
 export const GlobalStyle = createGlobalStyle`
    @media (prefers-color-scheme: dark) {
         :root {
-            --color-bg: ${props => props.theme?.utils?.themeColor?.('bg', 'dark') || '#121212'};
-            --color-page: ${props => props.theme?.utils?.themeColor?.('page', 'dark') || '#1b1b1b'};
-            --color-font: ${props => props.theme?.utils?.themeColor?.('font', 'dark') || '#b6b6b6'};
-            --color-border: ${props => props.theme?.utils?.themeColor?.('border', 'dark') || '#374151'};
+            --color-bg: ${props => props.theme.utils.color('theme.dark.bg')};
+            --color-page: ${props => props.theme.utils.color('theme.dark.page')};
+            --color-font: ${props => props.theme.utils.color('theme.dark.font')};
+            --color-border: ${props => props.theme.utils.color('theme.dark.border')};
         }
         body {
             background-color: var(--color-bg);
@@ -24,22 +24,22 @@ export const GlobalStyle = createGlobalStyle`
             background-color: var(--color-bg);
         }
         #article-main{
-            border-color: ${props => props.theme?.utils?.color?.('neutral.700') || 'rgb(49 49 49)'} black !important;
+            border-color: ${props => props.theme.utils.color('neutral.ne080')} black !important;
         }
-        ${props => props.theme?.utils?.media?.up?.('md') || '@media (min-width: 768px)'} {
+        @media (min-width: 768px) {
             .MainContainer {
-                border-right: 1px solid ${props => props.theme?.utils?.color?.('neutral.800', 0.5) || 'rgb(0 0 0 / 50%)'};
-                border-left: 1px solid ${props => props.theme?.utils?.color?.('neutral.800', 0.5) || 'rgb(0 0 0 / 50%)'};
+                border-right: 1px solid ${props => props.theme.utils.color('neutral.ne080')};
+                border-left: 1px solid ${props => props.theme.utils.color('neutral.ne080')};
             }    
         }
     }
 
     @media (prefers-color-scheme: light) {
         :root {
-            --color-bg: ${props => props.theme?.utils?.themeColor?.('bg', 'light') || '#ffffff'};
-            --color-page: ${props => props.theme?.utils?.themeColor?.('page', 'light') || '#f9fafb'};
-            --color-font: ${props => props.theme?.utils?.themeColor?.('font', 'light') || '#111827'};
-            --color-border: ${props => props.theme?.utils?.themeColor?.('border', 'light') || '#e5e7eb'};
+            --color-bg: ${props => props.theme.utils.color('theme.light.bg')};
+            --color-page: ${props => props.theme.utils.color('theme.light.page')};
+            --color-font: ${props => props.theme.utils.color('theme.light.font')};
+            --color-border: ${props => props.theme.utils.color('theme.light.border')};
         }
         body {
             background-color: var(--color-bg);
@@ -57,7 +57,7 @@ export const GlobalStyle = createGlobalStyle`
         #article-main{
             border-color: var(--color-border) !important;
         }
-        ${props => props.theme?.utils?.media?.up?.('md') || '@media (min-width: 768px)'} {
+        @media (min-width: 768px) {
             .MainContainer {
                 border-right: 1px solid var(--color-border);
                 border-left: 1px solid var(--color-border);
@@ -67,49 +67,58 @@ export const GlobalStyle = createGlobalStyle`
 `;
 
 export const Container = styled.div`
-    margin-block-start: ${props => props.theme?.utils?.spacing?.('4') || '1em'};
-    margin-block-end: ${props => props.theme?.utils?.spacing?.('32') || '100px'};
+    margin-block-start: ${props => props.theme.utils.spacing('4')};
+    margin-block-end: ${props => props.theme.utils.spacing('32')};
     position: relative;
 `;
 
 export const CardContainer = styled.div`
-    background-color: ${props => props.theme?.utils?.color?.('neutral.900') || 'black'};
-    color: ${props => props.theme?.utils?.color?.('neutral.50') || 'white'};
-    margin: ${props => props.theme?.utils?.spacing?.('10') || '40px'} 0;
-    padding-block-start: ${props => props.theme?.utils?.spacing?.('4') || '16px'};
-    padding-block-end: ${props => props.theme?.utils?.spacing?.('2') || '8px'};
-    padding-inline: ${props => props.theme?.utils?.spacing?.('3') || '12px'};
-    border-radius: ${props => props.theme?.utils?.borderRadius?.('md') || '0.375rem'};
+    background-color: ${props => props.theme.utils.color('neutral.black')};
+    color: ${props => props.theme.utils.color('whiteTint.white')};
+    margin: ${props => props.theme.utils.spacing('10')} 0;
+    padding-block-start: ${props => props.theme.utils.spacing('4')};
+    padding-block-end: ${props => props.theme.utils.spacing('2')};
+    padding-inline: ${props => props.theme.utils.spacing('3')};
+    border-radius: ${props => props.theme.utils.borderRadius('md')};
 
     .card-image {
         width: 172px;
         aspect-ratio: 1 / 1;
-        border-radius: ${props => props.theme?.utils?.borderRadius?.('lg') || '0.5rem'};
+        border-radius: ${props => props.theme.utils.borderRadius('lg')};
     }
 
     .card-name {
-        margin-block-start: ${props => props.theme?.utils?.spacing?.('2') || '8px'};
+        margin-block-start: ${props => props.theme.utils.spacing('2')};
         margin-block-end: 0;
-        font-weight: ${props => props.theme?.utils?.typography?.('fontWeight', 'medium') || '500'};
+        font-weight: ${props => props.theme.utils.typography('fontWeight', 'medium')};
+        font-family: ${props => 
+            props.theme.utils.typography('fontFamily', 'timesModernMedium')?.join(', ')
+        };
+        font-size: ${props => props.theme.utils.typography('fontSize', 'base')};
+        color: ${props => props.theme.utils.color('whiteTint.white')};
     }
 
     .card-quote {
-        font-size: ${props => props.theme?.utils?.typography?.('fontSize', '2xl') || '24px'};
-        line-height: ${props => props.theme?.utils?.typography?.('lineHeight', 'tight') || '30px'};
-        font-weight: ${props => props.theme?.utils?.typography?.('fontWeight', 'bold') || '700'};
+        font-size: ${props => props.theme.utils.typography('fontSize', '2xl')};
+        line-height: ${props => props.theme.utils.typography('lineHeight', 'tight')};
+        font-weight: ${props => props.theme.utils.typography('fontWeight', 'bold')};
+        font-family: ${props => 
+            props.theme.utils.typography('fontFamily', 'timesModernBold')?.join(', ')
+        };
         text-align: left;
-        color: ${props => props.theme?.utils?.color?.('neutral.300') || '#d9d9d9'};
-        margin-block-start: ${props => props.theme?.utils?.spacing?.('3') || '12px'};
+        color: ${props => props.theme.utils.color('neutral.ne030')};
+        margin-block-start: ${props => props.theme.utils.spacing('3')};
+        letter-spacing: ${props => props.theme.utils.typography('letterSpacing', 'editorial')};
     }
 
-    ${props => props.theme?.utils?.media?.up?.('md') || '@media (min-width: 768px)'} {
+    @media (min-width: 768px) {
         display: grid;
         grid-template-columns: 1fr 2fr;
-        gap: ${props => props.theme?.utils?.spacing?.('4') || '1em'};
+        gap: ${props => props.theme.utils.spacing('4')};
 
         .waveform-container {
             grid-column: 2 / 3;
-            margin-block: ${props => props.theme?.utils?.spacing?.('2') || '0.5em'};
+            margin-block: ${props => props.theme.utils.spacing('2')};
         }
 
         .card-image--container {
@@ -125,7 +134,7 @@ export const CardContainer = styled.div`
         }
 
         .card-name {
-            font-size: ${props => props.theme?.utils?.typography?.('fontSize', 'base') || '1rem'};
+            font-size: ${props => props.theme.utils.typography('fontSize', 'base')};
         }
     }
 `;

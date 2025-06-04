@@ -1,8 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Board, Section, SlidesContainer, SlidesWrapper, Text } from './styles';
 import { Container, GlobalStyle } from '../GlobalStyle';
+import ThemeProvider from '../../themes/ThemeProvider';
 
-export default function ScrollStory({ data }) {
+export default function ScrollStory({ data, theme }) {
     const {
         slides = [],
         imgFit = 'cover',
@@ -70,7 +71,7 @@ export default function ScrollStory({ data }) {
         url.includes('youtube.com') || url.includes('youtu.be');
     const isMP4 = (url) => url.endsWith('.mp4');
 
-    return (
+    const content = (
         <>
             <GlobalStyle />
             <Container>
@@ -173,5 +174,21 @@ export default function ScrollStory({ data }) {
                 </div>
             </Container>
         </>
+    );
+
+    // If no custom theme is provided, use default ThemeProvider
+    if (!theme) {
+        return (
+            <ThemeProvider>
+                {content}
+            </ThemeProvider>
+        );
+    }
+
+    // If theme is provided, wrap with ThemeProvider
+    return (
+        <ThemeProvider customTheme={theme}>
+            {content}
+        </ThemeProvider>
     );
 }
