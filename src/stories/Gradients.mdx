@@ -1,0 +1,344 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Design System/Gradients" />
+
+# Gradients
+
+<div style={{
+  fontFamily: 'system-ui, -apple-system, sans-serif',
+  fontSize: '14px',
+  lineHeight: '1.4',
+  marginTop: '2rem'
+}}>
+
+{/* Gradient Component Styles */}
+<style>
+{`
+.gradients-section {
+  margin-bottom: 3rem;
+  padding: 0;
+}
+
+.gradients-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #111827;
+}
+
+.gradients-description {
+  color: #6b7280;
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.gradient-container {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.gradient-demo {
+  flex: 1;
+  min-width: 500px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  height: 350px;
+}
+
+.gradient-image {
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.gradient-image img {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.gradient-image-placeholder {
+  width: 100%;
+  height: 100%;
+  background: #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 8px;
+  border: 2px dashed #cbd5e1;
+  position: relative;
+}
+
+.gradient-info {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.gradient-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #1a202c;
+}
+
+.gradient-css {
+  background: #f7fafc;
+  padding: 1rem;
+  border-radius: 6px;
+  font-family: 'Monaco', 'Courier New', monospace;
+  font-size: 0.8rem;
+  color: #2d3748;
+  margin-bottom: 1rem;
+  border-left: 3px solid #4299e1;
+}
+
+.gradient-usage {
+  font-size: 0.85rem;
+  color: #718096;
+  line-height: 1.5;
+}
+
+/* Theme-specific styles for gradient info sections */
+.gradient-info-light * {
+  color: #000000 !important;
+}
+
+.gradient-info-dark * {
+  color: #ffffff !important;
+}
+
+.gradient-info-light .gradient-name {
+  color: #1a202c !important;
+}
+
+.gradient-info-dark .gradient-name {
+  color: #ffffff !important;
+}
+
+.gradient-info-light .gradient-usage {
+  color: #4a5568 !important;
+}
+
+.gradient-info-dark .gradient-usage {
+  color: #e2e8f0 !important;
+}
+
+/* Gradient Variations */
+.overlay-gradient-base-vertical-light {
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+}
+
+.overlay-gradient-base-horizontal-light {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+}
+
+.overlay-gradient-base-vertical-dark {
+  background: linear-gradient(0deg, rgba(41, 41, 41, 0) 0%, rgba(41, 41, 41, 1) 100%);
+}
+
+.overlay-gradient-base-horizontal-dark {
+  background: linear-gradient(90deg, rgba(41, 41, 41, 0) 0%, rgba(41, 41, 41, 1) 100%);
+}
+
+/* Inverse Gradient Variations */
+.overlay-gradient-inverse-vertical-light {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+}
+
+.overlay-gradient-inverse-horizontal-light {
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+}
+
+.overlay-gradient-inverse-vertical-dark {
+  background: linear-gradient(0deg, rgba(228, 228, 228, 0) 0%, rgba(228, 228, 228, 1) 100%);
+}
+
+.overlay-gradient-inverse-horizontal-dark {
+  background: linear-gradient(90deg, rgba(228, 228, 228, 0) 0%, rgba(228, 228, 228, 1) 100%);
+}
+
+/* Demo backgrounds for better visibility */
+.gradient-demo-bg {
+  background-image: url('data:image/svg+xml,<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect width="10" height="10" fill="%23f1f5f9"/><rect x="10" y="10" width="10" height="10" fill="%23f1f5f9"/><rect x="10" width="10" height="10" fill="%23e2e8f0"/><rect y="10" width="10" height="10" fill="%23e2e8f0"/></svg>');
+}
+`}
+</style>
+
+<div className="gradients-section">
+  <div className="gradients-description">
+    Gradients provide smooth transitions between colors and transparency levels. Our gradient system offers consistent overlay effects for both light and dark themes, helping create visual depth and improve text readability over images.
+  </div>
+
+  {/* Light Mode - Vertical Gradient */}
+  <div className="gradient-container">
+    <div className="gradient-demo">
+      <div className="gradient-image">
+        <img src="img/overlayGradientBaseVertical-light.jpg" alt="Vertical gradient light mode example" />
+      </div>
+      <div className="gradient-info gradient-info-light" style={{background: '#ffffff'}}>
+        <div className="gradient-name">Base Vertical - Light Mode</div>
+        <div className="gradient-css overlay-gradient-base-vertical-light">
+          background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+        </div>
+        <div className="gradient-usage">
+          <strong>overlay.overlayGradientBaseVertical</strong><br/>
+          Vertical gradient for light theme overlays. Creates a smooth transition from transparent to white, ideal for text readability over images in light mode interfaces.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {/* Light Mode - Horizontal Gradient */}
+  <div className="gradient-container">
+    <div className="gradient-demo">
+      <div className="gradient-image">
+        <img src="img/overlay.overlayGradientBaseHorizontal-light.jpg" alt="Horizontal gradient light mode example" />
+      </div>
+      <div className="gradient-info gradient-info-light" style={{background: '#ffffff'}}>
+        <div className="gradient-name">Base Horizontal - Light Mode</div>
+        <div className="gradient-css overlay-gradient-base-horizontal-light">
+          background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+        </div>
+        <div className="gradient-usage">
+          <strong>overlay.overlayGradientBaseHorizontal</strong><br/>
+          Horizontal gradient for light theme overlays. Transitions from transparent to white from left to right, perfect for side-aligned content in light mode.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {/* Dark Mode - Vertical Gradient */}
+  <div className="gradient-container">
+    <div className="gradient-demo">
+      <div className="gradient-image">
+        <img src="img/overlayGradientBaseVertical-dark.jpg" alt="Vertical gradient dark mode example" />
+      </div>
+      <div className="gradient-info gradient-info-dark" style={{background: '#1b1b27'}}>
+        <div className="gradient-name">Base Vertical - Dark Mode</div>
+        <div className="gradient-css overlay-gradient-base-vertical-dark">
+          background: linear-gradient(0deg, rgba(41, 41, 41, 0) 0%, rgba(41, 41, 41, 1) 100%);
+        </div>
+        <div className="gradient-usage">
+          <strong>overlay.overlayGradientBaseVertical</strong><br/>
+          Vertical gradient for dark theme overlays. Creates a smooth transition from transparent to dark gray (#292929), ensuring text readability in dark mode interfaces.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {/* Dark Mode - Horizontal Gradient */}
+  <div className="gradient-container">
+    <div className="gradient-demo">
+      <div className="gradient-image">
+        <img src="img/overlay.overlayGradientBaseHorizontal-dark.jpg" alt="Horizontal gradient dark mode example" />
+      </div>
+      <div className="gradient-info gradient-info-dark" style={{background: '#1b1b27'}}>
+        <div className="gradient-name">Base Horizontal - Dark Mode</div>
+        <div className="gradient-css overlay-gradient-base-horizontal-dark">
+          background: linear-gradient(90deg, rgba(41, 41, 41, 0) 0%, rgba(41, 41, 41, 1) 100%);
+        </div>
+        <div className="gradient-usage">
+          <strong>overlay.overlayGradientBaseHorizontal</strong><br/>
+          Horizontal gradient for dark theme overlays. Transitions from transparent to dark gray from left to right, ideal for side content in dark mode layouts.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {/* Inverse Light Mode - Vertical Gradient */}
+  <div className="gradient-container">
+    <div className="gradient-demo">
+      <div className="gradient-image">
+        <img src="img/overlay.overlayGradientInverseVertical-light.jpg" alt="Inverse vertical gradient light mode example" />
+      </div>
+      <div className="gradient-info gradient-info-light" style={{background: '#ffffff'}}>
+        <div className="gradient-name">Inverse Vertical - Light Mode</div>
+        <div className="gradient-css overlay-gradient-inverse-vertical-light">
+          background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+        </div>
+        <div className="gradient-usage">
+          <strong>overlay.overlayGradientInverseVertical</strong><br/>
+          Inverse vertical gradient for light theme overlays. Creates a smooth transition from transparent to black, ideal for white text over bright images.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {/* Inverse Light Mode - Horizontal Gradient */}
+  <div className="gradient-container">
+    <div className="gradient-demo">
+      <div className="gradient-image">
+        <img src="img/overlay.overlayGradientInverseHorizontal-light.jpg" alt="Inverse horizontal gradient light mode example" />
+      </div>
+      <div className="gradient-info gradient-info-light" style={{background: '#ffffff'}}>
+        <div className="gradient-name">Inverse Horizontal - Light Mode</div>
+        <div className="gradient-css overlay-gradient-inverse-horizontal-light">
+          background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+        </div>
+        <div className="gradient-usage">
+          <strong>overlay.overlayGradientInverseHorizontal</strong><br/>
+          Inverse horizontal gradient for light theme overlays. Transitions from transparent to black from left to right, perfect for white text placement.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {/* Inverse Dark Mode - Vertical Gradient */}
+  <div className="gradient-container">
+    <div className="gradient-demo">
+      <div className="gradient-image">
+        <img src="img/overlay.overlayGradientInverseVertical-dark.jpg" alt="Inverse vertical gradient dark mode example" />
+      </div>
+      <div className="gradient-info gradient-info-dark" style={{background: '#1b1b27'}}>
+        <div className="gradient-name">Inverse Vertical - Dark Mode</div>
+        <div className="gradient-css overlay-gradient-inverse-vertical-dark">
+          background: linear-gradient(0deg, rgba(228, 228, 228, 0) 0%, rgba(228, 228, 228, 1) 100%);
+        </div>
+        <div className="gradient-usage">
+          <strong>overlay.overlayGradientInverseVertical</strong><br/>
+          Inverse vertical gradient for dark theme overlays. Creates a smooth transition from transparent to light gray (#e4e4e4), ensuring dark text readability.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {/* Inverse Dark Mode - Horizontal Gradient */}
+  <div className="gradient-container">
+    <div className="gradient-demo">
+      <div className="gradient-image">
+        <img src="img/overlay.overlayGradientInverseHorizontal-dark.jpg" alt="Inverse horizontal gradient dark mode example" />
+      </div>
+      <div className="gradient-info gradient-info-dark" style={{background: '#1b1b27'}}>
+        <div className="gradient-name">Inverse Horizontal - Dark Mode</div>
+        <div className="gradient-css overlay-gradient-inverse-horizontal-dark">
+          background: linear-gradient(90deg, rgba(228, 228, 228, 0) 0%, rgba(228, 228, 228, 1) 100%);
+        </div>
+        <div className="gradient-usage">
+          <strong>overlay.overlayGradientInverseHorizontal</strong><br/>
+          Inverse horizontal gradient for dark theme overlays. Transitions from transparent to light gray from left to right, ideal for dark text placement.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</div> 

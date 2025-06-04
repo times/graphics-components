@@ -1,0 +1,568 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Design System/Channels" />
+
+# Channels
+
+<div style={{
+  fontFamily: 'system-ui, -apple-system, sans-serif',
+  fontSize: '14px',
+  lineHeight: '1.4',
+  marginTop: '2rem'
+}}>
+
+{/* Color Palette Component Style */}
+<style>
+{`
+.color-palette {
+  margin-bottom: 3rem;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border-width: 2px;
+  border-style: dashed;
+}
+
+.color-grid {
+  display: flex;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.color-swatch {
+  width: 100%;
+  height: 50px;
+}
+
+.color-names {
+  display: flex;
+  font-size: 11px;
+  color: #475569;
+  margin-bottom: 12px;
+  font-weight: 500;
+  gap: 4px;
+}
+
+.color-name {
+  width: 100px;
+  text-align: center;
+  padding: 0 2px;
+  font-size: 10px;
+}
+
+.color-codes {
+  display: flex;
+  font-size: 10px;
+  color: #64748b;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  gap: 6px;
+}
+
+.color-code {
+  width: 85px;
+  text-align: center;
+  padding: 8px 4px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  font-size: 9px;
+}
+
+.color-code:hover {
+  background-color: #f8fafc;
+  border-color: #cbd5e1;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+`}
+</style>
+
+## Primary Channels Palettes
+<div className="color-palette" style={{ 
+  borderColor: '#374151', 
+  backgroundColor: '#f9fafb',
+  boxShadow: '0 4px 12px rgba(55, 65, 81, 0.1)'
+}}>
+  <div className="color-grid">
+    <div className="color-swatch" style={{ backgroundColor: '#135DCB' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#39556A' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#005E61' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#9B1F45' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#21709C' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#007A3F' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#149FB5' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#942364' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#C05729' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#145683' }}></div>
+  </div>
+  <div className="color-names">
+    <div className="color-name">home070</div>
+    <div className="color-name">news070</div>
+    <div className="color-name">world090</div>
+    <div className="color-name">comment070</div>
+    <div className="color-name">business060</div>
+    <div className="color-name">sport060</div>
+    <div className="color-name">lifestyle050</div>
+    <div className="color-name">culture070</div>
+    <div className="color-name">puzzles070</div>
+    <div className="color-name">travel070</div>
+  </div>
+  <div className="color-codes">
+    <div className="color-code">#135DCB</div>
+    <div className="color-code">#39556A</div>
+    <div className="color-code">#005E61</div>
+    <div className="color-code">#9B1F45</div>
+    <div className="color-code">#21709C</div>
+    <div className="color-code">#007A3F</div>
+    <div className="color-code">#149FB5</div>
+    <div className="color-code">#942364</div>
+    <div className="color-code">#C05729</div>
+    <div className="color-code">#145683</div>
+  </div>
+</div>
+
+## Home
+<div className="color-palette" style={{ 
+  borderColor: '#3b82f6', 
+  backgroundColor: '#eff6ff',
+  boxShadow: '0 4px 12px rgba(59, 130, 246, 0.1)'
+}}>
+  <div className="color-grid">
+    <div className="color-swatch" style={{ backgroundColor: '#E7EFFA' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#DDDFF5' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#B8CEEF' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#A1BEEA' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#719EE0' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#427DD5' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#135DCB' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#0F4AA2' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#0B387A' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#082551' }}></div>
+  </div>
+  <div className="color-names">
+    <div className="color-name">home010</div>
+    <div className="color-name">home020</div>
+    <div className="color-name">home030</div>
+    <div className="color-name">home040</div>
+    <div className="color-name">home050</div>
+    <div className="color-name">home060</div>
+    <div className="color-name">home070</div>
+    <div className="color-name">home080</div>
+    <div className="color-name">home090</div>
+    <div className="color-name">home100</div>
+  </div>
+  <div className="color-codes">
+    <div className="color-code">#E7EFFA</div>
+    <div className="color-code">#DDDFF5</div>
+    <div className="color-code">#B8CEEF</div>
+    <div className="color-code">#A1BEEA</div>
+    <div className="color-code">#719EE0</div>
+    <div className="color-code">#427DD5</div>
+    <div className="color-code">#135DCB</div>
+    <div className="color-code">#0F4AA2</div>
+    <div className="color-code">#0B387A</div>
+    <div className="color-code">#082551</div>
+  </div>
+</div>
+
+## News
+<div className="color-palette" style={{ 
+  borderColor: '#6b7280', 
+  backgroundColor: '#f9fafb',
+  boxShadow: '0 4px 12px rgba(107, 114, 128, 0.1)'
+}}>
+  <div className="color-grid">
+    <div className="color-swatch" style={{ backgroundColor: '#EEF0F2' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#DEE2E6' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#BDC7CE' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#9FADB7' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#8193A1' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#556D7F' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#39556A' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#1D3E56' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#0E283B' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#07121B' }}></div>
+  </div>
+  <div className="color-names">
+    <div className="color-name">news010</div>
+    <div className="color-name">news020</div>
+    <div className="color-name">news030</div>
+    <div className="color-name">news040</div>
+    <div className="color-name">news050</div>
+    <div className="color-name">news060</div>
+    <div className="color-name">news070</div>
+    <div className="color-name">news080</div>
+    <div className="color-name">news090</div>
+    <div className="color-name">news100</div>
+  </div>
+  <div className="color-codes">
+    <div className="color-code">#EEF0F2</div>
+    <div className="color-code">#DEE2E6</div>
+    <div className="color-code">#8DC7CE</div>
+    <div className="color-code">#9FADB7</div>
+    <div className="color-code">#8193A1</div>
+    <div className="color-code">#556D7F</div>
+    <div className="color-code">#39556A</div>
+    <div className="color-code">#1D3E56</div>
+    <div className="color-code">#0E283B</div>
+    <div className="color-code">#07121B</div>
+  </div>
+</div>
+
+## World
+<div className="color-palette" style={{ 
+  borderColor: '#059669', 
+  backgroundColor: '#ecfdf5',
+  boxShadow: '0 4px 12px rgba(5, 150, 105, 0.1)'
+}}>
+  <div className="color-grid">
+    <div className="color-swatch" style={{ backgroundColor: '#D9F0F0' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#B5E0E1' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#91CFD1' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#6CBEC0' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#48ABAE' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#008387' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#00787C' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#006C6F' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#005E61' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#004E51' }}></div>
+  </div>
+  <div className="color-names">
+    <div className="color-name">world010</div>
+    <div className="color-name">world020</div>
+    <div className="color-name">world030</div>
+    <div className="color-name">world040</div>
+    <div className="color-name">world050</div>
+    <div className="color-name">world060</div>
+    <div className="color-name">world070</div>
+    <div className="color-name">world080</div>
+    <div className="color-name">world090</div>
+    <div className="color-name">world100</div>
+  </div>
+  <div className="color-codes">
+    <div className="color-code">#D9F0F0</div>
+    <div className="color-code">#B5E0E1</div>
+    <div className="color-code">#91CFD1</div>
+    <div className="color-code">#6CBEC0</div>
+    <div className="color-code">#48ABAE</div>
+    <div className="color-code">#008387</div>
+    <div className="color-code">#00787C</div>
+    <div className="color-code">#006C6F</div>
+    <div className="color-code">#005E61</div>
+    <div className="color-code">#004E51</div>
+  </div>
+</div>
+
+## Comment
+<div className="color-palette" style={{ 
+  borderColor: '#dc2626', 
+  backgroundColor: '#fef2f2',
+  boxShadow: '0 4px 12px rgba(220, 38, 38, 0.1)'
+}}>
+  <div className="color-grid">
+    <div className="color-swatch" style={{ backgroundColor: '#F8EFF2' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#FDDDE3' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#E3BBC7' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#D69AAD' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#C87A92' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#B04466' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#9B1F45' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#7B0021' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#54000D' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#2C0005' }}></div>
+  </div>
+  <div className="color-names">
+    <div className="color-name">comment010</div>
+    <div className="color-name">comment020</div>
+    <div className="color-name">comment030</div>
+    <div className="color-name">comment040</div>
+    <div className="color-name">comment050</div>
+    <div className="color-name">comment060</div>
+    <div className="color-name">comment070</div>
+    <div className="color-name">comment080</div>
+    <div className="color-name">comment090</div>
+    <div className="color-name">comment100</div>
+  </div>
+  <div className="color-codes">
+    <div className="color-code">#F8EFF2</div>
+    <div className="color-code">#FDDDE3</div>
+    <div className="color-code">#E3BBC7</div>
+    <div className="color-code">#D69AAD</div>
+    <div className="color-code">#C87A92</div>
+    <div className="color-code">#B04466</div>
+    <div className="color-code">#9B1F45</div>
+    <div className="color-code">#7B0021</div>
+    <div className="color-code">#54000D</div>
+    <div className="color-code">#2C0005</div>
+  </div>
+</div>
+
+## Business
+<div className="color-palette" style={{ 
+  borderColor: '#1e40af', 
+  backgroundColor: '#eff6ff',
+  boxShadow: '0 4px 12px rgba(30, 64, 175, 0.1)'
+}}>
+  <div className="color-grid">
+    <div className="color-swatch" style={{ backgroundColor: '#E9F1F5' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#D4E3EC' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#ADCADA' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#85B1C9' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#5E98B7' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#21709C' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#005786' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#003E61' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#00283F' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#00131E' }}></div>
+  </div>
+  <div className="color-names">
+    <div className="color-name">business010</div>
+    <div className="color-name">business020</div>
+    <div className="color-name">business030</div>
+    <div className="color-name">business040</div>
+    <div className="color-name">business050</div>
+    <div className="color-name">business060</div>
+    <div className="color-name">business070</div>
+    <div className="color-name">business080</div>
+    <div className="color-name">business090</div>
+    <div className="color-name">business100</div>
+  </div>
+  <div className="color-codes">
+    <div className="color-code">#E9F1F5</div>
+    <div className="color-code">#D4E3EC</div>
+    <div className="color-code">#ADCADA</div>
+    <div className="color-code">#85B1C9</div>
+    <div className="color-code">#5E98B7</div>
+    <div className="color-code">#21709C</div>
+    <div className="color-code">#005786</div>
+    <div className="color-code">#003E61</div>
+    <div className="color-code">#00283F</div>
+    <div className="color-code">#00131E</div>
+  </div>
+</div>
+
+## Sports
+<div className="color-palette" style={{ 
+  borderColor: '#059669', 
+  backgroundColor: '#ecfdf5',
+  boxShadow: '0 4px 12px rgba(5, 150, 105, 0.1)'
+}}>
+  <div className="color-grid">
+    <div className="color-swatch" style={{ backgroundColor: '#E5F3ED' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#CAE8DA' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#96D3B7' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#62BC93' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#31A46F' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#007A3F' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#005F2B' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#00451D' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#002D13' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#001509' }}></div>
+  </div>
+  <div className="color-names">
+    <div className="color-name">sport010</div>
+    <div className="color-name">sport020</div>
+    <div className="color-name">sport030</div>
+    <div className="color-name">sport040</div>
+    <div className="color-name">sport050</div>
+    <div className="color-name">sport060</div>
+    <div className="color-name">sport070</div>
+    <div className="color-name">sport080</div>
+    <div className="color-name">sport090</div>
+    <div className="color-name">sport100</div>
+  </div>
+  <div className="color-codes">
+    <div className="color-code">#E5F3ED</div>
+    <div className="color-code">#CAE8DA</div>
+    <div className="color-code">#96D3B7</div>
+    <div className="color-code">#62BC93</div>
+    <div className="color-code">#31A46F</div>
+    <div className="color-code">#007A3F</div>
+    <div className="color-code">#005F2B</div>
+    <div className="color-code">#00451D</div>
+    <div className="color-code">#002D13</div>
+    <div className="color-code">#001509</div>
+  </div>
+</div>
+
+## Life & Styles
+<div className="color-palette" style={{ 
+  borderColor: '#14b8a6', 
+  backgroundColor: '#f0fdfa',
+  boxShadow: '0 4px 12px rgba(20, 184, 166, 0.1)'
+}}>
+  <div className="color-grid">
+    <div className="color-swatch" style={{ backgroundColor: '#DFF4F8' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#BAE9F1' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#77D3E2' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#3BBACE' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#149FB5' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#017487' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#005A69' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#00414C' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#002A31' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#001417' }}></div>
+  </div>
+  <div className="color-names">
+    <div className="color-name">lifestyle010</div>
+    <div className="color-name">lifestyle020</div>
+    <div className="color-name">lifestyle030</div>
+    <div className="color-name">lifestyle040</div>
+    <div className="color-name">lifestyle050</div>
+    <div className="color-name">lifestyle060</div>
+    <div className="color-name">lifestyle070</div>
+    <div className="color-name">lifestyle080</div>
+    <div className="color-name">lifestyle090</div>
+    <div className="color-name">lifestyle100</div>
+  </div>
+  <div className="color-codes">
+    <div className="color-code">#DFF4F8</div>
+    <div className="color-code">#BAE9F1</div>
+    <div className="color-code">#77D3E2</div>
+    <div className="color-code">#3BBACE</div>
+    <div className="color-code">#149FB5</div>
+    <div className="color-code">#017487</div>
+    <div className="color-code">#005A69</div>
+    <div className="color-code">#00414C</div>
+    <div className="color-code">#002A31</div>
+    <div className="color-code">#001417</div>
+  </div>
+</div>
+
+## Culture
+<div className="color-palette" style={{ 
+  borderColor: '#a855f7', 
+  backgroundColor: '#faf5ff',
+  boxShadow: '0 4px 12px rgba(168, 85, 247, 0.1)'
+}}>
+  <div className="color-grid">
+    <div className="color-swatch" style={{ backgroundColor: '#F7EEF3' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#EFDCE7' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#E0BCD1' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#D29BBA' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#C27BA3' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#A9467E' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#942364' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#770043' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#520027' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#2B0013' }}></div>
+  </div>
+  <div className="color-names">
+    <div className="color-name">culture010</div>
+    <div className="color-name">culture020</div>
+    <div className="color-name">culture030</div>
+    <div className="color-name">culture040</div>
+    <div className="color-name">culture050</div>
+    <div className="color-name">culture060</div>
+    <div className="color-name">culture070</div>
+    <div className="color-name">culture080</div>
+    <div className="color-name">culture090</div>
+    <div className="color-name">culture100</div>
+  </div>
+  <div className="color-codes">
+    <div className="color-code">#F7EEF3</div>
+    <div className="color-code">#EFDCE7</div>
+    <div className="color-code">#E0BCD1</div>
+    <div className="color-code">#D29BBA</div>
+    <div className="color-code">#C27BA3</div>
+    <div className="color-code">#A9467E</div>
+    <div className="color-code">#942364</div>
+    <div className="color-code">#770043</div>
+    <div className="color-code">#520027</div>
+    <div className="color-code">#2B0013</div>
+  </div>
+</div>
+
+## Puzzles
+<div className="color-palette" style={{ 
+  borderColor: '#f59e0b', 
+  backgroundColor: '#fffbeb',
+  boxShadow: '0 4px 12px rgba(245, 158, 11, 0.1)'
+}}>
+  <div className="color-grid">
+    <div className="color-swatch" style={{ backgroundColor: '#FFF7ED' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#FEEEDC' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#FFDCB9' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#FFBB6A' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#FFA05B' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#DF7334' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#C05729' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#BB4200' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#933201' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#6E2200' }}></div>
+  </div>
+  <div className="color-names">
+    <div className="color-name">puzzles010</div>
+    <div className="color-name">puzzles020</div>
+    <div className="color-name">puzzles030</div>
+    <div className="color-name">puzzles040</div>
+    <div className="color-name">puzzles050</div>
+    <div className="color-name">puzzles060</div>
+    <div className="color-name">puzzles070</div>
+    <div className="color-name">puzzles080</div>
+    <div className="color-name">puzzles090</div>
+    <div className="color-name">puzzles100</div>
+  </div>
+  <div className="color-codes">
+    <div className="color-code">#FFF7ED</div>
+    <div className="color-code">#FEEEDC</div>
+    <div className="color-code">#FFDCB9</div>
+    <div className="color-code">#FFBB6A</div>
+    <div className="color-code">#FFA05B</div>
+    <div className="color-code">#DF7334</div>
+    <div className="color-code">#C05729</div>
+    <div className="color-code">#BB4200</div>
+    <div className="color-code">#933201</div>
+    <div className="color-code">#6E2200</div>
+  </div>
+</div>
+
+## Travel
+<div className="color-palette" style={{ 
+  borderColor: '#3b82f6', 
+  backgroundColor: '#eff6ff',
+  boxShadow: '0 4px 12px rgba(59, 130, 246, 0.1)'
+}}>
+  <div className="color-grid">
+    <div className="color-swatch" style={{ backgroundColor: '#E9F2F8' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#D1E4F1' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#A4CBE5' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#79B1D6' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#5298C6' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#236FA3' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#145683' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#0B3E60' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#07283F' }}></div>
+    <div className="color-swatch" style={{ backgroundColor: '#04121C' }}></div>
+  </div>
+  <div className="color-names">
+    <div className="color-name">travel010</div>
+    <div className="color-name">travel020</div>
+    <div className="color-name">travel030</div>
+    <div className="color-name">travel040</div>
+    <div className="color-name">travel050</div>
+    <div className="color-name">travel060</div>
+    <div className="color-name">travel070</div>
+    <div className="color-name">travel080</div>
+    <div className="color-name">travel090</div>
+    <div className="color-name">travel100</div>
+  </div>
+  <div className="color-codes">
+    <div className="color-code">#E9F2F8</div>
+    <div className="color-code">#D1E4F1</div>
+    <div className="color-code">#A4CBE5</div>
+    <div className="color-code">#79B1D6</div>
+    <div className="color-code">#5298C6</div>
+    <div className="color-code">#236FA3</div>
+    <div className="color-code">#145683</div>
+    <div className="color-code">#0B3E60</div>
+    <div className="color-code">#07283F</div>
+    <div className="color-code">#04121C</div>
+  </div>
+</div>
+
+</div> 

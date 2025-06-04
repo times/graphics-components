@@ -1,0 +1,1608 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Design System/Typography" />
+
+{/* Global Typography Styles */}
+<style>
+{`
+  /* Override for description text */
+  .desc-text {
+    font-family: 'Roboto, system-ui, -apple-system, sans-serif' !important;
+  }
+  
+  /* Size classes for Editorial Display typography samples */
+  .xxs p { font-size: 1rem !important; font-family: 'TimesModern-Regular', serif !important; font-weight: 300 !important;}
+  .xs p { font-size: 1.125rem !important;  font-family: 'TimesModern-Regular', serif !important;font-weight: 300 !important;}
+  .sm p { font-size: 1.5rem !important;  font-family: 'TimesModern-Regular', serif !important;font-weight: 300 !important;}
+  .md p { font-size: 1.75rem !important;  font-family: 'TimesModern-Regular', serif !important;font-weight: 300 !important;}
+  .lg p { font-size: 2rem !important;  font-family: 'TimesModern-Regular', serif !important;font-weight: 300 !important;}
+  .xl p { font-size: 2.25rem !important;  font-family: 'TimesModern-Regular', serif !important;font-weight: 300 !important;}
+  .xxl p { font-size: 2.5rem !important;  font-family: 'TimesModern-Regular', serif !important;font-weight: 300 !important;}
+  .xxxl p { font-size: 2.75rem !important;  font-family: 'TimesModern-Regular', serif !important;font-weight: 300 !important;}
+  .xxxxl p { font-size: 3.5rem !important;  font-family: 'TimesModern-Regular', serif !important;font-weight: 300 !important;}
+  
+  /* Size classes for Headline typography samples */
+  .h-xs p { font-size: 1.125rem !important; font-family: 'TimesModern-Regular', serif !important; font-weight: 300 !important;}
+  .h-sm p { font-size: 1.25rem !important; font-family: 'TimesModern-Regular', serif !important;font-weight: 300 !important; }
+  .h-md p { font-size: 1.5rem !important; font-family: 'TimesModern-Regular', serif !important;font-weight: 300 !important; }
+  .h-lg p { font-size: 1.75rem !important; font-family: 'TimesModern-Regular', serif !important; font-weight: 300 !important;}
+  .h-xl p { font-size: 2rem !important; font-family: 'TimesModern-Regular', serif !important; font-weight: 300 !important;}
+  .h-xxl p { font-size: 2.25rem !important; font-family: 'TimesModern-Regular', serif !important; font-weight: 300 !important;}
+  .h-xxxl p { font-size: 2.5rem !important; font-family: 'TimesModern-Regular', serif !important; font-weight: 300 !important;}
+  .h-xxxxl p { font-size: 3rem !important; font-family: 'TimesModern-Regular', serif !important;font-weight: 300 !important; }
+  
+  /* Size classes for Editorial Display Regular typography samples */
+  .r-xxs p { font-size: 1rem !important; font-family: 'TimesModern-Regular', serif !important; font-weight: 400 !important;}
+  .r-xs p { font-size: 1.125rem !important; font-family: 'TimesModern-Regular', serif !important; font-weight: 400 !important;}
+  .r-sm p { font-size: 1.5rem !important; font-family: 'TimesModern-Regular', serif !important; font-weight: 400 !important;}
+  .r-md p { font-size: 1.75rem !important; font-family: 'TimesModern-Regular', serif !important; font-weight: 400 !important;}
+  .r-lg p { font-size: 2rem !important; font-family: 'TimesModern-Regular', serif !important; font-weight: 400 !important;}
+  .r-xl p { font-size: 2.25rem !important; font-family: 'TimesModern-Regular', serif !important; font-weight: 400 !important;}
+  .r-xxl p { font-size: 2.5rem !important; font-family: 'TimesModern-Regular', serif !important; font-weight: 400 !important;}
+  .r-xxxl p { font-size: 2.75rem !important; font-family: 'TimesModern-Regular', serif !important; font-weight: 400 !important;}
+  .r-xxxxl p { font-size: 3.5rem !important; font-family: 'TimesModern-Regular', serif !important; font-weight: 400 !important;}
+  
+  /* Size classes for Headline Regular typography samples */
+  .hr-xs p { font-size: 1.125rem !important; font-family: 'TimesModern-Regular', serif !important; font-weight: 400 !important;}
+  .hr-sm p { font-size: 1.25rem !important; font-family: 'TimesModern-Regular', serif !important; font-weight: 400 !important;}
+  .hr-md p { font-size: 1.5rem !important; font-family: 'TimesModern-Regular', serif !important; font-weight: 400 !important;}
+  .hr-lg p { font-size: 1.75rem !important; font-family: 'TimesModern-Regular', serif !important; font-weight: 400 !important;}
+  .hr-xl p { font-size: 2rem !important; font-family: 'TimesModern-Regular', serif !important; font-weight: 400 !important;}
+  .hr-xxl p { font-size: 2.25rem !important; font-family: 'TimesModern-Regular', serif !important; font-weight: 400 !important;}
+  .hr-xxxl p { font-size: 2.5rem !important; font-family: 'TimesModern-Regular', serif !important; font-weight: 400 !important;}
+  .hr-xxxxl p { font-size: 3rem !important; font-family: 'TimesModern-Regular', serif !important; font-weight: 400 !important;}
+  
+  /* Size classes for Editorial Display Bold typography samples */
+  .b-xxs p { font-size: 1rem !important; font-family: 'TimesModern-Bold', serif !important; font-weight: 700 !important;}
+  .b-xs p { font-size: 1.125rem !important; font-family: 'TimesModern-Bold', serif !important; font-weight: 700 !important;}
+  .b-sm p { font-size: 1.5rem !important; font-family: 'TimesModern-Bold', serif !important; font-weight: 700 !important;}
+  .b-md p { font-size: 1.75rem !important; font-family: 'TimesModern-Bold', serif !important; font-weight: 700 !important;}
+  .b-lg p { font-size: 2rem !important; font-family: 'TimesModern-Bold', serif !important; font-weight: 700 !important;}
+  .b-xl p { font-size: 2.25rem !important; font-family: 'TimesModern-Bold', serif !important; font-weight: 700 !important;}
+  .b-xxl p { font-size: 2.5rem !important; font-family: 'TimesModern-Bold', serif !important; font-weight: 700 !important;}
+  .b-xxxl p { font-size: 2.75rem !important; font-family: 'TimesModern-Bold', serif !important; font-weight: 700 !important;}
+  .b-xxxxl p { font-size: 3.5rem !important; font-family: 'TimesModern-Bold', serif !important; font-weight: 700 !important;}
+  
+  /* Size classes for Headline Bold typography samples */
+  .hb-xs p { font-size: 1.125rem !important; font-family: 'TimesModern-Bold', serif !important; font-weight: 700 !important;}
+  .hb-sm p { font-size: 1.25rem !important; font-family: 'TimesModern-Bold', serif !important; font-weight: 700 !important;}
+  .hb-md p { font-size: 1.5rem !important; font-family: 'TimesModern-Bold', serif !important; font-weight: 700 !important;}
+  .hb-lg p { font-size: 1.75rem !important; font-family: 'TimesModern-Bold', serif !important; font-weight: 700 !important;}
+  .hb-xl p { font-size: 2rem !important; font-family: 'TimesModern-Bold', serif !important; font-weight: 700 !important;}
+  .hb-xxl p { font-size: 2.25rem !important; font-family: 'TimesModern-Bold', serif !important; font-weight: 700 !important;}
+  .hb-xxxl p { font-size: 2.5rem !important; font-family: 'TimesModern-Bold', serif !important; font-weight: 700 !important;}
+  .hb-xxxxl p { font-size: 3rem !important; font-family: 'TimesModern-Bold', serif !important; font-weight: 700 !important;}
+  
+  /* Font weight classes for controlling font widths */
+  .font-weight-100 { font-weight: 100; font-family: 'TimesModern-Thin', serif !important; }
+  .font-weight-200 { font-weight: 200; font-family: 'TimesModern-ExtraLight', serif !important; }
+  .font-weight-300 { font-weight: 300; font-family: 'TimesModern-Light', serif !important; }
+  .font-weight-400 { font-weight: 400; font-family: 'TimesModern-Regular', serif !important; }
+  .font-weight-500 { font-weight: 500; font-family: 'TimesModern-Medium', serif !important; }
+  .font-weight-600 { font-weight: 600; font-family: 'TimesModern-SemiBold', serif !important; }
+  .font-weight-700 { font-weight: 700; font-family: 'TimesModern-Bold', serif !important; }
+  .font-weight-800 { font-weight: 800; font-family: 'TimesModern-ExtraBold', serif !important; }
+  .font-weight-900 { font-weight: 900; font-family: 'TimesModern-Black', serif !important; }
+  
+  /* Editorial display utility classes for p elements */
+  p.editorial-light-display-001 { 
+    font-family: 'TimesModern-Thin', serif !important; 
+    font-weight: 100 !important; 
+    line-height: 112.5% !important; 
+    letter-spacing: 0% !important; 
+    font-size: 1rem !important; 
+  }
+  p.editorial-light-display-002 { 
+    font-family: 'TimesModern-ExtraLight', serif !important; 
+    font-weight: 200 !important; 
+    line-height: 112.5% !important; 
+    letter-spacing: 0% !important; 
+    font-size: 1.125rem !important; 
+  }
+  p.editorial-light-display-003 { 
+    font-family: 'TimesModern-Light', serif !important; 
+    font-weight: 300 !important; 
+    line-height: 112.5% !important; 
+    letter-spacing: 0% !important; 
+    font-size: 1.5rem !important; 
+  }
+  p.editorial-light-display-004 { 
+    font-family: 'TimesModern-Regular', serif !important; 
+    font-weight: 400 !important; 
+    line-height: 112.5% !important; 
+    letter-spacing: 0% !important; 
+    font-size: 1.75rem !important; 
+  }
+  p.editorial-light-display-005 { 
+    font-family: 'TimesModern-Medium', serif !important; 
+    font-weight: 500 !important; 
+    line-height: 112.5% !important; 
+    letter-spacing: 0% !important; 
+    font-size: 2rem !important; 
+  }
+  p.editorial-light-display-006 { 
+    font-family: 'TimesModern-SemiBold', serif !important; 
+    font-weight: 600 !important; 
+    line-height: 112.5% !important; 
+    letter-spacing: 0% !important; 
+    font-size: 2.25rem !important; 
+  }
+  p.editorial-light-display-007 { 
+    font-family: 'TimesModern-Bold', serif !important; 
+    font-weight: 700 !important; 
+    line-height: 112.5% !important; 
+    letter-spacing: 0% !important; 
+    font-size: 2.5rem !important; 
+  }
+  p.editorial-light-display-008 { 
+    font-family: 'TimesModern-ExtraBold', serif !important; 
+    font-weight: 800 !important; 
+    line-height: 112.5% !important; 
+    letter-spacing: 0% !important; 
+    font-size: 2.75rem !important; 
+  }
+  p.editorial-light-display-009 { 
+    font-family: 'TimesModern-Black', serif !important; 
+    font-weight: 900 !important; 
+    line-height: 112.5% !important; 
+    letter-spacing: 0% !important; 
+    font-size: 3.5rem !important; 
+  }
+`}
+</style>
+
+# Typography
+
+This document showcases the typography system used across The Times components, including font weights, sizes, and styles for editorial display purposes.
+
+---
+
+## Editorial Display
+
+The Editorial Display typography system provides a range of font weights and styles optimized for readability and visual hierarchy in editorial content.
+
+<div style={{
+  fontFamily: 'TimesModern-Regular',
+  marginTop: '2rem',
+  marginBottom: '2rem'
+}}>
+
+{/* Typography samples container */}
+<div style={{
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '2rem',
+  padding: '2rem',
+  backgroundColor: '#f8f9fa',
+  borderRadius: '8px',
+  border: '1px solid #e9ecef'
+}}>
+
+  <div className="desc-text" style={{
+    fontSize: '13px',
+    color: '#6c757d',
+    marginBottom: '1rem',
+    textTransform: 'uppercase',
+    letterSpacing: '0.5px',
+    fontWeight: '500'
+  }}>
+    Used for Editorial sections on page story
+  </div>
+
+  {/* TimesModern-Thin - 1rem */}
+  <div>
+    <p className="xxs" style={{
+      fontFamily: 'TimesModern-Thin',
+      lineHeight: '1.2',
+      color: '#212529',
+      marginBottom: '0.5rem'
+    }}>
+      Aa
+    </p>
+    <div className="desc-text" style={{
+      fontSize: '14px',
+      color: '#6c757d',
+      fontWeight: '600',
+      marginBottom: '0.25rem'
+    }}>
+      editorialLightDisplay001
+    </div>
+    <div className="desc-text" style={{
+      fontSize: '12px',
+      color: '#6c757d'
+    }}>
+      • font-family: "Times Modern" • font-weight: "300" • font-style: "normal" • line-height: "112.5%" • letter-spacing: "0%" • font-size: "1rem" • font-stretch: "normal"
+    </div>
+  </div>
+
+  {/* TimesModern-Thin Regular - 1rem */}
+  <div>
+    <p className="r-xxs" style={{
+      fontFamily: 'TimesModern-Thin',
+      lineHeight: '1.2',
+      color: '#212529',
+      marginBottom: '0.5rem'
+    }}>
+      Aa
+    </p>
+    <div className="desc-text" style={{
+      fontSize: '14px',
+      color: '#6c757d',
+      fontWeight: '600',
+      marginBottom: '0.25rem'
+    }}>
+      editorialRegularDisplay001
+    </div>
+    <div className="desc-text" style={{
+      fontSize: '12px',
+      color: '#6c757d'
+    }}>
+      • font-family: "Times Modern" • font-weight: "regular" • font-style: "normal" • line-height: "112.5%" • letter-spacing: "0%" • font-size: "1rem" • font-stretch: "normal"
+    </div>
+  </div>
+
+  {/* TimesModern-Thin Bold - 1rem */}
+  <div>
+    <p className="b-xxs" style={{
+      fontFamily: 'TimesModern-Thin',
+      lineHeight: '1.2',
+      color: '#212529',
+      marginBottom: '0.5rem'
+    }}>
+      Aa
+    </p>
+    <div className="desc-text" style={{
+      fontSize: '14px',
+      color: '#6c757d',
+      fontWeight: '600',
+      marginBottom: '0.25rem'
+    }}>
+      editorialBoldDisplay001
+    </div>
+    <div className="desc-text" style={{
+      fontSize: '12px',
+      color: '#6c757d'
+    }}>
+      • font-family: "Times Modern" • font-weight: "bold" • font-style: "normal" • line-height: "112.5%" • letter-spacing: "0%" • font-size: "1rem" • font-stretch: "normal"
+    </div>
+  </div>
+
+  {/* TimesModern-ExtraLight - 1.125rem */}
+  <div>
+    <p className="xs" style={{
+      fontFamily: 'TimesModern-ExtraLight',
+      lineHeight: '1.2',
+      color: '#212529',
+      marginBottom: '0.5rem'
+    }}>
+      Aa
+    </p>
+    <div className="desc-text" style={{
+      fontSize: '14px',
+      color: '#6c757d',
+      fontWeight: '600',
+      marginBottom: '0.25rem'
+    }}>
+      editorialLightDisplay002
+    </div>
+    <div className="desc-text" style={{
+      fontSize: '12px',
+      color: '#6c757d'
+    }}>
+      • font-family: "Times Modern" • font-weight: "300" • font-style: "normal" • line-height: "112.5%" • letter-spacing: "0%" • font-size: "1.125rem" • font-stretch: "normal"
+    </div>
+  </div>
+
+  {/* TimesModern-ExtraLight Regular - 1.125rem */}
+  <div>
+    <p className="r-xs" style={{
+      fontFamily: 'TimesModern-ExtraLight',
+      lineHeight: '1.2',
+      color: '#212529',
+      marginBottom: '0.5rem'
+    }}>
+      Aa
+    </p>
+    <div className="desc-text" style={{
+      fontSize: '14px',
+      color: '#6c757d',
+      fontWeight: '600',
+      marginBottom: '0.25rem'
+    }}>
+      editorialRegularDisplay002
+    </div>
+    <div className="desc-text" style={{
+      fontSize: '12px',
+      color: '#6c757d'
+    }}>
+      • font-family: "Times Modern" • font-weight: "regular" • font-style: "normal" • line-height: "112.5%" • letter-spacing: "0%" • font-size: "1.125rem" • font-stretch: "normal"
+    </div>
+  </div>
+
+  {/* TimesModern-ExtraLight Bold - 1.125rem */}
+  <div>
+    <p className="b-xs" style={{
+      fontFamily: 'TimesModern-ExtraLight',
+      lineHeight: '1.2',
+      color: '#212529',
+      marginBottom: '0.5rem'
+    }}>
+      Aa
+    </p>
+    <div className="desc-text" style={{
+      fontSize: '14px',
+      color: '#6c757d',
+      fontWeight: '600',
+      marginBottom: '0.25rem'
+    }}>
+      editorialBoldDisplay002
+    </div>
+    <div className="desc-text" style={{
+      fontSize: '12px',
+      color: '#6c757d'
+    }}>
+      • font-family: "Times Modern" • font-weight: "bold" • font-style: "normal" • line-height: "112.5%" • letter-spacing: "0%" • font-size: "1.125rem" • font-stretch: "normal"
+    </div>
+  </div>
+
+  {/* TimesModern-Light - 1.5rem */}
+  <div>
+    <p className="sm" style={{
+      fontFamily: 'TimesModern-Light',
+      lineHeight: '1.2',
+      color: '#212529',
+      marginBottom: '0.5rem'
+    }}>
+      Aa
+    </p>
+    <div className="desc-text" style={{
+      fontSize: '14px',
+      color: '#6c757d',
+      fontWeight: '600',
+      marginBottom: '0.25rem'
+    }}>
+      editorialLightDisplay003
+    </div>
+    <div className="desc-text" style={{
+      fontSize: '12px',
+      color: '#6c757d'
+    }}>
+      • font-family: "Times Modern" • font-weight: "300" • font-style: "normal" • line-height: "112.5%" • letter-spacing: "0%" • font-size: "1.5rem" • font-stretch: "normal"
+    </div>
+  </div>
+
+  {/* TimesModern-Light Regular - 1.5rem */}
+  <div>
+    <p className="r-sm" style={{
+      fontFamily: 'TimesModern-Light',
+      lineHeight: '1.2',
+      color: '#212529',
+      marginBottom: '0.5rem'
+    }}>
+      Aa
+    </p>
+    <div className="desc-text" style={{
+      fontSize: '14px',
+      color: '#6c757d',
+      fontWeight: '600',
+      marginBottom: '0.25rem'
+    }}>
+      editorialRegularDisplay003
+    </div>
+    <div className="desc-text" style={{
+      fontSize: '12px',
+      color: '#6c757d'
+    }}>
+      • font-family: "Times Modern" • font-weight: "regular" • font-style: "normal" • line-height: "112.5%" • letter-spacing: "0%" • font-size: "1.5rem" • font-stretch: "normal"
+    </div>
+  </div>
+
+  {/* TimesModern-Light Bold - 1.5rem */}
+  <div>
+    <p className="b-sm" style={{
+      fontFamily: 'TimesModern-Light',
+      lineHeight: '1.2',
+      color: '#212529',
+      marginBottom: '0.5rem'
+    }}>
+      Aa
+    </p>
+    <div className="desc-text" style={{
+      fontSize: '14px',
+      color: '#6c757d',
+      fontWeight: '600',
+      marginBottom: '0.25rem'
+    }}>
+      editorialBoldDisplay003
+    </div>
+    <div className="desc-text" style={{
+      fontSize: '12px',
+      color: '#6c757d'
+    }}>
+      • font-family: "Times Modern" • font-weight: "bold" • font-style: "normal" • line-height: "112.5%" • letter-spacing: "0%" • font-size: "1.5rem" • font-stretch: "normal"
+    </div>
+  </div>
+
+  {/* TimesModern-Regular - 1.75rem */}
+  <div>
+    <p className="md" style={{
+      fontFamily: 'TimesModern-Regular',
+      lineHeight: '1.2',
+      color: '#212529',
+      marginBottom: '0.5rem'
+    }}>
+      Aa
+    </p>
+    <div className="desc-text" style={{
+      fontSize: '14px',
+      color: '#6c757d',
+      fontWeight: '600',
+      marginBottom: '0.25rem'
+    }}>
+      editorialLightDisplay004
+    </div>
+    <div className="desc-text" style={{
+      fontSize: '12px',
+      color: '#6c757d'
+    }}>
+      • font-family: "Times Modern" • font-weight: "300" • font-style: "normal" • line-height: "112.5%" • letter-spacing: "0%" • font-size: "1.75rem" • font-stretch: "normal"
+    </div>
+  </div>
+
+  {/* TimesModern-Regular Regular - 1.75rem */}
+  <div>
+    <p className="r-md" style={{
+      fontFamily: 'TimesModern-Regular',
+      lineHeight: '1.2',
+      color: '#212529',
+      marginBottom: '0.5rem'
+    }}>
+      Aa
+    </p>
+    <div className="desc-text" style={{
+      fontSize: '14px',
+      color: '#6c757d',
+      fontWeight: '600',
+      marginBottom: '0.25rem'
+    }}>
+      editorialRegularDisplay004
+    </div>
+    <div className="desc-text" style={{
+      fontSize: '12px',
+      color: '#6c757d'
+    }}>
+      • font-family: "Times Modern" • font-weight: "regular" • font-style: "normal" • line-height: "112.5%" • letter-spacing: "0%" • font-size: "1.75rem" • font-stretch: "normal"
+    </div>
+  </div>
+
+  {/* TimesModern-Regular Bold - 1.75rem */}
+  <div>
+    <p className="b-md" style={{
+      fontFamily: 'TimesModern-Regular',
+      lineHeight: '1.2',
+      color: '#212529',
+      marginBottom: '0.5rem'
+    }}>
+      Aa
+    </p>
+    <div className="desc-text" style={{
+      fontSize: '14px',
+      color: '#6c757d',
+      fontWeight: '600',
+      marginBottom: '0.25rem'
+    }}>
+      editorialBoldDisplay004
+    </div>
+    <div className="desc-text" style={{
+      fontSize: '12px',
+      color: '#6c757d'
+    }}>
+      • font-family: "Times Modern" • font-weight: "bold" • font-style: "normal" • line-height: "112.5%" • letter-spacing: "0%" • font-size: "1.75rem" • font-stretch: "normal"
+    </div>
+  </div>
+
+  {/* TimesModern-Medium - 2rem */}
+  <div>
+    <p className="lg" style={{
+      fontFamily: 'TimesModern-Medium',
+      lineHeight: '1.2',
+      color: '#212529',
+      marginBottom: '0.5rem'
+    }}>
+      Aa
+    </p>
+    <div className="desc-text" style={{
+      fontSize: '14px',
+      color: '#6c757d',
+      fontWeight: '600',
+      marginBottom: '0.25rem'
+    }}>
+      editorialLightDisplay005
+    </div>
+    <div className="desc-text" style={{
+      fontSize: '12px',
+      color: '#6c757d'
+    }}>
+      • font-family: "Times Modern" • font-weight: "300" • font-style: "normal" • line-height: "112.5%" • letter-spacing: "0%" • font-size: "2rem" • font-stretch: "normal"
+    </div>
+  </div>
+
+  {/* TimesModern-Medium Regular - 2rem */}
+  <div>
+    <p className="r-lg" style={{
+      fontFamily: 'TimesModern-Medium',
+      lineHeight: '1.2',
+      color: '#212529',
+      marginBottom: '0.5rem'
+    }}>
+      Aa
+    </p>
+    <div className="desc-text" style={{
+      fontSize: '14px',
+      color: '#6c757d',
+      fontWeight: '600',
+      marginBottom: '0.25rem'
+    }}>
+      editorialRegularDisplay005
+    </div>
+    <div className="desc-text" style={{
+      fontSize: '12px',
+      color: '#6c757d'
+    }}>
+      • font-family: "Times Modern" • font-weight: "regular" • font-style: "normal" • line-height: "112.5%" • letter-spacing: "0%" • font-size: "2rem" • font-stretch: "normal"
+    </div>
+  </div>
+
+  {/* TimesModern-Medium Bold - 2rem */}
+  <div>
+    <p className="b-lg" style={{
+      fontFamily: 'TimesModern-Medium',
+      lineHeight: '1.2',
+      color: '#212529',
+      marginBottom: '0.5rem'
+    }}>
+      Aa
+    </p>
+    <div className="desc-text" style={{
+      fontSize: '14px',
+      color: '#6c757d',
+      fontWeight: '600',
+      marginBottom: '0.25rem'
+    }}>
+      editorialBoldDisplay005
+    </div>
+    <div className="desc-text" style={{
+      fontSize: '12px',
+      color: '#6c757d'
+    }}>
+      • font-family: "Times Modern" • font-weight: "bold" • font-style: "normal" • line-height: "112.5%" • letter-spacing: "0%" • font-size: "2rem" • font-stretch: "normal"
+    </div>
+  </div>
+
+  {/* TimesModern-SemiBold - 2.25rem */}
+  <div>
+    <p className="xl" style={{
+      fontFamily: 'TimesModern-SemiBold',
+      lineHeight: '1.2',
+      color: '#212529',
+      marginBottom: '0.5rem'
+    }}>
+      Aa
+    </p>
+    <div className="desc-text" style={{
+      fontSize: '14px',
+      color: '#6c757d',
+      fontWeight: '600',
+      marginBottom: '0.25rem'
+    }}>
+      editorialLightDisplay006
+    </div>
+    <div className="desc-text" style={{
+      fontSize: '12px',
+      color: '#6c757d'
+    }}>
+      • font-family: "Times Modern" • font-weight: "300" • font-style: "normal" • line-height: "112.5%" • letter-spacing: "0%" • font-size: "2.25rem" • font-stretch: "normal"
+    </div>
+  </div>
+
+  {/* TimesModern-SemiBold Regular - 2.25rem */}
+  <div>
+    <p className="r-xl" style={{
+      fontFamily: 'TimesModern-SemiBold',
+      lineHeight: '1.2',
+      color: '#212529',
+      marginBottom: '0.5rem'
+    }}>
+      Aa
+    </p>
+    <div className="desc-text" style={{
+      fontSize: '14px',
+      color: '#6c757d',
+      fontWeight: '600',
+      marginBottom: '0.25rem'
+    }}>
+      editorialRegularDisplay006
+    </div>
+    <div className="desc-text" style={{
+      fontSize: '12px',
+      color: '#6c757d'
+    }}>
+      • font-family: "Times Modern" • font-weight: "regular" • font-style: "normal" • line-height: "112.5%" • letter-spacing: "0%" • font-size: "2.25rem" • font-stretch: "normal"
+    </div>
+  </div>
+
+  {/* TimesModern-SemiBold Bold - 2.25rem */}
+  <div>
+    <p className="b-xl" style={{
+      fontFamily: 'TimesModern-SemiBold',
+      lineHeight: '1.2',
+      color: '#212529',
+      marginBottom: '0.5rem'
+    }}>
+      Aa
+    </p>
+    <div className="desc-text" style={{
+      fontSize: '14px',
+      color: '#6c757d',
+      fontWeight: '600',
+      marginBottom: '0.25rem'
+    }}>
+      editorialBoldDisplay006
+    </div>
+    <div className="desc-text" style={{
+      fontSize: '12px',
+      color: '#6c757d'
+    }}>
+      • font-family: "Times Modern" • font-weight: "bold" • font-style: "normal" • line-height: "112.5%" • letter-spacing: "0%" • font-size: "2.25rem" • font-stretch: "normal"
+    </div>
+  </div>
+
+  {/* TimesModern-Bold - 2.5rem */}
+  <div>
+    <p className="xxl" style={{
+      fontFamily: 'TimesModern-Bold',
+      lineHeight: '1.2',
+      color: '#212529',
+      marginBottom: '0.5rem'
+    }}>
+      Aa
+    </p>
+    <div className="desc-text" style={{
+      fontSize: '14px',
+      color: '#6c757d',
+      fontWeight: '600',
+      marginBottom: '0.25rem'
+    }}>
+      editorialLightDisplay007
+    </div>
+    <div className="desc-text" style={{
+      fontSize: '12px',
+      color: '#6c757d'
+    }}>
+      • font-family: "Times Modern" • font-weight: "300" • font-style: "normal" • line-height: "112.5%" • letter-spacing: "0%" • font-size: "2.5rem" • font-stretch: "normal"
+    </div>
+  </div>
+
+  {/* TimesModern-Bold Regular - 2.5rem */}
+  <div>
+    <p className="r-xxl" style={{
+      fontFamily: 'TimesModern-Bold',
+      lineHeight: '1.2',
+      color: '#212529',
+      marginBottom: '0.5rem'
+    }}>
+      Aa
+    </p>
+    <div className="desc-text" style={{
+      fontSize: '14px',
+      color: '#6c757d',
+      fontWeight: '600',
+      marginBottom: '0.25rem'
+    }}>
+      editorialRegularDisplay007
+    </div>
+    <div className="desc-text" style={{
+      fontSize: '12px',
+      color: '#6c757d'
+    }}>
+      • font-family: "Times Modern" • font-weight: "regular" • font-style: "normal" • line-height: "112.5%" • letter-spacing: "0%" • font-size: "2.5rem" • font-stretch: "normal"
+    </div>
+  </div>
+
+  {/* TimesModern-Bold Bold - 2.5rem */}
+  <div>
+    <p className="b-xxl" style={{
+      fontFamily: 'TimesModern-Bold',
+      lineHeight: '1.2',
+      color: '#212529',
+      marginBottom: '0.5rem'
+    }}>
+      Aa
+    </p>
+    <div className="desc-text" style={{
+      fontSize: '14px',
+      color: '#6c757d',
+      fontWeight: '600',
+      marginBottom: '0.25rem'
+    }}>
+      editorialBoldDisplay007
+    </div>
+    <div className="desc-text" style={{
+      fontSize: '12px',
+      color: '#6c757d'
+    }}>
+      • font-family: "Times Modern" • font-weight: "bold" • font-style: "normal" • line-height: "112.5%" • letter-spacing: "0%" • font-size: "2.5rem" • font-stretch: "normal"
+    </div>
+  </div>
+
+  {/* TimesModern-ExtraBold - 2.75rem */}
+  <div>
+    <p className="xxxl" style={{
+      fontFamily: 'TimesModern-ExtraBold',
+      lineHeight: '1.2',
+      color: '#212529',
+      marginBottom: '0.5rem'
+    }}>
+      Aa
+    </p>
+    <div className="desc-text" style={{
+      fontSize: '14px',
+      color: '#6c757d',
+      fontWeight: '600',
+      marginBottom: '0.25rem'
+    }}>
+      editorialLightDisplay008
+    </div>
+    <div className="desc-text" style={{
+      fontSize: '12px',
+      color: '#6c757d'
+    }}>
+      • font-family: "Times Modern" • font-weight: "300" • font-style: "normal" • line-height: "112.5%" • letter-spacing: "0%" • font-size: "2.75rem" • font-stretch: "normal"
+    </div>
+  </div>
+
+  {/* TimesModern-ExtraBold Regular - 2.75rem */}
+  <div>
+    <p className="r-xxxl" style={{
+      fontFamily: 'TimesModern-ExtraBold',
+      lineHeight: '1.2',
+      color: '#212529',
+      marginBottom: '0.5rem'
+    }}>
+      Aa
+    </p>
+    <div className="desc-text" style={{
+      fontSize: '14px',
+      color: '#6c757d',
+      fontWeight: '600',
+      marginBottom: '0.25rem'
+    }}>
+      editorialRegularDisplay008
+    </div>
+    <div className="desc-text" style={{
+      fontSize: '12px',
+      color: '#6c757d'
+    }}>
+      • font-family: "Times Modern" • font-weight: "regular" • font-style: "normal" • line-height: "112.5%" • letter-spacing: "0%" • font-size: "2.75rem" • font-stretch: "normal"
+    </div>
+  </div>
+
+  {/* TimesModern-ExtraBold Bold - 2.75rem */}
+  <div>
+    <p className="b-xxxl" style={{
+      fontFamily: 'TimesModern-ExtraBold',
+      lineHeight: '1.2',
+      color: '#212529',
+      marginBottom: '0.5rem'
+    }}>
+      Aa
+    </p>
+    <div className="desc-text" style={{
+      fontSize: '14px',
+      color: '#6c757d',
+      fontWeight: '600',
+      marginBottom: '0.25rem'
+    }}>
+      editorialBoldDisplay008
+    </div>
+    <div className="desc-text" style={{
+      fontSize: '12px',
+      color: '#6c757d'
+    }}>
+      • font-family: "Times Modern" • font-weight: "bold" • font-style: "normal" • line-height: "112.5%" • letter-spacing: "0%" • font-size: "2.75rem" • font-stretch: "normal"
+    </div>
+  </div>
+
+  {/* TimesModern-Black - 3.5rem */}
+  <div>
+    <p className="xxxxl" style={{
+      fontFamily: 'TimesModern-Black',
+      lineHeight: '1.2',
+      color: '#212529',
+      marginBottom: '0.5rem'
+    }}>
+      Aa
+    </p>
+    <div className="desc-text" style={{
+      fontSize: '14px',
+      color: '#6c757d',
+      fontWeight: '600',
+      marginBottom: '0.25rem'
+    }}>
+      editorialLightDisplay009
+    </div>
+    <div className="desc-text" style={{
+      fontSize: '12px',
+      color: '#6c757d'
+    }}>
+      • font-family: "Times Modern" • font-weight: "300" • font-style: "normal" • line-height: "112.5%" • letter-spacing: "0%" • font-size: "3.5rem" • font-stretch: "normal"
+    </div>
+  </div>
+
+  {/* TimesModern-Black Regular - 3.5rem */}
+  <div>
+    <p className="r-xxxxl" style={{
+      fontFamily: 'TimesModern-Black',
+      lineHeight: '1.2',
+      color: '#212529',
+      marginBottom: '0.5rem'
+    }}>
+      Aa
+    </p>
+    <div className="desc-text" style={{
+      fontSize: '14px',
+      color: '#6c757d',
+      fontWeight: '600',
+      marginBottom: '0.25rem'
+    }}>
+      editorialRegularDisplay009
+    </div>
+    <div className="desc-text" style={{
+      fontSize: '12px',
+      color: '#6c757d'
+    }}>
+      • font-family: "Times Modern" • font-weight: "regular" • font-style: "normal" • line-height: "112.5%" • letter-spacing: "0%" • font-size: "3.5rem" • font-stretch: "normal"
+    </div>
+  </div>
+
+  {/* TimesModern-Black Bold - 3.5rem */}
+  <div>
+    <p className="b-xxxxl" style={{
+      fontFamily: 'TimesModern-Black',
+      lineHeight: '1.2',
+      color: '#212529',
+      marginBottom: '0.5rem'
+    }}>
+      Aa
+    </p>
+    <div className="desc-text" style={{
+      fontSize: '14px',
+      color: '#6c757d',
+      fontWeight: '600',
+      marginBottom: '0.25rem'
+    }}>
+      editorialBoldDisplay009
+    </div>
+    <div className="desc-text" style={{
+      fontSize: '12px',
+      color: '#6c757d'
+    }}>
+      • font-family: "Times Modern" • font-weight: "bold" • font-style: "normal" • line-height: "112.5%" • letter-spacing: "0%" • font-size: "3.5rem" • font-stretch: "normal"
+    </div>
+  </div>
+
+</div>
+
+</div>
+
+## Font Weight Scale
+
+The typography system uses a comprehensive font weight scale to establish clear visual hierarchy:
+
+<div style={{
+  display: 'grid',
+  gridTemplateColumns: '1fr 1fr 1fr',
+  gap: '1rem',
+  marginTop: '1.5rem',
+  fontFamily: 'ui-monospace, SFMono-Regular, "SF Mono", Monaco, Consolas, monospace'
+}}>
+  <div style={{ padding: '1rem', backgroundColor: '#f8f9fa', borderRadius: '6px', textAlign: 'center' }}>
+    <div style={{ fontWeight: '100', fontSize: '18px', marginBottom: '0.5rem' }}>100</div>
+    <div style={{ fontSize: '12px', color: '#6c757d' }}>Thin</div>
+  </div>
+  <div style={{ padding: '1rem', backgroundColor: '#f8f9fa', borderRadius: '6px', textAlign: 'center' }}>
+    <div style={{ fontWeight: '200', fontSize: '18px', marginBottom: '0.5rem' }}>200</div>
+    <div style={{ fontSize: '12px', color: '#6c757d' }}>Extra Light</div>
+  </div>
+  <div style={{ padding: '1rem', backgroundColor: '#f8f9fa', borderRadius: '6px', textAlign: 'center' }}>
+    <div style={{ fontWeight: '300', fontSize: '18px', marginBottom: '0.5rem' }}>300</div>
+    <div style={{ fontSize: '12px', color: '#6c757d' }}>Light</div>
+  </div>
+  <div style={{ padding: '1rem', backgroundColor: '#f8f9fa', borderRadius: '6px', textAlign: 'center' }}>
+    <div style={{ fontWeight: '400', fontSize: '18px', marginBottom: '0.5rem' }}>400</div>
+    <div style={{ fontSize: '12px', color: '#6c757d' }}>Regular</div>
+  </div>
+  <div style={{ padding: '1rem', backgroundColor: '#f8f9fa', borderRadius: '6px', textAlign: 'center' }}>
+    <div style={{ fontWeight: '500', fontSize: '18px', marginBottom: '0.5rem' }}>500</div>
+    <div style={{ fontSize: '12px', color: '#6c757d' }}>Medium</div>
+  </div>
+  <div style={{ padding: '1rem', backgroundColor: '#f8f9fa', borderRadius: '6px', textAlign: 'center' }}>
+    <div style={{ fontWeight: '600', fontSize: '18px', marginBottom: '0.5rem' }}>600</div>
+    <div style={{ fontSize: '12px', color: '#6c757d' }}>Semi Bold</div>
+  </div>
+  <div style={{ padding: '1rem', backgroundColor: '#f8f9fa', borderRadius: '6px', textAlign: 'center' }}>
+    <div style={{ fontWeight: '700', fontSize: '18px', marginBottom: '0.5rem' }}>700</div>
+    <div style={{ fontSize: '12px', color: '#6c757d' }}>Bold</div>
+  </div>
+  <div style={{ padding: '1rem', backgroundColor: '#f8f9fa', borderRadius: '6px', textAlign: 'center' }}>
+    <div style={{ fontWeight: '800', fontSize: '18px', marginBottom: '0.5rem' }}>800</div>
+    <div style={{ fontSize: '12px', color: '#6c757d' }}>Extra Bold</div>
+  </div>
+  <div style={{ padding: '1rem', backgroundColor: '#f8f9fa', borderRadius: '6px', textAlign: 'center' }}>
+    <div style={{ fontWeight: '900', fontSize: '18px', marginBottom: '0.5rem' }}>900</div>
+    <div style={{ fontSize: '12px', color: '#6c757d' }}>Black</div>
+  </div>
+</div>
+
+## Headline
+
+The Headline typography system provides a range of font weights and styles optimized for page headlines, section headers, and card titles.
+
+<div style={{
+  fontFamily: 'TimesModern-Regular',
+  marginTop: '2rem',
+  marginBottom: '2rem'
+}}>
+
+{/* Headline typography samples container */}
+<div style={{
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '2rem',
+  padding: '2rem',
+  backgroundColor: '#f8f9fa',
+  borderRadius: '8px',
+  border: '1px solid #e9ecef'
+}}>
+
+  <div className="desc-text" style={{
+    fontSize: '13px',
+    color: '#6c757d',
+    marginBottom: '1rem',
+    textTransform: 'uppercase',
+    letterSpacing: '0.5px',
+    fontWeight: '500'
+  }}>
+    Used for online page content, section and card titles
+  </div>
+
+  {/* TimesModern-Thin - 1.125rem */}
+  <div>
+    <p className="h-xs" style={{
+      fontFamily: 'TimesModern-Thin',
+      lineHeight: '1.2',
+      color: '#212529',
+      marginBottom: '0.5rem'
+    }}>
+      Aa
+    </p>
+    <div className="desc-text" style={{
+      fontSize: '14px',
+      color: '#6c757d',
+      fontWeight: '600',
+      marginBottom: '0.25rem'
+    }}>
+      editorialLightHeadline010
+    </div>
+    <div className="desc-text" style={{
+      fontSize: '12px',
+      color: '#6c757d'
+    }}>
+      • font-family: "Times Modern" • font-weight: "300" • font-style: "normal" • line-height: "112.5%" • letter-spacing: "0%" • font-size: "1.125rem" • font-stretch: "normal"
+    </div>
+  </div>
+
+  {/* TimesModern-Thin Regular - 1.125rem */}
+  <div>
+    <p className="hr-xs" style={{
+      fontFamily: 'TimesModern-Thin',
+      lineHeight: '1.2',
+      color: '#212529',
+      marginBottom: '0.5rem'
+    }}>
+      Aa
+    </p>
+    <div className="desc-text" style={{
+      fontSize: '14px',
+      color: '#6c757d',
+      fontWeight: '600',
+      marginBottom: '0.25rem'
+    }}>
+      editorialRegularHeadline010
+    </div>
+    <div className="desc-text" style={{
+      fontSize: '12px',
+      color: '#6c757d'
+    }}>
+      • font-family: "Times Modern" • font-weight: "regular" • font-style: "normal" • line-height: "112.5%" • letter-spacing: "0%" • font-size: "1.125rem" • font-stretch: "normal"
+    </div>
+  </div>
+
+  {/* TimesModern-Thin Bold - 1.125rem */}
+  <div>
+    <p className="hb-xs" style={{
+      fontFamily: 'TimesModern-Thin',
+      lineHeight: '1.2',
+      color: '#212529',
+      marginBottom: '0.5rem'
+    }}>
+      Aa
+    </p>
+    <div className="desc-text" style={{
+      fontSize: '14px',
+      color: '#6c757d',
+      fontWeight: '600',
+      marginBottom: '0.25rem'
+    }}>
+      editorialBoldHeadline010
+    </div>
+    <div className="desc-text" style={{
+      fontSize: '12px',
+      color: '#6c757d'
+    }}>
+      • font-family: "Times Modern" • font-weight: "bold" • font-style: "normal" • line-height: "112.5%" • letter-spacing: "0%" • font-size: "1.125rem" • font-stretch: "normal"
+    </div>
+  </div>
+
+  {/* TimesModern-ExtraLight - 1.25rem */}
+  <div>
+    <p className="h-sm" style={{
+      fontFamily: 'TimesModern-ExtraLight',
+      lineHeight: '1.2',
+      color: '#212529',
+      marginBottom: '0.5rem'
+    }}>
+      Aa
+    </p>
+    <div className="desc-text" style={{
+      fontSize: '14px',
+      color: '#6c757d',
+      fontWeight: '600',
+      marginBottom: '0.25rem'
+    }}>
+      editorialLightHeadline011
+    </div>
+    <div className="desc-text" style={{
+      fontSize: '12px',
+      color: '#6c757d'
+    }}>
+      • font-family: "Times Modern" • font-weight: "300" • font-style: "normal" • line-height: "112.5%" • letter-spacing: "0%" • font-size: "1.25rem" • font-stretch: "normal"
+    </div>
+  </div>
+
+  {/* TimesModern-ExtraLight Regular - 1.25rem */}
+  <div>
+    <p className="hr-sm" style={{
+      fontFamily: 'TimesModern-ExtraLight',
+      lineHeight: '1.2',
+      color: '#212529',
+      marginBottom: '0.5rem'
+    }}>
+      Aa
+    </p>
+    <div className="desc-text" style={{
+      fontSize: '14px',
+      color: '#6c757d',
+      fontWeight: '600',
+      marginBottom: '0.25rem'
+    }}>
+      editorialRegularHeadline011
+    </div>
+    <div className="desc-text" style={{
+      fontSize: '12px',
+      color: '#6c757d'
+    }}>
+      • font-family: "Times Modern" • font-weight: "regular" • font-style: "normal" • line-height: "112.5%" • letter-spacing: "0%" • font-size: "1.25rem" • font-stretch: "normal"
+    </div>
+  </div>
+
+  {/* TimesModern-ExtraLight Bold - 1.25rem */}
+  <div>
+    <p className="hb-sm" style={{
+      fontFamily: 'TimesModern-ExtraLight',
+      lineHeight: '1.2',
+      color: '#212529',
+      marginBottom: '0.5rem'
+    }}>
+      Aa
+    </p>
+    <div className="desc-text" style={{
+      fontSize: '14px',
+      color: '#6c757d',
+      fontWeight: '600',
+      marginBottom: '0.25rem'
+    }}>
+      editorialBoldHeadline011
+    </div>
+    <div className="desc-text" style={{
+      fontSize: '12px',
+      color: '#6c757d'
+    }}>
+      • font-family: "Times Modern" • font-weight: "bold" • font-style: "normal" • line-height: "112.5%" • letter-spacing: "0%" • font-size: "1.25rem" • font-stretch: "normal"
+    </div>
+  </div>
+
+  {/* TimesModern-Light - 1.5rem */}
+  <div>
+    <p className="h-md" style={{
+      fontFamily: 'TimesModern-Light',
+      lineHeight: '1.2',
+      color: '#212529',
+      marginBottom: '0.5rem'
+    }}>
+      Aa
+    </p>
+    <div className="desc-text" style={{
+      fontSize: '14px',
+      color: '#6c757d',
+      fontWeight: '600',
+      marginBottom: '0.25rem'
+    }}>
+      editorialLightHeadline012
+    </div>
+    <div className="desc-text" style={{
+      fontSize: '12px',
+      color: '#6c757d'
+    }}>
+      • font-family: "Times Modern" • font-weight: "300" • font-style: "normal" • line-height: "112.5%" • letter-spacing: "0%" • font-size: "1.5rem" • font-stretch: "normal"
+    </div>
+  </div>
+
+  {/* TimesModern-Light Regular - 1.5rem */}
+  <div>
+    <p className="hr-md" style={{
+      fontFamily: 'TimesModern-Light',
+      lineHeight: '1.2',
+      color: '#212529',
+      marginBottom: '0.5rem'
+    }}>
+      Aa
+    </p>
+    <div className="desc-text" style={{
+      fontSize: '14px',
+      color: '#6c757d',
+      fontWeight: '600',
+      marginBottom: '0.25rem'
+    }}>
+      editorialRegularHeadline012
+    </div>
+    <div className="desc-text" style={{
+      fontSize: '12px',
+      color: '#6c757d'
+    }}>
+      • font-family: "Times Modern" • font-weight: "regular" • font-style: "normal" • line-height: "112.5%" • letter-spacing: "0%" • font-size: "1.5rem" • font-stretch: "normal"
+    </div>
+  </div>
+
+  {/* TimesModern-Light Bold - 1.5rem */}
+  <div>
+    <p className="hb-md" style={{
+      fontFamily: 'TimesModern-Light',
+      lineHeight: '1.2',
+      color: '#212529',
+      marginBottom: '0.5rem'
+    }}>
+      Aa
+    </p>
+    <div className="desc-text" style={{
+      fontSize: '14px',
+      color: '#6c757d',
+      fontWeight: '600',
+      marginBottom: '0.25rem'
+    }}>
+      editorialBoldHeadline012
+    </div>
+    <div className="desc-text" style={{
+      fontSize: '12px',
+      color: '#6c757d'
+    }}>
+      • font-family: "Times Modern" • font-weight: "bold" • font-style: "normal" • line-height: "112.5%" • letter-spacing: "0%" • font-size: "1.5rem" • font-stretch: "normal"
+    </div>
+  </div>
+
+  {/* TimesModern-Regular - 1.75rem */}
+  <div>
+    <p className="h-lg" style={{
+      fontFamily: 'TimesModern-Regular',
+      lineHeight: '1.2',
+      color: '#212529',
+      marginBottom: '0.5rem'
+    }}>
+      Aa
+    </p>
+    <div className="desc-text" style={{
+      fontSize: '14px',
+      color: '#6c757d',
+      fontWeight: '600',
+      marginBottom: '0.25rem'
+    }}>
+      editorialLightHeadline013
+    </div>
+    <div className="desc-text" style={{
+      fontSize: '12px',
+      color: '#6c757d'
+    }}>
+      • font-family: "Times Modern" • font-weight: "300" • font-style: "normal" • line-height: "112.5%" • letter-spacing: "0%" • font-size: "1.75rem" • font-stretch: "normal"
+    </div>
+  </div>
+
+  {/* TimesModern-Regular Regular - 1.75rem */}
+  <div>
+    <p className="hr-lg" style={{
+      fontFamily: 'TimesModern-Regular',
+      lineHeight: '1.2',
+      color: '#212529',
+      marginBottom: '0.5rem'
+    }}>
+      Aa
+    </p>
+    <div className="desc-text" style={{
+      fontSize: '14px',
+      color: '#6c757d',
+      fontWeight: '600',
+      marginBottom: '0.25rem'
+    }}>
+      editorialRegularHeadline013
+    </div>
+    <div className="desc-text" style={{
+      fontSize: '12px',
+      color: '#6c757d'
+    }}>
+      • font-family: "Times Modern" • font-weight: "regular" • font-style: "normal" • line-height: "112.5%" • letter-spacing: "0%" • font-size: "1.75rem" • font-stretch: "normal"
+    </div>
+  </div>
+
+  {/* TimesModern-Regular Bold - 1.75rem */}
+  <div>
+    <p className="hb-lg" style={{
+      fontFamily: 'TimesModern-Regular',
+      lineHeight: '1.2',
+      color: '#212529',
+      marginBottom: '0.5rem'
+    }}>
+      Aa
+    </p>
+    <div className="desc-text" style={{
+      fontSize: '14px',
+      color: '#6c757d',
+      fontWeight: '600',
+      marginBottom: '0.25rem'
+    }}>
+      editorialBoldHeadline013
+    </div>
+    <div className="desc-text" style={{
+      fontSize: '12px',
+      color: '#6c757d'
+    }}>
+      • font-family: "Times Modern" • font-weight: "bold" • font-style: "normal" • line-height: "112.5%" • letter-spacing: "0%" • font-size: "1.75rem" • font-stretch: "normal"
+    </div>
+  </div>
+
+  {/* TimesModern-Medium - 2rem */}
+  <div>
+    <p className="h-xl" style={{
+      fontFamily: 'TimesModern-Medium',
+      lineHeight: '1.2',
+      color: '#212529',
+      marginBottom: '0.5rem'
+    }}>
+      Aa
+    </p>
+    <div className="desc-text" style={{
+      fontSize: '14px',
+      color: '#6c757d',
+      fontWeight: '600',
+      marginBottom: '0.25rem'
+    }}>
+      editorialLightHeadline014
+    </div>
+    <div className="desc-text" style={{
+      fontSize: '12px',
+      color: '#6c757d'
+    }}>
+      • font-family: "Times Modern" • font-weight: "300" • font-style: "normal" • line-height: "112.5%" • letter-spacing: "0%" • font-size: "2rem" • font-stretch: "normal"
+    </div>
+  </div>
+
+  {/* TimesModern-Medium Regular - 2rem */}
+  <div>
+    <p className="hr-xl" style={{
+      fontFamily: 'TimesModern-Medium',
+      lineHeight: '1.2',
+      color: '#212529',
+      marginBottom: '0.5rem'
+    }}>
+      Aa
+    </p>
+    <div className="desc-text" style={{
+      fontSize: '14px',
+      color: '#6c757d',
+      fontWeight: '600',
+      marginBottom: '0.25rem'
+    }}>
+      editorialRegularHeadline014
+    </div>
+    <div className="desc-text" style={{
+      fontSize: '12px',
+      color: '#6c757d'
+    }}>
+      • font-family: "Times Modern" • font-weight: "regular" • font-style: "normal" • line-height: "112.5%" • letter-spacing: "0%" • font-size: "2rem" • font-stretch: "normal"
+    </div>
+  </div>
+
+  {/* TimesModern-Medium Bold - 2rem */}
+  <div>
+    <p className="hb-xl" style={{
+      fontFamily: 'TimesModern-Medium',
+      lineHeight: '1.2',
+      color: '#212529',
+      marginBottom: '0.5rem'
+    }}>
+      Aa
+    </p>
+    <div className="desc-text" style={{
+      fontSize: '14px',
+      color: '#6c757d',
+      fontWeight: '600',
+      marginBottom: '0.25rem'
+    }}>
+      editorialBoldHeadline014
+    </div>
+    <div className="desc-text" style={{
+      fontSize: '12px',
+      color: '#6c757d'
+    }}>
+      • font-family: "Times Modern" • font-weight: "bold" • font-style: "normal" • line-height: "112.5%" • letter-spacing: "0%" • font-size: "2rem" • font-stretch: "normal"
+    </div>
+  </div>
+
+  {/* TimesModern-SemiBold - 2.25rem */}
+  <div>
+    <p className="h-xxl" style={{
+      fontFamily: 'TimesModern-SemiBold',
+      lineHeight: '1.2',
+      color: '#212529',
+      marginBottom: '0.5rem'
+    }}>
+      Aa
+    </p>
+    <div className="desc-text" style={{
+      fontSize: '14px',
+      color: '#6c757d',
+      fontWeight: '600',
+      marginBottom: '0.25rem'
+    }}>
+      editorialLightHeadline015
+    </div>
+    <div className="desc-text" style={{
+      fontSize: '12px',
+      color: '#6c757d'
+    }}>
+      • font-family: "Times Modern" • font-weight: "300" • font-style: "normal" • line-height: "112.5%" • letter-spacing: "0%" • font-size: "2.25rem" • font-stretch: "normal"
+    </div>
+  </div>
+
+  {/* TimesModern-SemiBold Regular - 2.25rem */}
+  <div>
+    <p className="hr-xxl" style={{
+      fontFamily: 'TimesModern-SemiBold',
+      lineHeight: '1.2',
+      color: '#212529',
+      marginBottom: '0.5rem'
+    }}>
+      Aa
+    </p>
+    <div className="desc-text" style={{
+      fontSize: '14px',
+      color: '#6c757d',
+      fontWeight: '600',
+      marginBottom: '0.25rem'
+    }}>
+      editorialRegularHeadline015
+    </div>
+    <div className="desc-text" style={{
+      fontSize: '12px',
+      color: '#6c757d'
+    }}>
+      • font-family: "Times Modern" • font-weight: "regular" • font-style: "normal" • line-height: "112.5%" • letter-spacing: "0%" • font-size: "2.25rem" • font-stretch: "normal"
+    </div>
+  </div>
+
+  {/* TimesModern-SemiBold Bold - 2.25rem */}
+  <div>
+    <p className="hb-xxl" style={{
+      fontFamily: 'TimesModern-SemiBold',
+      lineHeight: '1.2',
+      color: '#212529',
+      marginBottom: '0.5rem'
+    }}>
+      Aa
+    </p>
+    <div className="desc-text" style={{
+      fontSize: '14px',
+      color: '#6c757d',
+      fontWeight: '600',
+      marginBottom: '0.25rem'
+    }}>
+      editorialBoldHeadline015
+    </div>
+    <div className="desc-text" style={{
+      fontSize: '12px',
+      color: '#6c757d'
+    }}>
+      • font-family: "Times Modern" • font-weight: "bold" • font-style: "normal" • line-height: "112.5%" • letter-spacing: "0%" • font-size: "2.25rem" • font-stretch: "normal"
+    </div>
+  </div>
+
+  {/* TimesModern-Bold - 2.5rem */}
+  <div>
+    <p className="h-xxxl" style={{
+      fontFamily: 'TimesModern-Bold',
+      lineHeight: '1.2',
+      color: '#212529',
+      marginBottom: '0.5rem'
+    }}>
+      Aa
+    </p>
+    <div className="desc-text" style={{
+      fontSize: '14px',
+      color: '#6c757d',
+      fontWeight: '600',
+      marginBottom: '0.25rem'
+    }}>
+      editorialLightHeadline016
+    </div>
+    <div className="desc-text" style={{
+      fontSize: '12px',
+      color: '#6c757d'
+    }}>
+      • font-family: "Times Modern" • font-weight: "300" • font-style: "normal" • line-height: "112.5%" • letter-spacing: "0%" • font-size: "2.5rem" • font-stretch: "normal"
+    </div>
+  </div>
+
+  {/* TimesModern-Bold Regular - 2.5rem */}
+  <div>
+    <p className="hr-xxxl" style={{
+      fontFamily: 'TimesModern-Bold',
+      lineHeight: '1.2',
+      color: '#212529',
+      marginBottom: '0.5rem'
+    }}>
+      Aa
+    </p>
+    <div className="desc-text" style={{
+      fontSize: '14px',
+      color: '#6c757d',
+      fontWeight: '600',
+      marginBottom: '0.25rem'
+    }}>
+      editorialRegularHeadline016
+    </div>
+    <div className="desc-text" style={{
+      fontSize: '12px',
+      color: '#6c757d'
+    }}>
+      • font-family: "Times Modern" • font-weight: "regular" • font-style: "normal" • line-height: "112.5%" • letter-spacing: "0%" • font-size: "2.5rem" • font-stretch: "normal"
+    </div>
+  </div>
+
+  {/* TimesModern-Bold Bold - 2.5rem */}
+  <div>
+    <p className="hb-xxxl" style={{
+      fontFamily: 'TimesModern-Bold',
+      lineHeight: '1.2',
+      color: '#212529',
+      marginBottom: '0.5rem'
+    }}>
+      Aa
+    </p>
+    <div className="desc-text" style={{
+      fontSize: '14px',
+      color: '#6c757d',
+      fontWeight: '600',
+      marginBottom: '0.25rem'
+    }}>
+      editorialBoldHeadline016
+    </div>
+    <div className="desc-text" style={{
+      fontSize: '12px',
+      color: '#6c757d'
+    }}>
+      • font-family: "Times Modern" • font-weight: "bold" • font-style: "normal" • line-height: "112.5%" • letter-spacing: "0%" • font-size: "2.5rem" • font-stretch: "normal"
+    </div>
+  </div>
+
+  {/* TimesModern-ExtraBold - 3rem */}
+  <div>
+    <p className="h-xxxxl" style={{
+      fontFamily: 'TimesModern-ExtraBold',
+      lineHeight: '1.2',
+      color: '#212529',
+      marginBottom: '0.5rem'
+    }}>
+      Aa
+    </p>
+    <div className="desc-text" style={{
+      fontSize: '14px',
+      color: '#6c757d',
+      fontWeight: '600',
+      marginBottom: '0.25rem'
+    }}>
+      editorialLightHeadline017
+    </div>
+    <div className="desc-text" style={{
+      fontSize: '12px',
+      color: '#6c757d'
+    }}>
+      • font-family: "Times Modern" • font-weight: "300" • font-style: "normal" • line-height: "112.5%" • letter-spacing: "0%" • font-size: "3rem" • font-stretch: "normal"
+    </div>
+  </div>
+
+  {/* TimesModern-ExtraBold Regular - 3rem */}
+  <div>
+    <p className="hr-xxxxl" style={{
+      fontFamily: 'TimesModern-ExtraBold',
+      lineHeight: '1.2',
+      color: '#212529',
+      marginBottom: '0.5rem'
+    }}>
+      Aa
+    </p>
+    <div className="desc-text" style={{
+      fontSize: '14px',
+      color: '#6c757d',
+      fontWeight: '600',
+      marginBottom: '0.25rem'
+    }}>
+      editorialRegularHeadline017
+    </div>
+    <div className="desc-text" style={{
+      fontSize: '12px',
+      color: '#6c757d'
+    }}>
+      • font-family: "Times Modern" • font-weight: "regular" • font-style: "normal" • line-height: "112.5%" • letter-spacing: "0%" • font-size: "3rem" • font-stretch: "normal"
+    </div>
+  </div>
+
+  {/* TimesModern-ExtraBold Bold - 3rem */}
+  <div>
+    <p className="hb-xxxxl" style={{
+      fontFamily: 'TimesModern-ExtraBold',
+      lineHeight: '1.2',
+      color: '#212529',
+      marginBottom: '0.5rem'
+    }}>
+      Aa
+    </p>
+    <div className="desc-text" style={{
+      fontSize: '14px',
+      color: '#6c757d',
+      fontWeight: '600',
+      marginBottom: '0.25rem'
+    }}>
+      editorialBoldHeadline017
+    </div>
+    <div className="desc-text" style={{
+      fontSize: '12px',
+      color: '#6c757d'
+    }}>
+      • font-family: "Times Modern" • font-weight: "bold" • font-style: "normal" • line-height: "112.5%" • letter-spacing: "0%" • font-size: "3rem" • font-stretch: "normal"
+    </div>
+  </div>
+</div>
+
+</div>
+
+## Font Weight Scale
+
+

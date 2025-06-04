@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 export const MediaContainer = styled.div`
     display: block;
-    margin: 20px auto;
+    margin: ${props => props.theme?.utils?.spacing?.('5') || '20px'} auto;
     position: relative;
 
     &.bleed {
@@ -17,7 +17,7 @@ export const MediaContainer = styled.div`
     }
 
     @media (max-width: 767px) {
-        padding: 0 14px !important;
+        padding: 0 ${props => props.theme?.utils?.spacing?.('3') || '14px'} !important;
         &.bleed {
             padding: 0;
         }
@@ -70,27 +70,28 @@ export const MediaContainer = styled.div`
 
     .video-js .vjs-big-play-button {
         top: unset;
-        bottom: 6px;
-        left: 69px;
-        color: black;
-        width: 60px;
-        height: 60px;
-        background-color: white;
-        border-radius: 0;
-        font-size: 42px;
+        bottom: ${props => props.theme?.utils?.spacing?.('2') || '6px'};
+        left: ${props => props.theme?.utils?.spacing?.('16') || '69px'};
+        color: ${props => props.theme?.utils?.color?.('neutral.black') || 'black'};
+        width: ${props => props.theme?.utils?.spacing?.('16') || '60px'};
+        height: ${props => props.theme?.utils?.spacing?.('16') || '60px'};
+        background-color: ${props => props.theme?.utils?.color?.('neutral.nel010') || 'white'};
+        border-radius: ${props => props.theme?.utils?.borderRadius?.('none') || '0'};
+        font-size: ${props => props.theme?.utils?.typography?.('fontSize', '4xl') || '42px'};
         line-height: 1.35;
     }
 `;
 
 export const SlideText = styled.div`
-    margin-top: 10px;
+    margin-top: ${props => props.theme?.utils?.spacing?.('3') || '10px'};
     text-align: left;
-    font-family: Roboto-Regular, Roboto-Regular-fallback, sans-serif;
+    font-family: ${props => props.theme?.utils?.typography?.('fontFamily', 'sans')?.join(', ') || 'Roboto-Regular, Roboto-Regular-fallback, sans-serif'};
+    
     p {
-        font-size: 14px;
-        color: rgb(105, 105, 105);
-        line-height: 19px;
-        margin-bottom: 4px;
+        font-size: ${props => props.theme?.utils?.typography?.('fontSize', 'sm') || '14px'};
+        color: ${props => props.theme?.utils?.color?.('neutral.ne060') || 'rgb(105, 105, 105)'};
+        line-height: ${props => props.theme?.utils?.typography?.('lineHeight', 'normal') || '19px'};
+        margin-bottom: ${props => props.theme?.utils?.spacing?.('1') || '4px'};
         text-align: left;
     }
 `;
@@ -98,14 +99,15 @@ export const SlideText = styled.div`
 export const CaptionText = styled.div`
     position: absolute;
     top: 0;
-    background-color: black;
-    color: #fff;
-    padding: 10px;
-    border-radius: ${({ $imgBorderRadius }) => `${$imgBorderRadius} 0 0 0`};
+    background-color: ${props => props.theme?.utils?.color?.('neutral.black') || 'black'};
+    color: ${props => props.theme?.utils?.color?.('whiteTint.white') || '#fff'};
+    padding: ${props => props.theme?.utils?.spacing?.('3') || '10px'};
+    border-radius: ${({ $imgBorderRadius, theme }) => 
+        `${$imgBorderRadius || theme?.utils?.borderRadius?.('md') || '0.375rem'} 0 0 0`};
 
     p {
-        color: #fff;
-        font-size: 12px;
+        color: ${props => props.theme?.utils?.color?.('whiteTint.white') || '#fff'};
+        font-size: ${props => props.theme?.utils?.typography?.('fontSize', 'xs') || '12px'};
         margin: 0;
     }
 `;
@@ -119,12 +121,14 @@ export const StyledMedia = styled.div`
         width: 100%;
         height: auto;
         border: none;
-        ${({ $containerWidth, $fixedImgHeight, $imgBorderRadius }) => {
+        ${({ $containerWidth, $fixedImgHeight, $imgBorderRadius, theme }) => {
+            const borderRadius = $imgBorderRadius || theme?.utils?.borderRadius?.('md') || '0.375rem';
+            
             if ($containerWidth === 'edge-to-edge') {
                 return css`
                     height: 100vh;
                     object-fit: cover;
-                    border-radius: ${$imgBorderRadius};
+                    border-radius: ${borderRadius};
                 `;
             } else if (
                 $containerWidth === 'bleed' ||
@@ -133,11 +137,11 @@ export const StyledMedia = styled.div`
                 return css`
                     height: ${$fixedImgHeight};
                     object-fit: cover;
-                    border-radius: ${$imgBorderRadius};
+                    border-radius: ${borderRadius};
                 `;
             }
             return css`
-                border-radius: ${$imgBorderRadius};
+                border-radius: ${borderRadius};
             `;
         }}
     }

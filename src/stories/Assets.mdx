@@ -1,0 +1,340 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Design System/Assets" />
+
+# Assets
+
+<div style={{
+  fontFamily: 'system-ui, -apple-system, sans-serif',
+  fontSize: '14px',
+  lineHeight: '1.4',
+  marginTop: '2rem'
+}}>
+
+{/* Assets Component Styles */}
+<style>
+{`
+.assets-section {
+  margin-bottom: 3rem;
+  padding: 0;
+}
+
+.assets-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #111827;
+}
+
+.assets-description {
+  color: #6b7280;
+  margin-bottom: 3rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.theme-section-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: #111827;
+  padding-left: 0.5rem;
+  border-left: 4px solid #3b82f6;
+}
+
+.logo-container {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.logo-demo {
+  flex: 1;
+  min-width: 500px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  height: 300px;
+}
+
+.logo-image {
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 2rem;
+}
+
+.logo-image img {
+  max-width: 85%;
+  max-height: 85%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.logo-image-placeholder {
+  width: 85%;
+  height: 85%;
+  background: #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 8px;
+  border: 2px dashed #cbd5e1;
+}
+
+.logo-info {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.logo-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #1a202c;
+}
+
+.logo-specs {
+  background: #f7fafc;
+  padding: 1rem;
+  border-radius: 6px;
+  font-family: 'Monaco', 'Courier New', monospace;
+  font-size: 0.8rem;
+  color: #2d3748;
+  margin-bottom: 1rem;
+  border-left: 3px solid #4299e1;
+}
+
+.logo-usage {
+  font-size: 0.85rem;
+  color: #718096;
+  line-height: 1.5;
+}
+
+/* Theme-specific styling */
+.dark-mode-section {
+  background: #1a1a1a;
+  padding: 3rem 2rem;
+  border-radius: 12px;
+  margin-top: 3rem;
+}
+
+.dark-mode-section .theme-section-title {
+  color: #ffffff;
+  border-left-color: #60a5fa;
+}
+
+.dark-mode-section .logo-demo {
+  background: #2d3748;
+  border-color: #4a5568;
+}
+
+.dark-mode-section .logo-image {
+  background: #1a202c;
+}
+
+.dark-mode-section .logo-name {
+  color: #ffffff;
+}
+
+.dark-mode-section .logo-specs {
+  background: #2d3748;
+  color: #e2e8f0;
+  border-left-color: #60a5fa;
+}
+
+.dark-mode-section .logo-usage {
+  color: #cbd5e1;
+}
+`}
+</style>
+
+<div className="assets-section">
+  <h2 className="assets-title">Logos</h2>
+  <div className="assets-description">
+    Our logo system provides consistent brand representation across all platforms and contexts. Each logo variant is optimized for specific use cases, ensuring perfect visibility and brand recognition in both light and dark themes.
+  </div>
+
+  {/* Light Mode Section */}
+  <div>
+    <h3 className="theme-section-title">Light Mode</h3>
+    
+    {/* Brandmark Horizontal */}
+    <div className="logo-container">
+      <div className="logo-demo">
+        <div className="logo-image">
+          <img src="img/brandmarkHorizontal-light.jpg" alt="Horizontal brandmark for light backgrounds" />
+        </div>
+        <div className="logo-info">
+          <div className="logo-name">brandmarkHorizontal</div>
+        </div>
+      </div>
+    </div>
+
+    {/* Brandmark Horizontal Inverse */}
+    <div className="logo-container">
+      <div className="logo-demo">
+        <div className="logo-image">
+          <img src="img/brandmarkHorizontalInverse-light.jpg" alt="Horizontal inverse brandmark for light backgrounds" />
+        </div>
+        <div className="logo-info">
+          <div className="logo-name">brandmarkHorizontalInverse</div>
+        </div>
+      </div>
+    </div>
+
+    {/* Brandmark Vertical */}
+    <div className="logo-container">
+      <div className="logo-demo">
+        <div className="logo-image">
+          <img src="img/brandmarkVertical-light.jpg" alt="Vertical brandmark for light backgrounds" />
+        </div>
+        <div className="logo-info">
+          <div className="logo-name">brandmarkVertical</div>
+        </div>
+      </div>
+    </div>
+
+    {/* Brandmark Glyph */}
+    <div className="logo-container">
+      <div className="logo-demo">
+        <div className="logo-image">
+          <img src="img/brandmarkGlyph-light.jpg" alt="Glyph brandmark for light backgrounds" />
+        </div>
+        <div className="logo-info">
+          <div className="logo-name">brandmarkGlyph</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {/* Dark Mode Section */}
+  <div className="dark-mode-section">
+    <h3 className="theme-section-title">Dark Mode</h3>
+    
+    {/* Brandmark Horizontal Dark */}
+    <div className="logo-container">
+      <div className="logo-demo">
+        <div className="logo-image">
+          <img src="img/brandmarkHorizontal-dark.jpg" alt="Horizontal brandmark for dark backgrounds" />
+        </div>
+        <div className="logo-info">
+          <div className="logo-name">brandmarkHorizontal</div>
+        </div>
+      </div>
+    </div>
+
+    {/* Brandmark Horizontal Inverse Dark */}
+    <div className="logo-container">
+      <div className="logo-demo">
+        <div className="logo-image">
+          <img src="img/brandmarkHorizontalInverse-dark.jpg" alt="Horizontal inverse brandmark for dark backgrounds" />
+        </div>
+        <div className="logo-info">
+          <div className="logo-name">brandmarkHorizontalInverse</div>
+        </div>
+      </div>
+    </div>
+
+    {/* Brandmark Vertical Inverse Dark */}
+    <div className="logo-container">
+      <div className="logo-demo">
+        <div className="logo-image">
+          <img src="img/brandmarkVerticalInverse-dark.jpg" alt="Vertical inverse brandmark for dark backgrounds" />
+        </div>
+        <div className="logo-info">
+          <div className="logo-name">brandmarkVerticalInverse</div>
+        </div>
+      </div>
+    </div>
+
+    {/* Brandmark Glyph Dark */}
+    <div className="logo-container">
+      <div className="logo-demo">
+        <div className="logo-image">
+          <img src="img/brandmarkGlyph-dark.jpg" alt="Glyph brandmark for dark backgrounds" />
+        </div>
+        <div className="logo-info">
+          <div className="logo-name">brandmarkGlyph</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div className="assets-section">
+  <h2 className="assets-title">Placeholder</h2>
+  <div className="assets-description">
+    Placeholder images provide consistent visual representation when content is loading or unavailable. These images maintain visual hierarchy and user experience across both light and dark themes.
+  </div>
+
+  {/* Light Mode Section */}
+  <div>
+    <h3 className="theme-section-title">Light Mode</h3>
+    
+    {/* Placeholder Image */}
+    <div className="logo-container">
+      <div className="logo-demo">
+        <div className="logo-image">
+          <img src="img/placeholderImage-light.jpg" alt="Placeholder image for light backgrounds" />
+        </div>
+        <div className="logo-info">
+          <div className="logo-name">placeholderImage</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {/* Dark Mode Section */}
+  <div className="dark-mode-section">
+    <h3 className="theme-section-title">Dark Mode</h3>
+    
+    {/* Placeholder Image Dark */}
+    <div className="logo-container">
+      <div className="logo-demo">
+        <div className="logo-image">
+          <img src="img/placeholderImage-dark.jpg" alt="Placeholder image for dark backgrounds" />
+        </div>
+        <div className="logo-info">
+          <div className="logo-name">placeholderImage</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+### Logo Usage Guidelines
+
+**DO:**
+- Maintain minimum size requirements for readability
+- Use appropriate theme variants for background context
+- Preserve aspect ratios when scaling
+- Ensure adequate clear space around logos
+- Use SVG format when possible for scalability
+
+**DON'T:**
+- Stretch or distort logo proportions
+- Use light mode logos on dark backgrounds
+- Place logos on busy or low-contrast backgrounds
+- Modify colors or add effects to brand assets
+- Use logos smaller than minimum specifications
+
+### File Formats Available
+
+- **SVG**: Scalable vector format (recommended)
+- **PNG**: High-resolution raster format
+- **JPG**: Compressed format for photography contexts
+
+</div> 

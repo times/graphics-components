@@ -14,3 +14,7 @@ export { default as Text } from './Text';
 export { default as FurnitureBlock } from './FurnitureBlock';
 export { default as DataWrapperEmbed } from './DataWrapperEmbed';
 export { default as ImageSlider } from './ImageSlider';
+
+// Theme System
+export { default as ThemeProvider, useTheme } from '../themes/ThemeProvider';
+export { default as figmaTheme } from '../themes/figma-theme.json';

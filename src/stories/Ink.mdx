@@ -1,0 +1,552 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Design System/Ink" />
+
+# Ink
+
+<div style={{
+  fontFamily: 'system-ui, -apple-system, sans-serif',
+  fontSize: '14px',
+  lineHeight: '1.4',
+  marginTop: '2rem'
+}}>
+
+{/* Component Example Styles */}
+<style>
+{`
+
+
+.ink-section {
+  margin-bottom: 3rem;
+  padding: 0;
+}
+
+.ink-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #111827;
+}
+
+.ink-description {
+  color: #6b7280;
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.theme-container {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.theme-demo {
+  flex: 1;
+  min-width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  display: grid;
+  grid-template-columns: 1fr 200px;
+  height: 100%;
+}
+
+.light-theme {
+  background: #ffffff;
+  color: #111827;
+}
+
+.dark-theme {
+  background: #000;
+  color: #f9fafb;
+}
+
+.demo-content {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-family: 'TimesModern', serif;
+}
+
+.demo-title p{
+  font-size: 56px;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  font-family: 'TimesModern-Regular' !important;
+  margin: 0;
+}
+
+.demo-subtitle p{
+  font-size: 32px;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+  font-weight: 400;
+  font-family: 'TimesModern-Regular', serif;
+  margin: 0;
+  color: #696969;
+}
+
+.demo-text p{
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  font-family: 'TimesModern-Regular', serif;
+  margin: 0;
+}
+
+.demo-button {
+  padding: 0.5rem 1rem;
+  border: none;
+  font-size: 0.8rem;
+  margin-top: auto;
+  width: fit-content;
+  cursor: pointer;
+  font-family: 'TimesModern-Bold';
+}
+
+.demo-button p{
+  font-family: 'Roboto-Regular';
+  font-weight: 500;
+  margin: 0;
+}
+
+.demo-sidebar {
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 1rem;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.dark-theme .demo-sidebar {
+  background: #fff;
+}
+
+.sidebar-section {
+  text-align: left;
+}
+
+.sidebar-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.dark-theme .sidebar-title {
+  color: #1f2937;
+}
+
+.sidebar-hex {
+  font-size: 0.65rem;
+  color: #d1d5db;
+  margin-bottom: 0.25rem;
+}
+
+.dark-theme .sidebar-hex {
+  color: #6b7280;
+}
+
+.sidebar-standard {
+  font-size: 0.65rem;
+  color: #d0d0d1;
+}
+
+.dark-theme .sidebar-standard {
+  color: #9ca3af;
+}
+
+/* Light theme text colors */
+.light-theme .demo-title {
+  color: #000000 !important;
+}
+
+.light-theme .demo-subtitle {
+  color: #374151 !important;
+}
+
+.light-theme .demo-text {
+  color: #6b7280 !important;
+}
+
+.light-theme .demo-button {
+  background: #3b82f6;
+  color: #ffffff;
+}
+
+
+/* Dark theme text colors */
+.dark-theme .demo-title p{
+  color: #ffffff !important;
+}
+
+.dark-theme .demo-subtitle p{
+  color: #f3f4f6 !important;
+}
+
+.dark-theme .demo-text p{
+  color: #e5e7eb !important;
+}
+
+.dark-theme .demo-button {
+  background: #3b82f6;
+  color: #ffffff;
+}
+
+.info-section p {
+  font-family: 'Roboto-Regular';
+  margin: 0;
+  color: #ffffff !important;
+  fontSize: '0.8rem';
+}
+
+.dark-theme .info-section p {
+  color: #000000 !important;
+}
+
+.demo-button p {
+  color: #fff !important;
+}
+
+.dark-theme .disabled-button p {
+  color: #aaa !important;
+}
+
+.disabled-button {
+  padding: 0.5rem 1rem;
+  border: none;
+  font-size: 0.8rem;
+  margin-top: auto;
+  width: fit-content;
+  cursor: not-allowed;
+  font-family: 'TimesModern-Bold';
+}
+
+.disabled-button p {
+  font-family: 'Roboto-Regular';
+  font-weight: 500;
+  margin: 0;
+}
+
+.text-container {
+  width: 18rem;
+  padding: 0.75rem;
+  background: #e4e4e4;
+  font-size: 0.8rem;
+  padding: 1rem
+}
+
+.text-container p{
+  margin: 0;
+  font-weight: 600;
+  font-family: 'Roboto-Regular';
+  text-align: center;
+}
+
+.dark-theme .text-container {
+  background: #e4e4e4;
+}
+
+.container-text {
+  color: #111827;
+  margin: 0;
+  font-family: 'Roboto-Regular';
+}
+
+.dark-theme .container-text {
+  color: #f9fafb;
+}
+
+.input-container {
+  width: auto;
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: #ffffff;
+  font-size: 0.8rem;
+}
+
+.dark-theme .input-container {
+  border: 1px solid #4b5563;
+  background: #1f2937;
+}
+
+.input-text {
+  color: #111827;
+  margin: 0;
+  font-family: 'Roboto-Regular';
+}
+
+.dark-theme .input-text {
+  color: #f9fafb;
+}
+`}
+</style>
+
+## Common
+
+<div className="ink-section">
+  <p className="ink-description">
+    Common ink tokens are used to style most generic text and icons within a design such as traditional body/header/kicker & body text.
+  </p>
+
+  <div className="theme-container">
+    <div className="theme-demo light-theme">
+      <div className="demo-content">
+        <h1 className="demo-title">
+          The quick brown fox jumps over the lazy dog
+        </h1>
+        <h3 className="demo-subtitle">
+          The quick brown fox jumps over the lazy dog
+        </h3>
+        <p className="demo-text">
+          A mad boxer shot a quick, gloved jab to the jaw of his dizzy opponent whilst the frayed wizards plucky ivy from the big quilt. The quick brown fox jumps over the lazy dog and crazy Fredrick bought many very exquisite opal jewels.
+        </p>
+      </div>
+      
+      <div className="demo-sidebar">
+        <div className="sidebar-section">
+          <div className="sidebar-title">ink.inkContrast</div>
+          <div className="sidebar-hex">neutral100</div>
+          <div className="sidebar-standard">#01000d</div>
+        </div>
+
+        <div className="sidebar-section">
+          <div className="sidebar-title">ink.inkBase</div>
+          <div className="sidebar-hex">neutral080</div>
+          <div className="sidebar-standard">#333333</div>
+        </div>
+
+        <div className="sidebar-section">
+          <div className="sidebar-title">ink.inkSubtle</div>
+          <div className="sidebar-hex">neutral070</div>
+          <div className="sidebar-standard">#696969</div>
+        </div>
+      </div>
+    </div>
+
+    <div className="theme-demo dark-theme">
+      <div className="demo-content">
+        <h1 className="demo-title">
+          The quick brown fox jumps over the lazy dog
+        </h1>
+        <h3 className="demo-subtitle">
+          The quick brown fox jumps over the lazy dog
+        </h3>
+        <p className="demo-text">
+          A mad boxer shot a quick, gloved jab to the jaw of his dizzy opponent whilst the frayed wizards plucky ivy from the big quilt. The quick brown fox jumps over the lazy dog and crazy Fredrick bought many very exquisite opal jewels.
+        </p>
+      </div>
+      
+      <div className="demo-sidebar">
+        <div className="sidebar-section">
+          <div className="sidebar-title">ink.inkContrast</div>
+          <div className="sidebar-hex">white</div>
+          <div className="sidebar-standard">#ffffff</div>
+        </div>
+
+        <div className="sidebar-section">
+          <div className="sidebar-title">ink.inkBase</div>
+          <div className="sidebar-hex">neutral020</div>
+          <div className="sidebar-standard">#eeeeee</div>
+        </div>
+
+        <div className="sidebar-section">
+          <div className="sidebar-title">ink.inkSubtle</div>
+          <div className="sidebar-hex">neutral030</div>
+          <div className="sidebar-standard">#e4e4e4</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div className="ink-section">
+  <div className="theme-container">
+    <div className="theme-demo light-theme">
+      <div className="demo-content">
+        <button className="disabled-button" style={{ background: '#eee', color: '#9ca3af !important' }}>
+          Disabled button
+        </button>
+      </div>
+      
+      <div className="demo-sidebar">
+        <div className="sidebar-section">
+          <div className="sidebar-title">ink.inkNonEssential</div>
+          <div className="sidebar-hex">(neutral060)</div>
+          <div className="sidebar-standard">#aaaaaa</div>
+        </div>
+      </div>
+    </div>
+
+    <div className="theme-demo dark-theme">
+      <div className="demo-content">
+        <button className="disabled-button" style={{ background: '#333333', color: '#6b7280 !important' }}>
+          Disabled button
+        </button>
+      </div>
+      
+      <div className="demo-sidebar">
+        <div className="sidebar-section">
+          <div className="sidebar-title">ink.inkNonEssential</div>
+          <div className="sidebar-hex">(neutral070)</div>
+          <div className="sidebar-standard">#333333</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div className="ink-section">
+  <div className="theme-container">
+    <div className="theme-demo light-theme">
+      <div className="demo-content">
+        <div style={{ 
+          background: '#333333', 
+          padding: '0.75rem', 
+          border: '1px solid #e5e7eb',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '0.5rem'
+        }} className="info-section">
+          <span style={{ 
+            width: '12px', 
+            height: '12px', 
+            background: '#6b7280', 
+            borderRadius: '50%' 
+          }}></span>
+          <p>
+            A tool like is not describing the best information
+          </p>
+        </div>
+      </div>
+      
+      <div className="demo-sidebar">
+        <div className="sidebar-section">
+          <div className="sidebar-title">ink.inkInverse</div>
+          <div className="sidebar-hex">white</div>
+          <div className="sidebar-standard">#333333</div>
+        </div>
+      </div>
+    </div>
+
+    <div className="theme-demo dark-theme">
+      <div className="demo-content">
+        <div style={{ 
+          background: '#fff', 
+          padding: '0.75rem', 
+          border: '1px solid #4b5563',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '0.5rem'
+        }} className="info-section">
+          <span style={{ 
+            width: '12px', 
+            height: '12px', 
+            background: '#9ca3af', 
+            borderRadius: '50%' 
+          }}></span>
+          <p>
+            A tool like is not describing the best information
+          </p>
+        </div>
+      </div>
+      
+      <div className="demo-sidebar">
+        <div className="sidebar-section">
+          <div className="sidebar-title">ink.inkInverse</div>
+          <div className="sidebar-hex">neutral090</div>
+          <div className="sidebar-standard">#fff</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div className="ink-section">
+  <div className="theme-container">
+    <div className="theme-demo light-theme">
+      <div className="demo-content">
+        <button className="demo-button" style={{ background: '#1573a2', color: '#ffffff !important' }}>
+          Solid button
+        </button>
+      </div>
+      
+      <div className="demo-sidebar">
+        <div className="sidebar-section">
+          <div className="sidebar-title">ink.inkLight010</div>
+          <div className="sidebar-hex">white</div>
+          <div className="sidebar-standard">#fff</div>
+        </div>
+      </div>
+    </div>
+
+    <div className="theme-demo dark-theme">
+      <div className="demo-content">
+        <button className="demo-button" style={{ background: '#1573a2', color: '#ffffff !important' }}>
+          Solid button
+        </button>
+      </div>
+      
+      <div className="demo-sidebar">
+        <div className="sidebar-section">
+          <div className="sidebar-title">ink.inkLight010</div>
+          <div className="sidebar-hex">white</div>
+          <div className="sidebar-standard">#333</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div className="ink-section">
+  <div className="theme-container">
+    <div className="theme-demo light-theme">
+      <div className="demo-content">
+        <div className="text-container">
+          <p className="container-text">
+            The quick brown fox jumps over the lazy dog
+          </p>
+        </div>
+      </div>
+      
+      <div className="demo-sidebar">
+        <div className="sidebar-section">
+          <div className="sidebar-title">ink.inkDark010</div>
+          <div className="sidebar-hex">neutral100</div>
+          <div className="sidebar-standard">#e4e4e4</div>
+        </div>
+      </div>
+    </div>
+
+    <div className="theme-demo dark-theme">
+      <div className="demo-content">
+        <div className="text-container">
+          <p className="container-text">
+            The quick brown fox jumps over the lazy dog
+          </p>
+        </div>
+      </div>
+      
+      <div className="demo-sidebar">
+        <div className="sidebar-section">
+          <div className="sidebar-title">ink.inkDark010</div>
+          <div className="sidebar-hex">neutral100</div>
+          <div className="sidebar-standard">#e4e4e4</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div> 

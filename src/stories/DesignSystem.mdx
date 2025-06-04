@@ -1,0 +1,88 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Design System/Palettes" />
+
+# Palettes
+
+The palettes are a group of colours that are used tied to a single product but are part of the growing list of colours that represent all the brand colours available for use in The Times.
+
+These colours are free to use but should be critically evaluated for the benefit of their use within a design or product.
+
+---
+
+## Generating colours
+
+The core palettes are defined using the same lightness code for each colour tone, therefore palettes with the same number have the same perceived lightness and WCAG contrast ratio.
+
+Creating accessible light and dark themes is easier and quicker knowing which palette combinations meet the accessibility requirements.
+
+The following table indicates palette combinations that meet a minimum 4.5:1 contrast ratio:
+
+Colour palettes can be generated using online tools such as Leonardo Accessible Palettes, or Geenes Color Tool.
+
+## Color Palette Grid
+
+<div style={{
+  fontFamily: 'monospace',
+  fontSize: '11px',
+  lineHeight: '1.2',
+  marginTop: '2rem',
+  marginBottom: '2rem'
+}}>
+  <div style={{ display: 'flex', gap: '8px', marginBottom: '4px' }}>
+    <div style={{ width: '40px' }}></div>
+    {[100, 200, 300, 400, 500, 600, 700, 800, 900, 950].map(weight => (
+      <div key={weight} style={{ width: '24px', textAlign: 'center', fontSize: '10px' }}>
+        {weight}
+      </div>
+    ))}
+  </div>
+  
+  {[
+    { name: '000', colors: ['#ffffff', '#f8f9fa', '#e9ecef', '#dee2e6', '#ced4da', '#adb5bd', '#6c757d', '#495057', '#343a40', '#212529'] },
+    { name: '010', colors: ['#fefefe', '#fcfcfc', '#f1f1f1', '#e5e5e5', '#d4d4d4', '#a3a3a3', '#737373', '#525252', '#404040', '#262626'] },
+    { name: '020', colors: ['#fefefe', '#fcfcfc', '#f5f5f5', '#e5e5e5', '#d4d4d4', '#a3a3a3', '#737373', '#525252', '#404040', '#262626'] },
+    { name: '030', colors: ['#fefefe', '#fcfcfc', '#f5f5f5', '#e5e5e5', '#d4d4d4', '#a3a3a3', '#737373', '#525252', '#404040', '#262626'] },
+    { name: '040', colors: ['#fefefe', '#fcfcfc', '#f5f5f5', '#e5e5e5', '#d4d4d4', '#a3a3a3', '#737373', '#525252', '#404040', '#262626'] },
+    { name: '050', colors: ['#fefefe', '#fcfcfc', '#f5f5f5', '#e5e5e5', '#d4d4d4', '#a3a3a3', '#737373', '#525252', '#404040', '#262626'] },
+    { name: '060', colors: ['#fefefe', '#fcfcfc', '#f5f5f5', '#e5e5e5', '#d4d4d4', '#a3a3a3', '#737373', '#525252', '#404040', '#262626'] },
+    { name: '070', colors: ['#fefefe', '#fcfcfc', '#f5f5f5', '#e5e5e5', '#d4d4d4', '#a3a3a3', '#737373', '#525252', '#404040', '#262626'] },
+    { name: '080', colors: ['#fefefe', '#fcfcfc', '#f5f5f5', '#e5e5e5', '#d4d4d4', '#a3a3a3', '#737373', '#525252', '#404040', '#262626'] },
+    { name: '090', colors: ['#fefefe', '#fcfcfc', '#f5f5f5', '#e5e5e5', '#d4d4d4', '#a3a3a3', '#737373', '#525252', '#404040', '#262626'] }
+  ].map(row => (
+    <div key={row.name} style={{ display: 'flex', gap: '8px', marginBottom: '2px' }}>
+      <div style={{ width: '40px', textAlign: 'right', paddingRight: '8px', fontSize: '10px', color: '#666' }}>
+        {row.name}
+      </div>
+      {row.colors.map((color, index) => (
+        <div
+          key={index}
+          style={{
+            width: '24px',
+            height: '20px',
+            backgroundColor: color,
+            border: '1px solid #ddd',
+            borderRadius: '2px'
+          }}
+          title={color}
+        />
+      ))}
+    </div>
+  ))}
+</div>
+
+## Usage Guidelines
+
+- **Accessibility First**: All colour combinations should meet WCAG AA contrast requirements (minimum 4.5:1 ratio)
+- **Consistent Lightness**: Colours within the same palette weight (100, 200, etc.) have consistent perceived lightness
+- **Theme Flexibility**: The systematic approach makes it easier to create both light and dark themes
+- **Brand Compliance**: These colours represent The Times brand palette and should be used thoughtfully
+
+## Tools for Color Generation
+
+The following online tools can help generate accessible color palettes:
+
+- **Leonardo Accessible Palettes**: For creating accessible color systems
+- **Geenes Color Tool**: For generating and testing color combinations
+
+Remember to always validate color combinations for accessibility compliance before implementation. 

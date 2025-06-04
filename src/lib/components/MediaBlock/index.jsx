@@ -5,6 +5,7 @@ import videojs from 'video.js';
 import 'video.js/dist/video-js.css';
 import Wrapper from '../Wrapper';
 import { GlobalStyle } from '../GlobalStyle';
+import ThemeProvider from '../../themes/ThemeProvider';
 import { CaptionText, MediaContainer, SlideText, StyledMedia } from './styles';
 
 const VideoJS = ({ options, onReady, controlsTop = false }) => {
@@ -71,7 +72,7 @@ const getEmbedUrl = (mediaUrl, autoplay, loop, controls, mute) => {
     return mediaUrl;
 };
 
-const MediaBlock = ({ data }) => {
+const MediaBlock = ({ data, theme }) => {
     if (!data) return null;
 
     const {
@@ -150,13 +151,29 @@ const MediaBlock = ({ data }) => {
         </StyledMedia>
     );
 
-    return (
+    const content = (
         <>
             <GlobalStyle />
             <MediaContainer className={containerWidth}>
                 <Wrapper data={data}>{mediaElement}</Wrapper>
             </MediaContainer>
         </>
+    );
+
+    // If no custom theme is provided, use default ThemeProvider
+    if (!theme) {
+        return (
+            <ThemeProvider>
+                {content}
+            </ThemeProvider>
+        );
+    }
+
+    // If theme is provided, wrap with ThemeProvider
+    return (
+        <ThemeProvider customTheme={theme}>
+            {content}
+        </ThemeProvider>
     );
 };
 
