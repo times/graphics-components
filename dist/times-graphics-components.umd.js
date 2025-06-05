@@ -107,7 +107,7 @@ React keys must be passed directly to JSX without using spread:
         margin-block-end: 0;
         font-family: ${s=>{var e;return(e=s.theme.utils.typography("fontFamily","timesModernRegular"))==null?void 0:e.join(", ")}};
         font-size: ${s=>s.theme.utils.typography("fontSize","sm")};
-        color: ${s=>s.theme.utils.color("whiteTint.white")};
+        color: ${s=>s.theme.utils.color("whiteTint.white")} !important;
         font-weight: ${s=>s.theme.utils.typography("fontWeight","normal")};
     }
 
@@ -346,7 +346,7 @@ React keys must be passed directly to JSX without using spread:
         font-weight: ${s=>s.theme.utils.typography("fontWeight","medium")};
         font-family: ${s=>{var e;return(e=s.theme.utils.typography("fontFamily","timesModernMedium"))==null?void 0:e.join(", ")}};
         font-size: ${s=>s.theme.utils.typography("fontSize","base")};
-        color: ${s=>s.theme.utils.color("whiteTint.white")};
+        color: ${s=>s.theme.utils.color("whiteTint.white")} !important;
     }
 
     .card-quote {
@@ -355,7 +355,7 @@ React keys must be passed directly to JSX without using spread:
         font-weight: ${s=>s.theme.utils.typography("fontWeight","bold")};
         font-family: ${s=>{var e;return(e=s.theme.utils.typography("fontFamily","timesModernBold"))==null?void 0:e.join(", ")}};
         text-align: left;
-        color: ${s=>s.theme.utils.color("neutral.ne030")};
+        color: ${s=>s.theme.utils.color("neutral.ne030")} !important;
         margin-block-start: ${s=>s.theme.utils.spacing("3")};
         letter-spacing: ${s=>s.theme.utils.typography("letterSpacing","editorial")};
     }

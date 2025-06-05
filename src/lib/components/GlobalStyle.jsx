@@ -95,7 +95,7 @@ export const CardContainer = styled.div`
             props.theme.utils.typography('fontFamily', 'timesModernMedium')?.join(', ')
         };
         font-size: ${props => props.theme.utils.typography('fontSize', 'base')};
-        color: ${props => props.theme.utils.color('whiteTint.white')};
+        color: ${props => props.theme.utils.color('whiteTint.white')} !important;
     }
 
     .card-quote {
@@ -106,7 +106,7 @@ export const CardContainer = styled.div`
             props.theme.utils.typography('fontFamily', 'timesModernBold')?.join(', ')
         };
         text-align: left;
-        color: ${props => props.theme.utils.color('neutral.ne030')};
+        color: ${props => props.theme.utils.color('neutral.ne030')} !important;
         margin-block-start: ${props => props.theme.utils.spacing('3')};
         letter-spacing: ${props => props.theme.utils.typography('letterSpacing', 'editorial')};
     }

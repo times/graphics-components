@@ -17,7 +17,7 @@ export const EqualizerContainer = styled.div`
             props.theme.utils.typography('fontFamily', 'timesModernRegular')?.join(', ')
         };
         font-size: ${props => props.theme.utils.typography('fontSize', 'sm')};
-        color: ${props => props.theme.utils.color('whiteTint.white')};
+        color: ${props => props.theme.utils.color('whiteTint.white')} !important;
         font-weight: ${props => props.theme.utils.typography('fontWeight', 'normal')};
     }
 

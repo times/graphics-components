@@ -1,6 +1,7 @@
 import React from 'react';
 import { DataWrapperEmbed } from '../../lib/components';
 import WithTextWrapper from '../../storybook/decorators/WithTextWrapper';
+import WithThemeProvider from '../../storybook/decorators/WithThemeProvider';
 
 export default {
   title: 'Components/DatawrapperEmbed',
@@ -12,9 +13,11 @@ export default {
   },
   decorators: [
     (Story) => (
-      <WithTextWrapper>
-        <Story />
-      </WithTextWrapper>
+      <WithThemeProvider>
+        <WithTextWrapper>
+          <Story />
+        </WithTextWrapper>
+      </WithThemeProvider>
     ),
   ],
 };

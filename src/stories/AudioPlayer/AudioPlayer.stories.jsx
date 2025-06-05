@@ -1,6 +1,7 @@
 import React from 'react';
 import { AudioPlayer } from '../../lib/components';
 import WithTextWrapper from '../../storybook/decorators/WithTextWrapper';
+import WithThemeProvider from '../../storybook/decorators/WithThemeProvider';
 
 export default {
     title: 'Components/AudioPlayer',
@@ -10,9 +11,11 @@ export default {
     },
     decorators: [
         (Story) => (
-            <WithTextWrapper>
-                <Story />
-            </WithTextWrapper>
+            <WithThemeProvider>
+                <WithTextWrapper>
+                    <Story />
+                </WithTextWrapper>
+            </WithThemeProvider>
         ),
     ],
 };
