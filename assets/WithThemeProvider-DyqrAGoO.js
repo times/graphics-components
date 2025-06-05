@@ -1,0 +1,1 @@
+import{j as r}from"./jsx-runtime-D_zvdyIk.js";import"./index-U0ga5oGA.js";import{T as o}from"./index-BvmmDGMR.js";const i=({children:e})=>r.jsx(o,{children:e});i.__docgenInfo={description:"",methods:[],displayName:"WithThemeProvider"};export{i as W};
